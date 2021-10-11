@@ -8,6 +8,10 @@ from PyQt5.QtCore import *
 
 path = os.path.abspath(os.path.dirname(__file__))
 gui_path = os.path.abspath(os.path.join(path, 'GUIinput.ui'))
+modules_path = os.path.abspath(os.path.join(path, os.pardir, "source", 'modules'))      
+sys.path.append(modules_path)
+
+from library.format_translate import *                    
                            
 class Ui(QtWidgets.QMainWindow):
     def __init__(self):
@@ -58,9 +62,9 @@ class Ui(QtWidgets.QMainWindow):
         passive_text_1 = QGraphicsTextItem("Drag image here.")
         passive_text_2 = QGraphicsTextItem("Or")
         active_text = QGraphicsTextItem("choose file")
-        scene.addItem(passive_text_1)
-        scene.addItem(passive_text_2)
-        scene.addItem(active_text)
+        # scene.addItem(passive_text_1)
+        # scene.addItem(passive_text_2)
+        # scene.addItem(active_text)
         
         passive_text_1_font = QFont("Times", 14, QFont.Bold)
         passive_text_2_font = QFont("Times", 10)
@@ -93,8 +97,8 @@ class Ui(QtWidgets.QMainWindow):
         
         active_text.setAcceptedMouseButtons(Qt.AllButtons)
         active_text.setAcceptTouchEvents(True)
-        # scene.mousePressEvent = mousePressEvent
-        active_text.mousePressEvent = mousePressEvent
+        scene.mousePressEvent = mousePressEvent_lambda(self)
+        # active_text.mousePressEvent = mousePressEvent
         
         graphicView.setScene(scene)
         
@@ -107,13 +111,42 @@ class Ui(QtWidgets.QMainWindow):
         checkbox = self.findChild(QtWidgets.QCheckBox, 'CB_incident_1')
         checkbox.setIcon(icon)
         
+        TextItem = QGraphicsTextItem()
+        self.document_ = TextItem.document()
+        rootframe = TextItem.document().rootFrame()
+        cursor = rootframe.firstCursorPosition()
+        cursor.insertHtml("Drag image here.<br>Or ")
+        curs_min = cursor.position()
+        cursor.insertHtml("<b>choose file<b/>.")
+        curs_max=cursor.position()
+        self.my_callback = QGraphicsTextItem_callback(curs_min=curs_min, 
+                                                      curs_max=curs_max)
+        scene.addItem(TextItem)
+        
+        # self.p = QPointF()
+        
         self.show()
         
 
-def mousePressEvent(event):
-        if event.button() == Qt.LeftButton:
-            print("Press mouse")
+def mousePressEvent(self, event):
+    if event.button() == Qt.LeftButton:
+        print("Press mouse")
+        pos = event.scenePos()
+        self.p = QPointF(pos.x(), pos.y())
+        print(self.p.x())
+        print(self.p.y())
+        documentLayout = self.document_.documentLayout()
+        cur_pos = documentLayout.hitTest(self.p, 
+                                         Qt.ExactHit)
+        if cur_pos > self.my_callback.curs_min and cur_pos < self.my_callback.curs_max:
+            print("chose file callback")
+        print(cur_pos)
+        
+        
+def mousePressEvent_lambda(self):
+    return lambda event: mousePressEvent(self, event)
 
 app = QtWidgets.QApplication(sys.argv)
 window = Ui()
 app.exec_()
+

@@ -160,6 +160,7 @@
                         "LeadingPosition": {},
                         "TrailingPosition": {
                             "icon": {
+                                "name": "",
                                 "path": "source/icon/exclamation_mark.png"
                             }
                         }
@@ -185,6 +186,7 @@
                         "LeadingPosition": {},
                         "TrailingPosition": {
                             "icon": {
+                                "name": "",
                                 "path": "source/icon/exclamation_mark.png"
                             }
                         }
@@ -210,6 +212,7 @@
                         "LeadingPosition": {},
                         "TrailingPosition": {
                             "icon": {
+                                "name": "",
                                 "path": "source/icon/exclamation_mark.png"
                             }
                         }
@@ -235,6 +238,7 @@
                         "LeadingPosition": {},
                         "TrailingPosition": {
                             "icon": {
+                                "name": "",
                                 "path": "source/icon/exclamation_mark.png"
                             }
                         }
@@ -260,6 +264,7 @@
                         "LeadingPosition": {},
                         "TrailingPosition": {
                             "icon": {
+                                "name": "",
                                 "path": "source/icon/exclamation_mark.png"
                             }
                         }
@@ -284,6 +289,7 @@
                         "LeadingPosition": {},
                         "TrailingPosition": {
                             "icon": {
+                                "name": "",
                                 "path": "source/icon/exclamation_mark.png"
                             }
                         }
@@ -484,76 +490,41 @@
                         "h": null
                     },
                     "children": {
-                        "passive_text_1": {
-                            "text": "Drag image here.",
+                        "Insert_image_hints_text": {
+                            "text" : "",
                             "desc" : "",
+                            "geometry": "center",
                             "class": "QGraphicsTextItem",
-                            "position": {
-                                "x": null,
-                                "y": null
-                            },
-                            "size": {
-                                "width": null,
-                                "height": null
-                            },
-                            "font": {
-                                "family": null,
-                                "pointSize": null,
-                                "weight": null,
-                                "italic": false
+                            "root_frame": {
+                                "Drag_images_hint": {
+                                    "text" : "Drag image here.<br>Or ",
+                                    "desc" : "",
+                                    "curs": 0,
+                                    "class": "str",
+                                    "interpreted": "html"
+                                },
+                                "Choose_files_hint": {
+                                    "text" : "<b>choose file<b/>.",
+                                    "desc" : "",
+                                    "curs": 1,
+                                    "class": "str",
+                                    "interpreted": "html"
+                                }
                             }
-                        },
-                        "passive_text_2": {
-                            "text": "Or",
-                            "desc" : "",
-                            "class": "QGraphicsTextItem",
-                            "position": {
-                                "x": null,
-                                "y": null
-                            },
-                            "size": {
-                                "width": null,
-                                "height": null
-                            },
-                            "font": {
-                                "family": null,
-                                "pointSize": null,
-                                "weight": null,
-                                "italic": false
-                            }
-                        },
-                        "active_text": {
-                            "text": "Drag image here.",
-                            "desc" : "",
-                            "class": "QGraphicsTextItem",
-                            "position": {
-                                "x": null,
-                                "y": null
-                            },
-                            "size": {
-                                "width": null,
-                                "height": null
-                            },
-                            "font": {
-                                "family": null,
-                                "pointSize": null,
-                                "weight": null,
-                                "italic": false
-                            }
+
                         }
+                        
                     }
                 },
                 "BT_confirm": {
                     "text": "Xác nhận",
                     "desc": "",
                     "class": "QButton",
-                    "position": {
+                    "geometry": {
                         "x": null,
-                        "y": null
-                    },
-                    "size": {
-                        "width": null,
-                        "height": null
+                        "y": null,
+                        "w": null,
+                        "h": null
                     },
                     "font": {
                         "family": null,
@@ -566,13 +537,11 @@
                     "text": "Thoát",
                     "desc": "",
                     "class": "QButton",
-                    "position": {
+                    "geometry": {
                         "x": null,
-                        "y": null
-                    },
-                    "size": {
-                        "width": null,
-                        "height": null
+                        "y": null,
+                        "w": null,
+                        "h": null
                     },
                     "font": {
                         "family": null,
