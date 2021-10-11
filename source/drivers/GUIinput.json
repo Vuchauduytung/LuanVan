@@ -1,0 +1,587 @@
+{
+    "name": "MainWindow",
+    "path": "GUI/GUIinput.ui",
+    "desc": "",
+    "text": "GUI_input",
+    "icon": {
+        "name": "",
+        "path": null
+    },
+    "class": "QMainWindow",
+    "children": {
+        "GB_customer_information": {
+            "text": "Thông tin khách hàng",
+            "desc": "",
+            "class": "QGroupBox",
+            "geometry": {
+                "x": 20,
+                "y": 20,
+                "w": 411,
+                "h": 321
+            },
+            "font": {
+                "family": null,
+                "pointSize": null,
+                "weight": null,
+                "italic": false
+            },
+            "children": {      
+                "label_customer_name": {
+                    "text": "Tên khách hàng",
+                    "desc" : "",
+                    "class": "QLabel",
+                    "grid": {
+                        "row": 0,
+                        "column": 0,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "label_VIN_code": {
+                    "text": "Mã VIN",
+                    "desc" : "",
+                    "class": "QLabel",
+                    "grid": {
+                        "row": 1,
+                        "column": 0,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "label_number_plate": {
+                    "text": "Biển số",
+                    "desc" : "",
+                    "class": "QLabel",
+                    "grid": {
+                        "row": 2,
+                        "column": 0,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "label_phone_number": {
+                    "text": "SĐT",
+                    "desc" : "",
+                    "class": "QLabel",
+                    "grid": {
+                        "row": 3,
+                        "column": 0,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "label_address": {
+                    "text": "Địa chỉ",
+                    "desc" : "",
+                    "class": "QLabel",
+                    "grid": {
+                        "row": 4,
+                        "column": 0,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "label_fixing_date": {
+                    "text": "Ngày sửa chữa",
+                    "desc" : "",
+                    "class": "QLabel",
+                    "grid": {
+                        "row": 5,
+                        "column": 0,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "label_warning": {
+                    "text": "Vui lòng nhập đầy đủ thông tin",
+                    "desc" : "",
+                    "class": "QLabel",
+                    "show": false,
+                    "grid": {
+                        "row": 6,
+                        "column": 1,
+                        "rowSpan": 1,
+                        "columnSpan": 2
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "LE_customer_name": {
+                    "text": "",
+                    "desc" : "",
+                    "class": "QLineEdit",
+                    "grid": {
+                        "row": 0,
+                        "column": 1,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "action": {
+                        "LeadingPosition": {},
+                        "TrailingPosition": {
+                            "icon": {
+                                "path": "source/icon/exclamation_mark.png"
+                            }
+                        }
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "LE_VIN_code": {
+                    "text": "",
+                    "desc" : "",
+                    "class": "QLineEdit",
+                    "grid": {
+                        "row": 1,
+                        "column": 1,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "action": {
+                        "LeadingPosition": {},
+                        "TrailingPosition": {
+                            "icon": {
+                                "path": "source/icon/exclamation_mark.png"
+                            }
+                        }
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "LE_number_plate": {
+                    "text": "",
+                    "desc" : "",
+                    "class": "QLineEdit",
+                    "grid": {
+                        "row": 2,
+                        "column": 1,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "action": {
+                        "LeadingPosition": {},
+                        "TrailingPosition": {
+                            "icon": {
+                                "path": "source/icon/exclamation_mark.png"
+                            }
+                        }
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "LE_phone_number": {
+                    "text": "",
+                    "desc" : "",
+                    "class": "QLineEdit",
+                    "grid": {
+                        "row": 3,
+                        "column": 1,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "action": {
+                        "LeadingPosition": {},
+                        "TrailingPosition": {
+                            "icon": {
+                                "path": "source/icon/exclamation_mark.png"
+                            }
+                        }
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "LE_address": {
+                    "text": "",
+                    "desc" : "",
+                    "class": "QLineEdit",
+                    "grid": {
+                        "row": 4,
+                        "column": 1,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "action": {
+                        "LeadingPosition": {},
+                        "TrailingPosition": {
+                            "icon": {
+                                "path": "source/icon/exclamation_mark.png"
+                            }
+                        }
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "DE_fixing_date": {
+                    "date" : "today",
+                    "class": "QLineEdit",
+                    "grid": {
+                        "row": 4,
+                        "column": 1,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "action": {
+                        "LeadingPosition": {},
+                        "TrailingPosition": {
+                            "icon": {
+                                "path": "source/icon/exclamation_mark.png"
+                            }
+                        }
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                }
+            }
+        },
+        "GB_incident_phenomena": {
+            "text": "Sự cố của xe",
+            "desc": "",
+            "class": "QGroupBox",
+            "geometry": {
+                "x": null,
+                "y": null,
+                "w": null,
+                "h": null
+            },
+            "font": {
+                "family": null,
+                "pointSize": null,
+                "weight": null,
+                "italic": false
+            },
+            "children": {
+                "CB_incident_1": {
+                    "text": "Xe đột ngột tắt máy giữa đường",
+                    "desc" : "",
+                    "class": "QCheckBox",
+                    "grid": {
+                        "row": 0,
+                        "column": 0,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "CB_incident_2": {
+                    "text": "Khó đề máy khi khởi động",
+                    "desc" : "",
+                    "class": "QCheckBox",
+                    "grid": {
+                        "row": 0,
+                        "column": 1,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "CB_incident_3": {
+                    "text": "Thấy nhiều khói đen tỏa ra khi tăng tốc",
+                    "desc" : "",
+                    "class": "QCheckBox",
+                    "grid": {
+                        "row": 0,
+                        "column": 2,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "CB_incident_4": {
+                    "text": "Cảm giác xe đì khi leo dốc",
+                    "desc" : "",
+                    "class": "QCheckBox",
+                    "grid": {
+                        "row": 0,
+                        "column": 3,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "CB_incident_5": {
+                    "text": "Xe đột ngột giảm vòng tua khi tăng tốc",
+                    "desc" : "",
+                    "class": "QCheckBox",
+                    "grid": {
+                        "row": 0,
+                        "column": 4,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "CB_incident_6": {
+                    "text": "Có tiếng động lạ ở động cơ",
+                    "desc" : "",
+                    "class": "QCheckBox",
+                    "grid": {
+                        "row": 0,
+                        "column": 5,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "CB_incident_7": {
+                    "text": "Cảm giác lái bất thường, khó kiểm soát",
+                    "desc" : "",
+                    "class": "QCheckBox",
+                    "grid": {
+                        "row": 0,
+                        "column": 6,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "CB_incident_8": {
+                    "text": "Vòng tua không đáp ứng ngay khi tăng ",
+                    "desc" : "",
+                    "class": "QCheckBox",
+                    "grid": {
+                        "row": 0,
+                        "column": 7,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "CB_incident_9": {
+                    "text": "Động cơ rung lắc mạnh khi vận hành",
+                    "desc" : "",
+                    "class": "QCheckBox",
+                    "grid": {
+                        "row": 0,
+                        "column": 8,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                }
+            }
+        },
+        "GB_incident_images": {
+            "text": "Hình ảnh sự cố",
+            "desc": "",
+            "class": "QGroupBox",
+            "children": {
+                "GV_inciden_images": {
+                    "desc" : "",
+                    "class": "QGraphicsView",
+                    "geometry": {
+                        "x": null,
+                        "y": null,
+                        "w": null,
+                        "h": null
+                    },
+                    "children": {
+                        "passive_text_1": {
+                            "text": "Drag image here.",
+                            "desc" : "",
+                            "class": "QGraphicsTextItem",
+                            "position": {
+                                "x": null,
+                                "y": null
+                            },
+                            "size": {
+                                "width": null,
+                                "height": null
+                            },
+                            "font": {
+                                "family": null,
+                                "pointSize": null,
+                                "weight": null,
+                                "italic": false
+                            }
+                        },
+                        "passive_text_2": {
+                            "text": "Or",
+                            "desc" : "",
+                            "class": "QGraphicsTextItem",
+                            "position": {
+                                "x": null,
+                                "y": null
+                            },
+                            "size": {
+                                "width": null,
+                                "height": null
+                            },
+                            "font": {
+                                "family": null,
+                                "pointSize": null,
+                                "weight": null,
+                                "italic": false
+                            }
+                        },
+                        "active_text": {
+                            "text": "Drag image here.",
+                            "desc" : "",
+                            "class": "QGraphicsTextItem",
+                            "position": {
+                                "x": null,
+                                "y": null
+                            },
+                            "size": {
+                                "width": null,
+                                "height": null
+                            },
+                            "font": {
+                                "family": null,
+                                "pointSize": null,
+                                "weight": null,
+                                "italic": false
+                            }
+                        }
+                    }
+                },
+                "BT_confirm": {
+                    "text": "Xác nhận",
+                    "desc": "",
+                    "class": "QButton",
+                    "position": {
+                        "x": null,
+                        "y": null
+                    },
+                    "size": {
+                        "width": null,
+                        "height": null
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "BT_exit": {
+                    "text": "Thoát",
+                    "desc": "",
+                    "class": "QButton",
+                    "position": {
+                        "x": null,
+                        "y": null
+                    },
+                    "size": {
+                        "width": null,
+                        "height": null
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                }
+            }
+        }
+    }
+}
