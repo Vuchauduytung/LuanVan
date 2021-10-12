@@ -19,14 +19,14 @@
      <rect>
       <x>10</x>
       <y>430</y>
-      <width>301</width>
+      <width>381</width>
       <height>231</height>
      </rect>
     </property>
     <widget class="QPushButton" name="pushButton_4">
      <property name="geometry">
       <rect>
-       <x>170</x>
+       <x>280</x>
        <y>110</y>
        <width>93</width>
        <height>28</height>
@@ -44,8 +44,8 @@
     <widget class="QPushButton" name="pushButton_3">
      <property name="geometry">
       <rect>
-       <x>170</x>
-       <y>74</y>
+       <x>280</x>
+       <y>70</y>
        <width>93</width>
        <height>28</height>
       </rect>
@@ -80,8 +80,8 @@
     <widget class="QPushButton" name="pushButton_5">
      <property name="geometry">
       <rect>
-       <x>170</x>
-       <y>146</y>
+       <x>280</x>
+       <y>150</y>
        <width>93</width>
        <height>28</height>
       </rect>
@@ -161,8 +161,8 @@
     <widget class="QPushButton" name="pushButton_6">
      <property name="geometry">
       <rect>
-       <x>170</x>
-       <y>182</y>
+       <x>280</x>
+       <y>188</y>
        <width>93</width>
        <height>28</height>
       </rect>
@@ -210,6 +210,58 @@
      </property>
      <property name="text">
       <string>Đo xylanh 1</string>
+     </property>
+    </widget>
+    <widget class="QProgressBar" name="progressBar">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>70</y>
+       <width>118</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="value">
+      <number>24</number>
+     </property>
+    </widget>
+    <widget class="QProgressBar" name="progressBar_2">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>110</y>
+       <width>118</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="value">
+      <number>24</number>
+     </property>
+    </widget>
+    <widget class="QProgressBar" name="progressBar_3">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>190</y>
+       <width>118</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="value">
+      <number>24</number>
+     </property>
+    </widget>
+    <widget class="QProgressBar" name="progressBar_4">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>150</y>
+       <width>118</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="value">
+      <number>24</number>
      </property>
     </widget>
    </widget>
@@ -611,23 +663,39 @@
       <height>381</height>
      </rect>
     </property>
-    <widget class="QTableView" name="tabe_comment">
+    <widget class="QTableWidget" name="tableWidget">
      <property name="geometry">
       <rect>
        <x>10</x>
        <y>10</y>
        <width>661</width>
-       <height>371</height>
+       <height>361</height>
       </rect>
      </property>
+     <property name="rowCount">
+      <number>5</number>
+     </property>
+     <property name="columnCount">
+      <number>5</number>
+     </property>
+     <row/>
+     <row/>
+     <row/>
+     <row/>
+     <row/>
+     <column/>
+     <column/>
+     <column/>
+     <column/>
+     <column/>
     </widget>
    </widget>
    <widget class="QWidget" name="widget_grap" native="true">
     <property name="geometry">
      <rect>
-      <x>380</x>
+      <x>400</x>
       <y>400</y>
-      <width>691</width>
+      <width>671</width>
       <height>301</height>
      </rect>
     </property>
@@ -643,110 +711,55 @@
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
-     <widget class="QLabel" name="label_18">
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
+     <widget class="QSplitter" name="splitter_3">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
       </property>
-      <property name="text">
-       <string>Đồ thị</string>
-      </property>
+      <widget class="QLabel" name="label_19">
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Chẩn đoán</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="comboBox_2">
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+        </font>
+       </property>
+       <item>
+        <property name="text">
+         <string>Xylanh 1</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Xylanh 2</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Xylanh 3</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Xylanh 4</string>
+        </property>
+       </item>
+      </widget>
      </widget>
-     <widget class="QComboBox" name="comboBox">
-      <property name="font">
-       <font>
-        <pointsize>8</pointsize>
-       </font>
-      </property>
-      <item>
-       <property name="text">
-        <string>Xylanh 1</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Xylanh 2</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Xylanh 3</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Xylanh 4</string>
-       </property>
-      </item>
-     </widget>
-    </widget>
-    <widget class="QSplitter" name="splitter_3">
-     <property name="geometry">
-      <rect>
-       <x>370</x>
-       <y>10</y>
-       <width>191</width>
-       <height>22</height>
-      </rect>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <widget class="QLabel" name="label_19">
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Chẩn đoán</string>
-      </property>
-     </widget>
-     <widget class="QComboBox" name="comboBox_2">
-      <property name="font">
-       <font>
-        <pointsize>8</pointsize>
-       </font>
-      </property>
-      <item>
-       <property name="text">
-        <string>Xylanh 1</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Xylanh 2</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Xylanh 3</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Xylanh 4</string>
-       </property>
-      </item>
-     </widget>
-    </widget>
-    <widget class="QGraphicsView" name="grap_xylanh">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>40</y>
-       <width>331</width>
-       <height>251</height>
-      </rect>
-     </property>
     </widget>
     <widget class="QTextBrowser" name="t_comment">
      <property name="geometry">
       <rect>
-       <x>370</x>
+       <x>10</x>
        <y>40</y>
-       <width>311</width>
+       <width>641</width>
        <height>251</height>
       </rect>
      </property>
