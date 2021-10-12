@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>987</width>
     <height>650</height>
    </rect>
   </property>
@@ -62,7 +62,7 @@
      </property>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="QB_information_custom">
+   <widget class="QGroupBox" name="GB_information_custom">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -97,7 +97,7 @@
       <string>Địa chỉ</string>
      </property>
     </widget>
-    <widget class="QTextEdit" name="t_num_phone">
+    <widget class="QTextEdit" name="TE_num_phone">
      <property name="geometry">
       <rect>
        <x>135</x>
@@ -107,7 +107,7 @@
       </rect>
      </property>
     </widget>
-    <widget class="QLabel" name="QL_name">
+    <widget class="QLabel" name="label_name">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -125,7 +125,7 @@
       <string>Tên khách hàng</string>
      </property>
     </widget>
-    <widget class="QTextEdit" name="t_lices_num">
+    <widget class="QTextEdit" name="TE_lices_num">
      <property name="geometry">
       <rect>
        <x>135</x>
@@ -189,7 +189,7 @@
       <string>Biển số</string>
      </property>
     </widget>
-    <widget class="QTextEdit" name="t_fix">
+    <widget class="QTextEdit" name="TE_fix">
      <property name="geometry">
       <rect>
        <x>135</x>
@@ -199,7 +199,7 @@
       </rect>
      </property>
     </widget>
-    <widget class="QTextEdit" name="t_date">
+    <widget class="QTextEdit" name="TE_date">
      <property name="geometry">
       <rect>
        <x>135</x>
@@ -209,7 +209,7 @@
       </rect>
      </property>
     </widget>
-    <widget class="QTextEdit" name="EL_name">
+    <widget class="QTextEdit" name="TE_name">
      <property name="geometry">
       <rect>
        <x>135</x>
@@ -255,7 +255,7 @@
       <string>SĐT</string>
      </property>
     </widget>
-    <widget class="QTextEdit" name="t_address">
+    <widget class="QTextEdit" name="TE_address">
      <property name="geometry">
       <rect>
        <x>135</x>
@@ -265,7 +265,7 @@
       </rect>
      </property>
     </widget>
-    <widget class="QTextEdit" name="t_vin_num">
+    <widget class="QTextEdit" name="TE_vin_num">
      <property name="geometry">
       <rect>
        <x>135</x>
@@ -533,7 +533,7 @@
      <rect>
       <x>400</x>
       <y>10</y>
-      <width>391</width>
+      <width>571</width>
       <height>551</height>
      </rect>
     </property>
@@ -550,7 +550,7 @@
       <rect>
        <x>10</x>
        <y>30</y>
-       <width>371</width>
+       <width>551</width>
        <height>511</height>
       </rect>
      </property>
@@ -562,7 +562,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>987</width>
      <height>26</height>
     </rect>
    </property>
