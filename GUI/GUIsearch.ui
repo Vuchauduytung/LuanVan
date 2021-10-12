@@ -19,10 +19,10 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QGroupBox" name="groupBox">
+   <widget class="QGroupBox" name="GB_informatin_custom">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>20</x>
       <y>10</y>
       <width>381</width>
       <height>221</height>
@@ -36,7 +36,7 @@
     <property name="title">
      <string>Thông tin khách hàng</string>
     </property>
-    <widget class="QLabel" name="label">
+    <widget class="QLabel" name="label_name_custom">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -54,13 +54,13 @@
       <string>Tên khách hàng</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_2">
+    <widget class="QLabel" name="label_phone_number">
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>110</y>
+       <y>100</y>
        <width>142</width>
-       <height>20</height>
+       <height>31</height>
       </rect>
      </property>
      <property name="font">
@@ -72,13 +72,13 @@
       <string>Số điện thoại</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_3">
+    <widget class="QLabel" name="label_number_car">
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>170</y>
+       <y>159</y>
        <width>142</width>
-       <height>20</height>
+       <height>31</height>
       </rect>
      </property>
      <property name="font">
@@ -90,7 +90,7 @@
       <string>Biển số xe</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit">
+    <widget class="QLineEdit" name="LE_name_custom">
      <property name="geometry">
       <rect>
        <x>160</x>
@@ -100,7 +100,7 @@
       </rect>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_2">
+    <widget class="QLineEdit" name="LE_phone_number">
      <property name="geometry">
       <rect>
        <x>160</x>
@@ -110,7 +110,7 @@
       </rect>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_3">
+    <widget class="QLineEdit" name="LE_number_car">
      <property name="geometry">
       <rect>
        <x>160</x>
@@ -121,7 +121,7 @@
      </property>
     </widget>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="BT_search">
     <property name="geometry">
      <rect>
       <x>100</x>
@@ -134,7 +134,7 @@
      <string>Tìm kiếm</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="BT_cancel">
     <property name="geometry">
      <rect>
       <x>210</x>

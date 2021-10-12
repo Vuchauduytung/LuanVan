@@ -515,41 +515,41 @@
                         }
                         
                     }
-                },
-                "BT_confirm": {
-                    "text": "Xác nhận",
-                    "desc": "",
-                    "class": "QButton",
-                    "geometry": {
-                        "x": null,
-                        "y": null,
-                        "w": null,
-                        "h": null
-                    },
-                    "font": {
-                        "family": null,
-                        "pointSize": null,
-                        "weight": null,
-                        "italic": false
-                    }
-                },
-                "BT_exit": {
-                    "text": "Thoát",
-                    "desc": "",
-                    "class": "QButton",
-                    "geometry": {
-                        "x": null,
-                        "y": null,
-                        "w": null,
-                        "h": null
-                    },
-                    "font": {
-                        "family": null,
-                        "pointSize": null,
-                        "weight": null,
-                        "italic": false
-                    }
                 }
+            }
+        },
+        "BT_confirm": {
+            "text": "Xác nhận",
+            "desc": "",
+            "class": "QPushButton",
+            "geometry": {
+                "x": null,
+                "y": null,
+                "w": null,
+                "h": null
+            },
+            "font": {
+                "family": null,
+                "pointSize": null,
+                "weight": null,
+                "italic": false
+            }
+        },
+        "BT_exit": {
+            "text": "Thoát",
+            "desc": "",
+            "class": "QPushButton",
+            "geometry": {
+                "x": null,
+                "y": null,
+                "w": null,
+                "h": null
+            },
+            "font": {
+                "family": null,
+                "pointSize": null,
+                "weight": null,
+                "italic": false
             }
         }
     }
