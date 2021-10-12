@@ -14,54 +14,6 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="widget_4" native="true">
-    <property name="geometry">
-     <rect>
-      <x>270</x>
-      <y>560</y>
-      <width>271</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <widget class="QPushButton" name="b_cancel">
-     <property name="geometry">
-      <rect>
-       <x>140</x>
-       <y>10</y>
-       <width>93</width>
-       <height>28</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="text">
-      <string>Thoát</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="b_search">
-     <property name="geometry">
-      <rect>
-       <x>40</x>
-       <y>10</y>
-       <width>93</width>
-       <height>28</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="text">
-      <string>Tìm kiếm</string>
-     </property>
-    </widget>
-   </widget>
    <widget class="QGroupBox" name="GB_information_custom">
     <property name="geometry">
      <rect>
@@ -276,7 +228,7 @@
      </property>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="groupBox_2">
+   <widget class="QGroupBox" name="GB_car_number">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -311,27 +263,27 @@
       <string>Nước sản xuất</string>
      </property>
     </widget>
-    <widget class="QTextEdit" name="t_name_9">
+    <widget class="QTextEdit" name="TE_num_product">
      <property name="geometry">
       <rect>
-       <x>140</x>
+       <x>160</x>
        <y>240</y>
-       <width>241</width>
+       <width>221</width>
        <height>24</height>
       </rect>
      </property>
     </widget>
-    <widget class="QTextEdit" name="t_name_7">
+    <widget class="QTextEdit" name="TE_product_date">
      <property name="geometry">
       <rect>
-       <x>140</x>
+       <x>160</x>
        <y>180</y>
-       <width>241</width>
+       <width>221</width>
        <height>24</height>
       </rect>
      </property>
     </widget>
-    <widget class="QLabel" name="label_prod_date">
+    <widget class="QLabel" name="label_product_date">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -349,12 +301,12 @@
       <string>Năm sản xuất</string>
      </property>
     </widget>
-    <widget class="QTextEdit" name="t_name_8">
+    <widget class="QTextEdit" name="TE_factory">
      <property name="geometry">
       <rect>
-       <x>140</x>
+       <x>160</x>
        <y>210</y>
-       <width>241</width>
+       <width>221</width>
        <height>24</height>
       </rect>
      </property>
@@ -377,45 +329,45 @@
       <string>Mã bảo mật</string>
      </property>
     </widget>
-    <widget class="QTextEdit" name="t_name_2">
+    <widget class="QTextEdit" name="TE_country">
      <property name="geometry">
       <rect>
-       <x>140</x>
+       <x>160</x>
        <y>30</y>
-       <width>241</width>
+       <width>221</width>
        <height>24</height>
       </rect>
      </property>
     </widget>
-    <widget class="QLabel" name="label_num">
+    <widget class="QLabel" name="label_num_product">
      <property name="geometry">
       <rect>
        <x>10</x>
        <y>240</y>
-       <width>117</width>
+       <width>141</width>
        <height>21</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>8</pointsize>
+       <pointsize>10</pointsize>
       </font>
      </property>
      <property name="text">
       <string>Số thứ tự sản xuất</string>
      </property>
     </widget>
-    <widget class="QTextEdit" name="t_name_4">
+    <widget class="QTextEdit" name="TE_car">
      <property name="geometry">
       <rect>
-       <x>140</x>
+       <x>160</x>
        <y>90</y>
-       <width>241</width>
+       <width>221</width>
        <height>24</height>
       </rect>
      </property>
     </widget>
-    <widget class="QLabel" name="label_factor">
+    <widget class="QLabel" name="label_factory">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -426,29 +378,29 @@
      </property>
      <property name="font">
       <font>
-       <pointsize>9</pointsize>
+       <pointsize>10</pointsize>
       </font>
      </property>
      <property name="text">
       <string>Nhà máy lắp ráp</string>
      </property>
     </widget>
-    <widget class="QTextEdit" name="t_name_6">
+    <widget class="QTextEdit" name="TE_sec_num">
      <property name="geometry">
       <rect>
-       <x>140</x>
+       <x>160</x>
        <y>150</y>
-       <width>241</width>
+       <width>221</width>
        <height>24</height>
       </rect>
      </property>
     </widget>
-    <widget class="QTextEdit" name="t_name_5">
+    <widget class="QTextEdit" name="TE_name_car">
      <property name="geometry">
       <rect>
-       <x>140</x>
+       <x>160</x>
        <y>120</y>
-       <width>241</width>
+       <width>221</width>
        <height>24</height>
       </rect>
      </property>
@@ -471,12 +423,12 @@
       <string>Mẫu xe</string>
      </property>
     </widget>
-    <widget class="QTextEdit" name="t_name_3">
+    <widget class="QTextEdit" name="TE_branch">
      <property name="geometry">
       <rect>
-       <x>140</x>
+       <x>160</x>
        <y>60</y>
-       <width>241</width>
+       <width>221</width>
        <height>24</height>
       </rect>
      </property>
@@ -528,10 +480,10 @@
      </property>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="groupBox_3">
+   <widget class="QGroupBox" name="GB_diagnose">
     <property name="geometry">
      <rect>
-      <x>400</x>
+      <x>410</x>
       <y>10</y>
       <width>571</width>
       <height>551</height>
@@ -545,7 +497,7 @@
     <property name="title">
      <string>Chuẩn đoán</string>
     </property>
-    <widget class="QTextEdit" name="t_comment">
+    <widget class="QTextEdit" name="TE_diagnose">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -555,6 +507,44 @@
       </rect>
      </property>
     </widget>
+   </widget>
+   <widget class="QPushButton" name="BT_search">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>560</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Tìm kiếm</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="BT_cancel">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>560</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Thoát</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
