@@ -62,7 +62,7 @@
      </property>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="groupBox">
+   <widget class="QGroupBox" name="QB_information_custom">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -73,7 +73,7 @@
     </property>
     <property name="font">
      <font>
-      <pointsize>14</pointsize>
+      <pointsize>13</pointsize>
      </font>
     </property>
     <property name="title">
@@ -107,7 +107,7 @@
       </rect>
      </property>
     </widget>
-    <widget class="QLabel" name="label_name">
+    <widget class="QLabel" name="QL_name">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -209,7 +209,7 @@
       </rect>
      </property>
     </widget>
-    <widget class="QTextEdit" name="t_name">
+    <widget class="QTextEdit" name="EL_name">
      <property name="geometry">
       <rect>
        <x>135</x>
