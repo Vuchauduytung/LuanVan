@@ -23,7 +23,7 @@
       <height>41</height>
      </rect>
     </property>
-    <widget class="QPushButton" name="b_cancel">
+    <widget class="QPushButton" name="PB_b_cancel">
      <property name="geometry">
       <rect>
        <x>140</x>
@@ -42,7 +42,7 @@
       <string>Thoát</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="b_search">
+    <widget class="QPushButton" name="PB_b_search">
      <property name="geometry">
       <rect>
        <x>40</x>
@@ -62,7 +62,7 @@
      </property>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="groupBox">
+   <widget class="QGroupBox" name="GB_groupBox">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -79,7 +79,7 @@
     <property name="title">
      <string>Thông tin khách hàng</string>
     </property>
-    <widget class="QLabel" name="label_address">
+    <widget class="QLabel" name="QL_label_address">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -97,7 +97,7 @@
       <string>Địa chỉ</string>
      </property>
     </widget>
-    <widget class="QTextEdit" name="t_num_phone">
+    <widget class="QTextEdit" name="TE_t_num_phone">
      <property name="geometry">
       <rect>
        <x>135</x>
@@ -107,7 +107,7 @@
       </rect>
      </property>
     </widget>
-    <widget class="QLabel" name="label_name">
+    <widget class="QLabel" name="QL_label_name">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -125,7 +125,7 @@
       <string>Tên khách hàng</string>
      </property>
     </widget>
-    <widget class="QTextEdit" name="t_lices_num">
+    <widget class="QTextEdit" name="TE_t_lices_num">
      <property name="geometry">
       <rect>
        <x>135</x>
@@ -135,7 +135,7 @@
       </rect>
      </property>
     </widget>
-    <widget class="QLabel" name="label_date_fix_2">
+    <widget class="QLabel" name="QL_label_date_fix_2">
      <property name="geometry">
       <rect>
        <x>9</x>
@@ -153,7 +153,7 @@
       <string>Lỗi xe</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_date_fix">
+    <widget class="QLabel" name="QL_label_date_fix">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -171,7 +171,7 @@
       <string>Ngày sửa chữa</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_lices_num">
+    <widget class="QLabel" name="QL_label_lices_num">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -189,7 +189,7 @@
       <string>Biển số</string>
      </property>
     </widget>
-    <widget class="QTextEdit" name="t_fix">
+    <widget class="QTextEdit" name="TE_t_fix">
      <property name="geometry">
       <rect>
        <x>135</x>
@@ -199,7 +199,7 @@
       </rect>
      </property>
     </widget>
-    <widget class="QTextEdit" name="t_date">
+    <widget class="QTextEdit" name="TE_t_date">
      <property name="geometry">
       <rect>
        <x>135</x>
@@ -209,7 +209,7 @@
       </rect>
      </property>
     </widget>
-    <widget class="QTextEdit" name="t_name">
+    <widget class="QTextEdit" name="TE_t_name">
      <property name="geometry">
       <rect>
        <x>135</x>
@@ -219,7 +219,7 @@
       </rect>
      </property>
     </widget>
-    <widget class="QLabel" name="label_num_vin">
+    <widget class="QLabel" name="QL_label_num_vin">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -237,7 +237,7 @@
       <string>Mã VIN</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_num_phone">
+    <widget class="QLabel" name="QL_label_num_phone">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -255,7 +255,7 @@
       <string>SĐT</string>
      </property>
     </widget>
-    <widget class="QTextEdit" name="t_address">
+    <widget class="QTextEdit" name="TE_t_address">
      <property name="geometry">
       <rect>
        <x>135</x>
@@ -265,7 +265,7 @@
       </rect>
      </property>
     </widget>
-    <widget class="QTextEdit" name="t_vin_num">
+    <widget class="QTextEdit" name="TE_t_vin_num">
      <property name="geometry">
       <rect>
        <x>135</x>
@@ -276,7 +276,7 @@
      </property>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="groupBox_2">
+   <widget class="QGroupBox" name="GB_groupBox_2">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -293,7 +293,7 @@
     <property name="title">
      <string>Mã xe </string>
     </property>
-    <widget class="QLabel" name="label_contry">
+    <widget class="QLabel" name="QL_label_contry">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -311,7 +311,7 @@
       <string>Nước sản xuất</string>
      </property>
     </widget>
-    <widget class="QTextEdit" name="t_name_9">
+    <widget class="QTextEdit" name="TE_t_name_9">
      <property name="geometry">
       <rect>
        <x>140</x>
@@ -321,7 +321,7 @@
       </rect>
      </property>
     </widget>
-    <widget class="QTextEdit" name="t_name_7">
+    <widget class="QTextEdit" name="TE_t_name_7">
      <property name="geometry">
       <rect>
        <x>140</x>
@@ -331,7 +331,7 @@
       </rect>
      </property>
     </widget>
-    <widget class="QLabel" name="label_prod_date">
+    <widget class="QLabel" name="QL_label_prod_date">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -349,7 +349,7 @@
       <string>Năm sản xuất</string>
      </property>
     </widget>
-    <widget class="QTextEdit" name="t_name_8">
+    <widget class="QTextEdit" name="TE_t_name_8">
      <property name="geometry">
       <rect>
        <x>140</x>
@@ -359,7 +359,7 @@
       </rect>
      </property>
     </widget>
-    <widget class="QLabel" name="label_sec_num">
+    <widget class="QLabel" name="QL_label_sec_num">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -377,7 +377,7 @@
       <string>Mã bảo mật</string>
      </property>
     </widget>
-    <widget class="QTextEdit" name="t_name_2">
+    <widget class="QTextEdit" name="TE_t_name_2">
      <property name="geometry">
       <rect>
        <x>140</x>
@@ -387,7 +387,7 @@
       </rect>
      </property>
     </widget>
-    <widget class="QLabel" name="label_num">
+    <widget class="QLabel" name="QL_label_num">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -405,7 +405,7 @@
       <string>Số thứ tự sản xuất</string>
      </property>
     </widget>
-    <widget class="QTextEdit" name="t_name_4">
+    <widget class="QTextEdit" name="TE_t_name_4">
      <property name="geometry">
       <rect>
        <x>140</x>
@@ -415,7 +415,7 @@
       </rect>
      </property>
     </widget>
-    <widget class="QLabel" name="label_factor">
+    <widget class="QLabel" name="QL_label_factor">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -433,7 +433,7 @@
       <string>Nhà máy lắp ráp</string>
      </property>
     </widget>
-    <widget class="QTextEdit" name="t_name_6">
+    <widget class="QTextEdit" name="TE_t_name_6">
      <property name="geometry">
       <rect>
        <x>140</x>
@@ -443,7 +443,7 @@
       </rect>
      </property>
     </widget>
-    <widget class="QTextEdit" name="t_name_5">
+    <widget class="QTextEdit" name="TE_t_name_5">
      <property name="geometry">
       <rect>
        <x>140</x>
@@ -453,7 +453,7 @@
       </rect>
      </property>
     </widget>
-    <widget class="QLabel" name="label_car">
+    <widget class="QLabel" name="QL_label_car">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -471,7 +471,7 @@
       <string>Mẫu xe</string>
      </property>
     </widget>
-    <widget class="QTextEdit" name="t_name_3">
+    <widget class="QTextEdit" name="TE_t_name_3">
      <property name="geometry">
       <rect>
        <x>140</x>
@@ -481,7 +481,7 @@
       </rect>
      </property>
     </widget>
-    <widget class="QLabel" name="label_name_car">
+    <widget class="QLabel" name="QL_label_name_car">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -499,7 +499,7 @@
       <string>Dòng xe</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_branch">
+    <widget class="QLabel" name="QL_label_branch">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -528,7 +528,7 @@
      </property>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="groupBox_3">
+   <widget class="QGroupBox" name="GB_groupBox_3">
     <property name="geometry">
      <rect>
       <x>400</x>
@@ -545,7 +545,7 @@
     <property name="title">
      <string>Chuẩn đoán</string>
     </property>
-    <widget class="QTextEdit" name="t_comment">
+    <widget class="QTextEdit" name="TE_t_comment">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -570,11 +570,11 @@
     <property name="title">
      <string>Edit</string>
     </property>
-    <addaction name="actionOpen"/>
-    <addaction name="actionNew"/>
-    <addaction name="actionSave"/>
-    <addaction name="actionSave_as"/>
-    <addaction name="actionPrint"/>
+    <addaction name="QA_actionOpen"/>
+    <addaction name="QA_actionNew"/>
+    <addaction name="QA_actionSave"/>
+    <addaction name="QA_actionSave_as"/>
+    <addaction name="QA_actionPrint"/>
    </widget>
    <widget class="QMenu" name="menuView">
     <property name="title">
@@ -585,27 +585,27 @@
    <addaction name="menuView"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="actionOpen">
+  <action name="QA_actionOpen">
    <property name="text">
     <string>Open</string>
    </property>
   </action>
-  <action name="actionNew">
+  <action name="QA_actionNew">
    <property name="text">
     <string>New</string>
    </property>
   </action>
-  <action name="actionSave">
+  <action name="QA_actionSave">
    <property name="text">
     <string>Save</string>
    </property>
   </action>
-  <action name="actionSave_as">
+  <action name="QA_actionSave_as">
    <property name="text">
     <string>Save as</string>
    </property>
   </action>
-  <action name="actionPrint">
+  <action name="QA_actionPrint">
    <property name="text">
     <string>Print</string>
    </property>
