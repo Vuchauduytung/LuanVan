@@ -31,7 +31,7 @@
     <property name="title">
      <string>Số liệu</string>
     </property>
-    <widget class="QLineEdit" name="l_xup_cor">
+    <widget class="QLineEdit" name="LE_xup_cor">
      <property name="geometry">
       <rect>
        <x>191</x>
@@ -44,6 +44,9 @@
       <font>
        <pointsize>10</pointsize>
       </font>
+     </property>
+     <property name="placeholderText">
+      <string>Nhập số liệu</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_piston_jour">
@@ -82,7 +85,7 @@
       <string>Tỷ số nén</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="l_cyl_dm">
+    <widget class="QLineEdit" name="LE_cyl_dm">
      <property name="geometry">
       <rect>
        <x>191</x>
@@ -95,6 +98,9 @@
       <font>
        <pointsize>10</pointsize>
       </font>
+     </property>
+     <property name="placeholderText">
+      <string>Nhập số liệu</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_cyl_dm">
@@ -115,7 +121,7 @@
       <string>Đường kính xyalnh</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="l_air_press">
+    <widget class="QLineEdit" name="LE_air_press">
      <property name="geometry">
       <rect>
        <x>191</x>
@@ -129,8 +135,11 @@
        <pointsize>10</pointsize>
       </font>
      </property>
+     <property name="placeholderText">
+      <string>Nhập số liệu</string>
+     </property>
     </widget>
-    <widget class="QLineEdit" name="l_extTem">
+    <widget class="QLineEdit" name="LE_extTem">
      <property name="geometry">
       <rect>
        <x>191</x>
@@ -144,8 +153,11 @@
        <pointsize>10</pointsize>
       </font>
      </property>
+     <property name="placeholderText">
+      <string>Nhập số liệu</string>
+     </property>
     </widget>
-    <widget class="QLineEdit" name="l_piston_jour">
+    <widget class="QLineEdit" name="LE_piston_jour">
      <property name="geometry">
       <rect>
        <x>191</x>
@@ -159,8 +171,11 @@
        <pointsize>10</pointsize>
       </font>
      </property>
+     <property name="placeholderText">
+      <string>Nhập số liệu</string>
+     </property>
     </widget>
-    <widget class="QLineEdit" name="l_rod_len">
+    <widget class="QLineEdit" name="LE_rod_len">
      <property name="geometry">
       <rect>
        <x>191</x>
@@ -173,6 +188,9 @@
       <font>
        <pointsize>10</pointsize>
       </font>
+     </property>
+     <property name="placeholderText">
+      <string>Nhập số liệu</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_extTem">
@@ -229,7 +247,7 @@
       <string>Áp suất khí nạp</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="l_comp_rat">
+    <widget class="QLineEdit" name="LE_comp_rat">
      <property name="geometry">
       <rect>
        <x>191</x>
@@ -242,6 +260,9 @@
       <font>
        <pointsize>10</pointsize>
       </font>
+     </property>
+     <property name="placeholderText">
+      <string>Nhập số liệu</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_xup_cor">
@@ -262,7 +283,7 @@
       <string>Góc đóng muộn xuppap</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="b_clear">
+    <widget class="QPushButton" name="BT_clear">
      <property name="geometry">
       <rect>
        <x>170</x>
@@ -280,7 +301,7 @@
       <string>Hủy bỏ</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="b_math">
+    <widget class="QPushButton" name="BT_math">
      <property name="geometry">
       <rect>
        <x>70</x>
@@ -314,16 +335,6 @@
      </property>
      <property name="text">
       <string>Nhiệt độ (độ F)</string>
-     </property>
-    </widget>
-    <widget class="QTextBrowser" name="t_watt">
-     <property name="geometry">
-      <rect>
-       <x>170</x>
-       <y>370</y>
-       <width>201</width>
-       <height>22</height>
-      </rect>
      </property>
     </widget>
     <widget class="QLabel" name="label_Compression">
@@ -362,26 +373,6 @@
       <string>Nhiệt độ (độ C)</string>
      </property>
     </widget>
-    <widget class="QTextBrowser" name="t_Comp_temp_C">
-     <property name="geometry">
-      <rect>
-       <x>170</x>
-       <y>312</y>
-       <width>201</width>
-       <height>22</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QTextBrowser" name="t_Comp_temp_F">
-     <property name="geometry">
-      <rect>
-       <x>170</x>
-       <y>341</y>
-       <width>201</width>
-       <height>22</height>
-      </rect>
-     </property>
-    </widget>
     <widget class="QLabel" name="label_watt">
      <property name="geometry">
       <rect>
@@ -400,18 +391,48 @@
       <string>Công nén</string>
      </property>
     </widget>
-    <widget class="QTextBrowser" name="t_Compression">
+    <widget class="QTextEdit" name="TE_Compression">
      <property name="geometry">
       <rect>
        <x>170</x>
-       <y>283</y>
+       <y>280</y>
        <width>201</width>
-       <height>22</height>
+       <height>21</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="TE_Comp_temp_C">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>310</y>
+       <width>201</width>
+       <height>21</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="TE_Comp_temp_F">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>340</y>
+       <width>201</width>
+       <height>21</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="TE_watt">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>370</y>
+       <width>201</width>
+       <height>21</height>
       </rect>
      </property>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="groupBox_2">
+   <widget class="QGroupBox" name="GB_data">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -428,7 +449,7 @@
     <property name="title">
      <string>Dữ liệu</string>
     </property>
-    <widget class="QLabel" name="label_16">
+    <widget class="QLabel" name="label_time">
      <property name="geometry">
       <rect>
        <x>30</x>
@@ -446,7 +467,7 @@
       <string>Thời gian đo</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_13">
+    <widget class="QLabel" name="label_xylanh2">
      <property name="geometry">
       <rect>
        <x>30</x>
@@ -464,7 +485,7 @@
       <string>Đo xylanh 2</string>
      </property>
     </widget>
-    <widget class="QProgressBar" name="progressBar_3">
+    <widget class="QProgressBar" name="PB_xylanh4">
      <property name="geometry">
       <rect>
        <x>140</x>
@@ -477,7 +498,7 @@
       <number>24</number>
      </property>
     </widget>
-    <widget class="QLabel" name="label_12">
+    <widget class="QLabel" name="label_xylanh1">
      <property name="geometry">
       <rect>
        <x>30</x>
@@ -495,7 +516,7 @@
       <string>Đo xylanh 1</string>
      </property>
     </widget>
-    <widget class="QProgressBar" name="progressBar">
+    <widget class="QProgressBar" name="PB_xylanh1">
      <property name="geometry">
       <rect>
        <x>140</x>
@@ -508,7 +529,7 @@
       <number>24</number>
      </property>
     </widget>
-    <widget class="QProgressBar" name="progressBar_4">
+    <widget class="QProgressBar" name="PB_xylanh3">
      <property name="geometry">
       <rect>
        <x>140</x>
@@ -521,7 +542,7 @@
       <number>24</number>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_4">
+    <widget class="QPushButton" name="BT_measure_xylanh2">
      <property name="geometry">
       <rect>
        <x>280</x>
@@ -539,7 +560,7 @@
       <string>Xác nhận</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_15">
+    <widget class="QLabel" name="label_xylanh4">
      <property name="geometry">
       <rect>
        <x>30</x>
@@ -557,7 +578,7 @@
       <string>Đo xylanh 4</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_5">
+    <widget class="QPushButton" name="BT_measure_xylanh3">
      <property name="geometry">
       <rect>
        <x>280</x>
@@ -575,7 +596,7 @@
       <string>Xác nhận</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_17">
+    <widget class="QLabel" name="label_s">
      <property name="geometry">
       <rect>
        <x>250</x>
@@ -593,7 +614,7 @@
       <string>(s)</string>
      </property>
     </widget>
-    <widget class="QProgressBar" name="progressBar_2">
+    <widget class="QProgressBar" name="PB_xylanh2">
      <property name="geometry">
       <rect>
        <x>140</x>
@@ -606,7 +627,7 @@
       <number>24</number>
      </property>
     </widget>
-    <widget class="QLabel" name="label_14">
+    <widget class="QLabel" name="label_xylanh3">
      <property name="geometry">
       <rect>
        <x>30</x>
@@ -624,7 +645,7 @@
       <string>Đo xylanh 3</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_3">
+    <widget class="QPushButton" name="BT_measure_xylanh1">
      <property name="geometry">
       <rect>
        <x>280</x>
@@ -642,7 +663,7 @@
       <string>Xác nhận</string>
      </property>
     </widget>
-    <widget class="QDoubleSpinBox" name="doubleSpinBox">
+    <widget class="QDoubleSpinBox" name="DSB_time">
      <property name="geometry">
       <rect>
        <x>164</x>
@@ -657,7 +678,7 @@
       </font>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_6">
+    <widget class="QPushButton" name="BT_measure_xylanh4">
      <property name="geometry">
       <rect>
        <x>280</x>
@@ -693,7 +714,7 @@
     <property name="title">
      <string>Bảng số liệu</string>
     </property>
-    <widget class="QTableWidget" name="tableWidget">
+    <widget class="QTableWidget" name="TW_table">
      <property name="geometry">
       <rect>
        <x>0</x>
@@ -704,7 +725,7 @@
      </property>
     </widget>
    </widget>
-   <widget class="QPushButton" name="b_cancel">
+   <widget class="QPushButton" name="BT_cancel">
     <property name="geometry">
      <rect>
       <x>930</x>
@@ -723,7 +744,7 @@
      <string>Thoát</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="b_confirm">
+   <widget class="QPushButton" name="BT_confirm">
     <property name="geometry">
      <rect>
       <x>830</x>
@@ -742,7 +763,7 @@
      <string>Xác nhận</string>
     </property>
    </widget>
-   <widget class="QGroupBox" name="groupBox_3">
+   <widget class="QGroupBox" name="GB_diagnose">
     <property name="geometry">
      <rect>
       <x>400</x>
@@ -759,7 +780,7 @@
     <property name="title">
      <string>Chẩn đoán</string>
     </property>
-    <widget class="QTabWidget" name="grap">
+    <widget class="QTabWidget" name="grap_xylanh">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -774,13 +795,13 @@
       </font>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>3</number>
      </property>
      <widget class="QWidget" name="tab_1">
       <attribute name="title">
        <string>Xylanh 1</string>
       </attribute>
-      <widget class="QGraphicsView" name="graphicsView">
+      <widget class="QGraphicsView" name="grap_xylanh1">
        <property name="geometry">
         <rect>
          <x>0</x>
@@ -795,7 +816,7 @@
       <attribute name="title">
        <string>Xylanh 2</string>
       </attribute>
-      <widget class="QGraphicsView" name="graphicsView_2">
+      <widget class="QGraphicsView" name="grap_xylanh2">
        <property name="geometry">
         <rect>
          <x>0</x>
@@ -810,7 +831,7 @@
       <attribute name="title">
        <string>Xylanh 3</string>
       </attribute>
-      <widget class="QGraphicsView" name="graphicsView_3">
+      <widget class="QGraphicsView" name="grap_xylanh3">
        <property name="geometry">
         <rect>
          <x>0</x>
@@ -825,7 +846,7 @@
       <attribute name="title">
        <string>Xylanh 4</string>
       </attribute>
-      <widget class="QGraphicsView" name="graphicsView_4">
+      <widget class="QGraphicsView" name="grap_xylanh4">
        <property name="geometry">
         <rect>
          <x>0</x>
