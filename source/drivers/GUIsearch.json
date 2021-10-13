@@ -14,10 +14,10 @@
                     "desc" : "",
                     "class": "QGroupBox",
                     "geometry": {
-                        "x": null,
-                        "y": null,
-                        "w": null,
-                        "h": null
+                        "x": 20,
+                        "y": 10,
+                        "w": 381,
+                        "h": 221
                     },
                     "font": {
                         "family": null,
