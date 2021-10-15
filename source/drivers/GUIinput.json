@@ -5,7 +5,8 @@
     "text": "GUI_input",
     "icon": {
         "name": "",
-        "path": null
+        "path": null,
+        "size": [20,20]
     },
     "class": "QMainWindow",
     "children": {
@@ -132,7 +133,7 @@
                     "text": "Vui lòng nhập đầy đủ thông tin",
                     "desc" : "",
                     "class": "QLabel",
-                    "show": false,
+                    "visible": false,
                     "grid": {
                         "row": 6,
                         "column": 1,
@@ -161,7 +162,9 @@
                         "TrailingPosition": {
                             "icon": {
                                 "name": "",
-                                "path": "source/icon/exclamation_mark.png"
+                                "path": "source/icon/exclamation_mark.png",
+                                "tooltip": "Missing value",
+                                "size": [20,20]
                             }
                         }
                     },
@@ -187,7 +190,9 @@
                         "TrailingPosition": {
                             "icon": {
                                 "name": "",
-                                "path": "source/icon/exclamation_mark.png"
+                                "path": "source/icon/exclamation_mark.png",
+                                "tooltip": "Missing value",
+                                "size": [20,20]
                             }
                         }
                     },
@@ -213,7 +218,9 @@
                         "TrailingPosition": {
                             "icon": {
                                 "name": "",
-                                "path": "source/icon/exclamation_mark.png"
+                                "path": "source/icon/exclamation_mark.png",
+                                "tooltip": "Missing value",
+                                "size": [20,20]
                             }
                         }
                     },
@@ -239,7 +246,9 @@
                         "TrailingPosition": {
                             "icon": {
                                 "name": "",
-                                "path": "source/icon/exclamation_mark.png"
+                                "path": "source/icon/exclamation_mark.png",
+                                "tooltip": "Missing value",
+                                "size": [20,20]
                             }
                         }
                     },
@@ -265,7 +274,9 @@
                         "TrailingPosition": {
                             "icon": {
                                 "name": "",
-                                "path": "source/icon/exclamation_mark.png"
+                                "path": "source/icon/exclamation_mark.png",
+                                "tooltip": "Missing value",
+                                "size": [20,20]
                             }
                         }
                     },
@@ -290,7 +301,9 @@
                         "TrailingPosition": {
                             "icon": {
                                 "name": "",
-                                "path": "source/icon/exclamation_mark.png"
+                                "path": "source/icon/exclamation_mark.png",
+                                "tooltip": "Missing value",
+                                "size": [20,20]
                             }
                         }
                     },
@@ -490,30 +503,48 @@
                         "h": null
                     },
                     "children": {
-                        "Insert_image_hints_text": {
-                            "text" : "",
+                        "scene_incident_images": {
                             "desc" : "",
-                            "geometry": "center",
-                            "class": "QGraphicsTextItem",
-                            "root_frame": {
-                                "Drag_images_hint": {
-                                    "text" : "Drag image here.<br>Or ",
+                            "class": "QGraphicsScene",
+                            "geometry": {
+                                "x": null,
+                                "y": null,
+                                "w": null,
+                                "h": null
+                            },
+                            "children": {
+                                "Insert_image_hints_text": {
+                                    "text" : "",
                                     "desc" : "",
-                                    "curs": 0,
-                                    "class": "str",
-                                    "interpreted": "html"
+                                    "position": "center",
+                                    "size": null,
+                                    "class": "QGraphicsTextItem",
+                                    "root_frame": {
+                                        "Drag_images_hint": {
+                                            "text" : "Drag image here.<br>Or ",
+                                            "desc" : "",
+                                            "curs": 0,
+                                            "class": "str",
+                                            "format": "RichText"
+                                        },
+                                        "Choose_files_hint": {
+                                            "text" : "<b>choose file<b/>.",
+                                            "desc" : "",
+                                            "curs": 1,
+                                            "class": "str",
+                                            "format": "RichText"
+                                        }
+                                    }
                                 },
-                                "Choose_files_hint": {
-                                    "text" : "<b>choose file<b/>.",
+                                "Insert_image_hints_rect": {
                                     "desc" : "",
-                                    "curs": 1,
-                                    "class": "str",
-                                    "interpreted": "html"
+                                    "geometry": "center",
+                                    "class": "QGraphicsRectItem",
+                                    "position": "center",
+                                    "scale": 0.98
                                 }
                             }
-
-                        }
-                        
+                        }    
                     }
                 }
             }

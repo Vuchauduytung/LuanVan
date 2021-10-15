@@ -1,0 +1,19 @@
+QCheckBox, QPushButton, QLineEdit không hỗ trợ Rich Text (Html)
+
+"format": 
+    "PlainText": Chữ thường
+    "RichText": Html
+    "AutoText": có thể là thường hoặc html (không dùng trong root_frame)
+    "MarkdownText": Markdown (không dùng trong root_frame)
+    
+"alignment":
+    "AlignAbsolute": chữ từ trái sang phải
+    "AlignBottom": căn lề dưới
+    "AlignCenter": chính giữa (cả chiều dọc và chiều ngang)
+    "AlignHCenter": chính giữa (theo chiều ngang)
+    "AlignHorizontal_Mask": //
+    "AlignJustify": đặt chữ vào chỗ nào trống
+    "AlignLeft": căn lề trái
+    "AlignRight": căn lề phải
+    "AlignTop": căn lề trên
+    "AlignVCenter": chính giữa (theo chiều dọc)

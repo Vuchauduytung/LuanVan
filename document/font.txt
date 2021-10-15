@@ -1,0 +1,4 @@
+family: https://www.tutorialbrain.com/css_tutorial/css_font_family_list/ ,vd "family":"Arial"
+pointSize: 1: cố định, 0: có thể thay đổi
+weight: 0-99 (in đậm)
+italic: (true: in nghiêng, false: bình thường)

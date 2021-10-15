@@ -11,56 +11,56 @@
     "children":{
         "GB_information_custom":{
             "text": "Thông tin khách hàng",
+            "desc" : "",
+            "class": "QGroupBox",
+            "geometry": {
+                "x": null,
+                "y": null,
+                "w": null,
+                "h": null
+            },
+            "font": {
+                "family": null,
+                "pointSize": null,
+                "weight": null,
+                "italic": false
+            },
+            "children":{
+                "label_name": {
+                    "text": "Tên khách hàng",
                     "desc" : "",
-                    "class": "QGroupBox",
-                    "geometry": {
-                        "x": null,
-                        "y": null,
-                        "w": null,
-                        "h": null
+                    "class": "QLabel",
+                    "grid": {
+                        "row": 0,
+                        "column": 0,
+                        "rowSpan": 1,
+                        "columnSpan": 1
                     },
                     "font": {
                         "family": null,
                         "pointSize": null,
                         "weight": null,
                         "italic": false
+                    }
+                },
+                "label_num_vin":{
+                    "text": "Mã VIN",
+                    "desc" : "",
+                    "class": "QLabel",
+                    "grid": {
+                        "row": 1,
+                        "column": 0,
+                        "rowSpan": 1,
+                        "columnSpan": 1
                     },
-                    "children":{
-                        "label_name": {
-                            "text": "Tên khách hàng",
-                            "desc" : "",
-                            "class": "QLabel",
-                            "grid": {
-                                "row": 0,
-                                "column": 0,
-                                "rowSpan": 1,
-                                "columnSpan": 1
-                            },
-                            "font": {
-                                "family": null,
-                                "pointSize": null,
-                                "weight": null,
-                                "italic": false
-                            }
-                        },
-                        "label_num_vin":{
-                            "text": "Mã VIN",
-                            "desc" : "",
-                            "class": "QLabel",
-                            "grid": {
-                                "row": 1,
-                                "column": 0,
-                                "rowSpan": 1,
-                                "columnSpan": 1
-                            },
-                            "font": {
-                                "family": null,
-                                "pointSize": null,
-                                "weight": null,
-                                "italic": false
-                            }
-                        }
-                    }   
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                }
+            }   
         } 
     }
 }

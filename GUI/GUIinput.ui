@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1173</width>
-    <height>677</height>
+    <height>796</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -105,7 +105,7 @@
       <x>20</x>
       <y>350</y>
       <width>411</width>
-      <height>321</height>
+      <height>371</height>
      </rect>
     </property>
     <property name="font">
@@ -282,6 +282,27 @@
      </property>
      <property name="text">
       <string>Động cơ rung lắc mạnh khi vận hành</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="Label_incident_phenomena_warning">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>330</y>
+       <width>291</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;Vui lòng chọn sự cố của xe&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="textInteractionFlags">
+      <set>Qt::NoTextInteraction</set>
      </property>
     </widget>
    </widget>
@@ -494,7 +515,7 @@
       </item>
      </layout>
     </widget>
-    <widget class="QLabel" name="QL_label_warning">
+    <widget class="QLabel" name="Label_customer_information_warning">
      <property name="geometry">
       <rect>
        <x>60</x>
@@ -509,7 +530,7 @@
       </font>
      </property>
      <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;Vui lòng nhập đầy đủ thông tin&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;&amp;lt;b&amp;gt; Vui lòng nhập đầy đủ thông tin &amp;lt;/b&amp;gt;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
      <property name="textInteractionFlags">
       <set>Qt::NoTextInteraction</set>
