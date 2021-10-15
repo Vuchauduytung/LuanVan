@@ -8,3 +8,4 @@ sys.path.append(path)
 
 import GUI
 import library
+import modules.math
