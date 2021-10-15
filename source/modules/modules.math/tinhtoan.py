@@ -36,6 +36,7 @@ def nd(S,A,L,e,D,Po,T):
     ed = (Ve+Vc)/Vc
     nv=(T/(T+20))*(ed/(ed-1))*(Pa/Po)
     return nv
+    
 def phantich(T,ed,n,Po,Vh,nd):
 
     n0 = (8.314/(19.806+0.002095*(T+20)*(ed**(n-1)+1))+1)
@@ -44,3 +45,7 @@ def phantich(T,ed,n,Po,Vh,nd):
     Tz = Tc-273
     Pc=(((Po*0.96)*10**5)*0.000145)*ed**n0
     return Lc,Tc,Tz,Pc
+
+def pmin(Po):
+    Pc_min=(((Po*0.96)*10**5)*0.000145)
+    return Pc_min
