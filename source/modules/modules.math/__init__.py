@@ -9,5 +9,5 @@ sys.path.append(path)
 
 ## Tuy co ung bien
 # User modules()
-import tinhtoan
-import loi
+import math
+import fix
