@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QGroupBox" name="GB_grap">
+   <widget class="QGroupBox" name="GB_grap_fix">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -29,9 +29,9 @@
      </font>
     </property>
     <property name="title">
-     <string>Đồ thị xylanh 1</string>
+     <string>Hình ảnh xe</string>
     </property>
-    <widget class="QGraphicsView" name="GV_graph">
+    <widget class="QGraphicsView" name="GV_graph_fix">
      <property name="geometry">
       <rect>
        <x>10</x>
