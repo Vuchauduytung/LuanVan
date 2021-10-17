@@ -626,6 +626,23 @@
                 "weight": null,
                 "italic": false
             }
+        },
+        "BT_graph_fix": {
+            "text": "Hình ảnh xe",
+            "desc": "",
+            "class": "QPushButton",
+            "geometry": {
+                "x": null,
+                "y": null,
+                "w": null,
+                "h": null
+            },
+            "font": {
+                "family": null,
+                "pointSize": null,
+                "weight": null,
+                "italic": false
+            }
         }
     }
 }

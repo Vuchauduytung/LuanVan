@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>987</width>
-    <height>650</height>
+    <height>670</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -512,7 +512,7 @@
     <property name="geometry">
      <rect>
       <x>430</x>
-      <y>560</y>
+      <y>570</y>
       <width>93</width>
       <height>28</height>
      </rect>
@@ -531,7 +531,7 @@
     <property name="geometry">
      <rect>
       <x>530</x>
-      <y>560</y>
+      <y>570</y>
       <width>93</width>
       <height>28</height>
      </rect>
@@ -544,6 +544,25 @@
     </property>
     <property name="text">
      <string>Thoát</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="BT_graph_fix">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>570</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Hình ảnh xe</string>
     </property>
    </widget>
   </widget>
