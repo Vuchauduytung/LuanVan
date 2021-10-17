@@ -537,6 +537,309 @@
                     "text":"Estonia"
                 }
             }
+        },
+        "X":{
+            "text": "Europe",
+            "children":{
+                "A":{
+                    "text":"Bulgaria"
+                },
+                "E":{
+                    "text":"Bulgaria"
+                },
+                "F":{
+                    "text":"Greece"
+                },
+                "K":{
+                    "text":"Greece"
+                },
+                "L":{
+                    "text":"Netherlands"
+                },
+                "R":{
+                    "text":"Netherlands"
+                },
+                "S":{
+                    "text":"USSR"
+                },
+                "W":{
+                    "text":"USSR"
+                },
+                "X":{
+                    "text":"Luxembourg"
+                },
+                "2":{
+                    "text":"Luxembourg"
+                },
+                "3":{
+                    "text":"Russia"
+                },
+                "0":{
+                    "text":"Russia"
+                }
+            }
+        },
+        "Y":{
+            "text": "Europe",
+            "children":{
+                "A":{
+                    "text":"Belgium"
+                },
+                "E":{
+                    "text":"Belgium"
+                },
+                "F":{
+                    "text":"Finland"
+                },
+                "K":{
+                    "text":"GreFinlandece"
+                },
+                "L":{
+                    "text":"Malta"
+                },
+                "R":{
+                    "text":"Malta"
+                },
+                "S":{
+                    "text":"Sweden"
+                },
+                "W":{
+                    "text":"Sweden"
+                },
+                "X":{
+                    "text":"Norway"
+                },
+                "2":{
+                    "text":"Norway"
+                },
+                "3":{
+                    "text":"Belarus"
+                },
+                "5":{
+                    "text":"Belarus"
+                },
+                "6":{
+                    "text":"Ukraine"
+                },
+                "0":{
+                    "text":"Ukraine"
+                }
+            }
+        },
+        "Z":{
+            "text": "Europe",
+            "children":{
+                "A":{
+                    "text":"Italy"
+                },
+                "R":{
+                    "text":"Italy"
+                },
+                "S":{
+                    "text":"not assigned"
+                },
+                "W":{
+                    "text":"not assigned"
+                },
+                "X":{
+                    "text":"Slovenia"
+                },
+                "2":{
+                    "text":"Slovenia"
+                },
+                "3":{
+                    "text":"Lithuania"
+                },
+                "5":{
+                    "text":"Lithuania"
+                },
+                "6":{
+                    "text":"not assigned"
+                },
+                "0":{
+                    "text":"not assigned"
+                }
+            }
+        },
+        "1":{
+            "text": "North America",
+            "children":{
+                "A":{
+                    "text":"United States"
+                },
+                "0":{
+                    "text":"United States"
+                }
+            }
+        },
+        "2":{
+            "text": "North America",
+            "children":{
+                "A":{
+                    "text":"Canada"
+                },
+                "0":{
+                    "text":"Canada"
+                }
+            }
+        },
+        "3":{
+            "text": "North America",
+            "children":{
+                "A":{
+                    "text":"Mexico"
+                },
+                "7":{
+                    "text":"Mexico"
+                },
+                "8":{
+                    "text":"Cayman Islands"
+                },
+                "0":{
+                    "text":"Cayman Islands"
+                }
+            }
+        },
+        "4":{
+            "text": "North America",
+            "children":{
+                "A":{
+                    "text":"United States"
+                },
+                "0":{
+                    "text":"United States"
+                }
+            }
+        },
+        "5":{
+            "text": "North America",
+            "children":{
+                "A":{
+                    "text":"United States"
+                },
+                "0":{
+                    "text":"United States"
+                }
+            }
+        },
+        "6":{
+            "text": "Oceania",
+            "children":{
+                "A":{
+                    "text":"Australia"
+                },
+                "W":{
+                    "text":"Australia"
+                },
+                "X":{
+                    "text":"not assigned"
+                },
+                "0":{
+                    "text":"not assigned"
+                }
+            }
+        },
+        "7":{
+            "text": "North America",
+            "children":{
+                "A":{
+                    "text":"New Zealand"
+                },
+                "E":{
+                    "text":"New Zealand"
+                },
+                "F":{
+                    "text":"not assigned"
+                },
+                "0":{
+                    "text":"not assigned"
+                }
+            }
+        },
+        "8":{
+            "text": "South America",
+            "children":{
+                "A":{
+                    "text":"Argentina"
+                },
+                "E":{
+                    "text":"Argentina"
+                },
+                "F":{
+                    "text":"Chile"
+                },
+                "K":{
+                    "text":"Chile"
+                },
+                "L":{
+                    "text":"Ecuador"
+                },
+                "R":{
+                    "text":"Ecuador"
+                },
+                "S":{
+                    "text":"Peru"
+                },
+                "W":{
+                    "text":"Peru"
+                },
+                "X":{
+                    "text":"Venezuela"
+                },
+                "2":{
+                    "text":"Venezuela"
+                },
+                "3":{
+                    "text":"not assigned"
+                },
+                "0":{
+                    "text":"not assigned"
+                }
+            }
+        },
+        "9":{
+            "text": "South America",
+            "children":{
+                "A":{
+                    "text":"Brazil"
+                },
+                "E":{
+                    "text":"Brazil"
+                },
+                "F":{
+                    "text":"Colombia"
+                },
+                "K":{
+                    "text":"Colombia"
+                },
+                "L":{
+                    "text":"Paraguay"
+                },
+                "R":{
+                    "text":"Paraguay"
+                },
+                "S":{
+                    "text":"Uruguay"
+                },
+                "W":{
+                    "text":"Uruguay"
+                },
+                "X":{
+                    "text":"Trinidad & Tobago"
+                },
+                "2":{
+                    "text":"Trinidad & Tobago"
+                },
+                "3":{
+                    "text":"Brazild"
+                },
+                "9":{
+                    "text":"Brazild"
+                },
+                "0":{
+                    "text":"not assigned"
+                }
+            }
         }
     }
 }

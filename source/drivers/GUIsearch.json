@@ -5,7 +5,8 @@
     "text": "GUI_search",
     "icon": {
         "name": "",
-        "path": null
+        "path": null,
+        "size": [20,20]
     },
     "class": "QMainWindow",
     "children":{
