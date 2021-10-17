@@ -1,22 +1,542 @@
 {
-    "A":"Africa",
-    "children":{
-        "A": "South Africa",
-        "H": "South Africa",
-        "J": "Ivory Coast",
-        "N": "Ivory Coast",
-        "P": "not assigned",
-        "0": "not assigned"
-    },
-    "B": "Africa",
-    "childern":{
-        "A": "Angola",
-        "E": "Angola",
-        "F": "Kenya",
-        "K": "Kenya",
-        "L": "Tanzania",
-        "R": "Tanzania",
-        "S": "not assigned",
-        "0": "not assigned"
+    "contry":{
+        "A":{
+        "text":"Africa",
+        "children":{
+                "A": {
+                    "text":"South Africa"
+                },
+                "H":{
+                    "text":"South Africa"
+                },
+                "J": {
+                    "text":"Ivory Coast"
+                },
+                "N": {
+                    "text":"Ivory Coast"
+                },
+                "P":{
+                    "text":"not assigned"
+                },
+                "0":{
+                    "text":"not assigned"
+                }
+            }
+        },
+        "B":{
+        "text":"Africa",
+        "childern":{
+                "A":{
+                    "text":"Angola"
+                },
+                "E":{
+                    "text":"Angola"
+                },
+                "F":{
+                    "text":"Kenya"
+                },
+                "K":{
+                    "text":"Kenya"
+                },
+                "L":{
+                    "text":"Tanzania"
+                },
+                "R":{
+                    "text":"Tanzania"
+                },
+                "S":{
+                    "text":"not assigned"
+                },
+                "0":{
+                    "text":"not assigned"
+                }
+            }
+        },
+        "C":{
+            "text":"Africa",
+            "children":{
+                    "A":{
+                        "text":"Benin"
+                    },
+                    "E":{
+                        "text":"Benin"
+                    },
+                    "F":{
+                        "text":"Madagascar"
+                    },
+                    "K":{
+                        "text":"Madagascar"
+                    },
+                    "L":{
+                        "text":"Tunisia"
+                    },
+                    "R":{
+                        "text":"Tunisia"
+                    },
+                    "S":{
+                        "text":"not assigned"
+                    },
+                    "0":{
+                        "text":"not assigned"
+                    }
+            }
+        },
+        "D":{
+            "text":"Africa",
+            "children":{
+                "A":{
+                    "text":"Egypt"
+                },
+                "E":{
+                    "text":"Egypt"
+                },
+                "F":{
+                    "text":"Morocco"
+                },
+                "K":{
+                    "text":"Morocco"
+                },
+                "L":{
+                    "text":"Zambia"
+                },
+                "R":{
+                    "text":"Zambia"
+                },
+                "S":{
+                    "text":"not assigned"
+                },
+                "0":{
+                    "text":"not assigned"
+                }
+            }
+        },
+        "E":{
+            "text":"Africa",
+            "children":{
+                    "A":{
+                        "text":"Ethiopia"
+                    },
+                    "E":{
+                        "text":"Ethiopia"
+                    },
+                    "F":{
+                        "text":"Mozambique"
+                    },
+                    "K":{
+                        "text":"Mozambique"
+                    },
+                    "L":{
+                        "text":"not assigned"
+                    },
+                    "0":{
+                        "text":"not assigned"
+                    }
+            }
+        },
+        "F":{
+            "text":"Africa",
+            "children":{
+                    "A":{
+                        "text":"Ghana"
+                    },
+                    "E":{
+                        "text":"Ghana"
+                    },
+                    "F":{
+                        "text":"Nigeria"
+                    },
+                    "K":{
+                        "text":"Nigeria"
+                    },
+                    "L":{
+                        "text":"not assigned"
+                    },
+                    "0":{
+                        "text":"not assigned"
+                    }
+            }
+        },
+        "G":{
+        "text":"Africa",
+        "children":{
+                "A":{
+                    "text":"not assigned"
+                },
+                "0":{
+                    "text":"not assigned"
+                }
+            }
+        },
+        "H":{
+            "text":"Africa",
+            "children":{
+                    "A":{
+                        "text":"not assigned"
+                    },
+                    "0":{
+                        "text":"not assigned"
+                    }
+            } 
+        },
+        "J":{
+            "text": "Asia",
+            "children":{
+                    "A":{
+                        "text":"Japan"
+                    },
+                    "0":{
+                        "text":"Japan"
+                    }
+            }
+        },
+        "K":{
+            "text":"Asia",
+            "children":{
+                    "A":{
+                        "text":"Sri Lanka"
+                    },
+                    "E":{
+                        "text":"Sri Lanka"
+                    },
+                    "F":{
+                        "text":"Isreal"
+                    },
+                    "K":{
+                        "text":"Isreal"
+                    },
+                    "L":{
+                        "text":"Korea (South)"
+                    },
+                    "R":{
+                        "text":"Korea (South)"
+                    },
+                    "S":{
+                        "text":"not assigned"
+                    },
+                    "0":{
+                        "text":"not assigned"
+                    }
+            }
+        },
+        "L":{
+            "text":"Asia",
+            "children":{
+                    "A":{
+                        "text":"China"
+                    },
+                    "0":{
+                        "text":"China"
+                    }
+            }
+        },
+        "M":{
+            "text":"Asia",
+            "children":{
+                    "A":{
+                        "text":"India"
+                    },
+                    "E":{
+                        "text":"India"
+                    },
+                    "F":{
+                        "text":"Indonesia"
+                    },
+                    "K":{
+                        "text":"Indonesia"
+                    },
+                    "L":{
+                        "text":"Thailand"
+                    },
+                    "R":{
+                        "text":"Thailand"
+                    },
+                    "S":{
+                        "text":"not assigned"
+                    },
+                    "0":{
+                        "text":"not assigned"
+                    }
+            }
+        },
+        "N":{
+            "text":"Asia",
+            "children":{
+                    "A":{
+                        "text":"Iran"
+                    },
+                    "E":{
+                        "text":"Iran"
+                    },
+                    "F":{
+                        "text":"Pakistan"
+                    },
+                    "K":{
+                        "text":"Pakistan"
+                    },
+                    "L":{
+                        "text":"Turkey"
+                    },
+                    "R":{
+                        "text":"Turkey"
+                    },
+                    "S":{
+                        "text":"not assigned"
+                    },
+                    "0":{
+                        "text":"not assigned"
+                    }
+            }
+        },
+        "P":{
+            "text":"Asia",
+            "children":{
+                    "A":{
+                        "text":"Philippines"
+                    },
+                    "E":{
+                        "text":"Philippines"
+                    },
+                    "F":{
+                        "text":"Singapore"
+                    },
+                    "K":{
+                        "text":"Singapore"
+                    },
+                    "S":{
+                        "text":"not assigned"
+                    },
+                    "0":{
+                        "text":"not assigned"
+                    }
+            }
+        },
+        "R":{
+            "text":"Asia",
+            "children":{
+                    "A":{
+                        "text":"United Arab Emirates"
+                    },
+                    "E":{
+                        "text":"United Arab Emirates"
+                    },
+                    "F":{
+                        "text":"Taiwan"
+                    },
+                    "K":{
+                        "text":"Taiwan"
+                    },
+                    "L":{
+                        "text":"Vietnam"
+                    },
+                    "R":{
+                        "text":"Vietnam"
+                    },
+                    "S":{
+                        "text":"not assigned"
+                    },
+                    "0":{
+                        "text":"not assigned"
+                    }
+            }
+        },
+        "S":{
+            "text":"Europe",
+            "children":{
+                "A":{
+                    "text":"Unitd Kingdom"
+                },
+                "M":{
+                    "text":"Unitd Kingdom"
+                },
+                "N":{
+                    "text":"Germany"
+                },
+                "T":{
+                    "text":"Germany"
+                },
+                "U":{
+                    "text":"Poland"
+                },
+                "Z":{
+                    "text":"Poland"
+                },
+                "1":{
+                    "text":"Latvia"
+                },
+                "4":{
+                    "text":"Latvia"
+                },
+                "5":{
+                    "text":"not assigned"
+                },
+                "0":{
+                    "text":"not assigned"
+                }
+            }
+        },
+        "T":{
+            "text": "Europe",
+            "children":{
+                "A":{
+                    "text":"Switzerland"
+                },
+                "H":{
+                    "text":"Switzerland"
+                },
+                "J":{
+                    "text":"Czech Republic"
+                },
+                "P":{
+                    "text":"Czech Republic"
+                },
+                "R":{
+                    "text":"Hungary"
+                },
+                "V":{
+                    "text":"Hungary"
+                },
+                "W":{
+                    "text":"Portuga"
+                },
+                "1":{
+                    "text":"Portuga"
+                },
+                "2":{
+                    "text":"not assigned"
+                },
+                "0":{
+                    "text":"not assigned"
+                }
+            }
+        },
+        "U":{
+            "text": "Europe",
+            "children":{
+                "A":{
+                    "text":"not assigned"
+                },
+                "G":{
+                    "text":"not assigned"
+                },
+                "H":{
+                    "text":"Denmark"
+                },
+                "M":{
+                    "text":"Denmark"
+                },
+                "N":{
+                    "text":"Ireland"
+                },
+                "T":{
+                    "text":"Ireland"
+                },
+                "U":{
+                    "text":"Romania"
+                },
+                "Z":{
+                    "text":"Romania"
+                },
+                "1":{
+                    "text":"not assigned"
+                },
+                "4":{
+                    "text":"not assigned"
+                },
+                "5":{
+                    "text":"Slovakia"
+                },
+                "7":{
+                    "text":"Slovakia"
+                },
+                "8":{
+                    "text":"not assigned"
+                },
+                "0":{
+                    "text":"not assigned"
+                }
+            }
+        },
+        "V":{
+            "text": "Europe",
+            "children":{
+                "A":{
+                    "text":"Austria"
+                },
+                "E":{
+                    "text":"Austria"
+                },
+                "F":{
+                    "text":"France"
+                },
+                "R":{
+                    "text":"France"
+                },
+                "S":{
+                    "text":"Spain"
+                },
+                "W":{
+                    "text":"Spain"
+                },
+                "X":{
+                    "text":"Serbia"
+                },
+                "2":{
+                    "text":"Serbia"
+                },
+                "3":{
+                    "text":"Croatia"
+                },
+                "5":{
+                    "text":"Croatia"
+                },
+                "6":{
+                    "text":"Estonia"
+                },
+                "0":{
+                    "text":"Estonia"
+                }
+            }
+        },
+        "W":{
+            "text": "Europe",
+            "children":{
+                "A":{
+                    "text":"Austria"
+                },
+                "E":{
+                    "text":"Austria"
+                },
+                "F":{
+                    "text":"France"
+                },
+                "R":{
+                    "text":"France"
+                },
+                "S":{
+                    "text":"Spain"
+                },
+                "W":{
+                    "text":"Spain"
+                },
+                "X":{
+                    "text":"Serbia"
+                },
+                "2":{
+                    "text":"Serbia"
+                },
+                "3":{
+                    "text":"Croatia"
+                },
+                "5":{
+                    "text":"Croatia"
+                },
+                "6":{
+                    "text":"Estonia"
+                },
+                "0":{
+                    "text":"Estonia"
+                }
+            }
+        }
     }
 }
