@@ -2530,7 +2530,106 @@
         "1":{
             "text": "North America",
             "children":{
-                "A":{
+                "A": {
+                    "text":"United States"
+                },
+                "B": {
+                    "text":"United States"
+                },
+                "C": {
+                    "text":"United States"
+                },
+                "D": {
+                    "text":"United States"
+                },
+                "E": {
+                    "text":"United States"
+                },
+                "F": {
+                    "text":"United States"
+                },
+                "G": {
+                    "text":"United States"
+                },
+                "H":{
+                    "text":"United States"
+                },
+                "I":{
+                    "text":"United States"
+                },
+                "J": {
+                    "text":"United States"
+                },
+                "K": {
+                    "text":"United States"
+                },
+                "L": {
+                    "text":"United States"
+                },
+                "M": {
+                    "text":"United States"
+                },
+                "N": {
+                    "text":"United States"
+                },
+                "P":{
+                    "text":"United States"
+                },
+                "Q":{
+                    "text":"United States"
+                },
+                "R":{
+                    "text":"United States"
+                },
+                "S":{
+                    "text":"United States"
+                },
+                "T":{
+                    "text":"United States"
+                },
+                "U":{
+                    "text":"United States"
+                },
+                "V":{
+                    "text":"United States"
+                },
+                "W":{
+                    "text":"United States"
+                },
+                "X":{
+                    "text":"United States"
+                },
+                "Y":{
+                    "text":"United States"
+                },
+                "Z":{
+                    "text":"United States"
+                },
+                "1":{
+                    "text":"United States"
+                },
+                "2":{
+                    "text":"United States"
+                },
+                "3":{
+                    "text":"United States"
+                },
+                "4":{
+                    "text":"United States"
+                },
+                "5":{
+                    "text":"United States"
+                },
+                "6":{
+                    "text":"United States"
+                },
+                "7":{
+                    "text":"United States"
+                },
+                "8":{
+                    "text":"United States"
+                },
+                "9":{
                     "text":"United States"
                 },
                 "0":{
@@ -2541,7 +2640,106 @@
         "2":{
             "text": "North America",
             "children":{
-                "A":{
+                "A": {
+                    "text":"Canada"
+                },
+                "B": {
+                    "text":"Canada"
+                },
+                "C": {
+                    "text":"Canada"
+                },
+                "D": {
+                    "text":"Canada"
+                },
+                "E": {
+                    "text":"Canada"
+                },
+                "F": {
+                    "text":"Canada"
+                },
+                "G": {
+                    "text":"Canada"
+                },
+                "H":{
+                    "text":"Canada"
+                },
+                "I":{
+                    "text":"Canada"
+                },
+                "J": {
+                    "text":"Canada"
+                },
+                "K": {
+                    "text":"Canada"
+                },
+                "L": {
+                    "text":"Canada"
+                },
+                "M": {
+                    "text":"Canada"
+                },
+                "N": {
+                    "text":"Canada"
+                },
+                "P":{
+                    "text":"Canada"
+                },
+                "Q":{
+                    "text":"Canada"
+                },
+                "R":{
+                    "text":"Canada"
+                },
+                "S":{
+                    "text":"Canada"
+                },
+                "T":{
+                    "text":"Canada"
+                },
+                "U":{
+                    "text":"Canada"
+                },
+                "V":{
+                    "text":"Canada"
+                },
+                "W":{
+                    "text":"Canada"
+                },
+                "X":{
+                    "text":"Canada"
+                },
+                "Y":{
+                    "text":"Canada"
+                },
+                "Z":{
+                    "text":"Canada"
+                },
+                "1":{
+                    "text":"Canada"
+                },
+                "2":{
+                    "text":"Canada"
+                },
+                "3":{
+                    "text":"Canada"
+                },
+                "4":{
+                    "text":"Canada"
+                },
+                "5":{
+                    "text":"Canada"
+                },
+                "6":{
+                    "text":"Canada"
+                },
+                "7":{
+                    "text":"Canada"
+                },
+                "8":{
+                    "text":"Canada"
+                },
+                "9":{
                     "text":"Canada"
                 },
                 "0":{
@@ -2552,13 +2750,106 @@
         "3":{
             "text": "North America",
             "children":{
-                "A":{
+                "A": {
+                    "text":"Mexico"
+                },
+                "B": {
+                    "text":"Mexico"
+                },
+                "C": {
+                    "text":"Mexico"
+                },
+                "D": {
+                    "text":"Mexico"
+                },
+                "E": {
+                    "text":"Mexico"
+                },
+                "F": {
+                    "text":"Mexico"
+                },
+                "G": {
+                    "text":"Mexico"
+                },
+                "H":{
+                    "text":"Mexico"
+                },
+                "I":{
+                    "text":"Mexico"
+                },
+                "J": {
+                    "text":"Mexico"
+                },
+                "K": {
+                    "text":"Mexico"
+                },
+                "L": {
+                    "text":"Mexico"
+                },
+                "M": {
+                    "text":"Mexico"
+                },
+                "N": {
+                    "text":"Mexico"
+                },
+                "P":{
+                    "text":"Mexico"
+                },
+                "Q":{
+                    "text":"Mexico"
+                },
+                "R":{
+                    "text":"Mexico"
+                },
+                "S":{
+                    "text":"Mexico"
+                },
+                "T":{
+                    "text":"Mexico"
+                },
+                "U":{
+                    "text":"Mexico"
+                },
+                "V":{
+                    "text":"Mexico"
+                },
+                "W":{
+                    "text":"Mexico"
+                },
+                "X":{
+                    "text":"Mexico"
+                },
+                "Y":{
+                    "text":"Mexico"
+                },
+                "Z":{
+                    "text":"Mexico"
+                },
+                "1":{
+                    "text":"Mexico"
+                },
+                "2":{
+                    "text":"Mexico"
+                },
+                "3":{
+                    "text":"Mexico"
+                },
+                "4":{
+                    "text":"Mexico"
+                },
+                "5":{
+                    "text":"Mexico"
+                },
+                "6":{
                     "text":"Mexico"
                 },
                 "7":{
                     "text":"Mexico"
                 },
                 "8":{
+                    "text":"Cayman Islands"
+                },
+                "9":{
                     "text":"Cayman Islands"
                 },
                 "0":{
@@ -2569,7 +2860,106 @@
         "4":{
             "text": "North America",
             "children":{
-                "A":{
+                "A": {
+                    "text":"United States"
+                },
+                "B": {
+                    "text":"United States"
+                },
+                "C": {
+                    "text":"United States"
+                },
+                "D": {
+                    "text":"United States"
+                },
+                "E": {
+                    "text":"United States"
+                },
+                "F": {
+                    "text":"United States"
+                },
+                "G": {
+                    "text":"United States"
+                },
+                "H":{
+                    "text":"United States"
+                },
+                "I":{
+                    "text":"United States"
+                },
+                "J": {
+                    "text":"United States"
+                },
+                "K": {
+                    "text":"United States"
+                },
+                "L": {
+                    "text":"United States"
+                },
+                "M": {
+                    "text":"United States"
+                },
+                "N": {
+                    "text":"United States"
+                },
+                "P":{
+                    "text":"United States"
+                },
+                "Q":{
+                    "text":"United States"
+                },
+                "R":{
+                    "text":"United States"
+                },
+                "S":{
+                    "text":"United States"
+                },
+                "T":{
+                    "text":"United States"
+                },
+                "U":{
+                    "text":"United States"
+                },
+                "V":{
+                    "text":"United States"
+                },
+                "W":{
+                    "text":"United States"
+                },
+                "X":{
+                    "text":"United States"
+                },
+                "Y":{
+                    "text":"United States"
+                },
+                "Z":{
+                    "text":"United States"
+                },
+                "1":{
+                    "text":"United States"
+                },
+                "2":{
+                    "text":"United States"
+                },
+                "3":{
+                    "text":"United States"
+                },
+                "4":{
+                    "text":"United States"
+                },
+                "5":{
+                    "text":"United States"
+                },
+                "6":{
+                    "text":"United States"
+                },
+                "7":{
+                    "text":"United States"
+                },
+                "8":{
+                    "text":"United States"
+                },
+                "9":{
                     "text":"United States"
                 },
                 "0":{
@@ -2580,7 +2970,106 @@
         "5":{
             "text": "North America",
             "children":{
-                "A":{
+                "A": {
+                    "text":"United States"
+                },
+                "B": {
+                    "text":"United States"
+                },
+                "C": {
+                    "text":"United States"
+                },
+                "D": {
+                    "text":"United States"
+                },
+                "E": {
+                    "text":"United States"
+                },
+                "F": {
+                    "text":"United States"
+                },
+                "G": {
+                    "text":"United States"
+                },
+                "H":{
+                    "text":"United States"
+                },
+                "I":{
+                    "text":"United States"
+                },
+                "J": {
+                    "text":"United States"
+                },
+                "K": {
+                    "text":"United States"
+                },
+                "L": {
+                    "text":"United States"
+                },
+                "M": {
+                    "text":"United States"
+                },
+                "N": {
+                    "text":"United States"
+                },
+                "P":{
+                    "text":"United States"
+                },
+                "Q":{
+                    "text":"United States"
+                },
+                "R":{
+                    "text":"United States"
+                },
+                "S":{
+                    "text":"United States"
+                },
+                "T":{
+                    "text":"United States"
+                },
+                "U":{
+                    "text":"United States"
+                },
+                "V":{
+                    "text":"United States"
+                },
+                "W":{
+                    "text":"United States"
+                },
+                "X":{
+                    "text":"United States"
+                },
+                "Y":{
+                    "text":"United States"
+                },
+                "Z":{
+                    "text":"United States"
+                },
+                "1":{
+                    "text":"United States"
+                },
+                "2":{
+                    "text":"United States"
+                },
+                "3":{
+                    "text":"United States"
+                },
+                "4":{
+                    "text":"United States"
+                },
+                "5":{
+                    "text":"United States"
+                },
+                "6":{
+                    "text":"United States"
+                },
+                "7":{
+                    "text":"United States"
+                },
+                "8":{
+                    "text":"United States"
+                },
+                "9":{
                     "text":"United States"
                 },
                 "0":{
@@ -2591,13 +3080,106 @@
         "6":{
             "text": "Oceania",
             "children":{
-                "A":{
+                "A": {
+                    "text":"Australia"
+                },
+                "B": {
+                    "text":"Australia"
+                },
+                "C": {
+                    "text":"Australia"
+                },
+                "D": {
+                    "text":"Australia"
+                },
+                "E": {
+                    "text":"Australia"
+                },
+                "F": {
+                    "text":"Australia"
+                },
+                "G": {
+                    "text":"Australia"
+                },
+                "H":{
+                    "text":"Australia"
+                },
+                "I":{
+                    "text":"Australia"
+                },
+                "J": {
+                    "text":"Australia"
+                },
+                "K": {
+                    "text":"Australia"
+                },
+                "L": {
+                    "text":"Australia"
+                },
+                "M": {
+                    "text":"Australia"
+                },
+                "N": {
+                    "text":"Australia"
+                },
+                "P":{
+                    "text":"Australia"
+                },
+                "Q":{
+                    "text":"Australia"
+                },
+                "R":{
+                    "text":"Australia"
+                },
+                "S":{
+                    "text":"Australia"
+                },
+                "T":{
+                    "text":"Australia"
+                },
+                "U":{
+                    "text":"Australia"
+                },
+                "V":{
                     "text":"Australia"
                 },
                 "W":{
                     "text":"Australia"
                 },
                 "X":{
+                    "text":"not assigned"
+                },
+                "Y":{
+                    "text":"not assigned"
+                },
+                "Z":{
+                    "text":"not assigned"
+                },
+                "1":{
+                    "text":"not assigned"
+                },
+                "2":{
+                    "text":"not assigned"
+                },
+                "3":{
+                    "text":"not assigned"
+                },
+                "4":{
+                    "text":"not assigned"
+                },
+                "5":{
+                    "text":"not assigned"
+                },
+                "6":{
+                    "text":"not assigned"
+                },
+                "7":{
+                    "text":"not assigned"
+                },
+                "8":{
+                    "text":"not assigned"
+                },
+                "9":{
                     "text":"not assigned"
                 },
                 "0":{
@@ -2608,13 +3190,106 @@
         "7":{
             "text": "North America",
             "children":{
-                "A":{
+                "A": {
                     "text":"New Zealand"
                 },
-                "E":{
+                "B": {
                     "text":"New Zealand"
                 },
-                "F":{
+                "C": {
+                    "text":"New Zealand"
+                },
+                "D": {
+                    "text":"New Zealand"
+                },
+                "E": {
+                    "text":"New Zealand"
+                },
+                "F": {
+                    "text":"not assigned"
+                },
+                "G": {
+                    "text":"not assigned"
+                },
+                "H":{
+                    "text":"not assigned"
+                },
+                "I":{
+                    "text":"not assigned"
+                },
+                "J": {
+                    "text":"not assigned"
+                },
+                "K": {
+                    "text":"not assigned"
+                },
+                "L": {
+                    "text":"not assigned"
+                },
+                "M": {
+                    "text":"not assigned"
+                },
+                "N": {
+                    "text":"not assigned"
+                },
+                "P":{
+                    "text":"not assigned"
+                },
+                "Q":{
+                    "text":"not assigned"
+                },
+                "R":{
+                    "text":"not assigned"
+                },
+                "S":{
+                    "text":"not assigned"
+                },
+                "T":{
+                    "text":"not assigned"
+                },
+                "U":{
+                    "text":"not assigned"
+                },
+                "V":{
+                    "text":"not assigned"
+                },
+                "W":{
+                    "text":"not assigned"
+                },
+                "X":{
+                    "text":"not assigned"
+                },
+                "Y":{
+                    "text":"not assigned"
+                },
+                "Z":{
+                    "text":"not assigned"
+                },
+                "1":{
+                    "text":"not assigned"
+                },
+                "2":{
+                    "text":"not assigned"
+                },
+                "3":{
+                    "text":"not assigned"
+                },
+                "4":{
+                    "text":"not assigned"
+                },
+                "5":{
+                    "text":"not assigned"
+                },
+                "6":{
+                    "text":"not assigned"
+                },
+                "7":{
+                    "text":"not assigned"
+                },
+                "8":{
+                    "text":"not assigned"
+                },
+                "9":{
                     "text":"not assigned"
                 },
                 "0":{
@@ -2625,19 +3300,52 @@
         "8":{
             "text": "South America",
             "children":{
-                "A":{
+                "A": {
                     "text":"Argentina"
                 },
-                "E":{
+                "B": {
                     "text":"Argentina"
                 },
-                "F":{
+                "C": {
+                    "text":"Argentina"
+                },
+                "D": {
+                    "text":"Argentina"
+                },
+                "E": {
+                    "text":"Argentina"
+                },
+                "F": {
                     "text":"Chile"
                 },
-                "K":{
+                "G": {
                     "text":"Chile"
                 },
-                "L":{
+                "H":{
+                    "text":"Chile"
+                },
+                "I":{
+                    "text":"Chile"
+                },
+                "J": {
+                    "text":"Chile"
+                },
+                "K": {
+                    "text":"Chile"
+                },
+                "L": {
+                    "text":"Ecuador"
+                },
+                "M": {
+                    "text":"Ecuador"
+                },
+                "N": {
+                    "text":"Ecuador"
+                },
+                "P":{
+                    "text":"Ecuador"
+                },
+                "Q":{
                     "text":"Ecuador"
                 },
                 "R":{
@@ -2646,16 +3354,52 @@
                 "S":{
                     "text":"Peru"
                 },
+                "T":{
+                    "text":"Peru"
+                },
+                "U":{
+                    "text":"Peru"
+                },
+                "V":{
+                    "text":"Peru"
+                },
                 "W":{
                     "text":"Peru"
                 },
                 "X":{
                     "text":"Venezuela"
                 },
+                "Y":{
+                    "text":"Venezuela"
+                },
+                "Z":{
+                    "text":"Venezuela"
+                },
+                "1":{
+                    "text":"Venezuela"
+                },
                 "2":{
                     "text":"Venezuela"
                 },
                 "3":{
+                    "text":"not assigned"
+                },
+                "4":{
+                    "text":"not assigned"
+                },
+                "5":{
+                    "text":"not assigned"
+                },
+                "6":{
+                    "text":"not assigned"
+                },
+                "7":{
+                    "text":"not assigned"
+                },
+                "8":{
+                    "text":"not assigned"
+                },
+                "9":{
                     "text":"not assigned"
                 },
                 "0":{
@@ -2666,19 +3410,52 @@
         "9":{
             "text": "South America",
             "children":{
-                "A":{
+                "A": {
                     "text":"Brazil"
                 },
-                "E":{
+                "B": {
                     "text":"Brazil"
                 },
-                "F":{
+                "C": {
+                    "text":"Brazil"
+                },
+                "D": {
+                    "text":"Brazil"
+                },
+                "E": {
+                    "text":"Brazil"
+                },
+                "F": {
                     "text":"Colombia"
                 },
-                "K":{
+                "G": {
                     "text":"Colombia"
                 },
-                "L":{
+                "H":{
+                    "text":"Colombia"
+                },
+                "I":{
+                    "text":"Colombia"
+                },
+                "J": {
+                    "text":"Colombia"
+                },
+                "K": {
+                    "text":"Colombia"
+                },
+                "L": {
+                    "text":"Paraguay"
+                },
+                "M": {
+                    "text":"Paraguay"
+                },
+                "N": {
+                    "text":"Paraguay"
+                },
+                "P":{
+                    "text":"Paraguay"
+                },
+                "Q":{
                     "text":"Paraguay"
                 },
                 "R":{
@@ -2687,23 +3464,56 @@
                 "S":{
                     "text":"Uruguay"
                 },
+                "T":{
+                    "text":"Uruguay"
+                },
+                "U":{
+                    "text":"Uruguay"
+                },
+                "V":{
+                    "text":"Uruguay"
+                },
                 "W":{
                     "text":"Uruguay"
                 },
                 "X":{
                     "text":"Trinidad & Tobago"
                 },
+                "Y":{
+                    "text":"Trinidad & Tobago"
+                },
+                "Z":{
+                    "text":"Trinidad & Tobago"
+                },
+                "1":{
+                    "text":"Trinidad & Tobago"
+                },
                 "2":{
                     "text":"Trinidad & Tobago"
                 },
                 "3":{
-                    "text":"Brazild"
+                    "text":"Brazil"
+                },
+                "4":{
+                    "text":"Brazil"
+                },
+                "5":{
+                    "text":"Brazil"
+                },
+                "6":{
+                    "text":"Brazil"
+                },
+                "7":{
+                    "text":"Brazil"
+                },
+                "8":{
+                    "text":"Brazil"
                 },
                 "9":{
-                    "text":"Brazild"
+                    "text":"Brazil"
                 },
                 "0":{
-                    "text":"not assigned"
+                    "text":"not assign"
                 }
             }
         }
@@ -2887,7 +3697,112 @@
             "text": "Jaguar"
         },
         "SAR":{
-            "text": "SAR"
+            "text": "Rover"
+        },
+        "SCA": {
+            "text":"Rolls Royce"
+        },
+        "SCC": {
+            "text":"Lotus Cars"
+        },
+        "SCE": {
+            "text":"DeLorean Motor Cars N. Ireland (UK)"
+        },
+        "SCF": {
+            "text":"Aston"
+        },
+        "SDB": {
+            "text":"Peugeot UK"
+        },
+        "SFD": {
+            "text":"Alexander Dennis UK"
+        },
+        "SHS": {
+            "text":"Honda UK"
+        },
+        "SJN":{
+            "text":"Nissan UK"
+        },
+        "SU9":{
+            "text":"Solaris Bus & Coach (Poland)"
+        },
+        "TK9": {
+            "text":"SOR (Czech Republic)"
+        },
+        "TDM": {
+            "text":"QUANTYA Swiss Electric Movement (Switzerland)"
+        },
+        "TMB": {
+            "text":"Škoda (Czech Republic)"
+        },
+        "TMK": {
+            "text":"Karosa (Czech Republic)"
+        },
+        "TMP": {
+            "text":"Škoda trolleybuses (Czech Republic)"
+        },
+        "TMT":{
+            "text":"Tatra (Czech Republic)"
+        },
+        "TM9":{
+            "text":"Škoda trolleybuses (Czech Republic)"
+        },
+        "TN9":{
+            "text":"Karosa (Czech Republic)"
+        },
+        "TRA":{
+            "text":"Ikarus Bus"
+        },
+        "TRU":{
+            "text":"Audi Hungary"
+        },
+        "TSE":{
+            "text":"Ikarus Egyedi Autobuszgyar, (Hungary)"
+        },
+        "TSM":{
+            "text":"Suzuki, (Hungary)"
+        },
+        "UU1":{
+            "text":"Renault Dacia, (Romania)"
+        },
+        "VF1":{
+            "text":"Renault"
+        },
+        "VF3":{
+            "text":"Peugeot"
+        },
+        "VF6":{
+            "text":"Renault (Trucks & Buses)"
+        },
+        "VF7":{
+            "text":"Citroën"
+        },
+        "VF8":{
+            "text":"Matra"
+        },
+        "VLU":{
+            "text":"Scania France"
+        },
+        "VNE":{
+            "text":"Irisbus (France)"
+        },
+        "VSE":{
+            "text":"Suzuki Spain (Santana Motors)"
+        },
+        "VSK":{
+            "text":"Nissan Spain"
+        },
+        "VSS":{
+            "text":"SEAT"
+        },
+        "VSX":{
+            "text":"Opel Spain"
+        },
+        "VS6":{
+            "text":"Ford Spain"
+        },
+        "VS9":{
+            "text":"Carrocerias Ayats (Spain)"
         }
     },
     "product_date":{
