@@ -1,5 +1,5 @@
 {
-    "contry":{
+    "contry(first_2_digits)":{
         "A":{
             "text":"Africa",
             "children":{
@@ -3518,7 +3518,7 @@
             }
         }
     },
-    "name_product_car":{
+    "name_product_car(fist_3_digits)":{
         "AFA":{
             "text": "Ford South Africa"
         },
@@ -4306,7 +4306,7 @@
             "text":"Renault Colombia"
         }
     },
-    "product_date":{
+    "product_date(10th_number)":{
         "1":{
             "text": "2001"
         },
