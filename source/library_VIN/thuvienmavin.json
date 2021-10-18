@@ -3803,6 +3803,507 @@
         },
         "VS9":{
             "text":"Carrocerias Ayats (Spain)"
+        },
+        "VWV": {
+            "text":"Volkswagen Spain"
+        },
+        "VX1": {
+            "text":"Zastava / Yugo Serbia"
+        },
+        "WAG": {
+            "text":"Neoplan"
+        },
+        "WAU": {
+            "text":"Audi"
+        },
+        "WBA": {
+            "text":"BMW"
+        },
+        "WBS": {
+            "text":"BMW M"
+        },
+        "WDB": {
+            "text":"Mercedes-Benz"
+        },
+        "WDC":{
+            "text":"DaimlerChrysler"
+        },
+        "WDD":{
+            "text":"McLaren"
+        },
+        "WEB": {
+            "text":"Evobus GmbH (Mercedes-Bus)"
+        },
+        "WF0": {
+            "text":"Ford Germany"
+        },
+        "WMA": {
+            "text":"MAN Germany"
+        },
+        "WMW": {
+            "text":"MINI"
+        },
+        "WP0": {
+            "text":"Porsche"
+        },
+        "W0L":{
+            "text":"Opel"
+        },
+        "WVW":{
+            "text":"Volkswagen"
+        },
+        "WV1":{
+            "text":"Volkswagen Commercial Vehicles"
+        },
+        "WV2":{
+            "text":"Volkswagen Bus/Van"
+        },
+        "XL9":{
+            "text":"Spyker"
+        },
+        "XMC":{
+            "text":"Mitsubishi (NedCar)"
+        },
+        "XTA":{
+            "text":"Lada/AutoVaz (Russia)"
+        },
+        "YK1":{
+            "text":"Saab"
+        },
+        "YS2":{
+            "text":"Scania AB"
+        },
+        "YS3":{
+            "text":"Saab"
+        },
+        "YS4":{
+            "text":"Scania Bus"
+        },
+        "YV1":{
+            "text":"Volvo Cars"
+        },
+        "YV4":{
+            "text":"Volvo Cars"
+        },
+        "YV2":{
+            "text":"Volvo Trucks"
+        },
+        "YV3":{
+            "text":"Volvo Buses"
+        },
+        "ZAM":{
+            "text":"Maserati Biturbo"
+        },
+        "ZAP":{
+            "text":"Piaggio/Vespa/Gilera"
+        },
+        "ZAR":{
+            "text":"Alfa Romeo"
+        },
+        "ZCG":{
+            "text":"Cagiva SpA"
+        },
+        "ZDM":{
+            "text":"Ducati Motor Holdings SpA"
+        },
+        "ZDF":{
+            "text":"Ferrari Dino"
+        },
+        "ZD4": {
+            "text":"Aprilia"
+        },
+        "ZFA": {
+            "text":"Fiat"
+        },
+        "ZFC": {
+            "text":"Fiat V.I."
+        },
+        "ZFF": {
+            "text":"Ferrari"
+        },
+        "ZHW": {
+            "text":"Lamborghini"
+        },
+        "ZLA": {
+            "text":"Lancia"
+        },
+        "ZOM": {
+            "text":"OM"
+        },
+        "1C3":{
+            "text":"Chrysler"
+        },
+        "1C6":{
+            "text":"Chrysler"
+        },
+        "1D3": {
+            "text":"Dodge"
+        },
+        "1FA": {
+            "text":"Ford Motor Company"
+        },
+        "1FB": {
+            "text":"Ford Motor Company"
+        },
+        "1FC": {
+            "text":"Ford Motor Company"
+        },
+        "1FD": {
+            "text":"Ford Motor Company"
+        },
+        "1FM":{
+            "text":"Ford Motor Company"
+        },
+        "1FT":{
+            "text":"Ford Motor Company"
+        },
+        "1FU":{
+            "text":"Freightliner"
+        },
+        "1FV":{
+            "text":"Freightliner"
+        },
+        "1F9":{
+            "text":"FWD Corp."
+        },
+        "1G":{
+            "text":"General Motors USA"
+        },
+        "1GC":{
+            "text":"Chevrolet Truck USA"
+        },
+        "1GT":{
+            "text":"GMC Truck USA"
+        },
+        "1G1":{
+            "text":"Chevrolet USA"
+        },
+        "1G2":{
+            "text":"Pontiac USA"
+        },
+        "1G3":{
+            "text":"Oldsmobile USA"
+        },
+        "1G4":{
+            "text":"Buick USA"
+        },
+        "1G6":{
+            "text":"Cadillac USA"
+        },
+        "1GM":{
+            "text":"Pontiac USA"
+        },
+        "1G8":{
+            "text":"Saturn USA"
+        },
+        "1H":{
+            "text":"Honda USA"
+        },
+        "1HD":{
+            "text":"Harley-Davidson"
+        },
+        "1J4":{
+            "text":"Jeep"
+        },
+        "1L":{
+            "text":"Lincoln USA"
+        },
+        "1ME":{
+            "text":"Mercury USA"
+        },
+        "1M1":{
+            "text":"Mack Truck USA"
+        },
+        "1M2": {
+            "text":"Mack Truck USA"
+        },
+        "1M3": {
+            "text":"Mack Truck USA"
+        },
+        "1M4": {
+            "text":"Mack Truck USA"
+        },
+        "1N": {
+            "text":"Nissan USA"
+        },
+        "1NX": {
+            "text":"NUMMI USA"
+        },
+        "1P3": {
+            "text":"Plymouth USA"
+        },
+        "1R9": {
+            "text":"Roadrunner Hay Squeeze USA"
+        },
+        "1VW":{
+            "text":"Volkswagen USA"
+        },
+        "1XK":{
+            "text":"Kenworth USA"
+        },
+        "1XP": {
+            "text":"Peterbilt USA"
+        },
+        "1YV": {
+            "text":"Mazda USA (AutoAlliance International)"
+        },
+        "2C3": {
+            "text":"Chrysler Canada"
+        },
+        "2CN": {
+            "text":"CAMI"
+        },
+        "2D3": {
+            "text":"Dodge Canada"
+        },
+        "2FA":{
+            "text":"Ford Motor Company Canada"
+        },
+        "2FB":{
+            "text":"Ford Motor Company Canada"
+        },
+        "2FC":{
+            "text":"Ford Motor Company Canada"
+        },
+        "2FM":{
+            "text":"Ford Motor Company Canada"
+        },
+        "2FT":{
+            "text":"Ford Motor Company Canada"
+        },
+        "2FU":{
+            "text":"Freightliner"
+        },
+        "2FV":{
+            "text":"Freightliner"
+        },
+        "2FZ":{
+            "text":"Sterling"
+        },
+        "2G":{
+            "text":"General Motors Canada"
+        },
+        "2G1":{
+            "text":"Chevrolet Canada"
+        },
+        "2G2":{
+            "text":"Pontiac Canada"
+        },
+        "2G3":{
+            "text":"Oldsmobile Canada"
+        },
+        "2G4":{
+            "text":"Buick Canada"
+        },
+        "2HG":{
+            "text":"Honda Canada"
+        },
+        "2HK":{
+            "text":"Honda Canada"
+        },
+        "2HM":{
+            "text":"Hyundai Canada"
+        },
+        "2M":{
+            "text":"Mercury"
+        },
+        "2P3":{
+            "text":"Plymouth Canada"
+        },
+        "2T":{
+            "text":"Toyota Canada"
+        },
+        "2V4":{
+            "text":"Volkswagen Canada"
+        },
+        "2WK":{
+            "text":"Western Star"
+        },
+        "2WL": {
+            "text":"Western Star"
+        },
+        "2WM": {
+            "text":"Western Star"
+        },
+        "3D3": {
+            "text":"Dodge Mexico"
+        },
+        "3FE": {
+            "text":"Ford Motor Company Mexico"
+        },
+        "3G": {
+            "text":"General Motors Mexico"
+        },
+        "3H": {
+            "text":"Honda Mexico"
+        },
+        "3N": {
+            "text":"Nissan Mexico"
+        },
+        "3P3":{
+            "text":"Plymouth Mexico"
+        },
+        "3VW":{
+            "text":"Volkswagen Mexico"
+        },
+        "4F": {
+            "text":"Mazda USA"
+        },
+        "4M": {
+            "text":"Mercury"
+        },
+        "4S": {
+            "text":"Subaru-Isuzu Automotive"
+        },
+        "4T": {
+            "text":"Toyota"
+        },
+        "4US": {
+            "text":"BMW USA"
+        },
+        "4UZ":{
+            "text":"Frt-Thomas Bus"
+        },
+        "4V1":{
+            "text":"Volvo"
+        },
+        "4V2":{
+            "text":"Volvo"
+        },
+        "4V3":{
+            "text":"Volvo"
+        },
+        "4V4":{
+            "text":"Volvo"
+        },
+        "4V5":{
+            "text":"Volvo"
+        },
+        "4V6":{
+            "text":"Volvo"
+        },
+        "4VL":{
+            "text":"Volvo"
+        },
+        "4VM":{
+            "text":"Volvo"
+        },
+        "4VZ":{
+            "text":"Volvo"
+        },
+        "5F":{
+            "text":"Honda USA-Alabama"
+        },
+        "5L":{
+            "text":"Lincoln"
+        },
+        "5N1":{
+            "text":"Nissan USA"
+        },
+        "5NP":{
+            "text":"Hyundai USA"
+        },
+        "5T":{
+            "text":"Toyota USA - trucks"
+        },
+        "6AB":{
+            "text":"MAN Australia"
+        },
+        "6F4":{
+            "text":"Nissan Motor Company Australia"
+        },
+        "6F5":{
+            "text":"Kenworth Australia"
+        },
+        "6FP":{
+            "text":"Ford Motor Company Australia"
+        },
+        "6G1":{
+            "text":"General Motors-Holden (post Nov 2002)"
+        },
+        "6G2":{
+            "text":"Pontiac Australia (GTO & G8)"
+        },
+        "6H8": {
+            "text":"General Motors-Holden (pre Nov 2002)"
+        },
+        "6MM": {
+            "text":"Mitsubishi Motors Australia"
+        },
+        "6T1": {
+            "text":"Toyota Motor Corporation Australia"
+        },
+        "6U9": {
+            "text":"Privately Imported car in Australia"
+        },
+        "8AG": {
+            "text":"Chevrolet Argentina"
+        },
+        "8GG": {
+            "text":"Chevrolet Chile"
+        },
+        "8AP": {
+            "text":"Fiat Argentina"
+        },
+        "8AF":{
+            "text":"Ford Motor Company Argentina"
+        },
+        "8AD":{
+            "text":"Peugeot Argentina"
+        },
+        "8GD": {
+            "text":"Peugeot Chile"
+        },
+        "8A1": {
+            "text":"Renault Argentina"
+        },
+        "8AK": {
+            "text":"Suzuki Argentina"
+        },
+        "8AJ": {
+            "text":"Toyota Argentina"
+        },
+        "8AW": {
+            "text":"Volkswagen Argentina"
+        },
+        "93U":{
+            "text":"Audi Brazil"
+        },
+        "9BG":{
+            "text":"Chevrolet Brazil"
+        },
+        "935":{
+            "text":"Citroën Brazil"
+        },
+        "9BD":{
+            "text":"Fiat Brazil"
+        },
+        "9BF":{
+            "text":"Ford Motor Company Brazil"
+        },
+        "93H":{
+            "text":"Honda Brazil"
+        },
+        "9BM":{
+            "text":"Mercedes-Benz Brazil"
+        },
+        "936":{
+            "text":"Peugeot Brazil"
+        },
+        "93Y":{
+            "text":"Renault Brazil"
+        },
+        "9BS":{
+            "text":"Scania Brazil"
+        },
+        "93R":{
+            "text":"Toyota Brazil"
+        },
+        "9BW":{
+            "text":"Volkswagen Brazil"
+        },
+        "9FB":{
+            "text":"Renault Colombia"
         }
     },
     "product_date":{
