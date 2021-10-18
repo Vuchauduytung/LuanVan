@@ -284,8 +284,8 @@
                         "italic": false
                     },
                     "children":{
-                        "label_contry":{
-                            "text": "Nước sản xuất",
+                        "label_area":{
+                            "text": "Khu vực",
                             "desc" : "",
                             "class": "QLabel",
                             "grid": {
@@ -301,8 +301,8 @@
                                 "italic": false
                             }
                         },
-                        "label_branch":{
-                            "text": "Dòng xe",
+                        "label_country":{
+                            "text": "Nước sản xuất",
                             "desc" : "",
                             "class": "QLabel",
                             "grid": {
@@ -318,7 +318,7 @@
                                 "italic": false
                             }
                         },
-                        "label_car":{
+                        "label_car_model":{
                             "text": "Mẫu xe",
                             "desc" : "",
                             "class": "QLabel",
@@ -420,7 +420,7 @@
                                 "italic": false
                             }
                         },
-                        "TE_country":{
+                        "TE_area":{
                             "text": "",
                             "desc" : "",
                             "class": "QTextEdit",
@@ -437,7 +437,7 @@
                                 "italic": false
                             }
                         },
-                        "TE_branch":{
+                        "TE_coutry":{
                             "text": "",
                             "desc" : "",
                             "class": "QTextEdit",
@@ -454,7 +454,7 @@
                                 "italic": false
                             }
                         },
-                        "TE_car":{
+                        "TE_car_model":{
                             "text": "",
                             "desc" : "",
                             "class": "QTextEdit",

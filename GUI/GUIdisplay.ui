@@ -245,7 +245,7 @@
     <property name="title">
      <string>Mã xe </string>
     </property>
-    <widget class="QLabel" name="label_contry">
+    <widget class="QLabel" name="label_area">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -260,7 +260,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Nước sản xuất</string>
+      <string>Khu vực</string>
      </property>
     </widget>
     <widget class="QTextEdit" name="TE_num_product">
@@ -329,7 +329,7 @@
       <string>Mã bảo mật</string>
      </property>
     </widget>
-    <widget class="QTextEdit" name="TE_country">
+    <widget class="QTextEdit" name="TE_area">
      <property name="geometry">
       <rect>
        <x>160</x>
@@ -357,7 +357,7 @@
       <string>Số thứ tự sản xuất</string>
      </property>
     </widget>
-    <widget class="QTextEdit" name="TE_car">
+    <widget class="QTextEdit" name="TE_car_model">
      <property name="geometry">
       <rect>
        <x>160</x>
@@ -405,7 +405,7 @@
       </rect>
      </property>
     </widget>
-    <widget class="QLabel" name="label_car">
+    <widget class="QLabel" name="label_car_model">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -423,7 +423,7 @@
       <string>Mẫu xe</string>
      </property>
     </widget>
-    <widget class="QTextEdit" name="TE_branch">
+    <widget class="QTextEdit" name="TE_country">
      <property name="geometry">
       <rect>
        <x>160</x>
@@ -451,7 +451,7 @@
       <string>Hãng xe</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_branch">
+    <widget class="QLabel" name="label_contry">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -466,7 +466,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Dòng xe</string>
+      <string>Nước sản xuất</string>
      </property>
     </widget>
     <widget class="QWidget" name="widget_vin_num" native="true">
