@@ -4406,5 +4406,55 @@
                 "text": "2030"
             }
         }
+    },
+    "car_model":{
+        "desc":"chữ số 6 và 7",
+        "value":{
+            "11": {
+                "text":"Xe tải hoặc xe jeep mui tiêu chuẩn"
+            },
+            "12": {
+                "text":"Xe tải hoặc xe jeep mui tiêu chuẩn"
+            },
+            "21": {
+                "text":"Xe bus chở hàng có mui cao"
+            },
+            "22": {
+                "text":"Xe bus chở hàng có mui cao"
+            },
+            "23": {
+                "text":"Xe bus chở hàng có mui cao"
+            },
+            "31": {
+                "text":"Có cabin rưỡi hoặc đôi hoặc đơn"
+            },
+            "32": {
+                "text":"Có cabin rưỡi hoặc đôi hoặc đơn"
+            },
+            "33":{
+                "text":"Có cabin rưỡi hoặc đôi hoặc đơn"
+            },
+            "41":{
+                "text":"Xe bus có mui nâng"
+            },
+            "42": {
+                "text":"Xe bus có mui nâng"
+            },
+            "43": {
+                "text":"Xe bus có mui nâng"
+            },
+            "52": {
+                "text":"Xe hatchback 2 cửa"
+            },
+            "54": {
+                "text":"Xe hatchback 4 cửa"
+            },
+            "53": {
+                "text":"Xe sedan"
+            },
+            "72":{
+                "text":"toa xe ga"
+            }
+        }
     }
 }
