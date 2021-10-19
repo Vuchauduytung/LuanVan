@@ -370,7 +370,7 @@
                 "TE_Compression": {
                     "text": "",
                     "desc" : "",
-                    "class": "QtextEdit",
+                    "class": "QTextEdit",
                     "grid": {
                         "row": 8,
                         "column": 1,
@@ -387,7 +387,7 @@
                 "TE_Comp_temp_C": {
                     "text": "",
                     "desc" : "",
-                    "class": "QtextEdit",
+                    "class": "QTextEdit",
                     "grid": {
                         "row": 9,
                         "column": 1,
@@ -404,7 +404,7 @@
                 "TE_Comp_temp_F": {
                     "text": "",
                     "desc" : "",
-                    "class": "QtextEdit",
+                    "class": "QTextEdit",
                     "grid": {
                         "row": 10,
                         "column": 1,
@@ -421,7 +421,7 @@
                 "TE_watt": {
                     "text": "",
                     "desc" : "",
-                    "class": "QtextEdit",
+                    "class": "QTextEdit",
                     "grid": {
                         "row": 11,
                         "column": 1,
