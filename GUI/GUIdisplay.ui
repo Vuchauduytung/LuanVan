@@ -527,7 +527,7 @@
      <string>Đồ thị</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="BT_cancel">
+   <widget class="QPushButton" name="BT_fix">
     <property name="geometry">
      <rect>
       <x>530</x>
@@ -543,7 +543,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Thoát</string>
+     <string>Sửa chữa</string>
     </property>
    </widget>
    <widget class="QPushButton" name="BT_graph_fix">
@@ -563,6 +563,25 @@
     </property>
     <property name="text">
      <string>Hình ảnh xe</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="BT_cancel_2">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>570</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Thoát</string>
     </property>
    </widget>
   </widget>
