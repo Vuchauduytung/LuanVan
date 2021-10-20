@@ -53,8 +53,14 @@ def Analysis(Temperature,Dynamic_compression_ratio,n,Intake_pressure,Volume,n_dy
     
     return Compression_wattage,temperature_C,temperature_F,compression_pressure
 
-def Minimum_pressure(Intake_pressure):
+def Minimum_pressure(Dynamic_compression_ratio):
     
-    Minimum_pressure=(((Intake_pressure*0.96)*10**5)*0.000145)
+    Minimum_pressure=14.7*Dynamic_compression_ratio + 14.7 +5
     
     return Minimum_pressure
+
+def Minimum_pressure_intake(Intake_pressure):
+    
+    Minimum_pressure_intake=(((Intake_pressure*0.96)*10**5)*0.000145)
+    
+    return Minimum_pressure_intake
