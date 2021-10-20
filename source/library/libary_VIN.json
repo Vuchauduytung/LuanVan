@@ -1,6 +1,8 @@
 {
     "contry":{
         "desc":"2 chữ cái đầu",
+        "position":0,
+        "lenght":2,
         "value":{
             "A":{
                 "text":"Africa",
@@ -3523,6 +3525,8 @@
     },
     "name_product_car":{
         "desc":"3 chữ cái đầu",
+        "position":0,
+        "lenght":3,
         "value":{
             "AFA":{
                 "text": "Ford South Africa"
@@ -4313,7 +4317,8 @@
         }
     },
     "product_date":{
-        "position": 10,
+        "position": 9,
+        "lenght":1,
         "value":{
             "1":{
                 "text": "2001"
@@ -4409,6 +4414,8 @@
     },
     "car_model":{
         "desc":"chữ số 6 và 7",
+        "position":5,
+        "lenght":2,
         "value":{
             "11": {
                 "text":"Xe tải hoặc xe jeep mui tiêu chuẩn"
