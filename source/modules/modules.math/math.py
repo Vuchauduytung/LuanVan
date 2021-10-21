@@ -59,6 +59,12 @@ def Minimum_pressure(Dynamic_compression_ratio):
     
     return Minimum_pressure
 
+def Pressure_discharge(Intake_pressure,Dynamic_compression_ratio,n):
+    
+    Pressure_discharge = (((Intake_pressure*0.96)*10**5)*0.000145)*Dynamic_compression_ratio**n
+    
+    return Pressure_discharge
+
 def Minimum_pressure_intake(Intake_pressure):
     
     Minimum_pressure_intake=(((Intake_pressure*0.96)*10**5)*0.000145)
