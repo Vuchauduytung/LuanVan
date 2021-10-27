@@ -99,6 +99,9 @@
        <height>31</height>
       </rect>
      </property>
+     <property name="placeholderText">
+      <string>Nhập tên khách hàng</string>
+     </property>
     </widget>
     <widget class="QLineEdit" name="LE_phone_number">
      <property name="geometry">
@@ -109,6 +112,9 @@
        <height>31</height>
       </rect>
      </property>
+     <property name="placeholderText">
+      <string>Nhập số diện thoại</string>
+     </property>
     </widget>
     <widget class="QLineEdit" name="LE_number_car">
      <property name="geometry">
@@ -118,6 +124,9 @@
        <width>211</width>
        <height>31</height>
       </rect>
+     </property>
+     <property name="placeholderText">
+      <string>Nhập biển số</string>
      </property>
     </widget>
    </widget>
@@ -154,7 +163,7 @@
      <x>0</x>
      <y>0</y>
      <width>400</width>
-     <height>29</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuEdit">
