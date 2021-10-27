@@ -11,7 +11,7 @@ gui_path = os.path.abspath(os.path.join(path, 'GUIinput.ui'))
 modules_path = os.path.abspath(os.path.join(path, os.pardir, "source", 'modules'))      
 sys.path.append(modules_path)
 
-from library.format_translate import *                    
+from library.pyqt_support import *                    
                            
 class Ui(QtWidgets.QMainWindow):
     def __init__(self):
@@ -44,6 +44,7 @@ class Ui(QtWidgets.QMainWindow):
         action = QAction("new action", line_edit)
         action.setIcon(icon)
         line_edit.addAction(action, line_edit.TrailingPosition)
+        action.setIconText("Hello")
         
         action.setObjectName("action")
         action = line_edit.findChild(QtWidgets.QAction, 'action')
@@ -59,7 +60,7 @@ class Ui(QtWidgets.QMainWindow):
         
         # pix = QPixmap(r"C:\Users\Lenovo\Pictures\Quang\6.jpg")
         # item = QGraphicsPixmapItem(pix)
-        scene = QtWidgets.QGraphicsScene(graphicView)
+        scene = QtWidgets.QGraphicsScene()
         scene_size = (graphicView.size().width(), graphicView.size().height())
         # scene.addItem(item)
         
@@ -74,47 +75,6 @@ class Ui(QtWidgets.QMainWindow):
         x_center = graphicView.size().width()/2
         y_center = graphicView.size().height()/2
         
-        # passive_text_1 = scene.addText("Drag image here.")
-        # passive_text_2 = scene.addText("Or")
-        # active_text = scene.addText("choose file")
-        passive_text_1 = QGraphicsTextItem("Drag image here.")
-        passive_text_2 = QGraphicsTextItem("Or")
-        active_text = QGraphicsTextItem("choose file")
-        # scene.addItem(passive_text_1)
-        # scene.addItem(passive_text_2)
-        # scene.addItem(active_text)
-        
-        passive_text_1_font = QFont("Times", 14, QFont.Bold)
-        passive_text_2_font = QFont("Times", 10)
-        active_text_font = QFont("Times", 10)
-        active_text.setDefaultTextColor(Qt.blue)
-        # active_text_font.setDefaultTextColor()
-        
-        passive_text_1.setFont(passive_text_1_font)
-        passive_text_2.setFont(passive_text_2_font)
-        active_text.setFont(active_text_font)
-             
-        passive_text_1_pos = (
-            x_center - passive_text_1.boundingRect().width()/2,
-            y_center - (passive_text_1.boundingRect().height()+passive_text_2.boundingRect().height())/2
-        )
-        
-        passive_text_2_pos = (
-            x_center - (passive_text_2.boundingRect().width()+active_text.boundingRect().width())/2,
-            passive_text_1_pos[1] + passive_text_1.boundingRect().height()
-        )
-        
-        active_text_pos = (
-            passive_text_2_pos[0] + passive_text_2.boundingRect().width(),
-            passive_text_2_pos[1]
-        )
-        
-        passive_text_1.setPos(passive_text_1_pos[0], passive_text_1_pos[1])
-        passive_text_2.setPos(passive_text_2_pos[0], passive_text_2_pos[1])
-        active_text.setPos(active_text_pos[0], active_text_pos[1])
-        
-        active_text.setAcceptedMouseButtons(Qt.AllButtons)
-        active_text.setAcceptTouchEvents(True)
         scene.mousePressEvent = mousePressEvent_lambda(self)
         # active_text.mousePressEvent = mousePressEvent
         
@@ -140,46 +100,61 @@ class Ui(QtWidgets.QMainWindow):
         self.document_ = TextItem.document()
         rootframe = TextItem.document().rootFrame()
         cursor = rootframe.firstCursorPosition()
-        cursor.insertHtml(
+        self.document_.setHtml(
             '''
-                <!DOCTYPE html>
-                <html>
-                <head>
-                <style>
-
-                .center {
-                    margin: 0;
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    -ms-transform: translate(-50%, -50%);
-                    transform: translate(-50%, -50%);
+                <STYLE type="text/css">
+                DIV.mypars {
+                    text-align: center;    
                 }
-                </style>
-                </head>
-                <body>
-
-
-                <div class="center">
-                <p>I am vertically and horizontally centered.</p>
-                </div>
-
-
-                </body>
-                </html>
+                </STYLE>
+                <BODY>
+                <DIV class="mypars">
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <P style="color:red">Drag image here </P>
+                <P>Or <b>choose file</b> </P>
+                </DIV>
             '''
         )
-        # curs_max=cursor.position()
-        # self.my_callback = QGraphicsTextItem_callback(curs_min=curs_min, 
-        #                                               curs_max=curs_max)
+        curs_max=cursor.position()
+        self.my_callback = QGraphicsTextItem_callback(curs_min=33, 
+                                                      curs_max=curs_max)
         scene.addItem(TextItem)
-        
+        TextItem.installEventFilter(self)
         l = QAction(GB_cus_info)
         # l.setAccessibleName("Hello")
-        TextItem.document().setPageSize(QSizeF( 1000,1000))
+        TextItem.document().setPageSize(QSizeF(scene_size[0]*0.9, scene_size[1]*0.9))
         # self.p = QPointF()
         
+        DE_fixing_date = self.findChild(QtWidgets.QDateEdit, 'DE_fixing_date')
+        DE_fixing_date.setAccessibleName("Hello")
+        DE_fixing_date.addAction(action)
+        # date = QDate(2020, 6, 10)
+        date = QDate.fromString(None, "yyyy-MM-dd")
+        DE_fixing_date.setDate(date)
         self.show()
+        
+    def eventFilter(self, object, event):
+        if event.type() == QEvent.GraphicsSceneHoverMove:
+            print("Mouse is over the label")
+            self.stop = True
+            print('program stop is', self.stop)
+            return True
+        elif event.type() == QEvent.GraphicsSceneHoverLeave:
+            print("Mouse is not over the label")
+            self.stop = False
+            print('program stop is', self.stop)
+        return False    
         
 
 def mousePressEvent(self, event):
@@ -195,10 +170,25 @@ def mousePressEvent(self, event):
         if cur_pos > self.my_callback.curs_min and cur_pos < self.my_callback.curs_max:
             print("chose file callback")
         print(cur_pos)
+
+# def eventFilter(self, object, event):
+#     if event.type() == QEvent.Enter:
+#         print("Mouse is over the label")
+#         self.stop = True
+#         print('program stop is', self.stop)
+#         return True
+#     elif event.type() == QEvent.Leave:
+#         print("Mouse is not over the label")
+#         self.stop = False
+#         print('program stop is', self.stop)
+#         return False
         
         
 def mousePressEvent_lambda(self):
     return lambda event: mousePressEvent(self, event)
+
+# def eventFilter_lambda(self):
+#     return lambda event, object: eventFilter(self, object, event)
 
 app = QtWidgets.QApplication(sys.argv)
 window = Ui()
