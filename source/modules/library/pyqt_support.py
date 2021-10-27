@@ -1,12 +1,15 @@
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
+from task import *
 
-class FormatTranslator:
+
+class PyQtSupport:
     """
-    Translate json value from string to python class type
+    Class này hỗ trợ biên dịch các yêu cầu liên quan đến Object
+    Widget trong PyQt Application.
     """
-    
+
     @staticmethod
     def get_class(class_str: str):
         switchers = {
@@ -20,9 +23,10 @@ class FormatTranslator:
             "QGraphicsTextItem": QGraphicsTextItem,
             "QGraphicsRectItem": QGraphicsRectItem,
             "QAction": QAction,
+            "QDateEdit": QDateEdit,
         }
         return switchers.get(class_str)
-    
+
     @classmethod
     def add_icon(cls, obj, icon: QIcon, size: list):
         CLASS = obj.__class__
@@ -37,6 +41,7 @@ class FormatTranslator:
             QGraphicsTextItem: None,
             QGraphicsRectItem: None,
             QAction: lambda _, __, icon: obj.setIcon(icon),
+            QDateEdit: None,
         }
         FUNCTION = switchers.get(CLASS)
         if FUNCTION is None:
@@ -45,50 +50,85 @@ class FormatTranslator:
             return FUNCTION(label=obj,
                             size=size,
                             icon=icon)
-    
+
     @classmethod
     def set_geometry(cls, obj, x: float, y: float, w: float, h: float):
         switchers = {
-            QWidget: cls.QWidget_set_geometry,                                
-            QGraphicsItem: cls.QGraphicsItem_set_geometry    
+            QWidget: cls.QWidget_set_geometry,
+            QGraphicsItem: cls.QGraphicsItem_set_geometry
         }
         CLASS = obj.__class__
-        set_geometry_function = cls.get_geometry_function_by_class(CLASS=CLASS,
-                                                                   sw=switchers)
+        set_geometry_function = cls.get_value_from_base_class(CLASS=CLASS,
+                                                              sw=switchers)
         if set_geometry_function is None:
             return -1
         else:
             set_geometry_function(obj=obj,
-                                  x=x, 
-                                  y=y, 
-                                  w=w, 
+                                  x=x,
+                                  y=y,
+                                  w=w,
                                   h=h)
             return 0
-        
+
+    @staticmethod
+    def get_size(obj):
+        switchers = {
+            QLabel: lambda obj: obj.geometry(),
+            QLineEdit: lambda obj: obj.geometry(),
+            QGroupBox: lambda obj: obj.geometry(),
+            QPushButton: lambda obj: obj.geometry(),
+            QCheckBox: lambda obj: obj.geometry(),
+            QGraphicsView: lambda obj: obj.geometry(),
+            QGraphicsScene: lambda scene: scene.sceneRect(),
+            QGraphicsTextItem: lambda text_item: text_item.document().size(),
+            QGraphicsRectItem: lambda rect_item: rect_item.rect(),
+            QAction: None,
+            QDateEdit: lambda obj: obj.geometry(),
+        }
+        FUNCTION = switchers.get(obj.__class__)
+        if FUNCTION is None:
+            return None
+        else:
+            result = FUNCTION(obj)
+            return (result.width(), result.height())
+
+    @staticmethod
+    def QGraphicsTextItem_get_size(obj):
+        size = obj.document().size()
+        return (size.width(), size.height())
+
+    @staticmethod
+    def QGraphicsRectItem_get_size(obj):
+        rect = obj.rect()
+        return (rect.width(), rect.height())
+
     @classmethod
-    def get_geometry_function_by_class(cls, CLASS, sw: dict):
+    def get_value_from_base_class(cls, CLASS, sw: dict):
         func = None
         if CLASS in sw.keys():
             func = sw.get(CLASS)
         elif CLASS is None:
-            pass
+            return
         else:
             for CLASS_ in CLASS.__bases__:
                 if func is None:
                     func = sw.get(CLASS_)
+                    if func is None:
+                        func = cls.get_value_from_base_class(CLASS=CLASS_,
+                                                             sw=sw)
         return func
-    
-    @classmethod
-    def set_font(cls, obj, fam: str, psz: int, w: int, itl: bool):
-        font = QFont(family=fam,
-                     pointSize=psz,
-                     weight=w,
-                     italic=itl)
+
+    @staticmethod
+    def set_font(obj, fam: str, psz: int, w: int, itl: bool):
+        font = QFont(fam,
+                     psz,
+                     w,
+                     itl)
         CLASS = obj.__class__
         switchers = {
             QLabel: lambda font: obj.setFont(font),
             QLineEdit: lambda font: obj.setFont(font),
-            QGroupBox:lambda font: obj.setFont(font),
+            QGroupBox: lambda font: obj.setFont(font),
             QPushButton: lambda font: obj.setFont(font),
             QCheckBox: lambda font: obj.setFont(font),
             QGraphicsView: None,
@@ -96,6 +136,7 @@ class FormatTranslator:
             QGraphicsTextItem: None,
             QGraphicsRectItem: None,
             QAction: lambda font: obj.setFont(font),
+            QDateEdit: lambda font: obj.setFont(font),
         }
         FUNCTION = switchers.get(CLASS)
         if FUNCTION is None:
@@ -103,7 +144,7 @@ class FormatTranslator:
         else:
             FUNCTION(font)
             return 0
-    
+
     @classmethod
     def set_text(cls, obj, text, format_str):
         CLASS = obj.__class__
@@ -118,15 +159,16 @@ class FormatTranslator:
             QGraphicsTextItem: cls.QGraphicsText_set_text,
             QGraphicsRectItem: None,
             QAction: lambda _, text, __: obj.setTitle(text),
+            QDateEdit: lambda _, text, __: obj.setText(text),
         }
         FUNCTION = switchers.get(CLASS)
         if FUNCTION is None:
             return -1
         else:
-            return FUNCTION(obj, 
+            return FUNCTION(obj,
                             text,
                             format_str)
-    
+
     @classmethod
     def set_visible(cls, obj, visible):
         CLASS = obj.__class__
@@ -141,38 +183,39 @@ class FormatTranslator:
             QGraphicsTextItem: lambda visible: obj.setVisible(visible),
             QGraphicsRectItem: lambda visible: obj.setVisible(visible),
             QAction: lambda visible: obj.setVisible(visible),
+            QDateEdit: cls.show_hide,
         }
         FUNCTION = switchers.get(CLASS)
         if FUNCTION is None:
             return -1
         else:
-            return FUNCTION(obj, 
+            return FUNCTION(obj,
                             visible)
 
-    @classmethod
-    def add_icon_use_pixmap(cls, label, size, icon):
+    @staticmethod
+    def add_icon_use_pixmap(label, size, icon):
         pixmap = icon.pixmap(QSize(size[0], size[1]))
         label.setPixmap(pixmap)
         return 0
-        
-    @classmethod
-    def QWidget_set_geometry(cls, obj, x, y, w, h):
-        obj.setGeometry(x, 
-                        y, 
-                        w, 
-                        h)                              
-        return 0       
-                              
-    @classmethod
-    def QGraphicsItem_set_geometry(cls, obj, x, y, w, h):
-        obj.update(x=x, 
-                   y=y, 
-                   width=w, 
-                   height=h)                              
-        return 0  
-    
-    @classmethod
-    def QLabel_set_text(cls, obj, text, format_str):
+
+    @staticmethod
+    def QWidget_set_geometry(obj, x, y, w, h):
+        obj.setGeometry(x,
+                        y,
+                        w,
+                        h)
+        return 0
+
+    @staticmethod
+    def QGraphicsItem_set_geometry(obj, x, y, w, h):
+        obj.update(x=x,
+                   y=y,
+                   width=w,
+                   height=h)
+        return 0
+
+    @staticmethod
+    def QLabel_set_text(obj, text, format_str):
         obj.setText(text)
         switchers = {
             "PlainText": Qt.PlainText,
@@ -186,44 +229,43 @@ class FormatTranslator:
         else:
             obj.setTextFormat(FORMAT)
             return 0
-           
-    @classmethod                 
-    def QGraphicsText_set_text(cls, obj, text, format_str):
+
+    @staticmethod
+    def QGraphicsText_set_text(obj, text, format_str):
         switchers = {
-            "PlainText": obj.insertText(text),
-            "RichText": obj.insertHtml(text),
+            "PlainText": obj.setPlainText,
+            "RichText": obj.setHtml,
             "AutoText": None,
             "MarkdownText": None,
         }
-        switchers.get(format_str)
-        return 0     
-    
-    @classmethod
-    def show_hide(cls, obj, visible):
+        FUNCTION = switchers.get(format_str)
+        if FUNCTION is not None:
+            FUNCTION(text)
+        return 0
+
+    @staticmethod
+    def show_hide(obj, visible):
         if visible:
             obj.show()
         else:
             obj.hide()
         return 0
-    
-    @classmethod
-    def set_pos_size(cls, obj, position, size):
-        switchers = {
-            
-        }
-    
+
+    @staticmethod
+    def set_pos_size(obj, position, size):
+        obj.setTransformOriginPoint(size[0], size[1])
+        obj.update(position[0],
+                   position[1],
+                   size[0],
+                   size[1])
+        return 0
+
 
 class QGraphicsTextItem_callback:
-    
+
     def __init__(self, curs_min: float, curs_max: float):
         self.curs_min = curs_min
         self.curs_max = curs_max
-        
 
-        
-        
-                                          
-            
-        
-        
-        
+
+

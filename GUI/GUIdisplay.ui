@@ -14,59 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-<<<<<<< HEAD
-   <widget class="QWidget" name="widget_4" native="true">
-    <property name="geometry">
-     <rect>
-      <x>270</x>
-      <y>560</y>
-      <width>271</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <widget class="QPushButton" name="PB_b_cancel">
-     <property name="geometry">
-      <rect>
-       <x>140</x>
-       <y>10</y>
-       <width>93</width>
-       <height>28</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="text">
-      <string>Thoát</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="PB_b_search">
-     <property name="geometry">
-      <rect>
-       <x>40</x>
-       <y>10</y>
-       <width>93</width>
-       <height>28</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="text">
-      <string>Tìm kiếm</string>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QGroupBox" name="GB_groupBox">
-=======
    <widget class="QGroupBox" name="GB_information_custom">
->>>>>>> 6141a97e9e9d8dd7a42469e36de11ae91b027a39
     <property name="geometry">
      <rect>
       <x>20</x>

@@ -2,10 +2,14 @@
     "name": "MainWindow",
     "path": "GUI/GUIinput.ui",
     "desc": "",
-    "text": "GUI_input",
+    "text": "GUI input",
+    "dimension": {
+        "width": 1200,
+        "height": 800
+    },
     "icon": {
         "name": "",
-        "path": null,
+        "path": "source/icon/GUI_icon.jpg",
         "size": [20,20]
     },
     "class": "QMainWindow",
@@ -22,8 +26,8 @@
             },
             "font": {
                 "family": null,
-                "pointSize": null,
-                "weight": null,
+                "pointSize": 13,
+                "weight": 70,
                 "italic": false
             },
             "children": {      
@@ -39,8 +43,8 @@
                     },
                     "font": {
                         "family": null,
-                        "pointSize": null,
-                        "weight": null,
+                        "pointSize": 11,
+                        "weight": 50,
                         "italic": false
                     }
                 },
@@ -56,8 +60,8 @@
                     },
                     "font": {
                         "family": null,
-                        "pointSize": null,
-                        "weight": null,
+                        "pointSize": 11,
+                        "weight": 50,
                         "italic": false
                     }
                 },
@@ -73,8 +77,8 @@
                     },
                     "font": {
                         "family": null,
-                        "pointSize": null,
-                        "weight": null,
+                        "pointSize": 11,
+                        "weight": 50,
                         "italic": false
                     }
                 },
@@ -90,8 +94,8 @@
                     },
                     "font": {
                         "family": null,
-                        "pointSize": null,
-                        "weight": null,
+                        "pointSize": 11,
+                        "weight": 50,
                         "italic": false
                     }
                 },
@@ -107,8 +111,8 @@
                     },
                     "font": {
                         "family": null,
-                        "pointSize": null,
-                        "weight": null,
+                        "pointSize": 11,
+                        "weight": 50,
                         "italic": false
                     }
                 },
@@ -124,19 +128,19 @@
                     },
                     "font": {
                         "family": null,
-                        "pointSize": null,
-                        "weight": null,
+                        "pointSize": 11,
+                        "weight": 50,
                         "italic": false
                     }
                 },
-                "label_warning": {
+                "Label_customer_information_warning": {
                     "text": "Vui lòng nhập đầy đủ thông tin",
                     "desc" : "",
                     "class": "QLabel",
                     "visible": false,
                     "grid": {
                         "row": 6,
-                        "column": 1,
+                        "column": 0,
                         "rowSpan": 1,
                         "columnSpan": 2
                     },
@@ -157,21 +161,23 @@
                         "rowSpan": 1,
                         "columnSpan": 1
                     },
-                    "action": {
-                        "LeadingPosition": {},
-                        "TrailingPosition": {
-                            "icon": {
-                                "name": "",
-                                "path": "source/icon/exclamation_mark.png",
-                                "tooltip": "Missing value",
-                                "size": [20,20]
-                            }
+                    "action": [{
+                        "name": "missing_value_warning",
+                        "text": "",
+                        "desc" : "",
+                        "tooltip": "Missing value",
+                        "position": "TrailingPosition",
+                        "visible": false,
+                        "icon": {
+                            "name": "",
+                            "path": "source/icon/exclamation_mark.png",
+                            "size": [20,20]
                         }
-                    },
+                    }],
                     "font": {
                         "family": null,
-                        "pointSize": null,
-                        "weight": null,
+                        "pointSize": 11,
+                        "weight": 50,
                         "italic": false
                     }
                 },
@@ -185,21 +191,23 @@
                         "rowSpan": 1,
                         "columnSpan": 1
                     },
-                    "action": {
-                        "LeadingPosition": {},
-                        "TrailingPosition": {
-                            "icon": {
-                                "name": "",
-                                "path": "source/icon/exclamation_mark.png",
-                                "tooltip": "Missing value",
-                                "size": [20,20]
-                            }
+                    "action": [{
+                        "name": "missing_value_warning",
+                        "text": "",
+                        "desc" : "",
+                        "tooltip": "Missing value",
+                        "position": "TrailingPosition",
+                        "visible": false,
+                        "icon": {
+                            "name": "",
+                            "path": "source/icon/exclamation_mark.png",
+                            "size": [20,20]
                         }
-                    },
+                    }],
                     "font": {
                         "family": null,
-                        "pointSize": null,
-                        "weight": null,
+                        "pointSize": 11,
+                        "weight": 50,
                         "italic": false
                     }
                 },
@@ -213,21 +221,23 @@
                         "rowSpan": 1,
                         "columnSpan": 1
                     },
-                    "action": {
-                        "LeadingPosition": {},
-                        "TrailingPosition": {
-                            "icon": {
-                                "name": "",
-                                "path": "source/icon/exclamation_mark.png",
-                                "tooltip": "Missing value",
-                                "size": [20,20]
-                            }
+                    "action": [{
+                        "name": "missing_value_warning",
+                        "text": "",
+                        "desc" : "",
+                        "tooltip": "Missing value",
+                        "position": "TrailingPosition",
+                        "visible": false,
+                        "icon": {
+                            "name": "",
+                            "path": "source/icon/exclamation_mark.png",
+                            "size": [20,20]
                         }
-                    },
+                    }],
                     "font": {
                         "family": null,
-                        "pointSize": null,
-                        "weight": null,
+                        "pointSize": 11,
+                        "weight": 50,
                         "italic": false
                     }
                 },
@@ -241,21 +251,23 @@
                         "rowSpan": 1,
                         "columnSpan": 1
                     },
-                    "action": {
-                        "LeadingPosition": {},
-                        "TrailingPosition": {
-                            "icon": {
-                                "name": "",
-                                "path": "source/icon/exclamation_mark.png",
-                                "tooltip": "Missing value",
-                                "size": [20,20]
-                            }
+                    "action": [{
+                        "name": "missing_value_warning",
+                        "text": "",
+                        "desc" : "",
+                        "tooltip": "Missing value",
+                        "position": "TrailingPosition",
+                        "visible": false,
+                        "icon": {
+                            "name": "",
+                            "path": "source/icon/exclamation_mark.png",
+                            "size": [20,20]
                         }
-                    },
+                    }],
                     "font": {
                         "family": null,
-                        "pointSize": null,
-                        "weight": null,
+                        "pointSize": 11,
+                        "weight": 50,
                         "italic": false
                     }
                 },
@@ -269,48 +281,41 @@
                         "rowSpan": 1,
                         "columnSpan": 1
                     },
-                    "action": {
-                        "LeadingPosition": {},
-                        "TrailingPosition": {
-                            "icon": {
-                                "name": "",
-                                "path": "source/icon/exclamation_mark.png",
-                                "tooltip": "Missing value",
-                                "size": [20,20]
-                            }
+                    "action": [{
+                        "name": "missing_value_warning",
+                        "text": "",
+                        "desc" : "",
+                        "tooltip": "Missing value",
+                        "position": "TrailingPosition",
+                        "visible": false,
+                        "icon": {
+                            "name": "",
+                            "path": "source/icon/exclamation_mark.png",
+                            "size": [20,20]
                         }
-                    },
+                    }],
                     "font": {
                         "family": null,
-                        "pointSize": null,
-                        "weight": null,
+                        "pointSize": 11,
+                        "weight": 50,
                         "italic": false
                     }
                 },
                 "DE_fixing_date": {
-                    "date" : "today",
-                    "class": "QLineEdit",
+                    "date" : "12-05-2021",
+                    "minimum_date": "01-01-2021",
+                    "maximum_date": "01-01-2041",
+                    "class": "QDateEdit",
                     "grid": {
-                        "row": 4,
+                        "row": 5,
                         "column": 1,
                         "rowSpan": 1,
                         "columnSpan": 1
                     },
-                    "action": {
-                        "LeadingPosition": {},
-                        "TrailingPosition": {
-                            "icon": {
-                                "name": "",
-                                "path": "source/icon/exclamation_mark.png",
-                                "tooltip": "Missing value",
-                                "size": [20,20]
-                            }
-                        }
-                    },
                     "font": {
                         "family": null,
-                        "pointSize": null,
-                        "weight": null,
+                        "pointSize": 11,
+                        "weight": 50,
                         "italic": false
                     }
                 }
@@ -328,8 +333,8 @@
             },
             "font": {
                 "family": null,
-                "pointSize": null,
-                "weight": null,
+                "pointSize": 13,
+                "weight": 70,
                 "italic": false
             },
             "children": {
@@ -345,8 +350,8 @@
                     },
                     "font": {
                         "family": null,
-                        "pointSize": null,
-                        "weight": null,
+                        "pointSize": 11,
+                        "weight": 50,
                         "italic": false
                     }
                 },
@@ -355,15 +360,15 @@
                     "desc" : "",
                     "class": "QCheckBox",
                     "grid": {
-                        "row": 0,
-                        "column": 1,
+                        "row": 1,
+                        "column": 0,
                         "rowSpan": 1,
                         "columnSpan": 1
                     },
                     "font": {
                         "family": null,
-                        "pointSize": null,
-                        "weight": null,
+                        "pointSize": 11,
+                        "weight": 50,
                         "italic": false
                     }
                 },
@@ -372,15 +377,15 @@
                     "desc" : "",
                     "class": "QCheckBox",
                     "grid": {
-                        "row": 0,
-                        "column": 2,
+                        "row": 2,
+                        "column": 0,
                         "rowSpan": 1,
                         "columnSpan": 1
                     },
                     "font": {
                         "family": null,
-                        "pointSize": null,
-                        "weight": null,
+                        "pointSize": 11,
+                        "weight": 50,
                         "italic": false
                     }
                 },
@@ -389,15 +394,15 @@
                     "desc" : "",
                     "class": "QCheckBox",
                     "grid": {
-                        "row": 0,
-                        "column": 3,
+                        "row": 3,
+                        "column": 0,
                         "rowSpan": 1,
                         "columnSpan": 1
                     },
                     "font": {
                         "family": null,
-                        "pointSize": null,
-                        "weight": null,
+                        "pointSize": 11,
+                        "weight": 50,
                         "italic": false
                     }
                 },
@@ -406,15 +411,15 @@
                     "desc" : "",
                     "class": "QCheckBox",
                     "grid": {
-                        "row": 0,
-                        "column": 4,
+                        "row": 4,
+                        "column": 0,
                         "rowSpan": 1,
                         "columnSpan": 1
                     },
                     "font": {
                         "family": null,
-                        "pointSize": null,
-                        "weight": null,
+                        "pointSize": 11,
+                        "weight": 50,
                         "italic": false
                     }
                 },
@@ -423,15 +428,15 @@
                     "desc" : "",
                     "class": "QCheckBox",
                     "grid": {
-                        "row": 0,
-                        "column": 5,
+                        "row": 5,
+                        "column": 0,
                         "rowSpan": 1,
                         "columnSpan": 1
                     },
                     "font": {
                         "family": null,
-                        "pointSize": null,
-                        "weight": null,
+                        "pointSize": 11,
+                        "weight": 50,
                         "italic": false
                     }
                 },
@@ -440,15 +445,15 @@
                     "desc" : "",
                     "class": "QCheckBox",
                     "grid": {
-                        "row": 0,
-                        "column": 6,
+                        "row": 6,
+                        "column": 0,
                         "rowSpan": 1,
                         "columnSpan": 1
                     },
                     "font": {
                         "family": null,
-                        "pointSize": null,
-                        "weight": null,
+                        "pointSize": 11,
+                        "weight": 50,
                         "italic": false
                     }
                 },
@@ -457,15 +462,15 @@
                     "desc" : "",
                     "class": "QCheckBox",
                     "grid": {
-                        "row": 0,
-                        "column": 7,
+                        "row": 7,
+                        "column": 0,
                         "rowSpan": 1,
                         "columnSpan": 1
                     },
                     "font": {
                         "family": null,
-                        "pointSize": null,
-                        "weight": null,
+                        "pointSize": 11,
+                        "weight": 50,
                         "italic": false
                     }
                 },
@@ -474,8 +479,26 @@
                     "desc" : "",
                     "class": "QCheckBox",
                     "grid": {
-                        "row": 0,
-                        "column": 8,
+                        "row": 8,
+                        "column": 0,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": 11,
+                        "weight": 50,
+                        "italic": false
+                    }
+                },
+                "Label_incident_phenomena_warning": {
+                    "text": "Vui lòng chọn sự cố của xe",
+                    "desc" : "",
+                    "class": "QLabel",
+                    "visible": false,
+                    "grid": {
+                        "row": 9,
+                        "column": 0,
                         "rowSpan": 1,
                         "columnSpan": 1
                     },
@@ -492,6 +515,12 @@
             "text": "Hình ảnh sự cố",
             "desc": "",
             "class": "QGroupBox",
+            "font": {
+                "family": null,
+                "pointSize": 16,
+                "weight": 70,
+                "italic": false
+            },
             "children": {
                 "GV_inciden_images": {
                     "desc" : "",
@@ -514,34 +543,49 @@
                             },
                             "children": {
                                 "Insert_image_hints_text": {
-                                    "text" : "",
                                     "desc" : "",
-                                    "position": "center",
-                                    "size": null,
+                                    "scale": 0.98,
                                     "class": "QGraphicsTextItem",
-                                    "root_frame": {
-                                        "Drag_images_hint": {
-                                            "text" : "Drag image here.<br>Or ",
-                                            "desc" : "",
-                                            "curs": 0,
-                                            "class": "str",
-                                            "format": "RichText"
-                                        },
-                                        "Choose_files_hint": {
-                                            "text" : "<b>choose file<b/>.",
-                                            "desc" : "",
-                                            "curs": 1,
-                                            "class": "str",
-                                            "format": "RichText"
+                                    "document": {
+                                        "multi_text": [
+                                            "<STYLE type=\"text/css\">",
+                                            "DIV.mypars {",
+                                            "text-align: center;",
+                                            "font-size: 20px;}",
+                                            "</STYLE>",
+                                            "<BODY>",
+                                            "<DIV class=\"mypars\">",
+                                            "<P style=\"color:red\">Drag image here </P>",
+                                            "<P>Or <b>choose file</b> </P>",
+                                            "</DIV>"
+                                        ],
+                                        "format": "RichText"
+                                    },
+                                    "callback": {
+                                        "chose files mouse over": {
+                                            "rect": {
+                                                "x": 0,
+                                                "y": 0,
+                                                "w": 100,
+                                                "h": 100
+                                            },
+                                            "event": "mouseOver",
+                                            "task": "default"
                                         }
                                     }
                                 },
                                 "Insert_image_hints_rect": {
                                     "desc" : "",
-                                    "geometry": "center",
+                                    "scale": 0.98,
                                     "class": "QGraphicsRectItem",
-                                    "position": "center",
-                                    "scale": 0.98
+                                    "brush": {
+                                        "color": [224,224,224]
+                                    },
+                                    "pen": {
+                                        "color": [12,23,34],
+                                        "style": "DashLine",
+                                        "width": 2
+                                    }
                                 }
                             }
                         }    
