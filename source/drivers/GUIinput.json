@@ -566,8 +566,8 @@
                                             "rect": {
                                                 "x": 0,
                                                 "y": 0,
-                                                "w": 100,
-                                                "h": 100
+                                                "w": 0,
+                                                "h": 0
                                             },
                                             "event": "mouseOver",
                                             "task": "default"

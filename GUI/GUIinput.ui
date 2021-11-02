@@ -539,7 +539,7 @@
       </font>
      </property>
      <property name="placeholderText">
-      <string>Sô điện thoại liên lạc</string>
+      <string>Số điện thoại liên lạc</string>
      </property>
      <property name="clearButtonEnabled">
       <bool>true</bool>

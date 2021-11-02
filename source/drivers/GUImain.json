@@ -241,6 +241,19 @@
                         "rowSpan": 1,
                         "columnSpan": 1
                     },
+                    "action": [{
+                        "name": "missing_value_warning",
+                        "text": "",
+                        "desc" : "",
+                        "tooltip": "Missing value",
+                        "position": "TrailingPosition",
+                        "visible": false,
+                        "icon": {
+                            "name": "",
+                            "path": "source/icon/exclamation_mark.png",
+                            "size": [20,20]
+                        }
+                    }],
                     "font": {
                         "family": null,
                         "pointSize": null,
@@ -258,6 +271,19 @@
                         "rowSpan": 1,
                         "columnSpan": 1
                     },
+                    "action": [{
+                        "name": "missing_value_warning",
+                        "text": "",
+                        "desc" : "",
+                        "tooltip": "Missing value",
+                        "position": "TrailingPosition",
+                        "visible": false,
+                        "icon": {
+                            "name": "",
+                            "path": "source/icon/exclamation_mark.png",
+                            "size": [20,20]
+                        }
+                    }],
                     "font": {
                         "family": null,
                         "pointSize": null,
@@ -275,6 +301,19 @@
                         "rowSpan": 1,
                         "columnSpan": 1
                     },
+                    "action": [{
+                        "name": "missing_value_warning",
+                        "text": "",
+                        "desc" : "",
+                        "tooltip": "Missing value",
+                        "position": "TrailingPosition",
+                        "visible": false,
+                        "icon": {
+                            "name": "",
+                            "path": "source/icon/exclamation_mark.png",
+                            "size": [20,20]
+                        }
+                    }],
                     "font": {
                         "family": null,
                         "pointSize": null,
@@ -292,6 +331,19 @@
                         "rowSpan": 1,
                         "columnSpan": 1
                     },
+                    "action": [{
+                        "name": "missing_value_warning",
+                        "text": "",
+                        "desc" : "",
+                        "tooltip": "Missing value",
+                        "position": "TrailingPosition",
+                        "visible": false,
+                        "icon": {
+                            "name": "",
+                            "path": "source/icon/exclamation_mark.png",
+                            "size": [20,20]
+                        }
+                    }],
                     "font": {
                         "family": null,
                         "pointSize": null,
@@ -309,6 +361,19 @@
                         "rowSpan": 1,
                         "columnSpan": 1
                     },
+                    "action": [{
+                        "name": "missing_value_warning",
+                        "text": "",
+                        "desc" : "",
+                        "tooltip": "Missing value",
+                        "position": "TrailingPosition",
+                        "visible": false,
+                        "icon": {
+                            "name": "",
+                            "path": "source/icon/exclamation_mark.png",
+                            "size": [20,20]
+                        }
+                    }],
                     "font": {
                         "family": null,
                         "pointSize": null,
@@ -326,6 +391,19 @@
                         "rowSpan": 1,
                         "columnSpan": 1
                     },
+                    "action": [{
+                        "name": "missing_value_warning",
+                        "text": "",
+                        "desc" : "",
+                        "tooltip": "Missing value",
+                        "position": "TrailingPosition",
+                        "visible": false,
+                        "icon": {
+                            "name": "",
+                            "path": "source/icon/exclamation_mark.png",
+                            "size": [20,20]
+                        }
+                    }],
                     "font": {
                         "family": null,
                         "pointSize": null,
@@ -343,6 +421,19 @@
                         "rowSpan": 1,
                         "columnSpan": 1
                     },
+                    "action": [{
+                        "name": "missing_value_warning",
+                        "text": "",
+                        "desc" : "",
+                        "tooltip": "Missing value",
+                        "position": "TrailingPosition",
+                        "visible": false,
+                        "icon": {
+                            "name": "",
+                            "path": "source/icon/exclamation_mark.png",
+                            "size": [20,20]
+                        }
+                    }],
                     "font": {
                         "family": null,
                         "pointSize": null,

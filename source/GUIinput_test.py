@@ -88,7 +88,7 @@ class Ui(QtWidgets.QMainWindow):
 
 
 def main():
-    driver_path = r"E:\AutoProject\source\drivers\GUIinput.json"
+    driver_path = r"F:\HK211\Luận Văn\source\drivers\GUIinput.json"
     path = os.path.abspath(os.path.dirname(__file__))
     main_path = os.path.abspath(os.path.join(path, os.pardir))
     driver = json2dict(direct_path=driver_path)
