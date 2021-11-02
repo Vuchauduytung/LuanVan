@@ -649,9 +649,9 @@
                     }  
                 },
                 "PB_xylanh1": {
-                    "value": "0%",
-                    "minimum_value" : "0%",
-                    "maximum_value" : "100%",
+                    "value": "0",
+                    "minimum_value" : "0",
+                    "maximum_value" : "100",
                     "class": "QProgressBar",
                     "grid": {
                         "row": 1,
@@ -667,9 +667,9 @@
                     } 
                 },
                 "PB_xylanh2": {
-                    "value": "0%",
-                    "minimum_value" : "0%",
-                    "maximum_value" : "100%",
+                    "value": "0",
+                    "minimum_value" : "0",
+                    "maximum_value" : "100",
                     "class": "QProgressBar",
                     "grid": {
                         "row": 2,
@@ -685,9 +685,9 @@
                     }
                 },
                 "PB_xylanh3": {
-                    "value": "0%",
-                    "minimum_value" : "0%",
-                    "maximum_value" : "100%",
+                    "value": "0",
+                    "minimum_value" : "0",
+                    "maximum_value" : "100",
                     "class": "QProgressBar",
                     "grid": {
                         "row": 3,
@@ -703,9 +703,9 @@
                     }
                 },
                 "PB_xylanh4": {
-                    "value": "0%",
-                    "minimum_value" : "0%",
-                    "maximum_value" : "100%",
+                    "value": "0",
+                    "minimum_value" : "0",
+                    "maximum_value" : "100",
                     "class": "QProgressBar",
                     "grid": {
                         "row": 4,
