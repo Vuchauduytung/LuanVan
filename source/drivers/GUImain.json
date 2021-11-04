@@ -241,6 +241,19 @@
                         "rowSpan": 1,
                         "columnSpan": 1
                     },
+                    "action": [{
+                        "name": "missing_value_warning",
+                        "text": "",
+                        "desc" : "",
+                        "tooltip": "Missing value",
+                        "position": "TrailingPosition",
+                        "visible": false,
+                        "icon": {
+                            "name": "",
+                            "path": "source/icon/exclamation_mark.png",
+                            "size": [20,20]
+                        }
+                    }],
                     "font": {
                         "family": null,
                         "pointSize": null,
@@ -258,6 +271,19 @@
                         "rowSpan": 1,
                         "columnSpan": 1
                     },
+                    "action": [{
+                        "name": "missing_value_warning",
+                        "text": "",
+                        "desc" : "",
+                        "tooltip": "Missing value",
+                        "position": "TrailingPosition",
+                        "visible": false,
+                        "icon": {
+                            "name": "",
+                            "path": "source/icon/exclamation_mark.png",
+                            "size": [20,20]
+                        }
+                    }],
                     "font": {
                         "family": null,
                         "pointSize": null,
@@ -275,6 +301,19 @@
                         "rowSpan": 1,
                         "columnSpan": 1
                     },
+                    "action": [{
+                        "name": "missing_value_warning",
+                        "text": "",
+                        "desc" : "",
+                        "tooltip": "Missing value",
+                        "position": "TrailingPosition",
+                        "visible": false,
+                        "icon": {
+                            "name": "",
+                            "path": "source/icon/exclamation_mark.png",
+                            "size": [20,20]
+                        }
+                    }],
                     "font": {
                         "family": null,
                         "pointSize": null,
@@ -292,6 +331,19 @@
                         "rowSpan": 1,
                         "columnSpan": 1
                     },
+                    "action": [{
+                        "name": "missing_value_warning",
+                        "text": "",
+                        "desc" : "",
+                        "tooltip": "Missing value",
+                        "position": "TrailingPosition",
+                        "visible": false,
+                        "icon": {
+                            "name": "",
+                            "path": "source/icon/exclamation_mark.png",
+                            "size": [20,20]
+                        }
+                    }],
                     "font": {
                         "family": null,
                         "pointSize": null,
@@ -309,6 +361,19 @@
                         "rowSpan": 1,
                         "columnSpan": 1
                     },
+                    "action": [{
+                        "name": "missing_value_warning",
+                        "text": "",
+                        "desc" : "",
+                        "tooltip": "Missing value",
+                        "position": "TrailingPosition",
+                        "visible": false,
+                        "icon": {
+                            "name": "",
+                            "path": "source/icon/exclamation_mark.png",
+                            "size": [20,20]
+                        }
+                    }],
                     "font": {
                         "family": null,
                         "pointSize": null,
@@ -326,6 +391,19 @@
                         "rowSpan": 1,
                         "columnSpan": 1
                     },
+                    "action": [{
+                        "name": "missing_value_warning",
+                        "text": "",
+                        "desc" : "",
+                        "tooltip": "Missing value",
+                        "position": "TrailingPosition",
+                        "visible": false,
+                        "icon": {
+                            "name": "",
+                            "path": "source/icon/exclamation_mark.png",
+                            "size": [20,20]
+                        }
+                    }],
                     "font": {
                         "family": null,
                         "pointSize": null,
@@ -343,6 +421,19 @@
                         "rowSpan": 1,
                         "columnSpan": 1
                     },
+                    "action": [{
+                        "name": "missing_value_warning",
+                        "text": "",
+                        "desc" : "",
+                        "tooltip": "Missing value",
+                        "position": "TrailingPosition",
+                        "visible": false,
+                        "icon": {
+                            "name": "",
+                            "path": "source/icon/exclamation_mark.png",
+                            "size": [20,20]
+                        }
+                    }],
                     "font": {
                         "family": null,
                         "pointSize": null,
@@ -540,8 +631,9 @@
                     }     
                 },
                 "DSB_time": {
-                    "text": "",
-                    "desc" : "",
+                    "number": "0.00",
+                    "minimum_number" : "0.00",
+                    "maximum_number" : "99.99",
                     "class": "QDoubleSpinBox",
                     "grid": {
                         "row": 0,
@@ -557,8 +649,9 @@
                     }  
                 },
                 "PB_xylanh1": {
-                    "text": "",
-                    "desc" : "",
+                    "value": "0",
+                    "minimum_value" : "0",
+                    "maximum_value" : "100",
                     "class": "QProgressBar",
                     "grid": {
                         "row": 1,
@@ -574,8 +667,9 @@
                     } 
                 },
                 "PB_xylanh2": {
-                    "text": "",
-                    "desc" : "",
+                    "value": "0",
+                    "minimum_value" : "0",
+                    "maximum_value" : "100",
                     "class": "QProgressBar",
                     "grid": {
                         "row": 2,
@@ -591,8 +685,9 @@
                     }
                 },
                 "PB_xylanh3": {
-                    "text": "",
-                    "desc" : "",
+                    "value": "0",
+                    "minimum_value" : "0",
+                    "maximum_value" : "100",
                     "class": "QProgressBar",
                     "grid": {
                         "row": 3,
@@ -608,8 +703,9 @@
                     }
                 },
                 "PB_xylanh4": {
-                    "text": "",
-                    "desc" : "",
+                    "value": "0",
+                    "minimum_value" : "0",
+                    "maximum_value" : "100",
                     "class": "QProgressBar",
                     "grid": {
                         "row": 4,

@@ -1,4 +1,5 @@
 import math
+
 def n(Temperature,Compression_ratio):
 
     n = 1
