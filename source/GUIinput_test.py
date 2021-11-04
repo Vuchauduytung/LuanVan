@@ -8,6 +8,7 @@ from modules.library.IO_support import *
 from modules.library.pyqt_support import *
 from modules.library.pyqt_event import *
 from modules.library.pyqt_extension_method import *
+from modules.library.method_support import *
 
 
 class Ui(QtWidgets.QMainWindow):
@@ -70,21 +71,21 @@ class Ui(QtWidgets.QMainWindow):
         self.setMouseTracking(True)
         self.p = QPointF()
 
-    def eventFilter(self, obj, event):
-        """Bắt event của Application
+    # def eventFilter(self, obj, event):
+    #     """Bắt event của Application
 
-        Args:
-            obj (Any): object nhận được event
-            event (QEvent): event bắt được
+    #     Args:
+    #         obj (Any): object nhận được event
+    #         event (QEvent): event bắt được
 
-        Returns:
-            bool: 
-                True, nếu muốn dừng nhận các event kế tiếp \n
-                False, nếu muốn tiếp tục bắt event
-        """
-        return MouseEvent.run(obj=obj,
-                              event=event,
-                              point=self.p)
+    #     Returns:
+    #         bool: 
+    #             True, nếu muốn dừng nhận các event kế tiếp \n
+    #             False, nếu muốn tiếp tục bắt event
+    #     """
+    #     return MouseEvent.run(obj=obj,
+    #                           event=event,
+    #                           point=self.p)
 
 
 def main():

@@ -34,3 +34,8 @@ PenStyle:
     "DotLine": đường dạng ". ."
     "DashDotLine": đường dạng "- . -"
     "DashDotDotLine": "- . . -"
+
+Button:
+    "LeftButton": chuột trái
+    "RightButton": chuột phải
+    "MiddleButton": con lăn

@@ -542,6 +542,19 @@
                                 "h": null
                             },
                             "children": {
+                                "Insert_image_hints_rect": {
+                                    "desc" : "",
+                                    "scale": 0.98,
+                                    "class": "QGraphicsRectItem",
+                                    "brush": {
+                                        "color": [224,224,224]
+                                    },
+                                    "pen": {
+                                        "color": [50, 80, 168],
+                                        "style": "DashLine",
+                                        "width": 2
+                                    }
+                                },
                                 "Insert_image_hints_text": {
                                     "desc" : "",
                                     "scale": 0.98,
@@ -551,41 +564,43 @@
                                             "<STYLE type=\"text/css\">",
                                             "DIV.mypars {",
                                             "text-align: center;",
-                                            "font-size: 20px;}",
+                                            "font-size: 20px;",
+                                            "}",
                                             "</STYLE>",
                                             "<BODY>",
                                             "<DIV class=\"mypars\">",
-                                            "<P style=\"color:red\">Drag image here </P>",
-                                            "<P>Or <b>choose file</b> </P>",
+                                            "<br /><br /><br /><br /><br />",
+                                            "<br /><br /><br /><br />",
+                                            "<P>Drag image here </P>",
+                                            "<P>Or <span style=\"color:blue\"> <b>choose file</b> </P>",
                                             "</DIV>"
                                         ],
                                         "format": "RichText"
-                                    },
-                                    "callback": {
-                                        "chose files mouse over": {
-                                            "rect": {
-                                                "x": 0,
-                                                "y": 0,
-                                                "w": 100,
-                                                "h": 100
-                                            },
-                                            "event": "mouseOver",
-                                            "task": "default"
-                                        }
                                     }
+                                }
+                            },
+                            "callback": {
+                                "choose files mouse over": {
+                                    "rect": {
+                                        "x": 0,
+                                        "y": 0,
+                                        "w": 100,
+                                        "h": 100
+                                    },
+                                    "event": "mouseOver",
+                                    "task": "default",
+                                    "button": "left"
                                 },
-                                "Insert_image_hints_rect": {
-                                    "desc" : "",
-                                    "scale": 0.98,
-                                    "class": "QGraphicsRectItem",
-                                    "brush": {
-                                        "color": [224,224,224]
+                                "choose files mouse leave": {
+                                    "rect": {
+                                        "x": 0,
+                                        "y": 0,
+                                        "w": 1000,
+                                        "h": 1000
                                     },
-                                    "pen": {
-                                        "color": [12,23,34],
-                                        "style": "DashLine",
-                                        "width": 2
-                                    }
+                                    "event": "mouseLeave",
+                                    "task": "default",
+                                    "button": "LeftButton"
                                 }
                             }
                         }    
