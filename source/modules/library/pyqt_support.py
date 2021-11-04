@@ -2,6 +2,7 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 from task import *
+from method_support import *
 
 
 class PyQtSupport:
@@ -70,37 +71,9 @@ class PyQtSupport:
                                   h=h)
             return 0
 
-    @staticmethod
-    def get_size(obj):
-        switchers = {
-            QLabel: lambda obj: obj.geometry(),
-            QLineEdit: lambda obj: obj.geometry(),
-            QGroupBox: lambda obj: obj.geometry(),
-            QPushButton: lambda obj: obj.geometry(),
-            QCheckBox: lambda obj: obj.geometry(),
-            QGraphicsView: lambda obj: obj.geometry(),
-            QGraphicsScene: lambda scene: scene.sceneRect(),
-            QGraphicsTextItem: lambda text_item: text_item.document().size(),
-            QGraphicsRectItem: lambda rect_item: rect_item.rect(),
-            QAction: None,
-            QDateEdit: lambda obj: obj.geometry(),
-        }
-        FUNCTION = switchers.get(obj.__class__)
-        if FUNCTION is None:
-            return None
-        else:
-            result = FUNCTION(obj)
-            return (result.width(), result.height())
-
-    @staticmethod
-    def QGraphicsTextItem_get_size(obj):
-        size = obj.document().size()
-        return (size.width(), size.height())
-
-    @staticmethod
-    def QGraphicsRectItem_get_size(obj):
-        rect = obj.rect()
-        return (rect.width(), rect.height())
+    @classmethod
+    def get_size(cls, obj):
+        return cls.get_rect(obj)
 
     @classmethod
     def get_value_from_base_class(cls, CLASS, sw: dict):
@@ -259,7 +232,78 @@ class PyQtSupport:
                    size[0],
                    size[1])
         return 0
+    
+    @classmethod
+    def get_rect(cls, obj):
+        switchers = {
+            QLabel: lambda obj: obj.geometry(),
+            QLineEdit: lambda obj: obj.geometry(),
+            QGroupBox: lambda obj: obj.geometry(),
+            QPushButton: lambda obj: obj.geometry(),
+            QCheckBox: lambda obj: obj.geometry(),
+            QGraphicsView: lambda obj: obj.geometry(),
+            QGraphicsScene: lambda scene: scene.sceneRect(),
+            QGraphicsTextItem: lambda text_item: cls.QGraphicsTextItem_get_rect(text_item),
+            QGraphicsRectItem: lambda rect_item: rect_item.rect(),
+            QAction: None,
+            QDateEdit: lambda obj: obj.geometry(),
+        }
+        FUNCTION = switchers.get(obj.__class__)
+        if FUNCTION is None:
+            return None
+        else:
+            rect = FUNCTION(obj)
+            return rect
+        
+    @staticmethod
+    def QGraphicsTextItem_get_rect(text_item):
+        size = text_item.document().size()
+        x = text_item.x()
+        y = text_item.y()
+        return QRect(x, 
+                     y, 
+                     size.width(), 
+                     size.height)
+        
+    @classmethod
+    def set_scale(cls, obj, parent_rect: QRect, scale: float):
+        switchers = {
+            QGraphicsItem: cls.QGraphicsItem_set_scale
+        }
+        FUNCTION = PyQtSupport.get_value_from_base_class(CLASS=obj.__class__,
+                                                         sw=switchers)
+        assert FUNCTION is not None, "class {cls} doesn't have scale property"\
+            .format(cls=obj.__class__)
+        return FUNCTION(obj,
+                        parent_rect,
+                        scale)
 
+    @classmethod
+    def QGraphicsItem_set_scale(cls, obj, parent_rect: QRect, scale: float):
+        switchers = {
+            QGraphicsTextItem: cls.QGraphicsTextItem_set_rect,
+            QGraphicsRectItem: lambda obj, parent_rect: obj.setRect(parent_rect),
+        }
+        origin = MethodSupport.get_origin(parent_rect)
+        obj.setTransformOriginPoint(origin)
+        CLASS = obj.__class__
+        FUNCTION = switchers.get(CLASS)
+        FUNCTION(obj, parent_rect)
+        obj.setScale(scale)
+        return 0
+        
+    @staticmethod
+    def QGraphicsTextItem_set_rect(obj, rect: QRect):
+        obj.setPos(rect.x(),
+                   rect.y())
+        obj.document().setPageSize(QSizeF(rect.width(),
+                                   rect.height()))
+        return 0
+    
+
+        
+        
+        
 
 class QGraphicsTextItem_callback:
 

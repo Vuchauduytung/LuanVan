@@ -3,12 +3,13 @@ from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 import os
 import numpy as np
-from modules.library.IO_support import *
-from modules.library.pyqt_support import *
-from modules.library.pyqt_event import *
+from IO_support import *
+from pyqt_support import *
+from pyqt_event import *
+from method_support import *
 from task import *
 
-def childConfig(self, child_prop: dict, GUI, main_path: str):
+def childConfig(self, child_prop: dict, GUI: QMainWindow, main_path: str):
     if child_prop is None:
         return -1
     else:
@@ -67,10 +68,22 @@ def childConfig(self, child_prop: dict, GUI, main_path: str):
             obj.setup_callback = setup_callback_lambda(obj)
             obj.setup_callback(callback_prop=callback_prop,
                                GUI=GUI)
+            self.get_rect = get_rect_lambda(self)
+            parent_rect = self.get_rect()
+            scale = prop.get("scale")
+            obj.setup_scale = setup_scale_lambda(obj)
+            obj.setup_scale(scale=scale,
+                            parent_rect=parent_rect)
             obj.setup_date = setup_date_lambda(obj)
             obj.setup_date(date_str=date,
                            minimum_date_str=minimum_date,
                            maximum_date_str=maximum_date)
+            brush_prop = prop.get("brush")
+            pen_prop = prop.get("pen")
+            obj.setup_brush = setup_brush_lambda(obj)
+            obj.setup_brush(brush_prop=brush_prop)
+            obj.setup_pen = setup_pen_lambda(obj)
+            obj.setup_pen(pen_prop=pen_prop)
 
             if obj.__class__ not in [QGraphicsScene, QGraphicsTextItem, QGraphicsRectItem]:
                 obj.grid_layout = QGridLayout()
@@ -123,11 +136,19 @@ def create_nameless_object(self, cls, name):
     heritage = choice[1]
     if heritage:
         obj = cls(self)
+        if obj.__class__ in [QGraphicsScene]:
+            self.setScene(obj)
     else:
         obj = cls()
         self.addItem(obj)
-    if obj.__class__ in [QGraphicsScene]:
-        self.setScene(obj)
+    if self.__class__ in [QGraphicsView]:
+        size = self.size()
+        obj.setSceneRect(size.width()*0.01, 
+                         size.height()*0.01, 
+                         size.width()*0.98, 
+                         size.height()*0.98)
+    else:
+        pass
     if TYPE in self.nameless_child.keys():
         self.nameless_child[TYPE].update({
             name: obj
@@ -347,25 +368,36 @@ def get_date_from_String(date_str):
     return minimum_date
 
 
-def setup_callback(self, callback_prop: dict, GUI):
+def setup_callback(self, callback_prop: dict, GUI: QMainWindow):
     if callback_prop is None:
         return -1
     else:
         assert isinstance(callback_prop, dict), "Invalid callback"
-        self.installEventFilter(GUI)
+        # self.installEventFilter(GUI)
         mouse_event = MouseEvent(obj=self)
         for name, event_prop in callback_prop.items():
-            rect = event_prop.get("rect")
-            assert isinstance(rect, dict), "Rect is invalid"
-            task = event_prop.get("task")
-            assert isinstance(task, str) and len(
-                task) > 0, "Task name is invalid"
-            event = event_prop.get("event")
-            assert isinstance(event, str), "event is invalid"
+            rect_prop = event_prop.get("rect")
+            rect = MethodSupport.create_rect(rect_prop=rect_prop)
+            # assert isinstance(rect, dict), "Rect is invalid"
+            task_name = event_prop.get("task")
+            task = MethodSupport.get_task(task_name=task_name)
+            # assert isinstance(task, str) and len(
+            #     task) > 0, "Task name is invalid"
+            event_type = event_prop.get("event")
+            button_name = event_prop.get("button")
+            button = MethodSupport.get_button(button_name=button_name)
+            # assert isinstance(event, str), "event is invalid"
+            # mouse_event.add_event(name=name,
+            #                       event=event,
+            #                       task=task,
+            #                       rect=rect)
             mouse_event.add_event(name=name,
-                                  event=event,
-                                  task=task,
-                                  rect=rect)
+                                  event_type=event_type,
+                                  button=button,
+                                  rect=rect,
+                                  task=task)
+            mouse_event.setup_mouse_event(UI=GUI)
+
 
 
 def setup_document(self, document: dict):
@@ -379,8 +411,6 @@ def setup_document(self, document: dict):
             para = " ".join(multi_text)
             fmt_str = document.get("format")
             text_document = self.document()
-            scale = document.get("scale")
-
             switchers = {
                 "PlainText": text_document.setPlainText,
                 "RichText": text_document.setHtml,
@@ -393,7 +423,55 @@ def setup_document(self, document: dict):
                 return FUNCTION(para)
         else:
             return -1
-
+        
+def get_rect(self):
+    return PyQtSupport.get_rect(self)
+    
+        
+def setup_scale(self, scale: float, parent_rect: tuple):
+    if scale is None:
+        return -1
+    else:
+        assert isinstance(scale, float), "scale must be a float number"
+        return PyQtSupport.set_scale(obj=self, 
+                                     parent_rect=parent_rect, 
+                                     scale=scale)
+        
+def setup_brush(self, brush_prop: dict):
+    if brush_prop is None:
+        return -1 
+    else:
+        color_val = brush_prop.get('color')
+        color = MethodSupport.create_color(color_val=color_val)
+        brush = QBrush(color)
+        brush.setColor(color)
+        self.setBrush(brush)
+        return 0
+    
+def setup_pen(self, pen_prop: dict):
+    if pen_prop is None:
+        return -1
+    else:
+        color_val = pen_prop.get('color')
+        color = MethodSupport.create_color(color_val=color_val)
+        style_prop = pen_prop.get('style')
+        switchers = {
+            "NoPen": Qt.PenStyle.NoPen,
+            "SolidLine": Qt.PenStyle.SolidLine,
+            "DashLine": Qt.PenStyle.DashLine,
+            "DotLine": Qt.PenStyle.DotLine,
+            "DashDotLine": Qt.PenStyle.DashDotLine,
+            "DashDotDotLine": Qt.PenStyle.DashDotDotLine,
+        }
+        style = switchers.get(style_prop)
+        width = pen_prop.get('width')
+        assert isinstance(width, float) or isinstance(width, int), "width must be a number"
+        pen = QPen()
+        pen.setColor(color)
+        pen.setStyle(style)
+        pen.setWidth(width)
+        self.setPen(pen)
+        return 0
 
 def childConfig_lambda(self):
     return lambda child_prop, GUI, main_path: childConfig(self,
@@ -455,3 +533,15 @@ def setup_callback_lambda(self):
 def setup_document_lambda(self):
     return lambda document: setup_document(self,
                                            document)
+    
+def setup_scale_lambda(self):
+    return lambda scale, parent_rect: setup_scale(self, scale, parent_rect)
+
+def get_rect_lambda(self):
+    return lambda: get_rect(self)
+
+def setup_brush_lambda(self):
+    return lambda brush_prop: setup_brush(self, brush_prop)
+
+def setup_pen_lambda(self):
+    return lambda pen_prop: setup_pen(self, pen_prop)

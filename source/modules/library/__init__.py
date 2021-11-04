@@ -10,3 +10,5 @@ import IO_support
 import pyqt_support
 import pyqt_event
 import task
+import method_support
+import pyqt_extension_method

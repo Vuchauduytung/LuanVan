@@ -1,6 +1,7 @@
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
+from pyqt_support import *
 
 
 class Task:
@@ -23,6 +24,6 @@ class Task:
         return task()
 
     @classmethod
-    def default_task(cls):
+    def default_task(cls, _):
         print("Welcome to default task")
         return True

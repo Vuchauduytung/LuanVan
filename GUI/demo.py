@@ -56,26 +56,32 @@ class Ui(QtWidgets.QMainWindow):
         
         # show line edit and start event loop
         graphicView = self.findChild(QtWidgets.QGraphicsView, 'GV_inciden_images')
-        self.setMouseTracking(True)
+        # self.setMouseTracking(True)
         
         # pix = QPixmap(r"C:\Users\Lenovo\Pictures\Quang\6.jpg")
         # item = QGraphicsPixmapItem(pix)
-        scene = QtWidgets.QGraphicsScene()
+        scene = QtWidgets.QGraphicsScene(graphicView)
         scene_size = (graphicView.size().width(), graphicView.size().height())
         # scene.addItem(item)
-        
+        # graphicView.setSceneRect(0, 0, scene_size[0], scene_size[1])
         Color = QColor(224,224,224)
-        greenBrush = QBrush(Color)
-        pen = QPen(Qt.blue)
+        greenBrush = QBrush()
+        greenBrush.setColor(Color)
+        color1 = QColor(50, 80, 168)
+        pen = QPen(color1)
         pen.setStyle(Qt.PenStyle.DashLine)
         pen.setWidth(2)
-        rect = scene.addRect(0, 0, scene_size[0], scene_size[1], pen, greenBrush)
+        rect = QGraphicsRectItem(0, 0, scene_size[0], scene_size[1])
+        rect.setPen(pen)
+        rect.setBrush(greenBrush)
+        scene.addItem(rect)
         rect.setScale(0.98)
+        # graphicView.fitInView(scene.sceneRect())
                 
         x_center = graphicView.size().width()/2
         y_center = graphicView.size().height()/2
         
-        scene.mousePressEvent = mousePressEvent_lambda(self)
+        scene.mouseMoveEvent = mousePressEvent_lambda(self)
         # active_text.mousePressEvent = mousePressEvent
         
         graphicView.setScene(scene)
@@ -104,7 +110,7 @@ class Ui(QtWidgets.QMainWindow):
             '''
                 <STYLE type="text/css">
                 DIV.mypars {
-                    text-align: center;    
+                    text-align: center; 
                 }
                 </STYLE>
                 <BODY>
@@ -133,8 +139,9 @@ class Ui(QtWidgets.QMainWindow):
         TextItem.installEventFilter(self)
         l = QAction(GB_cus_info)
         # l.setAccessibleName("Hello")
-        TextItem.document().setPageSize(QSizeF(scene_size[0]*0.9, scene_size[1]*0.9))
-        # self.p = QPointF()
+        # TextItem.document().setPageSize(QSizeF(scene_size[0]*0.9, scene_size[1]*0.9))
+        # TextItem.update(0, 0, 1, 1)
+        self.p = QPointF()
         
         DE_fixing_date = self.findChild(QtWidgets.QDateEdit, 'DE_fixing_date')
         DE_fixing_date.setAccessibleName("Hello")
@@ -144,17 +151,17 @@ class Ui(QtWidgets.QMainWindow):
         DE_fixing_date.setDate(date)
         self.show()
         
-    def eventFilter(self, object, event):
-        if event.type() == QEvent.GraphicsSceneHoverMove:
-            print("Mouse is over the label")
-            self.stop = True
-            print('program stop is', self.stop)
-            return True
-        elif event.type() == QEvent.GraphicsSceneHoverLeave:
-            print("Mouse is not over the label")
-            self.stop = False
-            print('program stop is', self.stop)
-        return False    
+    # def eventFilter(self, object, event):
+    #     if event.type() == QEvent.GraphicsSceneHoverMove:
+    #         print("Mouse is over the label")
+    #         self.stop = True
+    #         print('program stop is', self.stop)
+    #         return True
+    #     elif event.type() == QEvent.GraphicsSceneHoverLeave:
+    #         print("Mouse is not over the label")
+    #         self.stop = False
+    #         print('program stop is', self.stop)
+    #     return False    
         
 
 def mousePressEvent(self, event):
@@ -170,6 +177,8 @@ def mousePressEvent(self, event):
         if cur_pos > self.my_callback.curs_min and cur_pos < self.my_callback.curs_max:
             print("chose file callback")
         print(cur_pos)
+    else: 
+        print("Mouse move event")
 
 # def eventFilter(self, object, event):
 #     if event.type() == QEvent.Enter:
