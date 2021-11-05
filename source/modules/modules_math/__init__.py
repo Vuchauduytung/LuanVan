@@ -9,5 +9,5 @@ sys.path.append(path)
 
 ## Tuy co ung bien
 # User modules()
-import math
+import math_analysis
 import fix
