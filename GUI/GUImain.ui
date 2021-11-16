@@ -717,7 +717,7 @@
     <widget class="QTableWidget" name="TW_table">
      <property name="geometry">
       <rect>
-       <x>0</x>
+       <x>10</x>
        <y>30</y>
        <width>681</width>
        <height>271</height>
