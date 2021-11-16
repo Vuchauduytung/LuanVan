@@ -12,7 +12,7 @@ class PyQtSupport:
     """
 
     @staticmethod
-    def get_class(class_str: str):
+    def get_class(cls_name: str):
         switchers = {
             "QLabel": QLabel,
             "QLineEdit": QLineEdit,
@@ -26,7 +26,7 @@ class PyQtSupport:
             "QAction": QAction,
             "QDateEdit": QDateEdit,
         }
-        return switchers.get(class_str)
+        return switchers.get(cls_name)
 
     @classmethod
     def add_icon(cls, obj, icon: QIcon, size: list):
@@ -119,7 +119,7 @@ class PyQtSupport:
             return 0
 
     @classmethod
-    def set_text(cls, obj, text, format_str):
+    def set_text(cls, obj, text: str, format_str: str):
         CLASS = obj.__class__
         switchers = {
             QLabel: cls.QLabel_set_text,
@@ -143,7 +143,7 @@ class PyQtSupport:
                             format_str)
 
     @classmethod
-    def set_visible(cls, obj, visible):
+    def set_visible(cls, obj, visible: bool):
         CLASS = obj.__class__
         switchers = {
             QLabel: cls.show_hide,
@@ -166,13 +166,13 @@ class PyQtSupport:
                             visible)
 
     @staticmethod
-    def add_icon_use_pixmap(label, size, icon):
+    def add_icon_use_pixmap(label, size: list, icon: QIcon):
         pixmap = icon.pixmap(QSize(size[0], size[1]))
         label.setPixmap(pixmap)
         return 0
 
     @staticmethod
-    def QWidget_set_geometry(obj, x, y, w, h):
+    def QWidget_set_geometry(obj, x: float, y: float, w: float, h: float):
         obj.setGeometry(x,
                         y,
                         w,
@@ -180,7 +180,7 @@ class PyQtSupport:
         return 0
 
     @staticmethod
-    def QGraphicsItem_set_geometry(obj, x, y, w, h):
+    def QGraphicsItem_set_geometry(obj, x: float, y: float, w: float, h: float):
         obj.update(x=x,
                    y=y,
                    width=w,
@@ -188,7 +188,7 @@ class PyQtSupport:
         return 0
 
     @staticmethod
-    def QLabel_set_text(obj, text, format_str):
+    def QLabel_set_text(obj, text: str, format_str: str):
         obj.setText(text)
         switchers = {
             "PlainText": Qt.PlainText,
@@ -204,7 +204,7 @@ class PyQtSupport:
             return 0
 
     @staticmethod
-    def QGraphicsText_set_text(obj, text, format_str):
+    def QGraphicsText_set_text(obj, text: str, format_str: str):
         switchers = {
             "PlainText": obj.setPlainText,
             "RichText": obj.setHtml,
@@ -217,7 +217,7 @@ class PyQtSupport:
         return 0
 
     @staticmethod
-    def show_hide(obj, visible):
+    def show_hide(obj, visible: bool):
         if visible:
             obj.show()
         else:
@@ -225,7 +225,7 @@ class PyQtSupport:
         return 0
 
     @staticmethod
-    def set_pos_size(obj, position, size):
+    def set_pos_size(obj, position: list, size: list):
         obj.setTransformOriginPoint(size[0], size[1])
         obj.update(position[0],
                    position[1],
@@ -256,7 +256,7 @@ class PyQtSupport:
             return rect
         
     @staticmethod
-    def QGraphicsTextItem_get_rect(text_item):
+    def QGraphicsTextItem_get_rect(text_item: QGraphicsTextItem):
         size = text_item.document().size()
         x = text_item.x()
         y = text_item.y()
@@ -300,16 +300,6 @@ class PyQtSupport:
                                    rect.height()))
         return 0
     
-
-        
-        
-        
-
-class QGraphicsTextItem_callback:
-
-    def __init__(self, curs_min: float, curs_max: float):
-        self.curs_min = curs_min
-        self.curs_max = curs_max
 
 
 

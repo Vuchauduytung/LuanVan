@@ -16,7 +16,7 @@ class Ui(QtWidgets.QMainWindow):
     Application
     """
 
-    def __init__(self, main_path, driver):
+    def __init__(self, main_path: str, driver: dict):
         super(Ui, self).__init__()
         gui_loc = driver.get("path")
         gui_path = os.path.abspath(os.path.join(main_path, gui_loc))
@@ -48,11 +48,11 @@ class Ui(QtWidgets.QMainWindow):
         self.desc = driver.get("desc")
         self.setWindowTitle(driver.get("text"))
 
-        dim = driver.get("dimension")
+        dim: dict = driver.get("dimension")
         if dim is not None:
             self.resize(dim.get("width"), dim.get("height"))
 
-        icon_prop = driver.get("icon")
+        icon_prop: dict = driver.get("icon")
         icon_path = icon_prop.get("path")
         if icon_path is not None:
             pixmap = QPixmap(os.path.abspath(os.path.join(self.main_path, icon_path)))

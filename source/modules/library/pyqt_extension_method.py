@@ -9,6 +9,7 @@ from pyqt_event import *
 from method_support import *
 from task import *
 
+
 def childConfig(self, child_prop: dict, GUI: QMainWindow, main_path: str):
     if child_prop is None:
         return -1
@@ -16,88 +17,105 @@ def childConfig(self, child_prop: dict, GUI: QMainWindow, main_path: str):
         assert isinstance(child_prop, dict), "'child' must be in dict type"
         self.nameless_child = {}
         self.setup_grid = setup_grid_lambda(self)
+        if self.__class__ not in [QGraphicsScene, QGraphicsTextItem, QGraphicsRectItem]:
+            self.grid_layout = QGridLayout()
+            self.setLayout(self.grid_layout)
         for name, prop in child_prop.items():
-            class_str = prop.get("class")
-            CLASS = PyQtSupport.get_class(class_str=class_str)
+            cls_name = prop.get("class")
+            CLASS = PyQtSupport.get_class(cls_name=cls_name)
             assert CLASS is not None, "Unregconize class"
-
             obj = GUI.create_object(cls=CLASS,
                                     name=name,
                                     parent=self)
-
-            icon_prop = prop.get("icon")
-            setup_icon(obj=obj,
-                       icon_prop=icon_prop,
-                       main_path=main_path)
-
-            geometry_prop = prop.get("geometry")
-            setup_geometry(obj=obj,
-                           geometry_prop=geometry_prop)
-            font_prop = prop.get("font")
-            setup_font(obj=obj,
-                       font_prop=font_prop)
-            text = prop.get("text")
-            format_str = prop.get("format")
-            setup_text(obj=obj,
-                       text=text,
-                       format_str=format_str)
+            obj.common_config = common_config_lambda(obj)
+            obj.common_config(prop=prop,
+                              main_path=main_path,
+                              GUI=GUI)
+            self.get_rect = get_rect_lambda(self)
+            rect = self.get_rect()
+            obj.specific_config = specific_config_lambda(obj)
+            obj.specific_config(prop=prop,
+                                main_path=main_path,
+                                GUI=GUI,
+                                parent_rect=rect)
             grid_prop = prop.get("grid")
-
             self.setup_grid(obj=obj,
                             grid_prop=grid_prop)
-            visible = prop.get("visible")
-            setup_visible(obj=obj,
-                          visible=visible)
-            position_prop = prop.get("position")
-            size_prop = prop.get("size")
-            obj.setup_pos_size = setup_pos_size_lambda(obj)
-            obj.setup_pos_size(obj=obj,
-                               position_prop=position_prop,
-                               size_prop=size_prop)
-            action_prop = prop.get("action")
-            obj.setup_action = setup_action_lambda(obj)
-            obj.setup_action(action_prop=action_prop,
-                             main_path=main_path,
-                             UI=GUI)
-            date = prop.get("date")
-            minimum_date = prop.get("minimum_date")
-            maximum_date = prop.get("maximum_date")
-            callback_prop = prop.get("callback")
-            document = prop.get("document")
-            obj.setup_document = setup_document_lambda(obj)
-            obj.setup_document(document=document)
-            obj.setup_callback = setup_callback_lambda(obj)
-            obj.setup_callback(callback_prop=callback_prop,
-                               GUI=GUI)
-            self.get_rect = get_rect_lambda(self)
-            parent_rect = self.get_rect()
-            scale = prop.get("scale")
-            obj.setup_scale = setup_scale_lambda(obj)
-            obj.setup_scale(scale=scale,
-                            parent_rect=parent_rect)
-            obj.setup_date = setup_date_lambda(obj)
-            obj.setup_date(date_str=date,
-                           minimum_date_str=minimum_date,
-                           maximum_date_str=maximum_date)
-            brush_prop = prop.get("brush")
-            pen_prop = prop.get("pen")
-            obj.setup_brush = setup_brush_lambda(obj)
-            obj.setup_brush(brush_prop=brush_prop)
-            obj.setup_pen = setup_pen_lambda(obj)
-            obj.setup_pen(pen_prop=pen_prop)
-
-            if obj.__class__ not in [QGraphicsScene, QGraphicsTextItem, QGraphicsRectItem]:
-                obj.grid_layout = QGridLayout()
-                obj.setLayout(obj.grid_layout)
-            obj.childConfig = childConfig_lambda(obj)
-            obj.childConfig(child_prop=prop.get("children"),
-                            GUI=GUI,
-                            main_path=main_path)
         return 0
 
-# def common_config(self, child_prop: dict, GUI: QMainWindow, main_path: str):
 
-def create_object(self, cls, name, parent):
+def common_config(self, prop: dict, main_path: str, GUI: QMainWindow):
+    icon_prop = prop.get("icon")
+    setup_icon(obj=self,
+               icon_prop=icon_prop,
+               main_path=main_path)
+    geometry_prop = prop.get("geometry")
+    setup_geometry(obj=self,
+                   geometry_prop=geometry_prop)
+    font_prop = prop.get("font")
+    setup_font(obj=self,
+               font_prop=font_prop)
+    text = prop.get("text")
+    format_str = prop.get("format")
+    setup_text(obj=self,
+               text=text,
+               format_str=format_str)
+    visible = prop.get("visible")
+    setup_visible(obj=self,
+                  visible=visible)
+    position_prop = prop.get("position")
+    size_prop = prop.get("size")
+    self.setup_pos_size = setup_pos_size_lambda(self)
+    self.setup_pos_size(obj=self,
+                        position_prop=position_prop,
+                        size_prop=size_prop)
+    callback_prop = prop.get("callback")
+    self.setup_callback = setup_callback_lambda(self)
+    self.setup_callback(callback_prop=callback_prop,
+                        GUI=GUI)
+    self.childConfig = childConfig_lambda(self)
+    self.childConfig(child_prop=prop.get("children"),
+                     GUI=GUI,
+                     main_path=main_path)
+
+
+def specific_config(self, prop: dict, main_path: str, GUI: QMainWindow, parent_rect: float):
+    if self.__class__ == QLineEdit:
+        action_prop = prop.get("action")
+        self.setup_action = setup_action_lambda(self)
+        self.setup_action(action_prop=action_prop,
+                          main_path=main_path,
+                          UI=GUI)
+    elif self.__class__ == QTimeEdit:
+        date = prop.get("date")
+        minimum_date = prop.get("minimum_date")
+        maximum_date = prop.get("maximum_date")
+        self.setup_date = setup_date_lambda(self)
+        self.setup_date(date_str=date,
+                        minimum_date_str=minimum_date,
+                        maximum_date_str=maximum_date)
+    elif self.__class__ == QGraphicsTextItem:
+        document = prop.get("document")
+        self.setup_document = setup_document_lambda(self)
+        self.setup_document(document=document)
+        scale = prop.get("scale")
+        self.setup_scale = setup_scale_lambda(self)
+        self.setup_scale(scale=scale,
+                         parent_rect=parent_rect)
+    elif self.__class__ == QGraphicsRectItem:
+        brush_prop = prop.get("brush")
+        pen_prop = prop.get("pen")
+        self.setup_brush = setup_brush_lambda(self)
+        self.setup_brush(brush_prop=brush_prop)
+        self.setup_pen = setup_pen_lambda(self)
+        self.setup_pen(pen_prop=pen_prop)
+        scale = prop.get("scale")
+        self.setup_scale = setup_scale_lambda(self)
+        self.setup_scale(scale=scale,
+                         parent_rect=parent_rect)
+
+
+def create_object(self, cls, name: str, parent):
     obj = self.findChild(cls, name)
     if obj is not None:
         return obj
@@ -121,13 +139,13 @@ def create_object(self, cls, name, parent):
                                parent)
 
 
-def create_named_object(self, cls, name, _):
+def create_named_object(self, cls, name: str, _):
     obj = cls(self)
     obj.setAccessibleName(name)
     return obj
 
 
-def create_nameless_object(self, cls, name, parent):
+def create_nameless_object(self, cls, name: str, parent):
     switchers = {
         QGraphicsScene: True,
         QGraphicsTextItem: False,
@@ -135,20 +153,20 @@ def create_nameless_object(self, cls, name, parent):
         QAction: True
     }
     heritage = switchers.get(cls)
-    # TYPE = choice[0]
-    # heritage = choice[1]
     if heritage:
         obj = cls(self)
         if obj.__class__ in [QGraphicsScene]:
+            parent: QGraphicsView
             parent.setScene(obj)
     else:
+        parent: QGraphicsScene
         obj = cls()
         parent.addItem(obj)
     if parent.__class__ in [QGraphicsView]:
         size = parent.size()
-        obj.setSceneRect(size.width()*0.01, 
-                         size.height()*0.01, 
-                         size.width()*0.98, 
+        obj.setSceneRect(size.width()*0.01,
+                         size.height()*0.01,
+                         size.width()*0.98,
                          size.height()*0.98)
     else:
         pass
@@ -162,8 +180,9 @@ def create_nameless_object(self, cls, name, parent):
         }
     return obj
 
-def get_object(self: QMainWindow, class_str, name: str):
-    CLASS = PyQtSupport.get_class(class_str=class_str)
+
+def get_object(self: QMainWindow, cls_name: str, name: str):
+    CLASS = PyQtSupport.get_class(cls_name=cls_name)
     if CLASS is None or name is None:
         return None
     else:
@@ -188,8 +207,7 @@ def get_object(self: QMainWindow, class_str, name: str):
                             name=name)
 
 
-
-def setup_icon(obj, icon_prop, main_path):
+def setup_icon(obj, icon_prop: dict, main_path: str):
     if icon_prop is None:
         return -1
     else:
@@ -206,7 +224,7 @@ def setup_icon(obj, icon_prop, main_path):
             return -1
 
 
-def setup_geometry(obj, geometry_prop):
+def setup_geometry(obj, geometry_prop: dict):
     if geometry_prop is None:
         return -1
     else:
@@ -224,7 +242,7 @@ def setup_geometry(obj, geometry_prop):
             return -1
 
 
-def setup_font(obj, font_prop):
+def setup_font(obj, font_prop: dict):
     if font_prop is None:
         return -1
     else:
@@ -250,7 +268,7 @@ def setup_font(obj, font_prop):
             return -1
 
 
-def setup_text(obj, text, format_str):
+def setup_text(obj, text: str, format_str: str):
     if text is None:
         return -1
     else:
@@ -259,7 +277,7 @@ def setup_text(obj, text, format_str):
                                     format_str=format_str)
 
 
-def setup_grid(self, obj, grid_prop):
+def setup_grid(self, obj, grid_prop: dict):
     if grid_prop is None:
         return -1
     else:
@@ -273,8 +291,7 @@ def setup_grid(self, obj, grid_prop):
             column,
             rowSpan,
             columnSpan
-        ]) != None):
-            # obj.setParent(None)
+        ]) != None) and obj.__class__ not in [QGraphicsScene, QGraphicsTextItem, QGraphicsRectItem]:
             if alignment is not None:
                 self.grid_layout.addWidget(obj,
                                            row,
@@ -293,7 +310,7 @@ def setup_grid(self, obj, grid_prop):
             return -1
 
 
-def setup_visible(obj, visible):
+def setup_visible(obj, visible: bool):
     if visible is None:
         return -1
     else:
@@ -301,7 +318,7 @@ def setup_visible(obj, visible):
                                        visible=visible)
 
 
-def setup_pos_size(self, obj, position_prop, size_prop):
+def setup_pos_size(self, obj, position_prop: dict, size_prop: dict):
     if position_prop is None and size_prop is None:
         return -1
     else:
@@ -335,10 +352,10 @@ def setup_action(self, action_prop: dict, main_path: str, UI: QMainWindow):
             name = act_prop.get("name")
             assert name is not None, "Missing name"
             icon_prop = act_prop.get("icon")
-            icon = create_icon(icon_prop=icon_prop, 
+            icon = create_icon(icon_prop=icon_prop,
                                main_path=main_path)
-            action = UI.create_object(cls=QAction, 
-                                      name=name, 
+            action = UI.create_object(cls=QAction,
+                                      name=name,
                                       parent=None)
             action.setIcon(icon)
             tooltip = act_prop.get("tooltip")
@@ -356,7 +373,7 @@ def setup_action(self, action_prop: dict, main_path: str, UI: QMainWindow):
         return 0
 
 
-def create_icon(icon_prop, main_path):
+def create_icon(icon_prop: dict, main_path: str):
     if icon_prop is None:
         return None
     else:
@@ -364,7 +381,8 @@ def create_icon(icon_prop, main_path):
         if icon_path is None:
             return None
         else:
-            pixmap = QPixmap(os.path.abspath(os.path.join(main_path, icon_path)))
+            pixmap = QPixmap(os.path.abspath(
+                os.path.join(main_path, icon_path)))
             icon_size = icon_prop.get("size")
             if icon_size is None:
                 icon = QIcon(pixmap)
@@ -373,7 +391,7 @@ def create_icon(icon_prop, main_path):
             return icon
 
 
-def setup_date(self, date_str, minimum_date_str, maximum_date_str):
+def setup_date(self, date_str: str, minimum_date_str: str, maximum_date_str: str):
     if self.__class__ in [QDateEdit]:
         self.setDate(QDate.currentDate())
         date = QDate.fromString(date_str, "dd-MM-yyyy")
@@ -387,18 +405,6 @@ def setup_date(self, date_str, minimum_date_str, maximum_date_str):
         return -1
 
 
-def get_date_from_String(date_str):
-    if date_str is not None:
-        date_list = date_str.split('-')
-        assert len(date_list) == 3, "Invalid minimum date"
-        minimum_date = QDate(int(date_list[2]),
-                             int(date_list[1]),
-                             int(date_list[0]))
-    else:
-        minimum_date = None
-    return minimum_date
-
-
 def setup_callback(self, callback_prop: dict, GUI: QMainWindow):
     if callback_prop is None:
         return -1
@@ -406,7 +412,7 @@ def setup_callback(self, callback_prop: dict, GUI: QMainWindow):
         assert isinstance(callback_prop, dict), "Invalid callback"
         # self.installEventFilter(GUI)
         mouse_event_prop = callback_prop.get("mouse_event")
-        setup_mouse_event(self, 
+        setup_mouse_event(self,
                           mouse_event_prop,
                           GUI)
         button_event_prop = callback_prop.get("button_event")
@@ -414,17 +420,18 @@ def setup_callback(self, callback_prop: dict, GUI: QMainWindow):
                            button_event_prop,
                            GUI)
         return 0
-          
+
+
 def setup_mouse_event(self, mouse_event_prop: dict, GUI: QMainWindow):
     if mouse_event_prop is None:
         return -1
     else:
         mouse_event = MouseEvent(obj=self)
+        event_prop: dict
         for event_prop in mouse_event_prop:
             rect_prop = event_prop.get("rect")
             rect = MethodSupport.create_rect(rect_prop=rect_prop)
-            # assert isinstance(rect, dict), "Rect is invalid"
-            task_prop = event_prop.get("task")
+            task_prop: dict = event_prop.get("task")
             event_type = event_prop.get("event")
             button_name = event_prop.get("button")
             button = MethodSupport.get_button(button_name=button_name)
@@ -432,9 +439,10 @@ def setup_mouse_event(self, mouse_event_prop: dict, GUI: QMainWindow):
                 TASK = MethodSupport.get_task(task_name=task_name)
                 assert TASK, "undefined mouse event, task '{task_name}'"\
                     .format(task_name=task_name)
-                CONDITION = MethodSupport.get_condition(condition_name=condition_name)
+                CONDITION = MethodSupport.get_condition(
+                    condition_name=condition_name)
                 assert CONDITION, "undefined mouse event, condition '{condition_name}'"\
-                    .format(condition_name=condition_name)     
+                    .format(condition_name=condition_name)
                 mouse_event.add_event(name=task_name,
                                       event_type=event_type,
                                       button=button,
@@ -443,11 +451,13 @@ def setup_mouse_event(self, mouse_event_prop: dict, GUI: QMainWindow):
                                       task=TASK)
         mouse_event.setup_mouse_event(UI=GUI)
         return 0
-    
+
+
 def setup_button_event(self, button_event_prop: dict, UI: QMainWindow):
     if button_event_prop is None:
         return -1
     else:
+        event_prop: dict
         for event_prop in button_event_prop:
             event = event_prop.get("event")
             switchers = {
@@ -458,24 +468,25 @@ def setup_button_event(self, button_event_prop: dict, UI: QMainWindow):
             }
             FUNCTION = switchers.get(event)
             assert FUNCTION, "Invalid button event"
-            task_prop = event_prop.get("task")
+            task_prop: dict = event_prop.get("task")
             task_dict = {}
             for task_name, condition_name in task_prop.items():
                 TASK = MethodSupport.get_task(task_name=task_name)
                 assert TASK, "invalid button event, task {task_name}"\
                     .format(task_name=task_name)
-                CONDITION = MethodSupport.get_condition(condition_name=condition_name)
+                CONDITION = MethodSupport.get_condition(
+                    condition_name=condition_name)
                 assert CONDITION, "undefined mouse event, condition {condition_name}"\
                     .format(condition_name=condition_name)
                 task_dict.update({
                     CONDITION: TASK
                 })
-                
             FUNCTION.connect(lambda: MethodSupport.run_task(task_dict,
                                                             UI))
         return 0
 
-def setup_document(self, document: dict):
+
+def setup_document(self: QGraphicsTextItem, document: dict):
     if document is None:
         return -1
     else:
@@ -498,23 +509,25 @@ def setup_document(self, document: dict):
                 return FUNCTION(para)
         else:
             return -1
-        
+
+
 def get_rect(self):
     return PyQtSupport.get_rect(self)
-    
-        
+
+
 def setup_scale(self, scale: float, parent_rect: tuple):
     if scale is None:
         return -1
     else:
         assert isinstance(scale, float), "scale must be a float number"
-        return PyQtSupport.set_scale(obj=self, 
-                                     parent_rect=parent_rect, 
+        return PyQtSupport.set_scale(obj=self,
+                                     parent_rect=parent_rect,
                                      scale=scale)
-        
-def setup_brush(self, brush_prop: dict):
+
+
+def setup_brush(self: QGraphicsRectItem, brush_prop: dict):
     if brush_prop is None:
-        return -1 
+        return -1
     else:
         color_val = brush_prop.get('color')
         color = MethodSupport.create_color(color_val=color_val)
@@ -522,8 +535,9 @@ def setup_brush(self, brush_prop: dict):
         brush.setColor(color)
         self.setBrush(brush)
         return 0
-    
-def setup_pen(self, pen_prop: dict):
+
+
+def setup_pen(self: QGraphicsRectItem, pen_prop: dict):
     if pen_prop is None:
         return -1
     else:
@@ -540,7 +554,8 @@ def setup_pen(self, pen_prop: dict):
         }
         style = switchers.get(style_prop)
         width = pen_prop.get('width')
-        assert isinstance(width, float) or isinstance(width, int), "width must be a number"
+        assert isinstance(width, float) or isinstance(
+            width, int), "width must be a number"
         pen = QPen()
         pen.setColor(color)
         pen.setStyle(style)
@@ -548,11 +563,12 @@ def setup_pen(self, pen_prop: dict):
         self.setPen(pen)
         return 0
 
+
 def childConfig_lambda(self):
     return lambda child_prop, GUI, main_path: childConfig(self,
-                                               child_prop,
-                                               GUI,
-                                               main_path)
+                                                          child_prop,
+                                                          GUI,
+                                                          main_path)
 
 
 def setup_grid_lambda(self):
@@ -563,16 +579,16 @@ def setup_grid_lambda(self):
 
 def create_object_lambda(self):
     return lambda cls, name, parent: create_object(self,
-                                           cls,
-                                           name,
-                                           parent)
+                                                   cls,
+                                                   name,
+                                                   parent)
 
 
 def create_named_object_lambda(self):
     return lambda cls, name, parent: create_named_object(self,
-                                                 cls,
-                                                 name,
-                                                 parent)
+                                                         cls,
+                                                         name,
+                                                         parent)
 
 
 def create_nameless_object_lambda(self):
@@ -591,9 +607,9 @@ def setup_pos_size_lambda(self):
 
 def setup_action_lambda(self):
     return lambda action_prop, main_path, UI: setup_action(self,
-                                                       action_prop,
-                                                       main_path,
-                                                       UI)
+                                                           action_prop,
+                                                           main_path,
+                                                           UI)
 
 
 def setup_date_lambda(self):
@@ -612,24 +628,44 @@ def setup_callback_lambda(self):
 def setup_document_lambda(self):
     return lambda document: setup_document(self,
                                            document)
-    
+
+
 def setup_scale_lambda(self):
-    return lambda scale, parent_rect: setup_scale(self, 
-                                                  scale, 
+    return lambda scale, parent_rect: setup_scale(self,
+                                                  scale,
                                                   parent_rect)
+
 
 def get_rect_lambda(self):
     return lambda: get_rect(self)
 
+
 def setup_brush_lambda(self):
-    return lambda brush_prop: setup_brush(self, 
+    return lambda brush_prop: setup_brush(self,
                                           brush_prop)
 
+
 def setup_pen_lambda(self):
-    return lambda pen_prop: setup_pen(self, 
+    return lambda pen_prop: setup_pen(self,
                                       pen_prop)
 
+
 def get_object_lambda(self):
-    return lambda class_str, name: get_object(self, 
-                                              class_str, 
-                                              name)
+    return lambda cls_name, name: get_object(self,
+                                             cls_name,
+                                             name)
+
+
+def common_config_lambda(self):
+    return lambda prop, main_path, GUI: common_config(self,
+                                                      prop,
+                                                      main_path,
+                                                      GUI)
+
+
+def specific_config_lambda(self):
+    return lambda prop, main_path, GUI, parent_rect: specific_config(self,
+                                                                     prop,
+                                                                     main_path,
+                                                                     GUI,
+                                                                     parent_rect)
