@@ -200,7 +200,7 @@ class Ui_MainWindow(object):
         self.GB_Table.setFont(font)
         self.TW_table = QTableWidget(self.GB_Table)
         self.TW_table.setObjectName(u"TW_table")
-        self.TW_table.setGeometry(QRect(0, 30, 681, 271))
+        self.TW_table.setGeometry(QRect(10, 30, 681, 271))
         self.BT_cancel = QPushButton(self.centralwidget)
         self.BT_cancel.setObjectName(u"BT_cancel")
         self.BT_cancel.setGeometry(QRect(760, 710, 93, 28))
