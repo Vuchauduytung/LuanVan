@@ -15,15 +15,15 @@ def childConfig(self, child_prop: dict, GUI: QMainWindow, main_path: str):
     else:
         assert isinstance(child_prop, dict), "'child' must be in dict type"
         self.nameless_child = {}
-        self.create_object = create_object_lambda(self)
         self.setup_grid = setup_grid_lambda(self)
         for name, prop in child_prop.items():
             class_str = prop.get("class")
             CLASS = PyQtSupport.get_class(class_str=class_str)
             assert CLASS is not None, "Unregconize class"
 
-            obj = self.create_object(cls=CLASS,
-                                     name=name)
+            obj = GUI.create_object(cls=CLASS,
+                                    name=name,
+                                    parent=self)
 
             icon_prop = prop.get("icon")
             setup_icon(obj=obj,
@@ -57,7 +57,8 @@ def childConfig(self, child_prop: dict, GUI: QMainWindow, main_path: str):
             action_prop = prop.get("action")
             obj.setup_action = setup_action_lambda(obj)
             obj.setup_action(action_prop=action_prop,
-                             main_path=main_path)
+                             main_path=main_path,
+                             UI=GUI)
             date = prop.get("date")
             minimum_date = prop.get("minimum_date")
             maximum_date = prop.get("maximum_date")
@@ -94,8 +95,9 @@ def childConfig(self, child_prop: dict, GUI: QMainWindow, main_path: str):
                             main_path=main_path)
         return 0
 
+# def common_config(self, child_prop: dict, GUI: QMainWindow, main_path: str):
 
-def create_object(self, cls, name):
+def create_object(self, cls, name, parent):
     obj = self.findChild(cls, name)
     if obj is not None:
         return obj
@@ -114,50 +116,77 @@ def create_object(self, cls, name):
             QDateEdit: create_named_object_lambda(self)
         }
         self.create_obj = switchers.get(cls)
-        return self.create_obj(cls=cls,
-                               name=name)
+        return self.create_obj(cls,
+                               name,
+                               parent)
 
 
-def create_named_object(self, cls, name):
+def create_named_object(self, cls, name, _):
     obj = cls(self)
     obj.setAccessibleName(name)
     return obj
 
 
-def create_nameless_object(self, cls, name):
+def create_nameless_object(self, cls, name, parent):
     switchers = {
-        QGraphicsScene: ("QGraphicsScene", True),
-        QGraphicsTextItem: ("QGraphicsTextItem", False),
-        QGraphicsRectItem: ("QGraphicsRectItem", False),
-        QAction: ("QAction", True)
+        QGraphicsScene: True,
+        QGraphicsTextItem: False,
+        QGraphicsRectItem: False,
+        QAction: True
     }
-    choice = switchers.get(cls)
-    TYPE = choice[0]
-    heritage = choice[1]
+    heritage = switchers.get(cls)
+    # TYPE = choice[0]
+    # heritage = choice[1]
     if heritage:
         obj = cls(self)
         if obj.__class__ in [QGraphicsScene]:
-            self.setScene(obj)
+            parent.setScene(obj)
     else:
         obj = cls()
-        self.addItem(obj)
-    if self.__class__ in [QGraphicsView]:
-        size = self.size()
+        parent.addItem(obj)
+    if parent.__class__ in [QGraphicsView]:
+        size = parent.size()
         obj.setSceneRect(size.width()*0.01, 
                          size.height()*0.01, 
                          size.width()*0.98, 
                          size.height()*0.98)
     else:
         pass
-    if TYPE in self.nameless_child.keys():
-        self.nameless_child[TYPE].update({
+    if cls in self.nameless_child.keys():
+        self.nameless_child[cls].update({
             name: obj
         })
     else:
-        self.nameless_child[TYPE] = {
+        self.nameless_child[cls] = {
             name: obj
         }
     return obj
+
+def get_object(self: QMainWindow, class_str, name: str):
+    CLASS = PyQtSupport.get_class(class_str=class_str)
+    if CLASS is None or name is None:
+        return None
+    else:
+        switchers = {
+            QLabel: lambda CLASS, name: self.findChild(CLASS, name),
+            QLineEdit: lambda CLASS, name: self.findChild(CLASS, name),
+            QGroupBox: lambda CLASS, name: self.findChild(CLASS, name),
+            QPushButton: lambda CLASS, name: self.findChild(CLASS, name),
+            QCheckBox: lambda CLASS, name: self.findChild(CLASS, name),
+            QGraphicsView: lambda CLASS, name: self.findChild(CLASS, name),
+            QGraphicsScene: lambda CLASS, name: self.nameless_child.get(CLASS).get(name),
+            QGraphicsTextItem: lambda CLASS, name: self.nameless_child.get(CLASS).get(name),
+            QGraphicsRectItem: lambda CLASS, name: self.nameless_child.get(CLASS).get(name),
+            QAction: lambda CLASS, name: self.nameless_child.get(CLASS).get(name),
+            QDateEdit: lambda CLASS, name: self.findChild(CLASS, name)
+        }
+        FUNCTION = switchers.get(CLASS)
+        if FUNCTION is None:
+            return None
+        else:
+            return FUNCTION(CLASS=CLASS,
+                            name=name)
+
 
 
 def setup_icon(obj, icon_prop, main_path):
@@ -298,7 +327,7 @@ def setup_pos_size(self, obj, position_prop, size_prop):
                                         size=size)
 
 
-def setup_action(self, action_prop, main_path: str):
+def setup_action(self, action_prop: dict, main_path: str, UI: QMainWindow):
     if action_prop is None:
         return -1
     else:
@@ -308,7 +337,9 @@ def setup_action(self, action_prop, main_path: str):
             icon_prop = act_prop.get("icon")
             icon = create_icon(icon_prop=icon_prop, 
                                main_path=main_path)
-            action = QAction(name, self)
+            action = UI.create_object(cls=QAction, 
+                                      name=name, 
+                                      parent=None)
             action.setIcon(icon)
             tooltip = act_prop.get("tooltip")
             if tooltip is not None:
@@ -374,31 +405,75 @@ def setup_callback(self, callback_prop: dict, GUI: QMainWindow):
     else:
         assert isinstance(callback_prop, dict), "Invalid callback"
         # self.installEventFilter(GUI)
+        mouse_event_prop = callback_prop.get("mouse_event")
+        setup_mouse_event(self, 
+                          mouse_event_prop,
+                          GUI)
+        button_event_prop = callback_prop.get("button_event")
+        setup_button_event(self,
+                           button_event_prop,
+                           GUI)
+        return 0
+          
+def setup_mouse_event(self, mouse_event_prop: dict, GUI: QMainWindow):
+    if mouse_event_prop is None:
+        return -1
+    else:
         mouse_event = MouseEvent(obj=self)
-        for name, event_prop in callback_prop.items():
+        for event_prop in mouse_event_prop:
             rect_prop = event_prop.get("rect")
             rect = MethodSupport.create_rect(rect_prop=rect_prop)
             # assert isinstance(rect, dict), "Rect is invalid"
-            task_name = event_prop.get("task")
-            task = MethodSupport.get_task(task_name=task_name)
-            # assert isinstance(task, str) and len(
-            #     task) > 0, "Task name is invalid"
+            task_prop = event_prop.get("task")
             event_type = event_prop.get("event")
             button_name = event_prop.get("button")
             button = MethodSupport.get_button(button_name=button_name)
-            # assert isinstance(event, str), "event is invalid"
-            # mouse_event.add_event(name=name,
-            #                       event=event,
-            #                       task=task,
-            #                       rect=rect)
-            mouse_event.add_event(name=name,
-                                  event_type=event_type,
-                                  button=button,
-                                  rect=rect,
-                                  task=task)
-            mouse_event.setup_mouse_event(UI=GUI)
-
-
+            for task_name, condition_name in task_prop.items():
+                TASK = MethodSupport.get_task(task_name=task_name)
+                assert TASK, "undefined mouse event, task '{task_name}'"\
+                    .format(task_name=task_name)
+                CONDITION = MethodSupport.get_condition(condition_name=condition_name)
+                assert CONDITION, "undefined mouse event, condition '{condition_name}'"\
+                    .format(condition_name=condition_name)     
+                mouse_event.add_event(name=task_name,
+                                      event_type=event_type,
+                                      button=button,
+                                      rect=rect,
+                                      condition=CONDITION,
+                                      task=TASK)
+        mouse_event.setup_mouse_event(UI=GUI)
+        return 0
+    
+def setup_button_event(self, button_event_prop: dict, UI: QMainWindow):
+    if button_event_prop is None:
+        return -1
+    else:
+        for event_prop in button_event_prop:
+            event = event_prop.get("event")
+            switchers = {
+                "clicked": self.clicked,
+                "pressed": self.pressed,
+                "released": self.released,
+                "toggled": self.toggled
+            }
+            FUNCTION = switchers.get(event)
+            assert FUNCTION, "Invalid button event"
+            task_prop = event_prop.get("task")
+            task_dict = {}
+            for task_name, condition_name in task_prop.items():
+                TASK = MethodSupport.get_task(task_name=task_name)
+                assert TASK, "invalid button event, task {task_name}"\
+                    .format(task_name=task_name)
+                CONDITION = MethodSupport.get_condition(condition_name=condition_name)
+                assert CONDITION, "undefined mouse event, condition {condition_name}"\
+                    .format(condition_name=condition_name)
+                task_dict.update({
+                    CONDITION: TASK
+                })
+                
+            FUNCTION.connect(lambda: MethodSupport.run_task(task_dict,
+                                                            UI))
+        return 0
 
 def setup_document(self, document: dict):
     if document is None:
@@ -487,21 +562,24 @@ def setup_grid_lambda(self):
 
 
 def create_object_lambda(self):
-    return lambda cls, name: create_object(self,
+    return lambda cls, name, parent: create_object(self,
                                            cls,
-                                           name)
+                                           name,
+                                           parent)
 
 
 def create_named_object_lambda(self):
-    return lambda cls, name: create_named_object(self,
+    return lambda cls, name, parent: create_named_object(self,
                                                  cls,
-                                                 name)
+                                                 name,
+                                                 parent)
 
 
 def create_nameless_object_lambda(self):
-    return lambda cls, name: create_nameless_object(self,
-                                                    cls,
-                                                    name)
+    return lambda cls, name, parent: create_nameless_object(self,
+                                                            cls,
+                                                            name,
+                                                            parent)
 
 
 def setup_pos_size_lambda(self):
@@ -512,9 +590,10 @@ def setup_pos_size_lambda(self):
 
 
 def setup_action_lambda(self):
-    return lambda action_prop, main_path: setup_action(self,
+    return lambda action_prop, main_path, UI: setup_action(self,
                                                        action_prop,
-                                                       main_path)
+                                                       main_path,
+                                                       UI)
 
 
 def setup_date_lambda(self):
@@ -535,13 +614,22 @@ def setup_document_lambda(self):
                                            document)
     
 def setup_scale_lambda(self):
-    return lambda scale, parent_rect: setup_scale(self, scale, parent_rect)
+    return lambda scale, parent_rect: setup_scale(self, 
+                                                  scale, 
+                                                  parent_rect)
 
 def get_rect_lambda(self):
     return lambda: get_rect(self)
 
 def setup_brush_lambda(self):
-    return lambda brush_prop: setup_brush(self, brush_prop)
+    return lambda brush_prop: setup_brush(self, 
+                                          brush_prop)
 
 def setup_pen_lambda(self):
-    return lambda pen_prop: setup_pen(self, pen_prop)
+    return lambda pen_prop: setup_pen(self, 
+                                      pen_prop)
+
+def get_object_lambda(self):
+    return lambda class_str, name: get_object(self, 
+                                              class_str, 
+                                              name)

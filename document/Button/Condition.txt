@@ -1,0 +1,63 @@
+GUI_input
+	GB_incident_images
+		"Chon anh":
+			Ảnh trong file lưu trữ
+	"Xac nhan:
+		Điền đầy đủ thông tin khách hàng trong Label
+		Chọn ảnh trong Lable ảnh
+		
+	"Thoat":
+		KHông có điều kiện
+		
+GUI_main
+	GB_forseen
+		"Tinh toan":
+			Điền đầy đủ thông số đã cho trong LineEdit
+		"Huy bo":
+			Không có điều kiện
+	GB_data
+		"Thoi gian":
+			Chọn thời gian lấy dữ liệu
+		"Xac nhan xylanh1":
+			Nhập đầy đủ dữ liệu trong GB_forseen
+		"Xac nhan xylanh2":
+			Nhập đầy đủ dữ liệu trong GB_forseen
+		"Xac nhan xylanh3":
+			Nhập đầy đủ dữ liệu trong GB_forseen
+		"Xac nhan xylanh4":
+			Nhập đầy đủ dữ liệu trong GB_forseen
+	"Xac nhan":
+		Điền đầy đủ thông số đã cho
+		Có dữ liệu tính toán từ thông số đã cho
+		Có dữ liệu thu từ cảm biến của 4 xylanh
+	"Thoat":
+		KHông có điều kiện
+GUIgraph_xylanh1
+	"Thoat":
+		KHông có điều kiện
+GUIgraph_xylanh2
+	"Thoat":
+		KHông có điều kiện
+GUIgraph_xylanh3
+	"Thoat":
+		KHông có điều kiện
+GUIgraph_xylanh4
+	"Thoat":
+		KHông có điều kiện
+GUI_search
+	"Tim kiem":
+		Điền đầy đủ thông tin khách hàng
+	"Huy bo":
+		Không có điều kiện
+GUI_display
+	"Hinh anh xe":
+		Không có điều kiện
+	"Do thi":
+		Không có điều kiện
+	"Sua chua":
+		Có hư hỏng trong đánh giá tình trạng động cơ
+	"Thoat":
+		KHông có điều kiện
+GUIgraph_fix
+	"Thoat":
+		KHông có điều kiện

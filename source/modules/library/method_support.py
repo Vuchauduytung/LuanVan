@@ -40,9 +40,12 @@ class MethodSupport:
     @staticmethod    
     def get_task(task_name: str):
         assert isinstance(task_name, str) and len(
-                    task_name) > 0, "Task name is invalid"
-        task = Task.get_task(task_name=task_name)
-        return task
+                    task_name) > 0 or task_name is None, "Task name is invalid"
+        return Task.get_task(task_name=task_name)
+    
+    @staticmethod  
+    def get_condition(condition_name: str):
+        return Condition.get_condition(condition_name=condition_name)
 
     @staticmethod
     def get_button(button_name: str):
@@ -61,3 +64,10 @@ class MethodSupport:
                 return True
         else:
             return False
+        
+    @staticmethod
+    def run_task(task_dict: dict, UI: QMainWindow):
+        for CONDITION, TASK in task_dict.items():
+            if CONDITION(UI):
+                TASK(UI)
+        # print("Hello World")

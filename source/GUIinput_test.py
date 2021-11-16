@@ -27,8 +27,9 @@ class Ui(QtWidgets.QMainWindow):
 
         # GUI config here
         # --------------------------
+        self.create_object = create_object_lambda(self)
+        self.get_object = get_object_lambda(self)
         self.GUI_init(driver=driver)
-
         # --------------------------
 
         # Show GUI and start event loop
@@ -64,6 +65,7 @@ class Ui(QtWidgets.QMainWindow):
 
         self.grid_layout = QGridLayout()
         self.setLayout(self.grid_layout)
+        self.create_object = create_object_lambda(self)
         self.childConfig = childConfig_lambda(self)
         self.childConfig(child_prop=driver.get("children"),
                          GUI=self,
@@ -71,25 +73,9 @@ class Ui(QtWidgets.QMainWindow):
         self.setMouseTracking(True)
         self.p = QPointF()
 
-    # def eventFilter(self, obj, event):
-    #     """Bắt event của Application
-
-    #     Args:
-    #         obj (Any): object nhận được event
-    #         event (QEvent): event bắt được
-
-    #     Returns:
-    #         bool: 
-    #             True, nếu muốn dừng nhận các event kế tiếp \n
-    #             False, nếu muốn tiếp tục bắt event
-    #     """
-    #     return MouseEvent.run(obj=obj,
-    #                           event=event,
-    #                           point=self.p)
-
 
 def main():
-    driver_path = r"F:\HK211\Luận Văn\source\drivers\GUIinput.json"
+    driver_path = r"E:\AutoProject\source\drivers\GUIinput.json"
     path = os.path.abspath(os.path.dirname(__file__))
     main_path = os.path.abspath(os.path.join(path, os.pardir))
     driver = json2dict(direct_path=driver_path)

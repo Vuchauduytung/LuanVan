@@ -1,0 +1,85 @@
+GUI_input
+	GB_incident_images
+		"Choose Graphic":
+			Chọn ảnh trong file lưu trữ
+			Hiện ảnh dã chọn
+ 
+	"Save information":
+		Tạo file lưu trữ các thông tin khách hàng
+		Lưu thông tin vào file lưu trữ
+		Mở file GUI_main
+
+	"Exit"
+		Thoát khỏi GUI_input
+GUI_main
+	GB_forseen
+		"Math":
+			Lấy dữu liệu để tính toán trong file math_analysis.py
+			Tạo file lưu trữ dữ liệu tính toán
+			Hiện kết qua trong TextEdit
+		"Cannel":
+			Xóa dữ liệu đã nhập trong LineEdit
+			Xóa dữ liệu hiện trong TextEdit
+	GB_data
+		"Time":
+			Xác định thời gian chạy chương trình lấy dữ liệu thực
+		"Confirm xylanh1":
+			Lấy dữ liệu cảm biến ở xylanh1
+			Tạo file lưu trữ dữ liệu
+			Lưu dữ liệu thu từ cảm biến vào file lưu trữ
+			Mở file GUIgraph_xylanh1
+			Vẽ đồ thị dữ liệu thu được từ cảm biến
+		"Confirm xylanh2":
+			Lấy dữ liệu cảm biến ở xylanh1
+			Tạo file lưu trữ dữ liệu
+			Lưu dữ liệu thu từ cảm biến vào file lưu trữ
+			Mở file GUIgraph_xylanh2
+			Vẽ đồ thị dữ liệu thu được từ cảm biến
+		"Confirm xylanh3":
+			Lấy dữ liệu cảm biến ở xylanh1
+			Tạo file lưu trữ dữ liệu
+			Lưu dữ liệu thu từ cảm biến vào file lưu trữ
+			Mở file GUIgraph_xylanh3
+			Vẽ đồ thị dữ liệu thu được từ cảm biến
+		"Confirm xylanh4":
+			Lấy dữ liệu cảm biến ở xylanh1
+			Tạo file lưu trữ dữ liệu
+			Lưu dữ liệu thu từ cảm biến vào file lưu trữ
+			Mở file GUIgraph_xylanh4
+			Vẽ đồ thị dữ liệu thu được từ cảm biến
+	"Confirm":
+		Hiện bảng đánh giá tình trạng động cơ trong GB_Table
+		Hiện tình trạng động cơ trong GB_diagnose
+	"Exit"
+		Thoát khỏi GUI_main
+GUIgraph_xylanh1
+	"Exit"
+		Thoát khỏi GUIgraph_xylanh1
+GUIgraph_xylanh2
+	"Exit"
+		Thoát khỏi GUIgraph_xylanh2
+GUIgraph_xylanh3
+	"Exit"
+		Thoát khỏi GUIgraph_xylanh3
+GUIgraph_xylanh4
+	"Exit"
+		Thoát khỏi GUIgraph_xylanh4
+GUI_search
+	"Search":
+		Tra dữ liệu khách hàng đã lưu
+		Mở file GUI_display
+		Hiện thông tin đã lưu trong file GUI_display
+	"Cannel":
+		Xóa dữ liệu đã nhập
+GUI_display
+	"Graphic":
+		Mở file GUIgraph_fix chứa hình ảnh xe
+	"Graphic_car":
+		Mở các file GUIgraph_xylanh chứa đồ thị dữ liệu thu từ cảm biến
+	"Fix":
+		Mở các file sửa chữa của từng hư hỏng động cơ (file pdf)
+	"Exit"
+		Thoát khỏi GUI_display
+GUIgraph_fix
+	"Exit"
+		Thoát khỏi GUIgraph_fix

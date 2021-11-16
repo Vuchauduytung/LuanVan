@@ -162,10 +162,10 @@
                         "columnSpan": 1
                     },
                     "action": [{
-                        "name": "missing_value_warning",
+                        "name": "missing_value_warning_1",
                         "text": "",
                         "desc" : "",
-                        "tooltip": "Missing value",
+                        "tooltip": "Vui lòng nhập tên của bạn",
                         "position": "TrailingPosition",
                         "visible": false,
                         "icon": {
@@ -192,10 +192,10 @@
                         "columnSpan": 1
                     },
                     "action": [{
-                        "name": "missing_value_warning",
+                        "name": "missing_value_warning_2",
                         "text": "",
                         "desc" : "",
-                        "tooltip": "Missing value",
+                        "tooltip": "Vui lòng nhập mã VIN",
                         "position": "TrailingPosition",
                         "visible": false,
                         "icon": {
@@ -222,10 +222,10 @@
                         "columnSpan": 1
                     },
                     "action": [{
-                        "name": "missing_value_warning",
+                        "name": "missing_value_warning_3",
                         "text": "",
                         "desc" : "",
-                        "tooltip": "Missing value",
+                        "tooltip": "Vui lòng nhập biển số xe",
                         "position": "TrailingPosition",
                         "visible": false,
                         "icon": {
@@ -252,10 +252,10 @@
                         "columnSpan": 1
                     },
                     "action": [{
-                        "name": "missing_value_warning",
+                        "name": "missing_value_warning_4",
                         "text": "",
                         "desc" : "",
-                        "tooltip": "Missing value",
+                        "tooltip": "Vui lòng nhập số điện thoại",
                         "position": "TrailingPosition",
                         "visible": false,
                         "icon": {
@@ -282,10 +282,10 @@
                         "columnSpan": 1
                     },
                     "action": [{
-                        "name": "missing_value_warning",
+                        "name": "missing_value_warning_5",
                         "text": "",
                         "desc" : "",
-                        "tooltip": "Missing value",
+                        "tooltip": "Vui lòng nhập địa chỉ của bạn",
                         "position": "TrailingPosition",
                         "visible": false,
                         "icon": {
@@ -542,6 +542,19 @@
                                 "h": null
                             },
                             "children": {
+                                "Insert_image_hints_rect": {
+                                    "desc" : "",
+                                    "scale": 0.98,
+                                    "class": "QGraphicsRectItem",
+                                    "brush": {
+                                        "color": [224,224,224]
+                                    },
+                                    "pen": {
+                                        "color": [50, 80, 168],
+                                        "style": "DashLine",
+                                        "width": 2
+                                    }
+                                },
                                 "Insert_image_hints_text": {
                                     "desc" : "",
                                     "scale": 0.98,
@@ -551,42 +564,61 @@
                                             "<STYLE type=\"text/css\">",
                                             "DIV.mypars {",
                                             "text-align: center;",
-                                            "font-size: 20px;}",
+                                            "font-size: 20px;",
+                                            "}",
                                             "</STYLE>",
                                             "<BODY>",
                                             "<DIV class=\"mypars\">",
-                                            "<P style=\"color:red\">Drag image here </P>",
-                                            "<P>Or <b>choose file</b> </P>",
+                                            "<br /><br /><br /><br /><br />",
+                                            "<br /><br /><br /><br />",
+                                            "<P>Drag image here </P>",
+                                            "<P>Or <span style=\"color:blue\"> <b>choose file</b> </P>",
                                             "</DIV>"
                                         ],
                                         "format": "RichText"
-                                    },
-                                    "callback": {
-                                        "chose files mouse over": {
-                                            "rect": {
-                                                "x": 0,
-                                                "y": 0,
-                                                "w": 0,
-                                                "h": 0
-                                            },
-                                            "event": "mouseOver",
-                                            "task": "default"
-                                        }
-                                    }
-                                },
-                                "Insert_image_hints_rect": {
-                                    "desc" : "",
-                                    "scale": 0.98,
-                                    "class": "QGraphicsRectItem",
-                                    "brush": {
-                                        "color": [224,224,224]
-                                    },
-                                    "pen": {
-                                        "color": [12,23,34],
-                                        "style": "DashLine",
-                                        "width": 2
                                     }
                                 }
+                            },
+                            "callback": {
+                                "mouse_event":[
+                                    {
+                                        "rect": {
+                                            "x": 305,
+                                            "y": 300,
+                                            "w": 110,
+                                            "h": 20
+                                        },
+                                        "event": "mouseOver",
+                                        "task": {
+                                            "underlined text": null
+                                        }
+                                    },
+                                    {
+                                        "rect": {
+                                            "x": 305,
+                                            "y": 300,
+                                            "w": 110,
+                                            "h": 20
+                                        },
+                                        "event": "mouseLeave",
+                                        "task": {
+                                            "not-underlined text": null
+                                        }
+                                    },
+                                    {
+                                        "rect": {
+                                            "x": 305,
+                                            "y": 300,
+                                            "w": 110,
+                                            "h": 20
+                                        },
+                                        "event": "mouseClick",
+                                        "button": "LeftButton",
+                                        "task": {
+                                            "choose image": null
+                                        }
+                                    }
+                                ]
                             }
                         }    
                     }
@@ -608,6 +640,17 @@
                 "pointSize": null,
                 "weight": null,
                 "italic": false
+            },
+            "callback":{
+                "button_event":[
+                    {
+                        "event": "clicked",
+                        "task": {
+                            "save and load next GUI": "full information",
+                            "show warning": "missing infomation"
+                        }
+                    }
+                ]
             }
         },
         "BT_exit": {
@@ -625,6 +668,16 @@
                 "pointSize": null,
                 "weight": null,
                 "italic": false
+            },
+            "callback":{
+                "button_event":[
+                    {
+                        "event": "clicked",
+                        "task": {
+                            "exit": null
+                        }
+                    }
+                ]
             }
         }
     }

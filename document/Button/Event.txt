@@ -1,0 +1,104 @@
+GUI_input
+	GB_incident_images
+		Choose Graphic:
+			Nhấn
+			Condition: "Chon anh"
+			Action: "Choose Graphic"	
+	Button Xac nhan: 
+		Nhấn
+		Condition: "Xac nhan"
+		Action: "Save information"
+	Button Thoat:
+		Nhấn
+		Condition: "Thoat"
+		Action: "Exit"
+GUi_main
+	GB_forseen
+		Button Tinh toan:
+			Nhấn
+			Condition: "Tinh toan"
+			Action: "Math"
+		Buttion Huy bo:
+			Nhấn
+			Condition: "Huy bo"
+			Action: "Cannel"
+	GB_data
+		DBS time:
+			Nhấn lựa chọn
+			Condition: "Thoi gian"
+			Action: "Time"
+		Button xac nhan xylanh 1:
+			Nhấn
+			Condition: "Xac nhan xylanh1"
+			Action: "Confirm xlylanh1"
+		Button xac nhan xylanh 2:
+			Nhấn
+			Condition: "Xac nhan xylanh2"
+			Action: "Confirm xlylanh2"
+		Button xac nhan xylanh 3:
+			Nhấn
+			Condition: "Xac nhan xylanh3"
+			Action: "Confirm xlylanh3"
+		Button xac nhan xylanh 4:
+			Nhấn
+			Condition: "Xac nhan xylanh4"
+			Action: "Confirm xlylanh4"
+	Button Xac nhan:
+		Nhấn
+		Condition: "Xac nhan"
+		Action: "Confirm"
+	Button Thoat:
+		Nhấn
+		Condition: "Thoat"
+		Action: "Exit"
+GUIgraph_xylanh1
+	Button Thoat:
+		Nhấn
+		Condition: "Thoat"
+		Action: "Exit"
+GUIgraph_xylanh2
+	Button Thoat:
+		Nhấn
+		Condition: "Thoat"
+		Action: "Exit"
+GUIgraph_xylanh3
+	Button Thoat:
+		Nhấn
+		Condition: "Thoat"
+		Action: "Exit"
+GUIgraph_xylanh4
+	Button Thoat:
+		Nhấn
+		Condition: "Thoat"
+		Action: "Exit"
+GUI_search
+	Button Tim kiem:
+		Nhấn
+		Condition: "Tim kiem"
+		Action: "Search"
+	Buttion Huy bo:
+		Nhấn
+		Condition: "Huy bo"
+		Action: "Cannel"
+GUI_display
+	Button Hinh anh xe:
+		Nhấn
+		Condition: "Hinh anh xe"
+		Action: "Graphic"
+	Button Do thi:
+		Nhấn
+		Condition: "Do thi"
+		Action: "Graphic_car"
+	Button Sua chua:
+		Nhấn
+		Condition: "Sua chua"
+		Action: "Fix"
+	Button Thoat:
+		Nhấn
+		Condition: "Thoat"
+		Action: "Exit"
+GUIgraph_fix
+	Button Thoat:
+		Nhấn
+		Condition: "Thoat"
+		Action: "Exit"
