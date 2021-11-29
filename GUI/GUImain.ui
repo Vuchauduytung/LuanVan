@@ -20,7 +20,7 @@
       <x>10</x>
       <y>10</y>
       <width>381</width>
-      <height>411</height>
+      <height>471</height>
      </rect>
     </property>
     <property name="font">
@@ -31,412 +31,332 @@
     <property name="title">
      <string>Số liệu</string>
     </property>
-    <widget class="QLineEdit" name="LE_xup_cor">
-     <property name="geometry">
-      <rect>
-       <x>191</x>
-       <y>180</y>
-       <width>178</width>
-       <height>24</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="placeholderText">
-      <string>Nhập số liệu</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_piston_jour">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>87</y>
-       <width>141</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Hành trình piston</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_comp_rat">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>56</y>
-       <width>72</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Tỷ số nén</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="LE_cyl_dm">
-     <property name="geometry">
-      <rect>
-       <x>191</x>
-       <y>118</y>
-       <width>178</width>
-       <height>24</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="placeholderText">
-      <string>Nhập số liệu</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_cyl_dm">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>118</y>
-       <width>136</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Đường kính xyalnh</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="LE_air_press">
-     <property name="geometry">
-      <rect>
-       <x>191</x>
-       <y>211</y>
-       <width>178</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="placeholderText">
-      <string>Nhập số liệu</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="LE_extTem">
-     <property name="geometry">
-      <rect>
-       <x>191</x>
-       <y>25</y>
-       <width>178</width>
-       <height>24</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="placeholderText">
-      <string>Nhập số liệu</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="LE_piston_jour">
-     <property name="geometry">
-      <rect>
-       <x>191</x>
-       <y>87</y>
-       <width>178</width>
-       <height>24</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="placeholderText">
-      <string>Nhập số liệu</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="LE_rod_len">
-     <property name="geometry">
-      <rect>
-       <x>191</x>
-       <y>149</y>
-       <width>178</width>
-       <height>24</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="placeholderText">
-      <string>Nhập số liệu</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_extTem">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>10</x>
        <y>25</y>
-       <width>63</width>
-       <height>21</height>
+       <width>356</width>
+       <height>408</height>
       </rect>
      </property>
-     <property name="font">
-      <font>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Nhiệt độ</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_rod_len">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>149</y>
-       <width>167</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Chiều dài thanh truyền</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_air_press">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>211</y>
-       <width>115</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Áp suất khí nạp</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="LE_comp_rat">
-     <property name="geometry">
-      <rect>
-       <x>191</x>
-       <y>56</y>
-       <width>178</width>
-       <height>24</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="placeholderText">
-      <string>Nhập số liệu</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_xup_cor">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>180</y>
-       <width>174</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Góc đóng muộn xuppap</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="BT_clear">
-     <property name="geometry">
-      <rect>
-       <x>170</x>
-       <y>240</y>
-       <width>93</width>
-       <height>28</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>8</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Hủy bỏ</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="BT_math">
-     <property name="geometry">
-      <rect>
-       <x>70</x>
-       <y>240</y>
-       <width>93</width>
-       <height>28</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>8</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Tính toán</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_Comp_temp_F">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>335</y>
-       <width>115</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Nhiệt độ (độ F)</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_Compression">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>277</y>
-       <width>89</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Áp suất nén</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_Comp_temp_C">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>306</y>
-       <width>116</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Nhiệt độ (độ C)</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_watt">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>364</y>
-       <width>69</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Công nén</string>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="TE_Compression">
-     <property name="geometry">
-      <rect>
-       <x>170</x>
-       <y>280</y>
-       <width>201</width>
-       <height>21</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="TE_Comp_temp_C">
-     <property name="geometry">
-      <rect>
-       <x>170</x>
-       <y>310</y>
-       <width>201</width>
-       <height>21</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="TE_Comp_temp_F">
-     <property name="geometry">
-      <rect>
-       <x>170</x>
-       <y>340</y>
-       <width>201</width>
-       <height>21</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="TE_watt">
-     <property name="geometry">
-      <rect>
-       <x>170</x>
-       <y>370</y>
-       <width>201</width>
-       <height>21</height>
-      </rect>
-     </property>
+     <layout class="QGridLayout" name="LT_foreseen">
+      <item row="0" column="0" colspan="2">
+       <layout class="QGridLayout" name="LT_input">
+        <item row="3" column="1">
+         <widget class="QLineEdit" name="LE_cyl_dm">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="placeholderText">
+           <string>Nhập số liệu</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_piston_jour">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Hành trình piston</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLineEdit" name="LE_comp_rat">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="placeholderText">
+           <string>Nhập số liệu</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="label_rod_len">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Chiều dài thanh truyền</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="1">
+         <widget class="QLineEdit" name="LE_xup_cor">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="placeholderText">
+           <string>Nhập số liệu</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="0">
+         <widget class="QLabel" name="label_air_press">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Áp suất khí nạp</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="1">
+         <widget class="QLineEdit" name="LE_air_press">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="placeholderText">
+           <string>Nhập số liệu</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0">
+         <widget class="QLabel" name="label_xup_cor">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Góc đóng muộn xuppap</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLineEdit" name="LE_extTem">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="placeholderText">
+           <string>Nhập số liệu</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QLineEdit" name="LE_rod_len">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="placeholderText">
+           <string>Nhập số liệu</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="label_cyl_dm">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Đường kính xyalnh</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_comp_rat">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Tỷ số nén</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLineEdit" name="LE_piston_jour">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="placeholderText">
+           <string>Nhập số liệu</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_extTem">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Nhiệt độ</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="1" column="0">
+       <widget class="QPushButton" name="BT_math">
+        <property name="font">
+         <font>
+          <pointsize>8</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Tính toán</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QPushButton" name="BT_clear">
+        <property name="font">
+         <font>
+          <pointsize>8</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Hủy bỏ</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0" colspan="2">
+       <layout class="QGridLayout" name="gridLayout_4">
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_Compression">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Áp suất nén</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLineEdit" name="LE_Compression">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+          <property name="placeholderText">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_Comp_temp_C">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Nhiệt độ (độ C)</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLineEdit" name="LE_Comp_temp_C">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+          <property name="placeholderText">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_Comp_temp_F">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Nhiệt độ (độ F)</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLineEdit" name="LE_Comp_temp_F">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+          <property name="placeholderText">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="label_watt">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Công nén</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QLineEdit" name="LE_watt">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+          <property name="placeholderText">
+           <string/>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
     </widget>
    </widget>
    <widget class="QGroupBox" name="GB_data">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>430</y>
+      <y>490</y>
       <width>381</width>
       <height>261</height>
      </rect>
@@ -495,7 +415,7 @@
       </rect>
      </property>
      <property name="value">
-      <number>24</number>
+      <number>0</number>
      </property>
     </widget>
     <widget class="QLabel" name="label_xylanh1">
@@ -526,7 +446,7 @@
       </rect>
      </property>
      <property name="value">
-      <number>24</number>
+      <number>0</number>
      </property>
     </widget>
     <widget class="QProgressBar" name="PB_xylanh3">
@@ -539,7 +459,7 @@
       </rect>
      </property>
      <property name="value">
-      <number>24</number>
+      <number>0</number>
      </property>
     </widget>
     <widget class="QPushButton" name="BT_measure_xylanh2">
@@ -624,7 +544,7 @@
       </rect>
      </property>
      <property name="value">
-      <number>24</number>
+      <number>0</number>
      </property>
     </widget>
     <widget class="QLabel" name="label_xylanh3">
@@ -769,7 +689,7 @@
       <x>400</x>
       <y>330</y>
       <width>691</width>
-      <height>361</height>
+      <height>381</height>
      </rect>
     </property>
     <property name="font">
@@ -807,7 +727,7 @@
          <x>0</x>
          <y>10</y>
          <width>641</width>
-         <height>271</height>
+         <height>301</height>
         </rect>
        </property>
       </widget>

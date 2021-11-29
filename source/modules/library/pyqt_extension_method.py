@@ -80,13 +80,13 @@ def common_config(self, prop: dict, main_path: str, GUI: QMainWindow):
 
 
 def specific_config(self, prop: dict, main_path: str, GUI: QMainWindow, parent_rect: float):
-    if self.__class__ == QLineEdit:
+    if self.__class__ in [QLineEdit]:
         action_prop = prop.get("action")
         self.setup_action = setup_action_lambda(self)
         self.setup_action(action_prop=action_prop,
                           main_path=main_path,
                           UI=GUI)
-    elif self.__class__ == QTimeEdit:
+    elif self.__class__ in [QDateEdit]:
         date = prop.get("date")
         minimum_date = prop.get("minimum_date")
         maximum_date = prop.get("maximum_date")
@@ -94,7 +94,7 @@ def specific_config(self, prop: dict, main_path: str, GUI: QMainWindow, parent_r
         self.setup_date(date_str=date,
                         minimum_date_str=minimum_date,
                         maximum_date_str=maximum_date)
-    elif self.__class__ == QGraphicsTextItem:
+    elif self.__class__ in [QGraphicsTextItem]:
         document = prop.get("document")
         self.setup_document = setup_document_lambda(self)
         self.setup_document(document=document)
@@ -102,7 +102,7 @@ def specific_config(self, prop: dict, main_path: str, GUI: QMainWindow, parent_r
         self.setup_scale = setup_scale_lambda(self)
         self.setup_scale(scale=scale,
                          parent_rect=parent_rect)
-    elif self.__class__ == QGraphicsRectItem:
+    elif self.__class__ in [QGraphicsRectItem]:
         brush_prop = prop.get("brush")
         pen_prop = prop.get("pen")
         self.setup_brush = setup_brush_lambda(self)
@@ -120,65 +120,10 @@ def create_object(self, cls, name: str, parent):
     if obj is not None:
         return obj
     else:
-        switchers = {
-            QLabel: create_named_object_lambda(self),
-            QLineEdit: create_named_object_lambda(self),
-            QGroupBox: create_named_object_lambda(self),
-            QPushButton: create_named_object_lambda(self),
-            QCheckBox: create_named_object_lambda(self),
-            QGraphicsView: create_named_object_lambda(self),
-            QGraphicsScene: create_nameless_object_lambda(self),
-            QGraphicsTextItem: create_nameless_object_lambda(self),
-            QGraphicsRectItem: create_nameless_object_lambda(self),
-            QAction: create_nameless_object_lambda(self),
-            QDateEdit: create_named_object_lambda(self)
-        }
-        self.create_obj = switchers.get(cls)
-        return self.create_obj(cls,
-                               name,
-                               parent)
-
-
-def create_named_object(self, cls, name: str, _):
-    obj = cls(self)
-    obj.setAccessibleName(name)
-    return obj
-
-
-def create_nameless_object(self, cls, name: str, parent):
-    switchers = {
-        QGraphicsScene: True,
-        QGraphicsTextItem: False,
-        QGraphicsRectItem: False,
-        QAction: True
-    }
-    heritage = switchers.get(cls)
-    if heritage:
-        obj = cls(self)
-        if obj.__class__ in [QGraphicsScene]:
-            parent: QGraphicsView
-            parent.setScene(obj)
-    else:
-        parent: QGraphicsScene
-        obj = cls()
-        parent.addItem(obj)
-    if parent.__class__ in [QGraphicsView]:
-        size = parent.size()
-        obj.setSceneRect(size.width()*0.01,
-                         size.height()*0.01,
-                         size.width()*0.98,
-                         size.height()*0.98)
-    else:
-        pass
-    if cls in self.nameless_child.keys():
-        self.nameless_child[cls].update({
-            name: obj
-        })
-    else:
-        self.nameless_child[cls] = {
-            name: obj
-        }
-    return obj
+        return PyQtSupport.create_object(UI=self,
+                                         CLASS=cls,
+                                         name=name,
+                                         parent=parent)
 
 
 def get_object(self: QMainWindow, cls_name: str, name: str):
@@ -186,25 +131,9 @@ def get_object(self: QMainWindow, cls_name: str, name: str):
     if CLASS is None or name is None:
         return None
     else:
-        switchers = {
-            QLabel: lambda CLASS, name: self.findChild(CLASS, name),
-            QLineEdit: lambda CLASS, name: self.findChild(CLASS, name),
-            QGroupBox: lambda CLASS, name: self.findChild(CLASS, name),
-            QPushButton: lambda CLASS, name: self.findChild(CLASS, name),
-            QCheckBox: lambda CLASS, name: self.findChild(CLASS, name),
-            QGraphicsView: lambda CLASS, name: self.findChild(CLASS, name),
-            QGraphicsScene: lambda CLASS, name: self.nameless_child.get(CLASS).get(name),
-            QGraphicsTextItem: lambda CLASS, name: self.nameless_child.get(CLASS).get(name),
-            QGraphicsRectItem: lambda CLASS, name: self.nameless_child.get(CLASS).get(name),
-            QAction: lambda CLASS, name: self.nameless_child.get(CLASS).get(name),
-            QDateEdit: lambda CLASS, name: self.findChild(CLASS, name)
-        }
-        FUNCTION = switchers.get(CLASS)
-        if FUNCTION is None:
-            return None
-        else:
-            return FUNCTION(CLASS=CLASS,
-                            name=name)
+        return PyQtSupport.get_object(UI=self, 
+                                      CLASS=CLASS, 
+                                      name=name)
 
 
 def setup_icon(obj, icon_prop: dict, main_path: str):
@@ -246,26 +175,15 @@ def setup_font(obj, font_prop: dict):
     if font_prop is None:
         return -1
     else:
-        fam = font_prop.get("family")
-        psz = font_prop.get("pointSize")
-        w = font_prop.get("weight")
-        itl = font_prop.get("italic")
-        if any(np.array([fam, psz, w, itl]) != None):
-            if fam is None:
-                fam = obj.font().defaultFamily()
-            if psz is None:
-                psz = -1
-            if w is None:
-                w = -1
-            if itl is None:
-                itl = False
-            return PyQtSupport.set_font(obj=obj,
-                                        fam=fam,
-                                        psz=psz,
-                                        w=w,
-                                        itl=itl)
-        else:
-            return -1
+        fam = font_prop.get("family") or obj.font().defaultFamily()
+        psz = font_prop.get("pointSize") or -1
+        w = font_prop.get("weight") or -1
+        itl = font_prop.get("italic") or False
+        return PyQtSupport.set_font(obj=obj,
+                                    fam=fam,
+                                    psz=psz,
+                                    w=w,
+                                    itl=itl)
 
 
 def setup_text(obj, text: str, format_str: str):
@@ -391,18 +309,14 @@ def create_icon(icon_prop: dict, main_path: str):
             return icon
 
 
-def setup_date(self, date_str: str, minimum_date_str: str, maximum_date_str: str):
-    if self.__class__ in [QDateEdit]:
-        self.setDate(QDate.currentDate())
-        date = QDate.fromString(date_str, "dd-MM-yyyy")
-        minimum_date = QDate.fromString(minimum_date_str, "dd-MM-yyyy")
-        maximum_date = QDate.fromString(maximum_date_str, "dd-MM-yyyy")
-        self.setMinimumDate(minimum_date)
-        self.setMaximumDate(maximum_date)
-        self.setDate(date)
-        return 0
-    else:
-        return -1
+def setup_date(self: QDateEdit, date_str: str, minimum_date_str: str, maximum_date_str: str):
+    self.setDate(QDate.currentDate())
+    date = QDate.fromString(date_str, "dd-MM-yyyy")
+    minimum_date = QDate.fromString(minimum_date_str, "dd-MM-yyyy")
+    maximum_date = QDate.fromString(maximum_date_str, "dd-MM-yyyy")
+    self.setMinimumDate(minimum_date)
+    self.setMaximumDate(maximum_date)
+    self.setDate(date)
 
 
 def setup_callback(self, callback_prop: dict, GUI: QMainWindow):
@@ -410,7 +324,6 @@ def setup_callback(self, callback_prop: dict, GUI: QMainWindow):
         return -1
     else:
         assert isinstance(callback_prop, dict), "Invalid callback"
-        # self.installEventFilter(GUI)
         mouse_event_prop = callback_prop.get("mouse_event")
         setup_mouse_event(self,
                           mouse_event_prop,
@@ -582,20 +495,6 @@ def create_object_lambda(self):
                                                    cls,
                                                    name,
                                                    parent)
-
-
-def create_named_object_lambda(self):
-    return lambda cls, name, parent: create_named_object(self,
-                                                         cls,
-                                                         name,
-                                                         parent)
-
-
-def create_nameless_object_lambda(self):
-    return lambda cls, name, parent: create_nameless_object(self,
-                                                            cls,
-                                                            name,
-                                                            parent)
 
 
 def setup_pos_size_lambda(self):

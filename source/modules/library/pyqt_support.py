@@ -300,6 +300,119 @@ class PyQtSupport:
                                    rect.height()))
         return 0
     
+    @classmethod
+    def create_object(cls, UI, CLASS, name: str, parent):
+        switchers = {
+            QLabel: (lambda CLASS, name, parent: cls.create_named_object(UI, 
+                                                                         CLASS, 
+                                                                         name, 
+                                                                         parent)),
+            QLineEdit: (lambda CLASS, name, parent: cls.create_named_object(UI, 
+                                                                            CLASS, 
+                                                                            name, 
+                                                                            parent)),
+            QGroupBox: (lambda CLASS, name, parent: cls.create_named_object(UI, 
+                                                                            CLASS, 
+                                                                            name, 
+                                                                            parent)),
+            QPushButton: (lambda CLASS, name, parent: cls.create_named_object(UI, 
+                                                                            CLASS, 
+                                                                            name, 
+                                                                            parent)),
+            QCheckBox: (lambda CLASS, name, parent: cls.create_named_object(UI, 
+                                                                            CLASS, 
+                                                                            name, 
+                                                                            parent)),
+            QGraphicsView: (lambda CLASS, name, parent: cls.create_named_object(UI, 
+                                                                                CLASS, 
+                                                                                name, 
+                                                                                parent)),
+            QGraphicsScene: (lambda CLASS, name, parent: cls.create_nameless_object(UI, 
+                                                                                    CLASS, 
+                                                                                    name, 
+                                                                                    parent)),
+            QGraphicsTextItem: (lambda CLASS, name, parent: cls.create_nameless_object(UI, 
+                                                                                       CLASS, 
+                                                                                       name, 
+                                                                                       parent)),
+            QGraphicsRectItem: (lambda CLASS, name, parent: cls.create_nameless_object(UI, 
+                                                                                       CLASS, 
+                                                                                       name, 
+                                                                                       parent)),
+            QAction: (lambda CLASS, name, parent: cls.create_nameless_object(UI, 
+                                                                             CLASS, 
+                                                                             name, 
+                                                                             parent)),
+            QDateEdit: (lambda CLASS, name, parent: cls.create_named_object(UI, 
+                                                                            CLASS, 
+                                                                            name, 
+                                                                            parent))
+        }
+        UI.create_obj = switchers.get(CLASS)
+        return UI.create_obj(CLASS,
+                             name,
+                             parent)
+        
+    @staticmethod
+    def create_named_object(_, cls, name: str, parent):
+        obj = cls(parent)
+        obj.setAccessibleName(name)
+        return obj
 
+    @staticmethod
+    def create_nameless_object(UI, cls, name: str, parent):
+        switchers = {
+            QGraphicsScene: True,
+            QGraphicsTextItem: False,
+            QGraphicsRectItem: False,
+            QAction: True
+        }
+        heritage = switchers.get(cls)
+        if heritage:
+            obj = cls(parent)
+            if obj.__class__ in [QGraphicsScene]:
+                parent: QGraphicsView
+                parent.setScene(obj)
+        else:
+            parent: QGraphicsScene
+            obj = cls()
+            parent.addItem(obj)
+        if parent.__class__ in [QGraphicsView]:
+            size = parent.size()
+            obj.setSceneRect(size.width()*0.01,
+                            size.height()*0.01,
+                            size.width()*0.98,
+                            size.height()*0.98)
+        else:
+            pass
+        if cls in UI.nameless_child.keys():
+            UI.nameless_child[cls].update({
+                name: obj
+            })
+        else:
+            UI.nameless_child[cls] = {
+                name: obj
+            }
+        return obj
 
-
+    @staticmethod
+    def get_object(UI, CLASS, name):
+        switchers = {
+            QLabel: lambda CLASS, name: UI.findChild(CLASS, name),
+            QLineEdit: lambda CLASS, name: UI.findChild(CLASS, name),
+            QGroupBox: lambda CLASS, name: UI.findChild(CLASS, name),
+            QPushButton: lambda CLASS, name: UI.findChild(CLASS, name),
+            QCheckBox: lambda CLASS, name: UI.findChild(CLASS, name),
+            QGraphicsView: lambda CLASS, name: UI.findChild(CLASS, name),
+            QGraphicsScene: lambda CLASS, name: UI.nameless_child.get(CLASS).get(name),
+            QGraphicsTextItem: lambda CLASS, name: UI.nameless_child.get(CLASS).get(name),
+            QGraphicsRectItem: lambda CLASS, name: UI.nameless_child.get(CLASS).get(name),
+            QAction: lambda CLASS, name: UI.nameless_child.get(CLASS).get(name),
+            QDateEdit: lambda CLASS, name: UI.findChild(CLASS, name)
+        }
+        FUNCTION = switchers.get(CLASS)
+        if FUNCTION is None:
+            return None
+        else:
+            return FUNCTION(CLASS=CLASS,
+                            name=name)

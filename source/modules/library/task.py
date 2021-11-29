@@ -130,7 +130,7 @@ class Task:
         action_dict: dict = {}
         for index, value in enumerate(line_edit_list):
             action_dict[action_name_list[index]] = (value.text() == "")
-        for action_name, visible in action_dict:
+        for action_name, visible in action_dict.items():
             action: QAction = UI.get_object(cls_name="QAction", name=action_name)
             action.setVisible(visible)
         
