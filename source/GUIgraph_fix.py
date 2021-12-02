@@ -21,6 +21,14 @@ class Ui(QtWidgets.QMainWindow):
         # self.setup_pushButton()
         self.show()
         
+    def setup_pushButton(self):
+        # GB_informatin_custom QGroupBox
+        BT_exit: QPushButton = self.findChild(QPushButton, "BT_exit")
+        BT_exit.clicked.connect(self.BT_quit_click)
+        
+    def BT_quit_click(self):
+        window.close()
+        
     
 
 if __name__ == "__main__":
