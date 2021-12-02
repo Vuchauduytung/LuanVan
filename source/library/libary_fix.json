@@ -1,0 +1,33 @@
+{
+    "case 1":{
+        "text": "Động cơ hoạt động bình thường"
+    },
+    "case 2":{
+        "text":"Gãy xéc măng, gãy xupap hay bị lủng piston",
+        "affect": "Áp suất cuối kì nén cực kì thấp ,thậm chí không có sự gia tăng"
+    },
+    "case 3":{
+        "text":"Hở xupap",
+        "affect": "Áp suất cuối kì nén rất thấp"
+    },
+    "case 4":{
+        "text":"Hở xupap",
+        "affect":"Áp suất cuối kì nén thấp đối với độ hở nhỏ, áp suất rất thấp nếu độ hở quá lớn."
+    },
+    "case 5":{
+        "text":"Buồng đốt bị bám mụi than, kẹt xupap xả",
+        "affect":"Áp suất kì nén tăng đột ngột, bất thường."
+    },
+    "case 6":{
+        "text":"Các xy lanh mòn không đều",
+        "affect":"Áp suất nén của các xy lanh có sự chênh lệch rõ."
+    },
+    "case 7":{
+        "text":"Xuppap bị kẹt ( không mở hoàn toàn )",
+        "affect":"Thể tích khí nạp không đủ"
+    },
+    "case 8":{
+        "text":"Lọt khí qua xecmang ( xecmang đóng không kín )",
+        "affect":"Không tạo ra sự chênh lệch áp suất giữa kì nạp và xả."
+    }
+}

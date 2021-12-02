@@ -1,0 +1,969 @@
+{
+    "name": "MainWindow",
+    "path": "GUI/GUImain.ui",
+    "desc": "",
+    "text": "GUI_main",
+    "icon": {
+        "name": "",
+        "path": null,
+        "size": [20,20]
+    },
+    "class": "QMainWindow",
+    "children":{
+        "GB_foreseen": {
+            "text": "Số liệu",
+            "desc": "",
+            "class": "QGroupBox",
+            "geometry": {
+                "x": null,
+                "y": null,
+                "w": null,
+                "h": null
+            },
+            "font": {
+                "family": null,
+                "pointSize": null,
+                "weight": null,
+                "italic": false
+            },
+            "children": {
+                "label_extTem": {
+                    "text": "Nhiệt độ",
+                    "desc" : "",
+                    "class": "QLabel",
+                    "grid": {
+                        "row": 0,
+                        "column": 0,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "label_comp_rat": {
+                    "text": "Tỷ số nén",
+                    "desc" : "",
+                    "class": "QLabel",
+                    "grid": {
+                        "row": 1,
+                        "column": 0,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "label_piston_jour": {
+                    "text": "Hành trình piston",
+                    "desc" : "",
+                    "class": "QLabel",
+                    "grid": {
+                        "row": 2,
+                        "column": 0,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "label_cyl_dm": {
+                    "text": "Đường kính xylanh",
+                    "desc" : "",
+                    "class": "QLabel",
+                    "grid": {
+                        "row": 3,
+                        "column": 0,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "label_rod_len": {
+                    "text": "Chiều dài thanh truyền",
+                    "desc" : "",
+                    "class": "QLabel",
+                    "grid": {
+                        "row": 4,
+                        "column": 0,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "label_xup_cor": {
+                    "text": "Góc đóng muộn xuppap",
+                    "desc" : "",
+                    "class": "QLabel",
+                    "grid": {
+                        "row": 5,
+                        "column": 0,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "label_air_press": {
+                    "text": "Áp suất khí nạp",
+                    "desc" : "",
+                    "class": "QLabel",
+                    "grid": {
+                        "row": 6,
+                        "column": 0,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "BT_math": {
+                    "text": "Tính toán",
+                    "desc" : "",
+                    "class": "QPushButton",
+                    "grid": {
+                        "row": 7,
+                        "column": 0,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "label_Compression": {
+                    "text": "Áp suất nén",
+                    "desc" : "",
+                    "class": "QLabel",
+                    "grid": {
+                        "row": 8,
+                        "column": 0,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "label_Comp_temp_C": {
+                    "text": "Nhiệt độ (độ C)",
+                    "desc" : "",
+                    "class": "QLabel",
+                    "grid": {
+                        "row": 9,
+                        "column": 0,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "label_Comp_Temp_F": {
+                    "text": "Nhiệt độ (độ F)",
+                    "desc" : "",
+                    "class": "QLabel",
+                    "grid": {
+                        "row": 10,
+                        "column": 0,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "label_watt": {
+                    "text": "Công nén",
+                    "desc" : "",
+                    "class": "QLabel",
+                    "grid": {
+                        "row": 11,
+                        "column": 0,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "LE_extTem": {
+                    "text": "",
+                    "desc" : "",
+                    "class": "QLineEdit",
+                    "grid": {
+                        "row": 0,
+                        "column": 1,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "action": [{
+                        "name": "missing_value_warning",
+                        "text": "",
+                        "desc" : "",
+                        "tooltip": "Missing value",
+                        "position": "TrailingPosition",
+                        "visible": false,
+                        "icon": {
+                            "name": "",
+                            "path": "source/icon/exclamation_mark.png",
+                            "size": [20,20]
+                        }
+                    }],
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "LE_comp_rat": {
+                    "text": "",
+                    "desc" : "",
+                    "class": "QLineEdit",
+                    "grid": {
+                        "row": 1,
+                        "column": 1,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "action": [{
+                        "name": "missing_value_warning",
+                        "text": "",
+                        "desc" : "",
+                        "tooltip": "Missing value",
+                        "position": "TrailingPosition",
+                        "visible": false,
+                        "icon": {
+                            "name": "",
+                            "path": "source/icon/exclamation_mark.png",
+                            "size": [20,20]
+                        }
+                    }],
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "LE_piston_jour": {
+                    "text": "",
+                    "desc" : "",
+                    "class": "QLineEdit",
+                    "grid": {
+                        "row": 2,
+                        "column": 1,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "action": [{
+                        "name": "missing_value_warning",
+                        "text": "",
+                        "desc" : "",
+                        "tooltip": "Missing value",
+                        "position": "TrailingPosition",
+                        "visible": false,
+                        "icon": {
+                            "name": "",
+                            "path": "source/icon/exclamation_mark.png",
+                            "size": [20,20]
+                        }
+                    }],
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "LE_cyl_dm": {
+                    "text": "",
+                    "desc" : "",
+                    "class": "QLineEdit",
+                    "grid": {
+                        "row": 3,
+                        "column": 1,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "action": [{
+                        "name": "missing_value_warning",
+                        "text": "",
+                        "desc" : "",
+                        "tooltip": "Missing value",
+                        "position": "TrailingPosition",
+                        "visible": false,
+                        "icon": {
+                            "name": "",
+                            "path": "source/icon/exclamation_mark.png",
+                            "size": [20,20]
+                        }
+                    }],
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "LE_rod_len": {
+                    "text": "",
+                    "desc" : "",
+                    "class": "QLineEdit",
+                    "grid": {
+                        "row": 4,
+                        "column": 1,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "action": [{
+                        "name": "missing_value_warning",
+                        "text": "",
+                        "desc" : "",
+                        "tooltip": "Missing value",
+                        "position": "TrailingPosition",
+                        "visible": false,
+                        "icon": {
+                            "name": "",
+                            "path": "source/icon/exclamation_mark.png",
+                            "size": [20,20]
+                        }
+                    }],
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "LE_xup_cor": {
+                    "text": "",
+                    "desc" : "",
+                    "class": "QLineEdit",
+                    "grid": {
+                        "row": 5,
+                        "column": 1,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "action": [{
+                        "name": "missing_value_warning",
+                        "text": "",
+                        "desc" : "",
+                        "tooltip": "Missing value",
+                        "position": "TrailingPosition",
+                        "visible": false,
+                        "icon": {
+                            "name": "",
+                            "path": "source/icon/exclamation_mark.png",
+                            "size": [20,20]
+                        }
+                    }],
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "LE_air_press": {
+                    "text": "",
+                    "desc" : "",
+                    "class": "QLineEdit",
+                    "grid": {
+                        "row": 6,
+                        "column": 1,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "action": [{
+                        "name": "missing_value_warning",
+                        "text": "",
+                        "desc" : "",
+                        "tooltip": "Missing value",
+                        "position": "TrailingPosition",
+                        "visible": false,
+                        "icon": {
+                            "name": "",
+                            "path": "source/icon/exclamation_mark.png",
+                            "size": [20,20]
+                        }
+                    }],
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "BT_clear": {
+                    "text": "Huỷ bỏ",
+                    "desc" : "",
+                    "class": "QPushButton",
+                    "grid": {
+                        "row": 7,
+                        "column": 1,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "TE_Compression": {
+                    "text": "",
+                    "desc" : "",
+                    "class": "QTextEdit",
+                    "grid": {
+                        "row": 8,
+                        "column": 1,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "TE_Comp_temp_C": {
+                    "text": "",
+                    "desc" : "",
+                    "class": "QTextEdit",
+                    "grid": {
+                        "row": 9,
+                        "column": 1,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "TE_Comp_temp_F": {
+                    "text": "",
+                    "desc" : "",
+                    "class": "QTextEdit",
+                    "grid": {
+                        "row": 10,
+                        "column": 1,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "TE_watt": {
+                    "text": "",
+                    "desc" : "",
+                    "class": "QTextEdit",
+                    "grid": {
+                        "row": 11,
+                        "column": 1,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }    
+                }
+            }
+        },
+        "GB_data": {
+            "text": "Dữ liệu",
+            "desc": "",
+            "class": "QGroupBox",
+            "geometry": {
+                "x": null,
+                "y": null,
+                "w": null,
+                "h": null
+            },
+            "font": {
+                "family": null,
+                "pointSize": null,
+                "weight": null,
+                "italic": false
+            },
+            "children":{
+                "label_time": {
+                    "text": "Thời gian đo",
+                    "desc" : "",
+                    "class": "QLabel",
+                    "grid": {
+                        "row": 0,
+                        "column": 0,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "label_xylanh1": {
+                    "text": "Đo xy lanh 1",
+                    "desc" : "",
+                    "class": "QLabel",
+                    "grid": {
+                        "row": 1,
+                        "column": 0,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "label_xylanh2": {
+                    "text": "Đo xy lanh 2",
+                    "desc" : "",
+                    "class": "QLabel",
+                    "grid": {
+                        "row": 2,
+                        "column": 0,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "label_xylanh3": {
+                    "text": "Đo xy lanh 3",
+                    "desc" : "",
+                    "class": "QLabel",
+                    "grid": {
+                        "row": 3,
+                        "column": 0,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    } 
+                },
+                "label_xylanh4": {
+                    "text": "Đo xy lanh 4",
+                    "desc" : "",
+                    "class": "QLabel",
+                    "grid": {
+                        "row":4,
+                        "column": 0,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }     
+                },
+                "DSB_time": {
+                    "number": "0.00",
+                    "minimum_number" : "0.00",
+                    "maximum_number" : "99.99",
+                    "class": "QDoubleSpinBox",
+                    "grid": {
+                        "row": 0,
+                        "column": 1,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }  
+                },
+                "PB_xylanh1": {
+                    "value": "0",
+                    "minimum_value" : "0",
+                    "maximum_value" : "100",
+                    "class": "QProgressBar",
+                    "grid": {
+                        "row": 1,
+                        "column": 1,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    } 
+                },
+                "PB_xylanh2": {
+                    "value": "0",
+                    "minimum_value" : "0",
+                    "maximum_value" : "100",
+                    "class": "QProgressBar",
+                    "grid": {
+                        "row": 2,
+                        "column": 1,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "PB_xylanh3": {
+                    "value": "0",
+                    "minimum_value" : "0",
+                    "maximum_value" : "100",
+                    "class": "QProgressBar",
+                    "grid": {
+                        "row": 3,
+                        "column": 1,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "PB_xylanh4": {
+                    "value": "0",
+                    "minimum_value" : "0",
+                    "maximum_value" : "100",
+                    "class": "QProgressBar",
+                    "grid": {
+                        "row": 4,
+                        "column": 1,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "label_s": {
+                    "text": "(s)",
+                    "desc" : "",
+                    "class": "QLabel",
+                    "grid": {
+                        "row": 0,
+                        "column": 2,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "BT_measure_xylanh1": {
+                    "text": "Xác nhận",
+                    "desc" : "",
+                    "class": "QPushButton",
+                    "grid": {
+                        "row": 1,
+                        "column": 2,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "BT_measure_xylanh2": {
+                    "text": "Xác nhận",
+                    "desc" : "",
+                    "class": "QPushButton",
+                    "grid": {
+                        "row": 2,
+                        "column": 2,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "BT_measure_xylanh3": {
+                    "text": "Xác nhận",
+                    "desc" : "",
+                    "class": "QPushButton",
+                    "grid": {
+                        "row": 3,
+                        "column": 2,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                },
+                "BT_measure_xylanh4": {
+                    "text": "Xác nhận",
+                    "desc" : "",
+                    "class": "QPushButton",
+                    "grid": {
+                        "row": 4,
+                        "column": 2,
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    }
+                }
+            }
+        },
+        "GB_Table": {
+            "text": "Bảng số liệu",
+            "desc": "",
+            "class": "QGroupBox",
+            "children": {
+                "TW_table": {
+                    "desc" : "",
+                    "class": "QTableWidget",
+                    "geometry": {
+                        "x": null,
+                        "y": null,
+                        "w": null,
+                        "h": null
+                    }                              
+                }
+            }
+        },
+        "GB_diagnose": {
+            "text": "Chẩn đoán",
+            "desc": "",
+            "class": "QGroupBox",
+            "children": {
+                "grap_xylanh": {
+                    "desc" : "",
+                    "class": "QTabWidget",
+                    "geometry": {
+                        "x": null,
+                        "y": null,
+                        "w": null,
+                        "h": null
+                    },
+                    "children":{
+                        "tab_1": {
+                            "desc" : "",
+                            "class": "QWidget",
+                            "geometry": {
+                                "x": null,
+                                "y": null,
+                                "w": null,
+                                "h": null
+                            },
+                            "children":{
+                                 "grap_xylanh1": {
+                                    "desc" : "",
+                                    "class": "QGraphicsView",
+                                    "geometry": {
+                                        "x": null,
+                                        "y": null,
+                                        "w": null,
+                                        "h": null
+                                    }
+                                }
+                            }
+                        },
+                        "tab_2": {
+                            "desc" : "",
+                            "class": "QWidget",
+                            "geometry": {
+                                "x": null,
+                                "y": null,
+                                "w": null,
+                                "h": null
+                            },
+                            "children":{
+                                 "grap_xylanh2": {
+                                    "desc" : "",
+                                    "class": "QGraphicsView",
+                                    "geometry": {
+                                        "x": null,
+                                        "y": null,
+                                        "w": null,
+                                        "h": null
+                                    }
+                                }
+                            }
+                        },
+                        "tab_3": {
+                            "desc" : "",
+                            "class": "QWidget",
+                            "geometry": {
+                                "x": null,
+                                "y": null,
+                                "w": null,
+                                "h": null
+                            },
+                            "children":{
+                                 "grap_xylanh3": {
+                                    "desc" : "",
+                                    "class": "QGraphicsView",
+                                    "geometry": {
+                                        "x": null,
+                                        "y": null,
+                                        "w": null,
+                                        "h": null
+                                    }
+                                }
+                            }
+                        },
+                        "tab_4": {
+                            "desc" : "",
+                            "class": "QWidget",
+                            "geometry": {
+                                "x": null,
+                                "y": null,
+                                "w": null,
+                                "h": null
+                            },
+                            "children":{
+                                 "grap_xylanh4": {
+                                    "desc" : "",
+                                    "class": "QGraphicsView",
+                                    "geometry": {
+                                        "x": null,
+                                        "y": null,
+                                        "w": null,
+                                        "h": null
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "BT_confirm": {
+            "text": "Xác nhận",
+            "desc": "",
+            "class": "QPushButton",
+            "geometry": {
+                "x": null,
+                "y": null,
+                "w": null,
+                "h": null
+            },
+            "font": {
+                "family": null,
+                "pointSize": null,
+                "weight": null,
+                "italic": false
+            }
+        },
+        "BT_cancel": {
+            "text": "Thoát",
+            "desc": "",
+            "class": "QPushButton",
+            "geometry": {
+                "x": null,
+                "y": null,
+                "w": null,
+                "h": null
+            },
+            "font": {
+                "family": null,
+                "pointSize": null,
+                "weight": null,
+                "italic": false
+            }
+        }
+    }  
+}

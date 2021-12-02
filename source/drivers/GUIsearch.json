@@ -1,0 +1,196 @@
+{
+    "name": "MainWindow",
+    "path": "GUI/GUIsearch.ui",
+    "desc": "",
+    "text": "GUI_search",
+    "icon": {
+        "name": "",
+        "path": null,
+        "size": [20,20]
+    },
+    "class": "QMainWindow",
+    "children":{
+        "GB_informatin_custom":{
+            "text": "Thông tin khách hàng",
+                    "desc" : "",
+                    "class": "QGroupBox",
+                    "geometry": {
+                        "x": 20,
+                        "y": 10,
+                        "w": 381,
+                        "h": 221
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    },
+                    "children":{
+                        "label_name_custom":{
+                            "text": "Tên khách hàng",
+                            "desc" : "",
+                            "class": "QLabel",
+                            "grid": {
+                                "row": 0,
+                                "column": 0,
+                                "rowSpan": 1,
+                                "columnSpan": 1
+                            },
+                            "font":{
+                                "family": null,
+                                "pointSize":null,
+                                "weight":null,
+                                "italic":false
+                            }   
+                        },
+                        "label_phone_number":{
+                           "text": "Số điện thoại",
+                           "desc":"",
+                           "class":"QLabel",
+                           "grid": {
+                               "row":1,
+                               "column":0,
+                               "rowSpan":1,
+                               "columnSpan":1
+                           },
+                           "font":{
+                               "family":null,
+                               "pointSize":null,
+                               "weight":null,
+                               "italic":false
+                           }
+                        },
+                        "label_number_car":{
+                            "text": "Biển số xe",
+                            "desc":"",
+                            "class":"QLabel",
+                            "grid":{
+                                "row":2,
+                                "column":0,
+                                "rowSpan":1,
+                                "columnSpan":1
+                            },
+                            "font":{
+                                "family":null,
+                                "pointSize":null,
+                                "weight":null,
+                                "italic":false
+                            }
+                        },
+                        "LE_name_custom":{
+                            "text":"",
+                            "desc":"",
+                            "class":"QLineEdit",
+                            "grid":{
+                                "row":0,
+                                "column":1,
+                                "rowSpan":1,
+                                "columnSpan":1
+                            },
+                            "action": {
+                                "LeadingPosition": {},
+                                "TrailingPosition": {
+                                    "icon": {
+                                        "name": "",
+                                        "path": "source/icon/exclamation_mark.png"
+                                    }
+                                }
+                            },
+                            "font":{
+                                "family":null,
+                                "pointSize":null,
+                                "weight":null,
+                                "italic":false
+                            }
+                        },
+                        "LE_phone_number":{
+                            "text":"",
+                            "desc":"",
+                            "class":"QLineEdit",
+                            "grid":{
+                                "row":1,
+                                "column":1,
+                                "rowSpan":1,
+                                "columnSpan":1
+                            },
+                            "action": {
+                                "LeadingPosition": {},
+                                "TrailingPosition": {
+                                    "icon": {
+                                        "name": "",
+                                        "path": "source/icon/exclamation_mark.png"
+                                    }
+                                }
+                            },
+                            "font":{
+                                "family":null,
+                                "pointSize":null,
+                                "weight":null,
+                                "italic":false
+                            }
+                        },
+                        "LE_number_car":{
+                            "text":"",
+                            "desc":"",
+                            "class":"QLineEdit",
+                            "grid":{
+                                "row":2,
+                                "column":1,
+                                "rowSpan":1,
+                                "columnSpan":1
+                            },
+                            "action": {
+                                "LeadingPosition": {},
+                                "TrailingPosition": {
+                                    "icon": {
+                                        "name": "",
+                                        "path": "source/icon/exclamation_mark.png"
+                                    }
+                                }
+                            },
+                            "font":{
+                                "family":null,
+                                "pointSize":null,
+                                "weight":null,
+                                "italic":false
+                            }
+                        }
+                    }
+        },
+        "BT_search": {
+            "text": "Tìm kiếm",
+            "desc": "",
+            "class": "QPushButton",
+            "geometry": {
+                "x": null,
+                "y": null,
+                "w": null,
+                "h": null
+            },
+            "font": {
+                "family": null,
+                "pointSize": null,
+                "weight": null,
+                "italic": false
+            }
+        },
+        "BT_exit": {
+            "text": "Hủy bỏ",
+            "desc": "",
+            "class": "QPushButton",
+            "geometry": {
+                "x": null,
+                "y": null,
+                "w": null,
+                "h": null
+            },
+            "font": {
+                "family": null,
+                "pointSize": null,
+                "weight": null,
+                "italic": false
+            }
+        }
+    }  
+}

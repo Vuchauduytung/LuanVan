@@ -1,0 +1,666 @@
+{
+    "name": "MainWindow",
+    "path": "GUI/GUIdisplay.ui",
+    "desc": "",
+    "text": "GUI_display",
+    "icon": {
+        "name": "",
+        "path": null,
+        "size": [20,20]
+    },
+    "class": "QMainWindow",
+    "children":{
+        "GB_information_custom":{
+            "text": "Thông tin khách hàng",
+                    "desc" : "",
+                    "class": "QGroupBox",
+                    "geometry": {
+                        "x": 20,
+                        "y": 10,
+                        "w": 381,
+                        "h": 261
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    },
+                    "children":{
+                        "label_name": {
+                            "text": "Tên khách hàng",
+                            "desc" : "",
+                            "class": "QLabel",
+                            "grid": {
+                                "row": 0,
+                                "column": 0,
+                                "rowSpan": 1,
+                                "columnSpan": 1
+                            },
+                            "font": {
+                                "family": null,
+                                "pointSize": null,
+                                "weight": null,
+                                "italic": false
+                            }
+                        },
+                        "label_num_vin":{
+                            "text": "Mã VIN",
+                            "desc" : "",
+                            "class": "QLabel",
+                            "grid": {
+                                "row": 1,
+                                "column": 0,
+                                "rowSpan": 1,
+                                "columnSpan": 1
+                            },
+                            "font": {
+                                "family": null,
+                                "pointSize": null,
+                                "weight": null,
+                                "italic": false
+                            }
+                        },
+                        "label_lices_num":{
+                            "text": "Biển số",
+                            "desc" : "",
+                            "class": "QLabel",
+                            "grid": {
+                                "row": 2,
+                                "column": 0,
+                                "rowSpan": 1,
+                                "columnSpan": 1
+                            },
+                            "font": {
+                                "family": null,
+                                "pointSize": null,
+                                "weight": null,
+                                "italic": false
+                            }
+                        },
+                        "label_num_phone":{
+                            "text": "SĐT",
+                            "desc" : "",
+                            "class": "QLabel",
+                            "grid": {
+                                "row": 3,
+                                "column": 0,
+                                "rowSpan": 1,
+                                "columnSpan": 1
+                            },
+                            "font": {
+                                "family": null,
+                                "pointSize": null,
+                                "weight": null,
+                                "italic": false
+                            }
+                        },
+                        "label_address":{
+                            "text": "Địa chỉ",
+                            "desc" : "",
+                            "class": "QLabel",
+                            "grid": {
+                                "row": 4,
+                                "column": 0,
+                                "rowSpan": 1,
+                                "columnSpan": 1
+                            },
+                            "font": {
+                                "family": null,
+                                "pointSize": null,
+                                "weight": null,
+                                "italic": false
+                            }
+                        },
+                        "label_date_fix":{
+                            "text": "Ngày sửa chữa",
+                            "desc" : "",
+                            "class": "QLabel",
+                            "grid": {
+                                "row": 5,
+                                "column": 0,
+                                "rowSpan": 1,
+                                "columnSpan": 1
+                            },
+                            "font": {
+                                "family": null,
+                                "pointSize": null,
+                                "weight": null,
+                                "italic": false
+                            }
+                        },
+                        "label_fix_car":{
+                            "text": "Lỗi xe",
+                            "desc" : "",
+                            "class": "QLabel",
+                            "grid": {
+                                "row": 6,
+                                "column": 0,
+                                "rowSpan": 1,
+                                "columnSpan": 1
+                            },
+                            "font": {
+                                "family": null,
+                                "pointSize": null,
+                                "weight": null,
+                                "italic": false
+                            }
+                        },
+                        "TE_name":{
+                            "text": "",
+                            "desc" : "",
+                            "class": "QTextEdit",
+                            "grid": {
+                                "row": 0,
+                                "column": 1,
+                                "rowSpan": 1,
+                                "columnSpan": 1
+                            },
+                            "font": {
+                                "family": null,
+                                "pointSize": null,
+                                "weight": null,
+                                "italic": false
+                            }
+                        },
+                        "TE_vin_num":{
+                            "text": "",
+                            "desc" : "",
+                            "class": "QTextEdit",
+                            "grid": {
+                                "row": 1,
+                                "column": 1,
+                                "rowSpan": 1,
+                                "columnSpan": 1
+                            },
+                            "font": {
+                                "family": null,
+                                "pointSize": null,
+                                "weight": null,
+                                "italic": false
+                            }
+                        },
+                        "TE_lices_num":{
+                            "text": "",
+                            "desc" : "",
+                            "class": "QTextEdit",
+                            "grid": {
+                                "row": 2,
+                                "column": 1,
+                                "rowSpan": 1,
+                                "columnSpan": 1
+                            },
+                            "font": {
+                                "family": null,
+                                "pointSize": null,
+                                "weight": null,
+                                "italic": false
+                            }
+                        },
+                        "TE_num_phone":{
+                            "text": "",
+                            "desc" : "",
+                            "class": "QTextEdit",
+                            "grid": {
+                                "row": 3,
+                                "column": 1,
+                                "rowSpan": 1,
+                                "columnSpan": 1
+                            },
+                            "font": {
+                                "family": null,
+                                "pointSize": null,
+                                "weight": null,
+                                "italic": false
+                            }
+                        },
+                        "TE_address":{
+                            "text": "",
+                            "desc" : "",
+                            "class": "QTextEdit",
+                            "grid": {
+                                "row": 4,
+                                "column": 1,
+                                "rowSpan": 1,
+                                "columnSpan": 1
+                            },
+                            "font": {
+                                "family": null,
+                                "pointSize": null,
+                                "weight": null,
+                                "italic": false
+                            }
+                        },
+                        "TE_date":{
+                            "text": "",
+                            "desc" : "",
+                            "class": "QTextEdit",
+                            "grid": {
+                                "row": 5,
+                                "column": 1,
+                                "rowSpan": 1,
+                                "columnSpan": 1
+                            },
+                            "font": {
+                                "family": null,
+                                "pointSize": null,
+                                "weight": null,
+                                "italic": false
+                            }
+                        },
+                        "TE_fix_car":{
+                            "text": "",
+                            "desc" : "",
+                            "class": "QTextEdit",
+                            "grid": {
+                                "row": 6,
+                                "column": 1,
+                                "rowSpan": 1,
+                                "columnSpan": 1
+                            },
+                            "font": {
+                                "family": null,
+                                "pointSize": null,
+                                "weight": null,
+                                "italic": false
+                            }
+                        }
+                    }   
+        },
+        "GB_car_number_VIN":{
+            "text": "Mã xe",
+                    "desc" : "",
+                    "class": "QGroupBox",
+                    "geometry": {
+                        "x": 10,
+                        "y": 280,
+                        "w": 391,
+                        "h": 281
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    },
+                    "children":{
+                        "label_area":{
+                            "text": "Khu vực",
+                            "desc" : "",
+                            "class": "QLabel",
+                            "grid": {
+                                "row": 0,
+                                "column": 0,
+                                "rowSpan": 1,
+                                "columnSpan": 1
+                            },
+                            "font": {
+                                "family": null,
+                                "pointSize": null,
+                                "weight": null,
+                                "italic": false
+                            }
+                        },
+                        "label_country":{
+                            "text": "Nước sản xuất",
+                            "desc" : "",
+                            "class": "QLabel",
+                            "grid": {
+                                "row": 1,
+                                "column": 0,
+                                "rowSpan": 1,
+                                "columnSpan": 1
+                            },
+                            "font": {
+                                "family": null,
+                                "pointSize": null,
+                                "weight": null,
+                                "italic": false
+                            }
+                        },
+                        "label_car_model":{
+                            "text": "Mẫu xe",
+                            "desc" : "",
+                            "class": "QLabel",
+                            "grid": {
+                                "row": 2,
+                                "column": 0,
+                                "rowSpan": 1,
+                                "columnSpan": 1
+                            },
+                            "font": {
+                                "family": null,
+                                "pointSize": null,
+                                "weight": null,
+                                "italic": false
+                            }
+                        },
+                        "label_name_car":{
+                            "text": "Hãng xe",
+                            "desc" : "",
+                            "class": "QLabel",
+                            "grid": {
+                                "row": 3,
+                                "column": 0,
+                                "rowSpan": 1,
+                                "columnSpan": 1
+                            },
+                            "font": {
+                                "family": null,
+                                "pointSize": null,
+                                "weight": null,
+                                "italic": false
+                            }
+                        },
+                        "label_sec_num":{
+                            "text": "Mã bảo mật",
+                            "desc" : "",
+                            "class": "QLabel",
+                            "grid": {
+                                "row": 4,
+                                "column": 0,
+                                "rowSpan": 1,
+                                "columnSpan": 1
+                            },
+                            "font": {
+                                "family": null,
+                                "pointSize": null,
+                                "weight": null,
+                                "italic": false
+                            }
+                        },
+                        "label_product_date":{
+                            "text": "Năm sản xuẩt",
+                            "desc" : "",
+                            "class": "QLabel",
+                            "grid": {
+                                "row": 5,
+                                "column": 0,
+                                "rowSpan": 1,
+                                "columnSpan": 1
+                            },
+                            "font": {
+                                "family": null,
+                                "pointSize": null,
+                                "weight": null,
+                                "italic": false
+                            }
+                        },
+                        "label_factory":{
+                            "text": "Nhà máy lắp ráp",
+                            "desc" : "",
+                            "class": "QLabel",
+                            "grid": {
+                                "row": 6,
+                                "column": 0,
+                                "rowSpan": 1,
+                                "columnSpan": 1
+                            },
+                            "font": {
+                                "family": null,
+                                "pointSize": null,
+                                "weight": null,
+                                "italic": false
+                            }
+                        },
+                        "label_num_product":{
+                            "text": "Số thứ tự sản xuất",
+                            "desc" : "",
+                            "class": "QLabel",
+                            "grid": {
+                                "row": 7,
+                                "column": 0,
+                                "rowSpan": 1,
+                                "columnSpan": 1
+                            },
+                            "font": {
+                                "family": null,
+                                "pointSize": null,
+                                "weight": null,
+                                "italic": false
+                            }
+                        },
+                        "TE_area":{
+                            "text": "",
+                            "desc" : "",
+                            "class": "QTextEdit",
+                            "grid": {
+                                "row": 0,
+                                "column": 1,
+                                "rowSpan": 1,
+                                "columnSpan": 1
+                            },
+                            "font": {
+                                "family": null,
+                                "pointSize": null,
+                                "weight": null,
+                                "italic": false
+                            }
+                        },
+                        "TE_coutry":{
+                            "text": "",
+                            "desc" : "",
+                            "class": "QTextEdit",
+                            "grid": {
+                                "row": 1,
+                                "column": 1,
+                                "rowSpan": 1,
+                                "columnSpan": 1
+                            },
+                            "font": {
+                                "family": null,
+                                "pointSize": null,
+                                "weight": null,
+                                "italic": false
+                            }
+                        },
+                        "TE_car_model":{
+                            "text": "",
+                            "desc" : "",
+                            "class": "QTextEdit",
+                            "grid": {
+                                "row": 2,
+                                "column": 1,
+                                "rowSpan": 1,
+                                "columnSpan": 1
+                            },
+                            "font": {
+                                "family": null,
+                                "pointSize": null,
+                                "weight": null,
+                                "italic": false
+                            }
+                        },
+                        "TE_name_car":{
+                            "text": "",
+                            "desc" : "",
+                            "class": "QTextEdit",
+                            "grid": {
+                                "row": 3,
+                                "column": 1,
+                                "rowSpan": 1,
+                                "columnSpan": 1
+                            },
+                            "font": {
+                                "family": null,
+                                "pointSize": null,
+                                "weight": null,
+                                "italic": false
+                            }
+                        },
+                        "TE_sec_num":{
+                            "text": "",
+                            "desc" : "",
+                            "class": "QTextEdit",
+                            "grid": {
+                                "row": 4,
+                                "column": 1,
+                                "rowSpan": 1,
+                                "columnSpan": 1
+                            },
+                            "font": {
+                                "family": null,
+                                "pointSize": null,
+                                "weight": null,
+                                "italic": false
+                            }
+                        },
+                        "TE_product_date":{
+                            "text": "",
+                            "desc" : "",
+                            "class": "QTextEdit",
+                            "grid": {
+                                "row": 5,
+                                "column": 1,
+                                "rowSpan": 1,
+                                "columnSpan": 1
+                            },
+                            "font": {
+                                "family": null,
+                                "pointSize": null,
+                                "weight": null,
+                                "italic": false
+                            }
+                        },
+                        "TE_factory":{
+                            "text": "",
+                            "desc" : "",
+                            "class": "QTextEdit",
+                            "grid": {
+                                "row": 6,
+                                "column": 1,
+                                "rowSpan": 1,
+                                "columnSpan": 1
+                            },
+                            "font": {
+                                "family": null,
+                                "pointSize": null,
+                                "weight": null,
+                                "italic": false
+                            }
+                        },
+                        "TE_num_product":{
+                            "text": "",
+                            "desc" : "",
+                            "class": "QTextEdit",
+                            "grid": {
+                                "row": 7,
+                                "column": 1,
+                                "rowSpan": 1,
+                                "columnSpan": 1
+                            },
+                            "font": {
+                                "family": null,
+                                "pointSize": null,
+                                "weight": null,
+                                "italic": false
+                            }
+                        }
+                    }
+        },
+        "GB_diagnose":{
+            "text": "Chẩn đoán",
+                    "desc" : "",
+                    "class": "QGroupBox",
+                    "geometry": {
+                        "x": 410,
+                        "y": 10,
+                        "w": 571,
+                        "h": 551
+                    },
+                    "font": {
+                        "family": null,
+                        "pointSize": null,
+                        "weight": null,
+                        "italic": false
+                    },
+                    "children":{
+                        "TE_diagnose":{
+                            "text": "",
+                            "desc" : "",
+                            "class": "QTextEdit",
+                            "geometry":{
+                                "x":null,
+                                "y":null,
+                                "w":null,
+                                "h":null
+                            },
+                            "font": {
+                                "family": null,
+                                "pointSize": null,
+                                "weight": null,
+                                "italic": false
+                            }
+                        }
+                    }
+        },
+        "BT_graph": {
+            "text": "Đồ thị",
+            "desc": "",
+            "class": "QPushButton",
+            "geometry": {
+                "x": null,
+                "y": null,
+                "w": null,
+                "h": null
+            },
+            "font": {
+                "family": null,
+                "pointSize": null,
+                "weight": null,
+                "italic": false
+            }
+        },
+        "BT_fix": {
+            "text": "Sửa chữa",
+            "desc": "",
+            "class": "QPushButton",
+            "geometry": {
+                "x": null,
+                "y": null,
+                "w": null,
+                "h": null
+            },
+            "font": {
+                "family": null,
+                "pointSize": null,
+                "weight": null,
+                "italic": false
+            }
+        },
+        "BT_cancel": {
+            "text": "Thoát",
+            "desc": "",
+            "class": "QPushButton",
+            "geometry": {
+                "x": null,
+                "y": null,
+                "w": null,
+                "h": null
+            },
+            "font": {
+                "family": null,
+                "pointSize": null,
+                "weight": null,
+                "italic": false
+            }
+        },
+        "BT_graph_fix": {
+            "text": "Hình ảnh xe",
+            "desc": "",
+            "class": "QPushButton",
+            "geometry": {
+                "x": null,
+                "y": null,
+                "w": null,
+                "h": null
+            },
+            "font": {
+                "family": null,
+                "pointSize": null,
+                "weight": null,
+                "italic": false
+            }
+        }
+    }
+}

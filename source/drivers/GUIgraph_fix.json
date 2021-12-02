@@ -1,0 +1,60 @@
+{
+    "name": "MainWindow",
+    "path": "GUI/GUIgraph_fix.ui",
+    "desc": "",
+    "text": "GUI_graph_fix",
+    "icon": {
+        "name": "",
+        "path": null,
+        "size": [20,20]
+    },
+    "class": "QMainWindow",
+    "children":{
+        "GB_grap_fix":{
+            "text": "Hình ảnh xe",
+            "desc" : "",
+            "class": "QGroupBox",
+            "geometry": {
+                "x": 10,
+                "y": 10,
+                "w": 781,
+                "h": 501
+            },
+            "font": {
+                "family": null,
+                "pointSize": null,
+                "weight": null,
+                "italic": false
+            },
+            "children":{
+                "GV_graph_fix":{
+                    "desc" : "",
+                    "class": "QGraphicsView",
+                    "geometry": {
+                        "x": null,
+                        "y": null,
+                        "w": null,
+                        "h": null
+                    }
+                }
+            }
+        },
+        "BT_exit": {
+            "text": "Thoát",
+            "desc": "",
+            "class": "QPushButton",
+            "geometry": {
+                "x": null,
+                "y": null,
+                "w": null,
+                "h": null
+            },
+            "font": {
+                "family": null,
+                "pointSize": null,
+                "weight": null,
+                "italic": false
+            }
+        }
+    }
+}

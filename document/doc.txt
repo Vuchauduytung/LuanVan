@@ -1,0 +1,41 @@
+QCheckBox, QPushButton, QLineEdit không hỗ trợ Rich Text (Html)
+
+"format": 
+    "PlainText": Chữ thường
+    "RichText": Html
+    "AutoText": có thể là thường hoặc html (không dùng trong root_frame)
+    "MarkdownText": Markdown (không dùng trong root_frame)
+    
+"alignment":
+    "AlignAbsolute": chữ từ trái sang phải
+    "AlignBottom": căn lề dưới
+    "AlignCenter": chính giữa (cả chiều dọc và chiều ngang)
+    "AlignHCenter": chính giữa (theo chiều ngang)
+    "AlignHorizontal_Mask": //
+    "AlignJustify": đặt chữ vào chỗ nào trống
+    "AlignLeft": căn lề trái
+    "AlignRight": căn lề phải
+    "AlignTop": căn lề trên
+    "AlignVCenter": chính giữa (theo chiều dọc)
+
+Mouse event: 
+    "mouseOver": di trỏ chuột đến vị trí có event
+    "mouseClick": click trỏ chuột vào vị trí có event
+    "mouseRelease": thả trỏ chuột khi đang nhấn vào vị trí có event
+    "mouseLeave": di chuyển trỏ chuột ra khỏi vị trí có event
+
+Task: 
+    "default": xuất ra màn hình "Welcome to default task"
+
+PenStyle:
+    "NoPen": không có
+    "SolidLine": đường bình thường
+    "DashLine": đường dạng "- -"
+    "DotLine": đường dạng ". ."
+    "DashDotLine": đường dạng "- . -"
+    "DashDotDotLine": "- . . -"
+
+Button:
+    "LeftButton": chuột trái
+    "RightButton": chuột phải
+    "MiddleButton": con lăn
