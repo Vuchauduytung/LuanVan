@@ -16,7 +16,7 @@ class Ui(QtWidgets.QMainWindow):
         self.main_path = main_path
         # load GUI
         gui_path = os.path.abspath(
-            os.path.join(main_path, "GUI", "GUIgraph_fix.ui"))
+            os.path.join(main_path, "GUI", "GUIgraph_xylanh1.ui"))
         uic.loadUi(gui_path, self)
         self.setup_pushButton()
         self.show()
