@@ -19,7 +19,8 @@ class Ui(QtWidgets.QMainWindow):
             os.path.join(main_path, "GUI", "GUIsearch.ui"))
         uic.loadUi(gui_path, self)
         self.setup_lineEdit()
-        self.setup_pushButton()
+        self.setup_pushButton_search()
+        self.setup_pushButton_exit()
         self.show()
         
     def setup_lineEdit(self):
@@ -59,14 +60,19 @@ class Ui(QtWidgets.QMainWindow):
             self.action.setVisible(False)
         QLineEdit.focusOutEvent(self, event)
         
-    def setup_pushButton(self):
+    def setup_pushButton_search(self):
         # GB_informatin_custom QGroupBox
         BT_search: QPushButton = self.findChild(QPushButton, "BT_search")
+        BT_search.clicked.connect(self.BT_search_click)
+        
+    def setup_pushButton_exit(self):
+        # GB_informatin_custom QGroupBox
         BT_exit: QPushButton = self.findChild(QPushButton, "BT_exit")
-        #BT_search.clicked.connect(self.BT_search_click)
         BT_exit.clicked.connect(self.BT_quit_click)
         
-
+    def BT_search_click(self):
+        window.close()
+    
     def BT_quit_click(self):
         window.close()
         
