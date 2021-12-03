@@ -63,7 +63,7 @@ class Ui(QtWidgets.QMainWindow):
         os.system('python "{}"'.format(file_data))
         
     def BT_fix_click(self):
-        file_data = os.path.abspath(os.path.join(self.main_path, "source","Open_pdf.py"))
+        file_data = os.path.abspath(os.path.join(self.main_path, "source","modules","library","Open_pdf.py"))
         os.system('python "{}"'.format(file_data))
         
     def BT_cancel_click(self):
