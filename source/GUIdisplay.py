@@ -19,19 +19,66 @@ class Ui(QtWidgets.QMainWindow):
             os.path.join(main_path, "GUI", "GUIdisplay.ui"))
         uic.loadUi(gui_path, self)
         self.setup_pushButton()
-        #self.setup_lineEdit()
+        self.setup_lineEdit_information_custom()
+        self.setup_lineEdit_car_number_VIN()
         self.show()
+    
+    def open_json(self):
+        #Open json
+        data_path = os.path.abspath(os.path.join(self.main_path, "source", "data.json"))
+        customer = json2dict(data_path)
         
-    def setup_lineEdit(self):
+    def setup_lineEdit_information_custom(self):
+        #Open json
+        data_path = os.path.abspath(os.path.join(self.main_path, "source", "data.json"))
+        customer = json2dict(data_path)
+        
         GB_information_custom: QGroupBox = self.findChild(QGroupBox, "GB_information_custom")
         LE_name: QLineEdit = self.findChild(QLineEdit, "LE_name")
-        LE_Comp_temp_C: QLineEdit = self.findChild(QLineEdit, "LE_Comp_temp_C")
-        LE_Comp_temp_F: QLineEdit = self.findChild(QLineEdit, "LE_Comp_temp_F")
-        LE_watt: QLineEdit = self.findChild(QLineEdit, "LE_watt")
-        LE_name.setText(value_LE_name)
-        LE_Comp_temp_C.setText(str(round(temperature_C,4)))
-        LE_Comp_temp_F.setText(str(round(temperature_F,4)))
-        LE_watt.setText(str(round(compression_pressure,4)))
+        LE_num_vin: QLineEdit = self.findChild(QLineEdit, "LE_num_vin")
+        LE_lices_num: QLineEdit = self.findChild(QLineEdit, "LE_lices_num")
+        LE_num_phone: QLineEdit = self.findChild(QLineEdit, "LE_num_phone")
+        LE_address: QLineEdit = self.findChild(QLineEdit, "LE_address")
+        LE_date_fix: QLineEdit = self.findChild(QLineEdit, "LE_date_fix")
+        LE_fix_car: QLineEdit = self.findChild(QLineEdit, "LE_fix_car")
+        
+        #Hien gia tri
+        LE_name.setText(customer["durian"])
+        LE_num_vin.setText(customer["durian"])
+        LE_lices_num.setText(customer["durian"])
+        LE_num_phone.setText(customer["durian"])
+        LE_address.setText(customer["durian"])
+        LE_date_fix.setText(customer["durian"])
+        LE_fix_car.setText(customer["durian"])
+        
+    def setup_lineEdit_car_number_VIN(self):
+        #Open json
+        data_path = os.path.abspath(os.path.join(self.main_path, "source", "data.json"))
+        customer = json2dict(data_path)
+        
+        data_vin = os.path.abspath(os.path.join(self.main_path, "source","library", "libary_VIN.json"))
+        num_vin_data = json2dict(data_vin)
+        
+        GB_car_number_VIN: QGroupBox = self.findChild(QGroupBox, "GB_car_number_VIN")
+        
+        LE_area: QLineEdit = self.findChild(QLineEdit, "LE_area")
+        LE_country: QLineEdit = self.findChild(QLineEdit, "LE_country")
+        LE_car_model: QLineEdit = self.findChild(QLineEdit, "LE_car_model")
+        LE_car_name: QLineEdit = self.findChild(QLineEdit, "LE_car_name")
+        LE_sec_num: QLineEdit = self.findChild(QLineEdit, "LE_sec_num")
+        LE_product_date: QLineEdit = self.findChild(QLineEdit, "LE_product_date")
+        LE_factory: QLineEdit = self.findChild(QLineEdit, "LE_factory")
+        LE_num_product: QLineEdit = self.findChild(QLineEdit, "LE_num_product")
+        
+        #Hien gia tri
+        LE_area.setText(customer["phone"])
+        LE_country.setText(customer["phone"])
+        LE_car_model.setText(customer["phone"])
+        LE_car_name.setText(customer["phone"])
+        LE_sec_num.setText(customer["phone"])
+        LE_product_date.setText(customer["phone"])
+        LE_factory.setText(customer["phone"])
+        LE_num_product.setText(customer["phone"])
         
     def LE_focusOutEvent(UI, self: QLineEdit, event: QFocusEvent):
         if self.text() == "":

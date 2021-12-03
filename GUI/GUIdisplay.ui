@@ -166,6 +166,11 @@
        <height>22</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
      <property name="readOnly">
       <bool>true</bool>
      </property>
@@ -178,6 +183,11 @@
        <width>221</width>
        <height>22</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
      </property>
      <property name="readOnly">
       <bool>true</bool>
@@ -192,6 +202,11 @@
        <height>22</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
      <property name="readOnly">
       <bool>true</bool>
      </property>
@@ -204,6 +219,11 @@
        <width>221</width>
        <height>22</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
      </property>
      <property name="readOnly">
       <bool>true</bool>
@@ -218,6 +238,11 @@
        <height>22</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
      <property name="readOnly">
       <bool>true</bool>
      </property>
@@ -231,6 +256,11 @@
        <height>31</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
      <property name="readOnly">
       <bool>true</bool>
      </property>
@@ -243,6 +273,11 @@
        <width>221</width>
        <height>22</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
      </property>
      <property name="readOnly">
       <bool>true</bool>
@@ -429,6 +464,11 @@
        <height>22</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
      <property name="readOnly">
       <bool>true</bool>
      </property>
@@ -441,6 +481,11 @@
        <width>221</width>
        <height>22</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
      </property>
      <property name="readOnly">
       <bool>true</bool>
@@ -455,6 +500,11 @@
        <height>22</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
      <property name="readOnly">
       <bool>true</bool>
      </property>
@@ -467,6 +517,11 @@
        <width>221</width>
        <height>22</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
      </property>
      <property name="readOnly">
       <bool>true</bool>
@@ -481,6 +536,11 @@
        <height>22</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
      <property name="readOnly">
       <bool>true</bool>
      </property>
@@ -493,6 +553,11 @@
        <width>221</width>
        <height>22</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
      </property>
      <property name="readOnly">
       <bool>true</bool>
@@ -507,6 +572,11 @@
        <height>22</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
      <property name="readOnly">
       <bool>true</bool>
      </property>
@@ -519,6 +589,11 @@
        <width>221</width>
        <height>22</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
      </property>
      <property name="readOnly">
       <bool>true</bool>
