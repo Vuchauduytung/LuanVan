@@ -40,10 +40,12 @@ class Ui(QtWidgets.QMainWindow):
         os.system('python "{}"'.format(file_data))
         
     def BT_graph_click(self):
-        window.close()
+        file_data = os.path.abspath(os.path.join(self.main_path, "source", "GUIgraph_xylanh1.py"))
+        os.system('python "{}"'.format(file_data))
         
     def BT_fix_click(self):
-        window.close()
+        file_data = os.path.abspath(os.path.join(self.main_path, "source","Open_pdf.py"))
+        os.system('python "{}"'.format(file_data))
         
     def BT_cancel_click(self):
         window.close()
