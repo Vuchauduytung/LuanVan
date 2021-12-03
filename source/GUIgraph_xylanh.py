@@ -41,21 +41,17 @@ class Ui(QtWidgets.QMainWindow):
             data_list_time[i] =  customer["Data"][i]['time']
             data_list_P[i] =  customer["Data"][i]['pmin']
             i+=1
-            
+        # Ve do thi ap suat nen   
         self.scene = QtWidgets.QGraphicsScene(self.GV_graph)
         self.GV_graph.setScene(self.scene)
-
         figure = Figure()
         axes = figure.gca()
         axes.set_title("Do thi ap suat nen")
-        
         axes.plot(data_list_time, data_list_P, "-k", label="Ap suat ")
         axes.legend()
         axes.grid(True)
-
         canvas = FigureCanvas(figure)
         proxy_widget = self.scene.addWidget(canvas)
-    
         proxy_widget = QtWidgets.QGraphicsProxyWidget()
         proxy_widget.setWidget(canvas)
         self.scene.addItem(proxy_widget)
