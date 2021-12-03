@@ -29,15 +29,15 @@
      </font>
     </property>
     <property name="title">
-     <string>Đồ thị xylanh 1</string>
+     <string>Đồ thị xylanh</string>
     </property>
     <widget class="QGraphicsView" name="GV_graph">
      <property name="geometry">
       <rect>
        <x>10</x>
        <y>30</y>
-       <width>761</width>
-       <height>461</height>
+       <width>760</width>
+       <height>460</height>
       </rect>
      </property>
     </widget>

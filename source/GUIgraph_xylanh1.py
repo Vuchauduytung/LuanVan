@@ -5,7 +5,10 @@ from PyQt5.QtCore import *
 import sys
 import os
 from modules.library.IO_support import *
-
+from modules.library.pyqt_support import *
+from matplotlib.figure import Figure
+from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
+import numpy as np
 
 class Ui(QtWidgets.QMainWindow):
     """
@@ -20,7 +23,42 @@ class Ui(QtWidgets.QMainWindow):
             os.path.join(main_path, "GUI", "GUIgraph_xylanh1.ui"))
         uic.loadUi(gui_path, self)
         self.setup_pushButton()
+        self.setup_graph()
         self.show()
+    
+    def setup_graph(self):
+        GV_graph: QGraphicsView = self.findChild(QGraphicsView, "GV_graph")
+        data_path = os.path.abspath(os.path.join(self.main_path, "data_P.json"))
+        customer = json2dict(data_path)
+        graph = customer["Data"]
+        # Tinh tong gia tri trong json
+        k = int(len(graph))
+        # Tao list
+        data_list_time = list(range(0,k))
+        data_list_P = list(range(0,k))
+        i = 0
+        for graph[i] in graph:
+            data_list_time[i] =  customer["Data"][i]['time']
+            data_list_P[i] =  customer["Data"][i]['pmin']
+            i+=1
+            
+        self.scene = QtWidgets.QGraphicsScene(self.GV_graph)
+        self.GV_graph.setScene(self.scene)
+
+        figure = Figure()
+        axes = figure.gca()
+        axes.set_title("Do thi ap suat nen")
+        
+        axes.plot(data_list_time, data_list_P, "-k", label="Ap suat ")
+        axes.legend()
+        axes.grid(True)
+
+        canvas = FigureCanvas(figure)
+        proxy_widget = self.scene.addWidget(canvas)
+    
+        proxy_widget = QtWidgets.QGraphicsProxyWidget()
+        proxy_widget.setWidget(canvas)
+        self.scene.addItem(proxy_widget)
         
     def setup_pushButton(self):
         # GB_informatin_custom QGroupBox
