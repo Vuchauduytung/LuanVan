@@ -4,6 +4,8 @@ from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 import sys
 import os
+import numpy as np
+# Import json module
 from modules.library.IO_support import *
 
 class Ui(QtWidgets.QMainWindow):
@@ -55,13 +57,15 @@ class Ui(QtWidgets.QMainWindow):
         #Open json
         data_path = os.path.abspath(os.path.join(self.main_path, "source", "data.json"))
         customer = json2dict(data_path)
+        vin_num = list(customer["num_vin"])
+        vin_num_product = "".join(vin_num[:3])
+        print(vin_num)
         
         data_vin = os.path.abspath(os.path.join(self.main_path, "source","library", "libary_VIN.json"))
         num_vin_data = json2dict(data_vin)
-        
+        # Doc ma vin
         GB_car_number_VIN: QGroupBox = self.findChild(QGroupBox, "GB_car_number_VIN")
-        
-        LE_area: QLineEdit = self.findChild(QLineEdit, "LE_area")
+        LE_area: QLineEdit = self.findChild(QLineEdit, "LE_area")    
         LE_country: QLineEdit = self.findChild(QLineEdit, "LE_country")
         LE_car_model: QLineEdit = self.findChild(QLineEdit, "LE_car_model")
         LE_car_name: QLineEdit = self.findChild(QLineEdit, "LE_car_name")
@@ -71,14 +75,15 @@ class Ui(QtWidgets.QMainWindow):
         LE_num_product: QLineEdit = self.findChild(QLineEdit, "LE_num_product")
         
         #Hien gia tri
-        LE_area.setText(customer["phone"])
-        LE_country.setText(customer["phone"])
-        LE_car_model.setText(customer["phone"])
-        LE_car_name.setText(customer["phone"])
+        LE_area.setText(num_vin_data["contry"]["value"][vin_num[0]]["text"])
+        LE_country.setText(num_vin_data["contry"]["value"][vin_num[0]]["children"][vin_num[1]]["text"])
+        LE_car_model.setText(num_vin_data["name_product_car"]["value"][vin_num_product]["text"])
+        LE_car_name.setText(num_vin_data["name_product_car"]["value"][vin_num_product]["text"])
         LE_sec_num.setText(customer["phone"])
-        LE_product_date.setText(customer["phone"])
+        LE_product_date.setText(num_vin_data["product_date"]["value"][vin_num[6]]["text"])
         LE_factory.setText(customer["phone"])
         LE_num_product.setText(customer["phone"])
+        
         
     def LE_focusOutEvent(UI, self: QLineEdit, event: QFocusEvent):
         if self.text() == "":
