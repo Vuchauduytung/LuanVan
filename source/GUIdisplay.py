@@ -59,7 +59,7 @@ class Ui(QtWidgets.QMainWindow):
         os.system('python "{}"'.format(file_data))
         
     def BT_graph_click(self):
-        file_data = os.path.abspath(os.path.join(self.main_path, "source", "GUIgraph_xylanh1.py"))
+        file_data = os.path.abspath(os.path.join(self.main_path, "source", "GUIgraph_xylanh.py"))
         os.system('python "{}"'.format(file_data))
         
     def BT_fix_click(self):
