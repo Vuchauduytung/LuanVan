@@ -19,7 +19,26 @@ class Ui(QtWidgets.QMainWindow):
             os.path.join(main_path, "GUI", "GUIdisplay.ui"))
         uic.loadUi(gui_path, self)
         self.setup_pushButton()
+        #self.setup_lineEdit()
         self.show()
+        
+    def setup_lineEdit(self):
+        GB_foreseen.label_warning.setVisible(False)
+        LE_Compression: QLineEdit = self.findChild(QLineEdit, "LE_Compression")
+        LE_Comp_temp_C: QLineEdit = self.findChild(QLineEdit, "LE_Comp_temp_C")
+        LE_Comp_temp_F: QLineEdit = self.findChild(QLineEdit, "LE_Comp_temp_F")
+        LE_watt: QLineEdit = self.findChild(QLineEdit, "LE_watt")
+        LE_Compression.setText(str(round(Compression_wattage,4)))
+        LE_Comp_temp_C.setText(str(round(temperature_C,4)))
+        LE_Comp_temp_F.setText(str(round(temperature_F,4)))
+        LE_watt.setText(str(round(compression_pressure,4)))
+        
+    def LE_focusOutEvent(UI, self: QLineEdit, event: QFocusEvent):
+        if self.text() == "":
+            self.action.setVisible(True)
+        else:
+            self.action.setVisible(False)
+        QLineEdit.focusOutEvent(self, event)
         
     def setup_pushButton(self):
         # GB_informatin_custom QGroupBox
