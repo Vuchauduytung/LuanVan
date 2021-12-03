@@ -23,8 +23,8 @@ class Ui(QtWidgets.QMainWindow):
         self.show()
         
     def setup_lineEdit(self):
-        GB_foreseen.label_warning.setVisible(False)
-        LE_Compression: QLineEdit = self.findChild(QLineEdit, "LE_Compression")
+        GB_information_custom: QGroupBox = self.findChild(QGroupBox, "GB_information_custom")
+        LE_name: QLineEdit = self.findChild(QLineEdit, "LE_name")
         LE_Comp_temp_C: QLineEdit = self.findChild(QLineEdit, "LE_Comp_temp_C")
         LE_Comp_temp_F: QLineEdit = self.findChild(QLineEdit, "LE_Comp_temp_F")
         LE_watt: QLineEdit = self.findChild(QLineEdit, "LE_watt")
