@@ -28,7 +28,7 @@ class Ui(QtWidgets.QMainWindow):
         LE_Comp_temp_C: QLineEdit = self.findChild(QLineEdit, "LE_Comp_temp_C")
         LE_Comp_temp_F: QLineEdit = self.findChild(QLineEdit, "LE_Comp_temp_F")
         LE_watt: QLineEdit = self.findChild(QLineEdit, "LE_watt")
-        LE_Compression.setText(str(round(Compression_wattage,4)))
+        LE_name.setText(value_LE_name)
         LE_Comp_temp_C.setText(str(round(temperature_C,4)))
         LE_Comp_temp_F.setText(str(round(temperature_F,4)))
         LE_watt.setText(str(round(compression_pressure,4)))
