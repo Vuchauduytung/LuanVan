@@ -565,7 +565,7 @@
      <string>Hình ảnh xe</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="BT_cancel_2">
+   <widget class="QPushButton" name="BT_cancel">
     <property name="geometry">
      <rect>
       <x>630</x>
