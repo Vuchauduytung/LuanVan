@@ -1,7 +1,7 @@
 % clc; clear all; close all
 %ve do thi quan he e va n
 %clc;
-%khai báo tat ca các bien su dung
+%khai bï¿½o tat ca cï¿½c bien su dung
 close all;
 syms a b c x y k n m i p q f g n1 m1 name z u v po S D Vh A L W Po Pa SE ed Ve Vc T n0 Lc gct M1 w  pc pmin Tc Pc nb
 % khai bao mang nhiet do T
@@ -11,7 +11,7 @@ for k=1:23
     x(k) = c ;
     c=c+10;
 end
-% khai báo mang ti so nén
+% khai bï¿½o mang ti so nï¿½n
 y=zeros(1,181);
 a=1.5;
 for i=1:181
@@ -25,7 +25,7 @@ for i=1:181
 s(i) = w;
 w = w + 1;
 end
-%khai báo và tìm giá tri n
+%khai bï¿½o vï¿½ tï¿½m giï¿½ tri n
 b=zeros(23,181);
 nb=1;
 for k=1:23
@@ -43,7 +43,7 @@ for i=1:2:23
         text(y(181),b(i,181),name);
 end
 %xac dinh
-% khai báo giá tri
+% khai bï¿½o giï¿½ tri
 v = 300;
 u = 9.1;
 S = 75;
@@ -69,7 +69,7 @@ if v>290
    end
    p=b(n1,m1);
    text(q,p,'*');
-% công thuc tinh
+% cï¿½ng thuc tinh
 SE = (S*(1+cosd(A))/2)+L-sqrt((L^2)-((S*sind(A))^2)/4);
 Ve = (pi*(D^2)*SE)/4;
 Vc = (pi/(4*(u-1)))*(D^2)*S;
@@ -106,7 +106,7 @@ for k=1:180
     mS(k)=r;
     r=r-(S/180);
 end
-%kì nen
+%kï¿½ nen
 uk=0;
 for k=181:360
     mS(k)=uk;
@@ -228,7 +228,7 @@ figure;
 a = 0;
 ii = 0;
 period = length(pmin);
-fileID = fopen('F:\HK211\Lu?n V?n\data_P.json','w');
+fileID = fopen('F:\HK211\Luáº­n VÄƒn\source\data_P.json','w');
 fprintf(fileID, '{ "Data"');
 fprintf(fileID, ':');
 fprintf(fileID, '[');
