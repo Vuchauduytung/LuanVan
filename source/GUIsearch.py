@@ -108,7 +108,6 @@ class Ui(QtWidgets.QMainWindow):
             GB_informatin_custom: QGroupBox = self.findChild(QGroupBox, "GB_informatin_custom")
             GB_informatin_custom.label_warning.setVisible(True)
             
-        window.close()
             
     def BT_quit_click(self):
         window.close()
