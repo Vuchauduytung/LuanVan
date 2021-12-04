@@ -28,7 +28,7 @@ class Ui(QtWidgets.QMainWindow):
     
     def setup_graph(self):
         GV_graph: QGraphicsView = self.findChild(QGraphicsView, "GV_graph")
-        data_path = os.path.abspath(os.path.join(self.main_path, "source" ,"data_P.json"))
+        data_path = os.path.abspath(os.path.join(self.main_path, "data" ,"data_P.json"))
         customer = json2dict(data_path)
         graph = customer["Data"]
         # Tinh tong gia tri trong json

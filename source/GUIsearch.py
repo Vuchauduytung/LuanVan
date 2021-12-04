@@ -96,17 +96,19 @@ class Ui(QtWidgets.QMainWindow):
         LE_number_car: QLineEdit = self.findChild(QLineEdit, "LE_number_car")
         value = LE_phone_number
         #Open json
-        data_path = os.path.abspath(os.path.join(self.main_path, "source", "data.json"))
+        data_path = os.path.abspath(os.path.join(self.main_path, "data", "data_cus.json"))
         customer = json2dict(data_path)
-        keyvalue = 'phone'
+        keyvalue = 'phone_number'
         # phone tra trong json
         if customer[keyvalue] == LE_phone_number.text():
             file_data = os.path.abspath(os.path.join(self.main_path, "source", "GUIdisplay.py"))
             os.system('python "{}"'.format(file_data))
+            window.close()
         else :
             GB_informatin_custom: QGroupBox = self.findChild(QGroupBox, "GB_informatin_custom")
             GB_informatin_custom.label_warning.setVisible(True)
             
+        window.close()
             
     def BT_quit_click(self):
         window.close()

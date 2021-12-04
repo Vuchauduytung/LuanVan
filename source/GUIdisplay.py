@@ -28,12 +28,12 @@ class Ui(QtWidgets.QMainWindow):
     
     def open_json(self):
         #Open json
-        data_path = os.path.abspath(os.path.join(self.main_path, "source", "data.json"))
+        data_path = os.path.abspath(os.path.join(self.main_path, "data", "data_cus.json"))
         customer = json2dict(data_path)
         
     def setup_lineEdit_information_custom(self):
         #Open json
-        data_path = os.path.abspath(os.path.join(self.main_path, "source", "data.json"))
+        data_path = os.path.abspath(os.path.join(self.main_path, "data", "data_cus.json"))
         customer = json2dict(data_path)
         
         GB_information_custom: QGroupBox = self.findChild(QGroupBox, "GB_information_custom")
@@ -47,18 +47,18 @@ class Ui(QtWidgets.QMainWindow):
         
         #Hien gia tri
         LE_name.setText(customer["name"])
-        LE_num_vin.setText(customer["num_vin"])
-        LE_lices_num.setText(customer["num_licese"])
-        LE_num_phone.setText(customer["phone"])
-        LE_address.setText(customer["adress"])
-        LE_date_fix.setText(customer["date_fix"])
+        LE_num_vin.setText(customer["VIN_code"])
+        LE_lices_num.setText(customer["number_plate"])
+        LE_num_phone.setText(customer["phone_number"])
+        LE_address.setText(customer["address"])
+        LE_date_fix.setText(customer["fixing_date"])
         LE_fix_car.setText(customer["damaged"])
         
     def setup_lineEdit_car_number_VIN(self):
         #Open json
-        data_path = os.path.abspath(os.path.join(self.main_path, "source", "data.json"))
+        data_path = os.path.abspath(os.path.join(self.main_path, "data", "data_cus.json"))
         customer = json2dict(data_path)
-        vin_num = list(customer["num_vin"])
+        vin_num = list(customer["VIN_code"])
         vin_num_product = "".join(vin_num[:3])
         num_product = "".join(vin_num[11:])
         
