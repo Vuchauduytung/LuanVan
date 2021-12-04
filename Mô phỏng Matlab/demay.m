@@ -228,7 +228,7 @@ figure;
 a = 0;
 ii = 0;
 period = length(pmin);
-fileID = fopen('F:\HK211\Luận Văn\source\data_P.json','w');
+fileID = fopen('F:\HK211\Luận Văn\data\data_P.json','w');
 fprintf(fileID, '{ "Data"');
 fprintf(fileID, ':');
 fprintf(fileID, '[');
