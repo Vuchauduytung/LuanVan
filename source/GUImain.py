@@ -492,8 +492,8 @@ class Ui(QtWidgets.QMainWindow):
             self.draw()  
 
         def setup_data(self):
-            data_path = os.path.abspath(os.path.join(self.main_path, "data"))
-            engine_path = os.path.abspath(os.path.join(data_path, 'data.dat'))
+            data_path = os.path.abspath(os.path.join(self.main_path,"source", "data"))
+            engine_path = os.path.abspath(os.path.join(data_path, 'new_data.dat'))
             self.engine_data = dat2numpy(direct_path=engine_path)
     
         def caculate_pressure(self, epoch: int):
@@ -503,7 +503,6 @@ class Ui(QtWidgets.QMainWindow):
                 except:
                     pressure_string = self.engine_data
             self.P_max = np.max(pressure_string)
-            
             self.P_min = np.min(pressure_string)
             return pressure_string
             
