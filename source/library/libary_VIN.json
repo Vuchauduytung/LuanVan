@@ -3529,790 +3529,1052 @@
         "lenght":3,
         "value":{
             "AFA":{
-                "text": "Ford South Africa"
+                "text": "Ford South Africa",
+                "key" : "AFA"
             },
             "AAV":{
-                "text": "Volkswagen South Africa"
+                "text": "Volkswagen South Africa",
+                "key" : "AAV"
             },
             "JA3":{
-                "text": "Mitsubishi"
+                "text": "Mitsubishi",
+                "key" : "JA3"
             },
             "JA":{
-                "text": "Isuzu"
+                "text": "Isuzu",
+                "key" : "JA"
             },
             "JF":{
-                "text": "Fuji Heavy Industries (Subaru)"
+                "text": "Fuji Heavy Industries (Subaru)",
+                "key" : "JF"
             },
             "JHM":{
-                "text": "Honda"
+                "text": "Honda",
+                "key" : "JHM"
             },
             "JHG":{
-                "text": "Honda"
+                "text": "Honda",
+                "key" : "JHG"
             },
             "JHL":{
-                "text": "Honda"
+                "text": "Honda",
+                "key" : "JHL"
             },
             "JK":{
-                "text": "Kawasaki (motorcycles)"
+                "text": "Kawasaki (motorcycles)",
+                "key" : "JK"
             },
             "JM":{
-                "text": "Mazda"
+                "text": "Mazda",
+                "key" : "JM"
             },
             "JN":{
-                "text": "Nissan"
+                "text": "Nissan",
+                "key" : "JN"
             },
             "JS":{
-                "text": "Suzuki"
+                "text": "Suzuki",
+                "key" : "JS"
             },
             "JT":{
-                "text": "Toyota"
+                "text": "Toyota",
+                "key" : "JT"
             },
             "KL":{
-                "text": "Daewoo General Motors South Korea"
+                "text": "Daewoo General Motors South Korea",
+                "key" : "KL"
             },
             "KM8":{
-                "text": "Hyundai"
+                "text": "Hyundai",
+                "key" : "KMB"
             },
             "KMH":{
-                "text": "Hyundai"
+                "text": "Hyundai",
+                "key" : "KMH"
             },
             "KNA":{
-                "text": "Kia"
+                "text": "Kia",
+                "key" : "KNA"
             },
             "KNB":{
-                "text": "Kia"
+                "text": "Kia",
+                "key" : "KNB"
             },
             "KNC":{
-                "text": "Kia"
+                "text": "Kia",
+                "key" : "KNC"
             },
             "KNM":{
-                "text": "Renault Samsung"
+                "text": "Renault Samsung",
+                "key" : "KNM"
             },
             "KPA":{
-                "text": "Ssangyong"
+                "text": "Ssangyong",
+                "key" : "KPA"
             },
             "KPT":{
-                "text": "Ssangyong"
+                "text": "Ssangyong",
+                "key" : "KPT"
             },
             "L56":{
-                "text": "Renault Samsung"
+                "text": "Renault Samsung",
+                "key" : "L56"
             },
             "L5Y":{
-                "text": "Merato Motorcycle Taizhou Zhongneng"
+                "text": "Merato Motorcycle Taizhou Zhongneng",
+                "key" : "L5Y"
             },
             "LDY":{
-                "text": "Zhongtong Coach, China"
+                "text": "Zhongtong Coach, China",
+                "key" : "LDY"
             },
             "LGH":{
-                "text": "Dong Feng (DFM), China"
+                "text": "Dong Feng (DFM), China",
+                "key" : "LGH"
             },
             "LKL":{
-                "text": "Suzhou King Long, China"
+                "text": "Suzhou King Long, China",
+                "key" : "LKL"
             },
             "LSY":{
-                "text": "Brilliance Zhonghua"
+                "text": "Brilliance Zhonghua",
+                "key" : "LSY"
             },
             "LTV":{
-                "text": "Toyota Tian Jin"
+                "text": "Toyota Tian Jin",
+                "key" : "LTV"
             },
             "LVS":{
-                "text": "Ford Chang An"
+                "text": "Ford Chang An",
+                "key" : "LVS"
             },
             "LVV":{
-                "text": "Chery, China"
+                "text": "Chery, China",
+                "key" : "LVV"
             },
             "LZM":{
-                "text": "MAN China"
+                "text": "MAN China",
+                "key" : "LZM"
             },
             "LZE":{
-                "text": "Isuzu Guangzhou, China"
+                "text": "Isuzu Guangzhou, China",
+                "key" : "LZE"
             },
             "LZG":{
-                "text": "Shaanxi Automobile Group, China"
+                "text": "Shaanxi Automobile Group, China",
+                "key" : "LZG"
             },
             "LZY":{
-                "text": "Yutong Zhengzhou, China"
+                "text": "Yutong Zhengzhou, China",
+                "key" : "LZY"
             },
             "MA1":{
-                "text": "Mahindra"
+                "text": "Mahindra",
+                "key" : "MA1"
             },
             "MA3":{
-                "text": "Suzuki India"
+                "text": "Suzuki India",
+                "key" : "MA3"
             },
             "MA7":{
-                "text": "Honda Siel Cars India"
+                "text": "Honda Siel Cars India",
+                "key" : "MA7"
             },
             "MAL":{
-                "text": "Hyundai"
+                "text": "Hyundai",
+                "key" : "MAL"
             },
             "MHR":{
-                "text": "Honda Indonesia"
+                "text": "Honda Indonesia",
+                "key" : "MHR"
             },
             "MNB":{
-                "text": "Ford Thailand"
+                "text": "Ford Thailand",
+                "key" : "MNB"
             },
             "MNT":{
-                "text": "Nissan Thailand"
+                "text": "Nissan Thailand",
+                "key" : "MNT"
             },
             "MMB":{
-                "text": "Mitsubishi Thailand"
+                "text": "Mitsubishi Thailand",
+                "key" : "MMB"
             },
             "MMM":{
-                "text": "Chevrolet Thailand"
+                "text": "Chevrolet Thailand",
+                "key" : "MMM"
             },
             "MMT":{
-                "text": "Mitsubishi Thailand"
+                "text": "Mitsubishi Thailand",
+                "key" : "MMT"
             },
             "MM8":{
-                "text": "Mazda Thailand"
+                "text": "Mazda Thailand",
+                "key" : "MM8"
             },
             "MPA":{
-                "text": "Isuzu Thailand"
+                "text": "Isuzu Thailand",
+                "key" : "MPA"
             },
             "MP1":{
-                "text": "Isuzu Thailand"
+                "text": "Isuzu Thailand",
+                "key" : "MP1"
             },
             "MRH":{
-                "text": "Honda Thailand"
+                "text": "Honda Thailand",
+                "key" : "MRH"
             },
             "MR0":{
-                "text": "Toyota Thailand"
+                "text": "Toyota Thailand",
+                "key" : "MR0"
             },
             "NLE":{
-                "text": "Mercedes-Benz Turk Truck"
+                "text": "Mercedes-Benz Turk Truck",
+                "key" : "NLE"
             },
             "NM0":{
-                "text": "Ford Turkey"
+                "text": "Ford Turkey",
+                "key" : "NM0"
             },
             "NM4":{
-                "text": "Tofas Turk"
+                "text": "Tofas Turk",
+                "key" : "NM4"
             },
             "NMT":{
-                "text": "Toyota Turkiye"
+                "text": "Toyota Turkiye",
+                "key" : "NMT"
             },
             "PE1":{
-                "text": "Ford Phillipines"
+                "text": "Ford Phillipines",
+                "key" : "PE1"
             },
             "PE3":{
-                "text": "Mazda Phillipines"
+                "text": "Mazda Phillipines",
+                "key" : "PE3"
             },
             "PL1":{
-                "text": "Proton, Malaysia"
+                "text": "Proton, Malaysia",
+                "key" : "PL1"
             },
             "SAL":{
-                "text": "Land Rover"
+                "text": "Land Rover",
+                "key" : "SAL"
             },
             "SAJ":{
-                "text": "Jaguar"
+                "text": "Jaguar",
+                "key" : "SAJ"
             },
             "SAR":{
-                "text": "Rover"
+                "text": "Rover",
+                "key" : "SAR"
             },
             "SCA": {
-                "text":"Rolls Royce"
+                "text":"Rolls Royce",
+                "key" : "SCA"
             },
             "SCC": {
-                "text":"Lotus Cars"
+                "text":"Lotus Cars",
+                "key" : "SCC"
             },
             "SCE": {
-                "text":"DeLorean Motor Cars N. Ireland (UK)"
+                "text":"DeLorean Motor Cars N. Ireland (UK)",
+                "key" : "SCE"
             },
             "SCF": {
-                "text":"Aston"
+                "text":"Aston",
+                "key" : "SCF"
             },
             "SDB": {
-                "text":"Peugeot UK"
+                "text":"Peugeot UK",
+                "key" : "SDB"
             },
             "SFD": {
-                "text":"Alexander Dennis UK"
+                "text":"Alexander Dennis UK",
+                "key" : "SFD"
             },
             "SHS": {
-                "text":"Honda UK"
+                "text":"Honda UK",
+                "key" : "SHS"
             },
             "SJN":{
-                "text":"Nissan UK"
+                "text":"Nissan UK",
+                "key" : "SJN"
             },
             "SU9":{
-                "text":"Solaris Bus & Coach (Poland)"
+                "text":"Solaris Bus & Coach (Poland)",
+                "key" : "SU9"
             },
             "TK9": {
-                "text":"SOR (Czech Republic)"
+                "text":"SOR (Czech Republic)",
+                "key" : "TK9"
             },
             "TDM": {
-                "text":"QUANTYA Swiss Electric Movement (Switzerland)"
+                "text":"QUANTYA Swiss Electric Movement (Switzerland)",
+                "key" : "TDM"
             },
             "TMB": {
-                "text":"Škoda (Czech Republic)"
+                "text":"Škoda (Czech Republic)",
+                "key" : "TMB"
             },
             "TMK": {
-                "text":"Karosa (Czech Republic)"
+                "text":"Karosa (Czech Republic)",
+                "key" : "TMK"
             },
             "TMP": {
-                "text":"Škoda trolleybuses (Czech Republic)"
+                "text":"Škoda trolleybuses (Czech Republic)",
+                "key" : "TMP"
             },
             "TMT":{
-                "text":"Tatra (Czech Republic)"
+                "text":"Tatra (Czech Republic)",
+                "key" : "TMT"
             },
             "TM9":{
-                "text":"Škoda trolleybuses (Czech Republic)"
+                "text":"Škoda trolleybuses (Czech Republic)",
+                "key" : "TM9"
             },
             "TN9":{
-                "text":"Karosa (Czech Republic)"
+                "text":"Karosa (Czech Republic)",
+                "key" : "TN9"
             },
             "TRA":{
-                "text":"Ikarus Bus"
+                "text":"Ikarus Bus",
+                "key" : "TRA"
             },
             "TRU":{
-                "text":"Audi Hungary"
+                "text":"Audi Hungary",
+                "key" : "TRU"
             },
             "TSE":{
-                "text":"Ikarus Egyedi Autobuszgyar, (Hungary)"
+                "text":"Ikarus Egyedi Autobuszgyar, (Hungary)",
+                "key" : "TSE"
             },
             "TSM":{
-                "text":"Suzuki, (Hungary)"
+                "text":"Suzuki, (Hungary)",
+                "key" : "TSM"
             },
             "UU1":{
-                "text":"Renault Dacia, (Romania)"
+                "text":"Renault Dacia, (Romania)",
+                "key" : "UU1"
             },
             "VF1":{
-                "text":"Renault"
+                "text":"Renault",
+                "key" : "VF1"
             },
             "VF3":{
-                "text":"Peugeot"
+                "text":"Peugeot",
+                "key" : "VF3"
             },
             "VF6":{
-                "text":"Renault (Trucks & Buses)"
+                "text":"Renault (Trucks & Buses)",
+                "key" : "VF6"
             },
             "VF7":{
-                "text":"Citroën"
+                "text":"Citroën",
+                "key" : "VF7"
             },
             "VF8":{
-                "text":"Matra"
+                "text":"Matra",
+                "key" : "VF8"
             },
             "VLU":{
-                "text":"Scania France"
+                "text":"Scania France",
+                "key" : "VF9"
             },
             "VNE":{
-                "text":"Irisbus (France)"
+                "text":"Irisbus (France)",
+                "key" : "VNE"
             },
             "VSE":{
-                "text":"Suzuki Spain (Santana Motors)"
+                "text":"Suzuki Spain (Santana Motors)",
+                "key" : "VSE"
             },
             "VSK":{
-                "text":"Nissan Spain"
+                "text":"Nissan Spain",
+                "key" : "VSK"
             },
             "VSS":{
-                "text":"SEAT"
+                "text":"SEAT",
+                "key" : "VSS"
             },
             "VSX":{
-                "text":"Opel Spain"
+                "text":"Opel Spain",
+                "key" : "VSX"
             },
             "VS6":{
-                "text":"Ford Spain"
+                "text":"Ford Spain",
+                "key" : "VS6"
             },
             "VS9":{
-                "text":"Carrocerias Ayats (Spain)"
+                "text":"Carrocerias Ayats (Spain)",
+                "key" : "VS9"
             },
             "VWV": {
-                "text":"Volkswagen Spain"
+                "text":"Volkswagen Spain",
+                "key" : "VWV"
             },
             "VX1": {
-                "text":"Zastava / Yugo Serbia"
+                "text":"Zastava / Yugo Serbia",
+                "key" : "VX1"
             },
             "WAG": {
-                "text":"Neoplan"
+                "text":"Neoplan",
+                "key" : "WAG"
             },
             "WAU": {
-                "text":"Audi"
+                "text":"Audi",
+                "key" : "WAU"
             },
             "WBA": {
-                "text":"BMW"
+                "text":"BMW",
+                "key" : "WBA"
             },
             "WBS": {
-                "text":"BMW M"
+                "text":"BMW M",
+                "key" : "WBS"
             },
             "WDB": {
-                "text":"Mercedes-Benz"
+                "text":"Mercedes-Benz",
+                "key" : "WDB"
             },
             "WDC":{
-                "text":"DaimlerChrysler"
+                "text":"DaimlerChrysler",
+                "key" : "WDC"
             },
             "WDD":{
-                "text":"McLaren"
+                "text":"McLaren",
+                "key" : "WDD"
             },
             "WEB": {
-                "text":"Evobus GmbH (Mercedes-Bus)"
+                "text":"Evobus GmbH (Mercedes-Bus)",
+                "key" : "WEB"
             },
             "WF0": {
-                "text":"Ford Germany"
+                "text":"Ford Germany",
+                "key" : "WF0"
             },
             "WMA": {
-                "text":"MAN Germany"
+                "text":"MAN Germany",
+                "key" : "WMA"
             },
             "WMW": {
-                "text":"MINI"
+                "text":"MINI",
+                "key" : "WMW"
             },
             "WP0": {
-                "text":"Porsche"
+                "text":"Porsche",
+                "key" : "WP0"
             },
             "W0L":{
-                "text":"Opel"
+                "text":"Opel",
+                "key" : "W0L"
             },
             "WVW":{
-                "text":"Volkswagen"
+                "text":"Volkswagen",
+                "key" : "WVW"
             },
             "WV1":{
-                "text":"Volkswagen Commercial Vehicles"
+                "text":"Volkswagen Commercial Vehicles",
+                "key" : "WV1"
             },
             "WV2":{
-                "text":"Volkswagen Bus/Van"
+                "text":"Volkswagen Bus/Van",
+                "key" : "WV2"
             },
             "XL9":{
-                "text":"Spyker"
+                "text":"Spyker",
+                "key" : "XL9"
             },
             "XMC":{
-                "text":"Mitsubishi (NedCar)"
+                "text":"Mitsubishi (NedCar)",
+                "key" : "XMC"
             },
             "XTA":{
-                "text":"Lada/AutoVaz (Russia)"
+                "text":"Lada/AutoVaz (Russia)",
+                "key" : "XTA"
             },
             "YK1":{
-                "text":"Saab"
+                "text":"Saab",
+                "key" : "YK1"
             },
             "YS2":{
-                "text":"Scania AB"
+                "text":"Scania AB",
+                "key" : "YS2"
             },
             "YS3":{
-                "text":"Saab"
+                "text":"Saab",
+                "key" : "YS3"
             },
             "YS4":{
-                "text":"Scania Bus"
+                "text":"Scania Bus",
+                "key" : "YS4"
             },
             "YV1":{
-                "text":"Volvo Cars"
+                "text":"Volvo Cars",
+                "key" : "YV1"
             },
             "YV4":{
-                "text":"Volvo Cars"
+                "text":"Volvo Cars",
+                "key" : "YV4"
             },
             "YV2":{
-                "text":"Volvo Trucks"
+                "text":"Volvo Trucks",
+                "key" : "YV2"
             },
             "YV3":{
-                "text":"Volvo Buses"
+                "text":"Volvo Buses",
+                "key" : "YV3"
             },
             "ZAM":{
-                "text":"Maserati Biturbo"
+                "text":"Maserati Biturbo",
+                "key" : "ZAM"
             },
             "ZAP":{
-                "text":"Piaggio/Vespa/Gilera"
+                "text":"Piaggio/Vespa/Gilera",
+                "key" : "ZAP"
             },
             "ZAR":{
-                "text":"Alfa Romeo"
+                "text":"Alfa Romeo",
+                "key" : "ZAR"
             },
             "ZCG":{
-                "text":"Cagiva SpA"
+                "text":"Cagiva SpA",
+                "key" : "ZCG"
             },
             "ZDM":{
-                "text":"Ducati Motor Holdings SpA"
+                "text":"Ducati Motor Holdings SpA",
+                "key" : "ZDM"
             },
             "ZDF":{
-                "text":"Ferrari Dino"
+                "text":"Ferrari Dino",
+                "key" : "ZDF"
             },
             "ZD4": {
-                "text":"Aprilia"
+                "text":"Aprilia",
+                "key" : "ZD4"
             },
             "ZFA": {
-                "text":"Fiat"
+                "text":"Fiat",
+                "key" : "ZFA"
             },
             "ZFC": {
-                "text":"Fiat V.I."
+                "text":"Fiat V.I.",
+                "key" : "ZFC"
             },
             "ZFF": {
-                "text":"Ferrari"
+                "text":"Ferrari",
+                "key" : "ZFF"
             },
             "ZHW": {
-                "text":"Lamborghini"
+                "text":"Lamborghini",
+                "key" : "ZHW"
             },
             "ZLA": {
-                "text":"Lancia"
+                "text":"Lancia",
+                "key" : "ZLA"
             },
             "ZOM": {
-                "text":"OM"
+                "text":"OM",
+                "key" : "ZOM"
             },
             "1C3":{
-                "text":"Chrysler"
+                "text":"Chrysler",
+                "key" : "1C3"
             },
             "1C6":{
-                "text":"Chrysler"
+                "text":"Chrysler",
+                "key" : "1C6"
             },
             "1D3": {
-                "text":"Dodge"
+                "text":"Dodge",
+                "key" : "1D3"
             },
             "1FA": {
-                "text":"Ford Motor Company"
+                "text":"Ford Motor Company",
+                "key" : "1FA"
             },
             "1FB": {
-                "text":"Ford Motor Company"
+                "text":"Ford Motor Company",
+                "key" : "1FB"
             },
             "1FC": {
-                "text":"Ford Motor Company"
+                "text":"Ford Motor Company",
+                "key" : "1FC"
             },
             "1FD": {
-                "text":"Ford Motor Company"
+                "text":"Ford Motor Company",
+                "key" : "1FD"
             },
             "1FM":{
-                "text":"Ford Motor Company"
+                "text":"Ford Motor Company",
+                "key" : "1FM"
             },
             "1FT":{
-                "text":"Ford Motor Company"
+                "text":"Ford Motor Company",
+                "key" : "1FT"
             },
             "1FU":{
-                "text":"Freightliner"
+                "text":"Freightliner",
+                "key" : "1FU"
             },
             "1FV":{
-                "text":"Freightliner"
+                "text":"Freightliner",
+                "key" : "1FV"
             },
             "1F9":{
-                "text":"FWD Corp."
+                "text":"FWD Corp.",
+                "key" : "1F9"
             },
-            "1G":{
-                "text":"General Motors USA"
+            "1GB":{
+                "text":"General Motors USA",
+                "key" : "1G"
             },
             "1GC":{
-                "text":"Chevrolet Truck USA"
+                "text":"Chevrolet Truck USA",
+                "key" : "1GC"
             },
             "1GT":{
-                "text":"GMC Truck USA"
+                "text":"GMC Truck USA",
+                "key" : "1GT"
             },
             "1G1":{
-                "text":"Chevrolet USA"
+                "text":"Chevrolet USA",
+                "key" : "1G1"
             },
             "1G2":{
-                "text":"Pontiac USA"
+                "text":"Pontiac USA",
+                "key" : "1G2"
             },
             "1G3":{
-                "text":"Oldsmobile USA"
+                "text":"Oldsmobile USA",
+                "key" : "1G3"
             },
             "1G4":{
-                "text":"Buick USA"
+                "text":"Buick USA",
+                "key" : "1G4"
             },
             "1G6":{
-                "text":"Cadillac USA"
+                "text":"Cadillac USA",
+                "key" : "1G6"
             },
             "1GM":{
-                "text":"Pontiac USA"
+                "text":"Pontiac USA",
+                "key" : "1GM"
             },
             "1G8":{
-                "text":"Saturn USA"
+                "text":"Saturn USA",
+                "key" : "1G8"
             },
-            "1H":{
-                "text":"Honda USA"
+            "1HB":{
+                "text":"Honda USA",
+                "key" : "1HB"
             },
             "1HD":{
-                "text":"Harley-Davidson"
+                "text":"Harley-Davidson",
+                "key" : "1HD"
             },
             "1J4":{
-                "text":"Jeep"
+                "text":"Jeep",
+                "key" : "1JA"
             },
-            "1L":{
-                "text":"Lincoln USA"
+            "1LA":{
+                "text":"Lincoln USA",
+                "key" : "1LA"
             },
             "1ME":{
-                "text":"Mercury USA"
+                "text":"Mercury USA",
+                "key" : "1ME"
             },
             "1M1":{
-                "text":"Mack Truck USA"
+                "text":"Mack Truck USA",
+                "key" : "1M1"
             },
             "1M2": {
-                "text":"Mack Truck USA"
+                "text":"Mack Truck USA",
+                "key" : "1M2"
             },
             "1M3": {
-                "text":"Mack Truck USA"
+                "text":"Mack Truck USA",
+                "key" : "1M3"
             },
             "1M4": {
-                "text":"Mack Truck USA"
+                "text":"Mack Truck USA",
+                "key" : "1M4"
             },
             "1N": {
-                "text":"Nissan USA"
+                "text":"Nissan USA",
+                "key" : "1N"
             },
             "1NX": {
-                "text":"NUMMI USA"
+                "text":"NUMMI USA",
+                "key" : "1NX"
             },
             "1P3": {
-                "text":"Plymouth USA"
+                "text":"Plymouth USA",
+                "key" : "1P3"
             },
             "1R9": {
-                "text":"Roadrunner Hay Squeeze USA"
+                "text":"Roadrunner Hay Squeeze USA",
+                "key" : "1R9"
             },
             "1VW":{
-                "text":"Volkswagen USA"
+                "text":"Volkswagen USA",
+                "key" : "1VW"
             },
             "1XK":{
-                "text":"Kenworth USA"
+                "text":"Kenworth USA",
+                "key" : "1XK"
             },
             "1XP": {
-                "text":"Peterbilt USA"
+                "text":"Peterbilt USA",
+                "key" : "1XP"
             },
             "1YV": {
-                "text":"Mazda USA (AutoAlliance International)"
+                "text":"Mazda USA (AutoAlliance International)",
+                "key" : "1YV"
             },
             "2C3": {
-                "text":"Chrysler Canada"
+                "text":"Chrysler Canada",
+                "key" : "2C3"
             },
             "2CN": {
-                "text":"CAMI"
+                "text":"CAMI",
+                "key" : "2CN"
             },
             "2D3": {
-                "text":"Dodge Canada"
+                "text":"Dodge Canada",
+                "key" : "2D3"
             },
             "2FA":{
-                "text":"Ford Motor Company Canada"
+                "text":"Ford Motor Company Canada",
+                "key" : "2FA"
             },
             "2FB":{
-                "text":"Ford Motor Company Canada"
+                "text":"Ford Motor Company Canada",
+                "key" : "2FB"
             },
             "2FC":{
-                "text":"Ford Motor Company Canada"
+                "text":"Ford Motor Company Canada",
+                "key" : "2FC"
             },
             "2FM":{
-                "text":"Ford Motor Company Canada"
+                "text":"Ford Motor Company Canada",
+                "key" : "2FM"
             },
             "2FT":{
-                "text":"Ford Motor Company Canada"
+                "text":"Ford Motor Company Canada",
+                "key" : "2FT"
             },
             "2FU":{
-                "text":"Freightliner"
+                "text":"Freightliner",
+                "key" : "2FU"
             },
             "2FV":{
-                "text":"Freightliner"
+                "text":"Freightliner",
+                "key" : "2FV"
             },
             "2FZ":{
-                "text":"Sterling"
+                "text":"Sterling",
+                "key" : "2FZ"
             },
             "2G":{
-                "text":"General Motors Canada"
+                "text":"General Motors Canada",
+                "key" : "2G"
             },
             "2G1":{
-                "text":"Chevrolet Canada"
+                "text":"Chevrolet Canada",
+                "key" : "2G1"
             },
             "2G2":{
-                "text":"Pontiac Canada"
+                "text":"Pontiac Canada",
+                "key" : "2G2"
             },
             "2G3":{
-                "text":"Oldsmobile Canada"
+                "text":"Oldsmobile Canada",
+                "key" : "2G3"
             },
             "2G4":{
-                "text":"Buick Canada"
+                "text":"Buick Canada",
+                "key" : "2G4"
             },
             "2HG":{
-                "text":"Honda Canada"
+                "text":"Honda Canada",
+                "key" : "2HG"
             },
             "2HK":{
-                "text":"Honda Canada"
+                "text":"Honda Canada",
+                "key" : "2HK"
             },
             "2HM":{
-                "text":"Hyundai Canada"
+                "text":"Hyundai Canada",
+                "key" : "2HM"
             },
             "2M":{
-                "text":"Mercury"
+                "text":"Mercury",
+                "key" : "2M"
             },
             "2P3":{
-                "text":"Plymouth Canada"
+                "text":"Plymouth Canada",
+                "key" : "2P3"
             },
             "2T":{
-                "text":"Toyota Canada"
+                "text":"Toyota Canada",
+                "key" : "2T"
             },
             "2V4":{
-                "text":"Volkswagen Canada"
+                "text":"Volkswagen Canada",
+                "key" : "2V4"
             },
             "2WK":{
-                "text":"Western Star"
+                "text":"Western Star",
+                "key" : "2WK"
             },
             "2WL": {
-                "text":"Western Star"
+                "text":"Western Star",
+                "key" : "2WL"
             },
             "2WM": {
-                "text":"Western Star"
+                "text":"Western Star",
+                "key" : "2WM"
             },
             "3D3": {
-                "text":"Dodge Mexico"
+                "text":"Dodge Mexico",
+                "key" : "3D3"
             },
             "3FE": {
-                "text":"Ford Motor Company Mexico"
+                "text":"Ford Motor Company Mexico",
+                "key" : "3FE"
             },
             "3G": {
-                "text":"General Motors Mexico"
+                "text":"General Motors Mexico",
+                "key" : "3G"
             },
             "3H": {
-                "text":"Honda Mexico"
+                "text":"Honda Mexico",
+                "key" : "3H"
             },
             "3N": {
-                "text":"Nissan Mexico"
+                "text":"Nissan Mexico",
+                "key" : "3N"
             },
             "3P3":{
-                "text":"Plymouth Mexico"
+                "text":"Plymouth Mexico",
+                "key" : "3P3"
             },
             "3VW":{
-                "text":"Volkswagen Mexico"
+                "text":"Volkswagen Mexico",
+                "key" : "3VW"
             },
             "4F": {
-                "text":"Mazda USA"
+                "text":"Mazda USA",
+                "key" : "4F"
             },
             "4M": {
-                "text":"Mercury"
+                "text":"Mercury",
+                "key" : "4M"
             },
             "4S": {
-                "text":"Subaru-Isuzu Automotive"
+                "text":"Subaru-Isuzu Automotive",
+                "key" : "4S"
             },
             "4T": {
-                "text":"Toyota"
+                "text":"Toyota",
+                "key" : "4T"
             },
             "4US": {
-                "text":"BMW USA"
+                "text":"BMW USA",
+                "key" : "4US"
             },
             "4UZ":{
-                "text":"Frt-Thomas Bus"
+                "text":"Frt-Thomas Bus",
+                "key" : "4UZ"
             },
             "4V1":{
-                "text":"Volvo"
+                "text":"Volvo",
+                "key" : "4V1"
             },
             "4V2":{
-                "text":"Volvo"
+                "text":"Volvo",
+                "key" : "4V2"
             },
             "4V3":{
-                "text":"Volvo"
+                "text":"Volvo",
+                "key" : "4V3"
             },
             "4V4":{
-                "text":"Volvo"
+                "text":"Volvo",
+                "key" : "4V4"
             },
             "4V5":{
-                "text":"Volvo"
+                "text":"Volvo",
+                "key" : "4V5"
             },
             "4V6":{
-                "text":"Volvo"
+                "text":"Volvo",
+                "key" : "4V6"
             },
             "4VL":{
-                "text":"Volvo"
+                "text":"Volvo",
+                "key" : "4VL"
             },
             "4VM":{
-                "text":"Volvo"
+                "text":"Volvo",
+                "key" : "4VM"
             },
             "4VZ":{
-                "text":"Volvo"
+                "text":"Volvo",
+                "key" : "4VZ"
             },
             "5F":{
-                "text":"Honda USA-Alabama"
+                "text":"Honda USA-Alabama",
+                "key" : "5F"
             },
             "5L":{
-                "text":"Lincoln"
+                "text":"Lincoln",
+                "key" : "5L"
             },
             "5N1":{
-                "text":"Nissan USA"
+                "text":"Nissan USA",
+                "key" : "5N1"
             },
             "5NP":{
-                "text":"Hyundai USA"
+                "text":"Hyundai USA",
+                "key" : "5NP"
             },
             "5T":{
-                "text":"Toyota USA - trucks"
+                "text":"Toyota USA - trucks",
+                "key" : "5T"
             },
             "6AB":{
-                "text":"MAN Australia"
+                "text":"MAN Australia",
+                "key" : "6AB"
             },
             "6F4":{
-                "text":"Nissan Motor Company Australia"
+                "text":"Nissan Motor Company Australia",
+                "key" : "6F4"
             },
             "6F5":{
-                "text":"Kenworth Australia"
+                "text":"Kenworth Australia",
+                "key" : "6F5"
             },
             "6FP":{
-                "text":"Ford Motor Company Australia"
+                "text":"Ford Motor Company Australia",
+                "key" : "6FP"
             },
             "6G1":{
-                "text":"General Motors-Holden (post Nov 2002)"
+                "text":"General Motors-Holden (post Nov 2002)",
+                "key" : "6G1"
             },
             "6G2":{
-                "text":"Pontiac Australia (GTO & G8)"
+                "text":"Pontiac Australia (GTO & G8)",
+                "key" : "6G2"
             },
             "6H8": {
-                "text":"General Motors-Holden (pre Nov 2002)"
+                "text":"General Motors-Holden (pre Nov 2002)",
+                "key" : "6H8"
             },
             "6MM": {
-                "text":"Mitsubishi Motors Australia"
+                "text":"Mitsubishi Motors Australia",
+                "key" : "6MM"
             },
             "6T1": {
-                "text":"Toyota Motor Corporation Australia"
+                "text":"Toyota Motor Corporation Australia",
+                "key" : "6T1"
             },
             "6U9": {
-                "text":"Privately Imported car in Australia"
+                "text":"Privately Imported car in Australia",
+                "key" : "6U9"
             },
             "8AG": {
-                "text":"Chevrolet Argentina"
+                "text":"Chevrolet Argentina",
+                "key" : "8AG"
             },
             "8GG": {
-                "text":"Chevrolet Chile"
+                "text":"Chevrolet Chile",
+                "key" : "8GG"
             },
             "8AP": {
-                "text":"Fiat Argentina"
+                "text":"Fiat Argentina",
+                "key" : "8AP"
             },
             "8AF":{
-                "text":"Ford Motor Company Argentina"
+                "text":"Ford Motor Company Argentina",
+                "key" : "8AF"
             },
             "8AD":{
-                "text":"Peugeot Argentina"
+                "text":"Peugeot Argentina",
+                "key" : "8AD"
             },
             "8GD": {
-                "text":"Peugeot Chile"
+                "text":"Peugeot Chile",
+                "key" : "8GD"
             },
             "8A1": {
-                "text":"Renault Argentina"
+                "text":"Renault Argentina",
+                "key" : "8A1"
             },
             "8AK": {
-                "text":"Suzuki Argentina"
+                "text":"Suzuki Argentina",
+                "key" : "8AK"
             },
             "8AJ": {
-                "text":"Toyota Argentina"
+                "text":"Toyota Argentina",
+                "key" : "8AJ"
             },
             "8AW": {
-                "text":"Volkswagen Argentina"
+                "text":"Volkswagen Argentina",
+                "key" : "8AW"
             },
             "93U":{
-                "text":"Audi Brazil"
+                "text":"Audi Brazil",
+                "key" : "93U"
             },
             "9BG":{
-                "text":"Chevrolet Brazil"
+                "text":"Chevrolet Brazil",
+                "key" : "9BG"
             },
             "935":{
-                "text":"Citroën Brazil"
+                "text":"Citroën Brazil",
+                "key" : "935"
             },
             "9BD":{
-                "text":"Fiat Brazil"
+                "text":"Fiat Brazil",
+                "key" : "9BD"
             },
             "9BF":{
-                "text":"Ford Motor Company Brazil"
+                "text":"Ford Motor Company Brazil",
+                "key" : "9BF"
             },
             "93H":{
-                "text":"Honda Brazil"
+                "text":"Honda Brazil",
+                "key" : "93H"
             },
             "9BM":{
-                "text":"Mercedes-Benz Brazil"
+                "text":"Mercedes-Benz Brazil",
+                "key" : "9BM"
             },
             "936":{
-                "text":"Peugeot Brazil"
+                "text":"Peugeot Brazil",
+                "key" : "936"
             },
             "93Y":{
-                "text":"Renault Brazil"
+                "text":"Renault Brazil",
+                "key" : "93Y"
             },
             "9BS":{
-                "text":"Scania Brazil"
+                "text":"Scania Brazil",
+                "key" : "9BS"
             },
             "93R":{
-                "text":"Toyota Brazil"
+                "text":"Toyota Brazil",
+                "key" : "93R"
             },
             "9BW":{
-                "text":"Volkswagen Brazil"
+                "text":"Volkswagen Brazil",
+                "key" : "9BW"
             },
             "9FB":{
-                "text":"Renault Colombia"
+                "text":"Renault Colombia",
+                "key" : "9FB"
             }
         }
     },

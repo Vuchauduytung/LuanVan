@@ -78,8 +78,17 @@ class Ui(QtWidgets.QMainWindow):
         #Hien gia tri
         LE_area.setText(num_vin_data["contry"]["value"][vin_num[0]]["text"])
         LE_country.setText(num_vin_data["contry"]["value"][vin_num[0]]["children"][vin_num[1]]["text"])
-        LE_car_model.setText(num_vin_data["name_product_car"]["value"][vin_num_product]["text"])
-        LE_car_name.setText(num_vin_data["name_product_car"]["value"][vin_num_product]["text"])
+        
+        if vin_num_product == num_vin_data["name_product_car"]["value"][vin_num_product]["key"]:
+            LE_car_model.setText(num_vin_data["name_product_car"]["value"][vin_num_product]["text"])
+            LE_car_name.setText(num_vin_data["name_product_car"]["value"][vin_num_product]["text"])
+        elif vin_num_product_2 == num_vin_data["name_product_car"]["value"][vin_num_product_2]["key"]:
+            LE_car_model.setText(num_vin_data["name_product_car"]["value"][vin_num_product_2]["text"])
+            LE_car_name.setText(num_vin_data["name_product_car"]["value"][vin_num_product_2]["text"])
+        else:   
+            LE_car_model.setText("Not assigned")
+            LE_car_name.setText("Not assigned")
+            
         LE_sec_num.setText(vin_num[8])
         LE_product_date.setText(num_vin_data["product_date"]["value"][vin_num[6]]["text"])
         LE_factory.setText(vin_num[10])
