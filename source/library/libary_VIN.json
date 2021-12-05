@@ -3528,6 +3528,10 @@
         "position":0,
         "lenght":3,
         "value":{
+            "1ZV":{
+                "text": "AutoAlliance International",
+                "key" : "1ZV"
+            },
             "AFA":{
                 "text": "Ford South Africa",
                 "key" : "AFA"
