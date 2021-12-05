@@ -503,6 +503,7 @@ class Ui(QtWidgets.QMainWindow):
                 except:
                     pressure_string = self.engine_data
             self.P_max = np.max(pressure_string)
+            
             self.P_min = np.min(pressure_string)
             return pressure_string
             
