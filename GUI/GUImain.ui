@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1100</width>
+    <width>1261</width>
     <height>798</height>
    </rect>
   </property>
@@ -622,8 +622,8 @@
      <rect>
       <x>400</x>
       <y>20</y>
-      <width>691</width>
-      <height>311</height>
+      <width>851</width>
+      <height>191</height>
      </rect>
     </property>
     <property name="font">
@@ -639,17 +639,282 @@
       <rect>
        <x>10</x>
        <y>30</y>
-       <width>681</width>
-       <height>271</height>
+       <width>831</width>
+       <height>151</height>
       </rect>
      </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Sunken</enum>
+     </property>
+     <property name="sizeAdjustPolicy">
+      <enum>QAbstractScrollArea::AdjustToContents</enum>
+     </property>
+     <property name="tabKeyNavigation">
+      <bool>true</bool>
+     </property>
+     <property name="showDropIndicator" stdset="0">
+      <bool>true</bool>
+     </property>
+     <property name="dragEnabled">
+      <bool>false</bool>
+     </property>
+     <property name="dragDropOverwriteMode">
+      <bool>true</bool>
+     </property>
+     <property name="alternatingRowColors">
+      <bool>true</bool>
+     </property>
+     <property name="horizontalScrollMode">
+      <enum>QAbstractItemView::ScrollPerItem</enum>
+     </property>
+     <property name="sortingEnabled">
+      <bool>true</bool>
+     </property>
+     <attribute name="horizontalHeaderCascadingSectionResizes">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="horizontalHeaderMinimumSectionSize">
+      <number>34</number>
+     </attribute>
+     <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="horizontalHeaderStretchLastSection">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="verticalHeaderVisible">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="verticalHeaderCascadingSectionResizes">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="verticalHeaderStretchLastSection">
+      <bool>true</bool>
+     </attribute>
+     <row>
+      <property name="text">
+       <string>Xi lanh 1</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>Xi lanh 2</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>Xi lanh 3</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>Xi lanh 4</string>
+      </property>
+     </row>
+     <column>
+      <property name="text">
+       <string>P nạp</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>P nén</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>P nén (lý thuyết)</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>% Chênh lệch</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Trạng thái</string>
+      </property>
+     </column>
+     <item row="0" column="0">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="flags">
+       <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
+     </item>
+     <item row="0" column="1">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="flags">
+       <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
+     </item>
+     <item row="0" column="2">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="flags">
+       <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
+     </item>
+     <item row="0" column="3">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="flags">
+       <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
+     </item>
+     <item row="0" column="4">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="flags">
+       <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
+     </item>
+     <item row="1" column="0">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="flags">
+       <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
+     </item>
+     <item row="1" column="1">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="flags">
+       <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
+     </item>
+     <item row="1" column="2">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="flags">
+       <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
+     </item>
+     <item row="1" column="3">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="flags">
+       <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
+     </item>
+     <item row="1" column="4">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="flags">
+       <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
+     </item>
+     <item row="2" column="0">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="flags">
+       <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
+     </item>
+     <item row="2" column="1">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="flags">
+       <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
+     </item>
+     <item row="2" column="2">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="flags">
+       <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
+     </item>
+     <item row="2" column="3">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="flags">
+       <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
+     </item>
+     <item row="2" column="4">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="flags">
+       <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
+     </item>
+     <item row="3" column="0">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="flags">
+       <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
+     </item>
+     <item row="3" column="1">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="flags">
+       <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
+     </item>
+     <item row="3" column="2">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="flags">
+       <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
+     </item>
+     <item row="3" column="3">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="flags">
+       <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
+     </item>
+     <item row="3" column="4">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="flags">
+       <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
+     </item>
     </widget>
    </widget>
    <widget class="QPushButton" name="BT_cancel">
     <property name="geometry">
      <rect>
-      <x>760</x>
-      <y>710</y>
+      <x>850</x>
+      <y>720</y>
       <width>93</width>
       <height>28</height>
      </rect>
@@ -667,8 +932,8 @@
    <widget class="QPushButton" name="BT_confirm">
     <property name="geometry">
      <rect>
-      <x>660</x>
-      <y>710</y>
+      <x>750</x>
+      <y>720</y>
       <width>93</width>
       <height>28</height>
      </rect>
@@ -687,9 +952,9 @@
     <property name="geometry">
      <rect>
       <x>400</x>
-      <y>330</y>
-      <width>691</width>
-      <height>381</height>
+      <y>230</y>
+      <width>851</width>
+      <height>481</height>
      </rect>
     </property>
     <property name="font">
@@ -700,19 +965,25 @@
     <property name="title">
      <string>Chẩn đoán</string>
     </property>
-    <widget class="QTabWidget" name="grap_xylanh">
+    <widget class="QTabWidget" name="TbW_diagnoses">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
      <property name="geometry">
       <rect>
        <x>20</x>
        <y>30</y>
-       <width>661</width>
-       <height>321</height>
+       <width>811</width>
+       <height>441</height>
       </rect>
      </property>
      <property name="font">
       <font>
        <pointsize>10</pointsize>
       </font>
+     </property>
+     <property name="autoFillBackground">
+      <bool>true</bool>
      </property>
      <property name="currentIndex">
       <number>0</number>
@@ -721,60 +992,235 @@
       <attribute name="title">
        <string>Xylanh 1</string>
       </attribute>
-      <widget class="QGraphicsView" name="grap_xylanh1">
+      <widget class="QWidget" name="W_xilanh1" native="true">
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>10</y>
-         <width>641</width>
-         <height>301</height>
+         <y>0</y>
+         <width>801</width>
+         <height>401</height>
         </rect>
        </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <widget class="QWidget" name="W_graph_xilanh1" native="true">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>590</width>
+          <height>400</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QSplitter" name="splitter">
+        <property name="geometry">
+         <rect>
+          <x>595</x>
+          <y>0</y>
+          <width>201</width>
+          <height>401</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <widget class="QTextEdit" name="TE_diagnoses_xilanh1">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="BT_xilanh1_cancel">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>Hủy bỏ</string>
+         </property>
+        </widget>
+       </widget>
       </widget>
      </widget>
      <widget class="QWidget" name="tab_2">
       <attribute name="title">
        <string>Xylanh 2</string>
       </attribute>
-      <widget class="QGraphicsView" name="grap_xylanh2">
+      <widget class="QWidget" name="W_xilanh2" native="true">
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>10</y>
-         <width>651</width>
-         <height>271</height>
+         <y>0</y>
+         <width>801</width>
+         <height>401</height>
         </rect>
        </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <widget class="QWidget" name="W_graph_xilanh2" native="true">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>590</width>
+          <height>400</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QSplitter" name="splitter_2">
+        <property name="geometry">
+         <rect>
+          <x>595</x>
+          <y>0</y>
+          <width>201</width>
+          <height>401</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <widget class="QTextEdit" name="TE_diagnoses_xilanh2">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="BT_xilanh2_cancel">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>Hủy bỏ</string>
+         </property>
+        </widget>
+       </widget>
       </widget>
      </widget>
      <widget class="QWidget" name="tab_3">
       <attribute name="title">
        <string>Xylanh 3</string>
       </attribute>
-      <widget class="QGraphicsView" name="grap_xylanh3">
+      <widget class="QWidget" name="W_xilanh3" native="true">
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>10</y>
-         <width>651</width>
-         <height>271</height>
+         <y>0</y>
+         <width>801</width>
+         <height>401</height>
         </rect>
        </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <widget class="QWidget" name="W_graph_xilanh3" native="true">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>590</width>
+          <height>400</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QSplitter" name="splitter_3">
+        <property name="geometry">
+         <rect>
+          <x>595</x>
+          <y>0</y>
+          <width>201</width>
+          <height>401</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <widget class="QTextEdit" name="TE_diagnoses_xilanh3">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="BT_xilanh3_cancel">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>Hủy bỏ</string>
+         </property>
+        </widget>
+       </widget>
       </widget>
      </widget>
      <widget class="QWidget" name="tab_4">
       <attribute name="title">
        <string>Xylanh 4</string>
       </attribute>
-      <widget class="QGraphicsView" name="grap_xylanh4">
+      <widget class="QWidget" name="W_xilanh4" native="true">
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>10</y>
-         <width>651</width>
-         <height>271</height>
+         <y>0</y>
+         <width>801</width>
+         <height>401</height>
         </rect>
        </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <widget class="QWidget" name="W_graph_xilanh4" native="true">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>590</width>
+          <height>400</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QSplitter" name="splitter_4">
+        <property name="geometry">
+         <rect>
+          <x>595</x>
+          <y>0</y>
+          <width>201</width>
+          <height>401</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <widget class="QTextEdit" name="TE_diagnoses_xilanh4">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+         <property name="html">
+          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="BT_xilanh4_cancel">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>Hủy bỏ</string>
+         </property>
+        </widget>
+       </widget>
       </widget>
      </widget>
     </widget>
@@ -785,8 +1231,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1100</width>
-     <height>26</height>
+     <width>1261</width>
+     <height>20</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuEdit">
