@@ -240,7 +240,7 @@
          </font>
         </property>
         <property name="placeholderText">
-         <string>Nhập mã VIN</string>
+         <string>Nhập mã VIN (17 kí tự)</string>
         </property>
         <property name="clearButtonEnabled">
          <bool>true</bool>

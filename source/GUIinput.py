@@ -52,7 +52,7 @@ class Ui(QtWidgets.QMainWindow):
             icon, LE_fixing_date.TrailingPosition)
         
         LE_customer_name.action.setToolTip("Vui lòng nhập tên")
-        LE_VIN_code.action.setToolTip("Vui lòng nhập mã VIN")
+        LE_VIN_code.action.setToolTip("Vui lòng nhập mã VIN (17 kí tự)")
         LE_number_plate.action.setToolTip("Vui lòng nhập biển số")
         LE_phone_number.action.setToolTip("Vui lòng nhập số điện thoại")
         LE_address.action.setToolTip("Vui lòng nhập địa chỉ")
@@ -169,27 +169,33 @@ class Ui(QtWidgets.QMainWindow):
         LE_fixing_date: QLineEdit = self.findChild(QLineEdit, "LE_fixing_date")
         LE_damage: QLineEdit = self.findChild(QLineEdit, "LE_damage")
         
-        if LE_customer_name.text() == "" and LE_VIN_code.text() =="" and LE_number_plate.text() =="" and LE_number_plate.text() =="" and LE_phone_number.text() =="" and LE_address.text() =="" and LE_fixing_date.text() =="":
+        number_char_vin = int(len(list(LE_VIN_code.text())))
+        
+        if number_char_vin == 17:
+            if LE_customer_name.text() == "" and LE_VIN_code.text() =="" and LE_number_plate.text() =="" and LE_number_plate.text() =="" and LE_phone_number.text() =="" and LE_address.text() =="" and LE_fixing_date.text() =="":
+                GB_customer_information: QGroupBox = self.findChild(QGroupBox, "GB_customer_information")
+                GB_customer_information.label_warning.setVisible(True)
+            else :
+                data_cus = {
+                    "name": LE_customer_name.text(),
+                    "VIN_code": LE_VIN_code.text(),
+                    "number_plate": LE_number_plate.text(),
+                    "phone_number": LE_phone_number.text(),
+                    "address": LE_address.text(),
+                    "fixing_date" : LE_fixing_date.text(),
+                    "damaged": LE_damage.text()
+                }
+                data_path = os.path.abspath(os.path.join(self.main_path, "data", "data_cus.json"))
+                with open(data_path, 'w') as outfile:
+                    json.dump(data_cus, outfile)
+                
+                file_data = os.path.abspath(os.path.join(self.main_path, "source", "GUImain.py"))
+                os.system('python "{}"'.format(file_data))
+                
+                window.close()
+        else:
             GB_customer_information: QGroupBox = self.findChild(QGroupBox, "GB_customer_information")
             GB_customer_information.label_warning.setVisible(True)
-        else :
-            data_cus = {
-                "name": LE_customer_name.text(),
-                "VIN_code": LE_VIN_code.text(),
-                "number_plate": LE_number_plate.text(),
-                "phone_number": LE_phone_number.text(),
-                "address": LE_address.text(),
-                "fixing_date" : LE_fixing_date.text(),
-                "damaged": LE_damage.text()
-            }
-            data_path = os.path.abspath(os.path.join(self.main_path, "data", "data_cus.json"))
-            with open(data_path, 'w') as outfile:
-                json.dump(data_cus, outfile)
-            
-            file_data = os.path.abspath(os.path.join(self.main_path, "source", "GUImain.py"))
-            os.system('python "{}"'.format(file_data))
-            
-            window.close()
 
     # Đóng chương trình
     def BT_exit_click(self):
