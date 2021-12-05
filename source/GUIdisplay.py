@@ -93,7 +93,8 @@ class Ui(QtWidgets.QMainWindow):
         LE_product_date.setText(num_vin_data["product_date"]["value"][vin_num[6]]["text"])
         LE_factory.setText(vin_num[10])
         LE_num_product.setText(num_product)
-        
+    
+    # Thêm giống GUimain
     def setup_lineEdit_diagnose(self):
         GB_diagnose: QGroupBox = self.findChild(QGroupBox, "GB_diagnose")
         LE_diagnose_1: QLineEdit = self.findChild(QLineEdit, "LE_diagnose_1")
