@@ -615,7 +615,7 @@
      </font>
     </property>
     <property name="title">
-     <string>Chuẩn đoán</string>
+     <string>Chẩn đoán</string>
     </property>
     <widget class="QLineEdit" name="LE_diagnose_1">
      <property name="geometry">

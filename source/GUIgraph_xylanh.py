@@ -25,7 +25,7 @@ class Ui(QtWidgets.QMainWindow):
         self.setup_pushButton()
         self.setup_graph()
         self.show()
-    
+    # Hien do thi giong GUI main
     def setup_graph(self):
         GV_graph: QGraphicsView = self.findChild(QGraphicsView, "GV_graph")
         data_path = os.path.abspath(os.path.join(self.main_path, "data" ,"data_P.json"))
