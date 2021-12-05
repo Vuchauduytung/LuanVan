@@ -22,7 +22,7 @@
    <widget class="QGroupBox" name="GB_informatin_custom">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>10</x>
       <y>10</y>
       <width>381</width>
       <height>221</height>
@@ -36,98 +36,74 @@
     <property name="title">
      <string>Thông tin khách hàng</string>
     </property>
-    <widget class="QLabel" name="label_name_custom">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>40</y>
-       <width>142</width>
-       <height>41</height>
+       <y>30</y>
+       <width>361</width>
+       <height>181</height>
       </rect>
      </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Tên khách hàng</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_phone_number">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>100</y>
-       <width>142</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Số điện thoại</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_number_car">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>159</y>
-       <width>142</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Biển số xe</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="LE_name_custom">
-     <property name="geometry">
-      <rect>
-       <x>160</x>
-       <y>50</y>
-       <width>211</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="placeholderText">
-      <string>Nhập tên khách hàng</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="LE_phone_number">
-     <property name="geometry">
-      <rect>
-       <x>160</x>
-       <y>100</y>
-       <width>211</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="placeholderText">
-      <string>Nhập số diện thoại</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="LE_number_car">
-     <property name="geometry">
-      <rect>
-       <x>160</x>
-       <y>160</y>
-       <width>211</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="placeholderText">
-      <string>Nhập biển số</string>
-     </property>
+     <layout class="QGridLayout" name="LT_informatin_custom">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_name_custom">
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Tên khách hàng</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="LE_name_custom">
+        <property name="placeholderText">
+         <string>Nhập tên khách hàng</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_phone_number">
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Số điện thoại</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="LE_phone_number">
+        <property name="placeholderText">
+         <string>Nhập số diện thoại</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_number_car">
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Biển số xe</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLineEdit" name="LE_number_car">
+        <property name="placeholderText">
+         <string>Nhập biển số</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </widget>
    <widget class="QPushButton" name="BT_search">

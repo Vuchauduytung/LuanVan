@@ -122,168 +122,6 @@
     <property name="checkable">
      <bool>false</bool>
     </property>
-    <widget class="QCheckBox" name="CB_incident_1">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>50</y>
-       <width>381</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>11</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Xe đột ngột tắt máy giữa đường</string>
-     </property>
-    </widget>
-    <widget class="QCheckBox" name="CB_incident_2">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>80</y>
-       <width>381</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>11</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Khó đề máy khi khởi động</string>
-     </property>
-    </widget>
-    <widget class="QCheckBox" name="CB_incident_3">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>110</y>
-       <width>381</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>11</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Thấy nhiều khói đen tỏa ra khi tăng tốc</string>
-     </property>
-    </widget>
-    <widget class="QCheckBox" name="CB_incident_4">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>140</y>
-       <width>381</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>11</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Cảm giác xe đì khi leo dốc</string>
-     </property>
-    </widget>
-    <widget class="QCheckBox" name="CB_incident_5">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>170</y>
-       <width>381</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>11</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Xe đột ngột giảm vòng tua khi tăng tốc</string>
-     </property>
-    </widget>
-    <widget class="QCheckBox" name="CB_incident_6">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>200</y>
-       <width>381</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>11</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Có tiếng động lạ ở động cơ</string>
-     </property>
-    </widget>
-    <widget class="QCheckBox" name="CB_incident_8">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>260</y>
-       <width>381</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>11</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Vòng tua không đáp ứng ngay khi tăng </string>
-     </property>
-    </widget>
-    <widget class="QCheckBox" name="CB_incident_7">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>230</y>
-       <width>381</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>11</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Cảm giác lái bất thường, khó kiểm soát</string>
-     </property>
-    </widget>
-    <widget class="QCheckBox" name="CB_incident_9">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>290</y>
-       <width>381</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>11</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Động cơ rung lắc mạnh khi vận hành</string>
-     </property>
-    </widget>
     <widget class="QLabel" name="Label_incident_phenomena_warning">
      <property name="geometry">
       <rect>
@@ -299,10 +137,23 @@
       </font>
      </property>
      <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;Vui lòng chọn sự cố của xe&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;Vui lòng nhập sự cố của xe&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
      <property name="textInteractionFlags">
       <set>Qt::NoTextInteraction</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="LE_damage">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>381</width>
+       <height>291</height>
+      </rect>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
      </property>
     </widget>
    </widget>
@@ -326,263 +177,185 @@
     <property name="title">
      <string>Thông tin khách hàng</string>
     </property>
-    <widget class="QLabel" name="Label_customer_information_warning">
-     <property name="geometry">
-      <rect>
-       <x>60</x>
-       <y>280</y>
-       <width>291</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;Vui lòng nhập đầy đủ thông tin&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-     <property name="textInteractionFlags">
-      <set>Qt::NoTextInteraction</set>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_customer_name">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>3</x>
        <y>34</y>
-       <width>117</width>
-       <height>21</height>
+       <width>401</width>
+       <height>281</height>
       </rect>
      </property>
-     <property name="font">
-      <font>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Tên khách hàng</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_VIN_code">
-     <property name="geometry">
-      <rect>
-       <x>3</x>
-       <y>73</y>
-       <width>54</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Mã VIN</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_number_plate">
-     <property name="geometry">
-      <rect>
-       <x>3</x>
-       <y>113</y>
-       <width>55</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Biển số</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_phone_number">
-     <property name="geometry">
-      <rect>
-       <x>3</x>
-       <y>152</y>
-       <width>31</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>SĐT</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_address">
-     <property name="geometry">
-      <rect>
-       <x>3</x>
-       <y>191</y>
-       <width>51</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Địa chỉ</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_fixing_date">
-     <property name="geometry">
-      <rect>
-       <x>3</x>
-       <y>231</y>
-       <width>110</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Ngày sửa chữa</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="LE_customer_name">
-     <property name="geometry">
-      <rect>
-       <x>128</x>
-       <y>39</y>
-       <width>271</width>
-       <height>27</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="whatsThis">
-      <string notr="true"/>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="placeholderText">
-      <string>Vui lòng nhập tên của bạn</string>
-     </property>
-     <property name="clearButtonEnabled">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="LE_VIN_code">
-     <property name="geometry">
-      <rect>
-       <x>128</x>
-       <y>78</y>
-       <width>271</width>
-       <height>27</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="placeholderText">
-      <string>Nhập mã VIN</string>
-     </property>
-     <property name="clearButtonEnabled">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="LE_number_plate">
-     <property name="geometry">
-      <rect>
-       <x>128</x>
-       <y>117</y>
-       <width>271</width>
-       <height>27</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="placeholderText">
-      <string>Biển số xe cần kiểm tra</string>
-     </property>
-     <property name="clearButtonEnabled">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="LE_phone_number">
-     <property name="geometry">
-      <rect>
-       <x>128</x>
-       <y>156</y>
-       <width>271</width>
-       <height>27</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="placeholderText">
-      <string>Số điện thoại liên lạc</string>
-     </property>
-     <property name="clearButtonEnabled">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="LE_address">
-     <property name="geometry">
-      <rect>
-       <x>128</x>
-       <y>195</y>
-       <width>271</width>
-       <height>27</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="placeholderText">
-      <string>Nhập địa chỉ nhà của bạn</string>
-     </property>
-     <property name="clearButtonEnabled">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QDateEdit" name="DE_fixing_date">
-     <property name="geometry">
-      <rect>
-       <x>128</x>
-       <y>234</y>
-       <width>113</width>
-       <height>27</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="specialValueText">
-      <string/>
-     </property>
+     <layout class="QGridLayout" name="LT_customer_information">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_customer_name">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Tên khách hàng</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="LE_customer_name">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="whatsThis">
+         <string notr="true"/>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="placeholderText">
+         <string>Vui lòng nhập tên của bạn</string>
+        </property>
+        <property name="clearButtonEnabled">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_VIN_code">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Mã VIN</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="LE_VIN_code">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="placeholderText">
+         <string>Nhập mã VIN</string>
+        </property>
+        <property name="clearButtonEnabled">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_number_plate">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Biển số</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLineEdit" name="LE_number_plate">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="placeholderText">
+         <string>Biển số xe cần kiểm tra</string>
+        </property>
+        <property name="clearButtonEnabled">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_phone_number">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>SĐT</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QLineEdit" name="LE_phone_number">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="placeholderText">
+         <string>Số điện thoại liên lạc</string>
+        </property>
+        <property name="clearButtonEnabled">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="label_address">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Địa chỉ</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QLineEdit" name="LE_address">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="placeholderText">
+         <string>Nhập địa chỉ nhà của bạn</string>
+        </property>
+        <property name="clearButtonEnabled">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QLabel" name="label_fixing_date">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Ngày sửa chữa</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <widget class="QLineEdit" name="LE_fixing_date">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="placeholderText">
+         <string>Nhập ngày sửa chữa</string>
+        </property>
+        <property name="clearButtonEnabled">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </widget>
    <widget class="QGroupBox" name="GB_incident_images">
@@ -607,8 +380,8 @@
       <rect>
        <x>10</x>
        <y>39</y>
-       <width>701</width>
-       <height>591</height>
+       <width>700</width>
+       <height>590</height>
       </rect>
      </property>
      <property name="autoFillBackground">
@@ -690,6 +463,26 @@
      <string>Thoát</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="BT_Ghaph">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>690</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Chọn ảnh</string>
+    </property>
+   </widget>
    <zorder>GB_incident_phenomena</zorder>
    <zorder>GB_incident_images</zorder>
    <zorder>splitter</zorder>
@@ -703,6 +496,7 @@
    <zorder>QL_label_3</zorder>
    <zorder>BT_confirm</zorder>
    <zorder>BT_exit</zorder>
+   <zorder>BT_Ghaph</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
