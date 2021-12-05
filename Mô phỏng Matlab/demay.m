@@ -44,15 +44,16 @@ for i=1:2:23
 end
 %xac dinh
 % khai b�o gi� tri
-v = 300;
-u = 9.1;
-S = 75;
-D = 76;
-Vh = 1343;
-A = 40;
-L = 133;
-W = 68.4;
-Po = 1;
+v = input('nhiet do To: '); %300
+u = input('ty so nen cua dong co: '); %9.1
+S = input('Hanh trinh piston: '); %75
+D = input('Duong kinh xylanh: '); %76
+Vh = input('Dung tich xylanh: '); %1343
+A = input('Goc dong muon xuppap: '); %40
+L = input('Chieu dai thanh truyen: '); %133
+W = input('cong suat cuc dai: '); %68.4
+Po = input('Ap suat khi nap: '); %1
+Pa = Po*0.96;
 Pa = Po*0.96;
 % truy bat diem
 if v>290
@@ -250,3 +251,16 @@ end
 fprintf(fileID, ']');
 fprintf(fileID, '}')
 fclose(fileID);
+
+% save dat
+data_pmin = randn (721,1);
+period = length(pmin);
+time_step = 0.0007;
+time = now;
+for ii=1:period
+        
+        data_pmin (ii,1) = pmin(ii);
+        
+        time = time + time_step;
+end
+dlmwrite('F:\HK211\Lu?n V?n\data\data.dat', data_pmin);

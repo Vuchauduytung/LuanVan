@@ -223,14 +223,14 @@ for k = 541:721;
         end
 end
 % save dat
-data_pmin = randn (721,3);
+data_pmin = randn (721,1);
 period = length(pmin);
 time_step = 0.0007;
 time = now;
 for ii=1:period
-        data_pmin (ii,1) = ii;
-        data_pmin (ii,2) = pmin(ii);
-        data_pmin (ii,3) = time;
+        
+        data_pmin (ii,1) = pmin(ii);
+        
         time = time + time_step;
 end
-dlmwrite('data.dat', data_pmin);
+dlmwrite('F:\HK211\Lu?n V?n\data\data.dat', data_pmin);
