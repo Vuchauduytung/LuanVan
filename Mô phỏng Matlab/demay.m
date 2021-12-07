@@ -233,14 +233,15 @@ fileID = fopen('F:\HK211\Luận Văn\data\data_P.json','w');
 fprintf(fileID, '{ "Data"');
 fprintf(fileID, ':');
 fprintf(fileID, '[');
-time_step = 1/length(pmin);
+time_step = (1/length(pmin))*1/2;
 str = sprintf('{"xilanh":1, "time":%f, "pmin":%f}', 0, pmin(1));
 fprintf(fileID, str);
 time = input('thoi gian do :');
+time = time*2;
 time_time = 0;
-for a=0:period:time*period
+for a=1:period:time*period
     for ii=1:period
-        plot((ii+a)/period, pmin(ii), 'b.', 'MarkerSize', 10);
+        plot(((ii+a)/period)/2 , pmin(ii), 'b.', 'MarkerSize', 10);
         hold on;
         str = sprintf(', {"xilanh":1, "time":%f, "pmin":%f}', time_time, pmin(ii));
         time_time = time_time +time_step;
