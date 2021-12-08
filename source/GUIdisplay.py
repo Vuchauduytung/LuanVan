@@ -7,6 +7,8 @@ import os
 import numpy as np
 # Import json module
 from modules.library.IO_support import *
+from modules.library.Open_pdf import *
+import webbrowser
 
 class Ui(QtWidgets.QMainWindow):
     """
@@ -143,8 +145,23 @@ class Ui(QtWidgets.QMainWindow):
         os.system('python "{}"'.format(file_data))
         
     def BT_fix_click(self):
-        file_data = os.path.abspath(os.path.join(self.main_path, "source","modules","library","Open_pdf.py"))
-        os.system('python "{}"'.format(file_data))
+        
+        data_path = os.path.abspath(os.path.join(self.main_path, "data" ,"data_cus_pdf.json"))
+        pdf = json2dict(data_path)
+
+        Pmax = pdf["Data"]["Pmax"]
+        compression_pressure = pdf["Data"]["compression_pressure"]
+        Minimum_pressure_intake = pdf["Data"]["Minimum_pressure_intake"]
+        Pmin = pdf["Data"]["Pmin"]
+        
+        path_open, path= open(compression_pressure = compression_pressure ,
+                        Pmax = Pmax ,
+                        Pmin = Pmin ,
+                        Minimum_pressure_intake = Minimum_pressure_intake)
+        
+        
+        webbrowser.open_new(path_open)
+        webbrowser.open_new(path)
         
     def BT_cancel_click(self):
         window.close()
