@@ -23,4 +23,4 @@ def open(compression_pressure, Pmax, Pmin, Minimum_pressure_intake ):
             path = 'F:\HK211\Luận Văn\source\library\libary_fix\Hở xupap.pdf'
         elif Pmin > 0.62*Minimum_pressure_intake:
             path = 'F:\HK211\Luận Văn\source\library\libary_fix\Hở giăng nắp máy.pdf'
-    return  path_open,path
+    return  value, path_open,path

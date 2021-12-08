@@ -154,14 +154,18 @@ class Ui(QtWidgets.QMainWindow):
         Minimum_pressure_intake = pdf["Data"]["Minimum_pressure_intake"]
         Pmin = pdf["Data"]["Pmin"]
         
-        path_open, path= open(compression_pressure = compression_pressure ,
+        value, path_open, path= open(compression_pressure = compression_pressure ,
                         Pmax = Pmax ,
                         Pmin = Pmin ,
                         Minimum_pressure_intake = Minimum_pressure_intake)
         
         
-        webbrowser.open_new(path_open)
-        webbrowser.open_new(path)
+        if value == "Bình thường":
+            webbrowser.open_new(path_open)
+        else :
+            webbrowser.open_new(path_open)
+            webbrowser.open_new(path)
+        
         
     def BT_cancel_click(self):
         window.close()
