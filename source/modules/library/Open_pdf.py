@@ -29,7 +29,7 @@ def open_in(compression_pressure, Pmax, Pmin, Minimum_pressure_intake ):
         path_in = "source\library\libary_fix\Open.txt"
     else:
         value_in = 'Hư hỏng'
-        path_open = "source\library\libary_fix\Tháo lắp động cơ.pdf"
+        path_open_in = "source\library\libary_fix\Tháo lắp động cơ.pdf"
         if Pmin < 0.8*Minimum_pressure_intake:
             path_in = 'source\library\libary_fix\Hở xupap.pdf'
         elif Pmin > 0.62*Minimum_pressure_intake:
