@@ -243,9 +243,7 @@ class Ui(QtWidgets.QMainWindow):
                             Pmin = Pmin ,
                             Minimum_pressure_intake = Minimum_pressure_intake)
             
-            if value == "Bình thường" and value_in == "Bình thường":
-                webbrowser.open_new(path_open)
-            elif value == 'Hư hỏng':
+            if value == 'Hư hỏng':
                 webbrowser.open_new(path_open)
                 webbrowser.open_new(path)
             elif value_in == 'Hư hỏng':
