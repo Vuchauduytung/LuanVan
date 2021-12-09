@@ -1,6 +1,6 @@
 # Method 3: Open with webbrowser
 
-def open(compression_pressure, Pmax, Pmin, Minimum_pressure_intake ):
+def open_c(compression_pressure, Pmax, Pmin, Minimum_pressure_intake ):
         # Pmax lay gia ti lon nhat trong .dat , Pmin lay gia trinho nhat trong .dat
     if 0.8*compression_pressure < Pmax < compression_pressure*1.1 and 0.8*Minimum_pressure_intake < Pmin < Minimum_pressure_intake*1.1:
         value = 'Bình thường'
@@ -19,8 +19,18 @@ def open(compression_pressure, Pmax, Pmin, Minimum_pressure_intake ):
             path = 'source\library\libary_fix\Xilanh không đều.pdf'
         elif Pmax > 0.9*compression_pressure:
             path = 'source\library\libary_fix\Xilanh không đều.pdf'
-        elif Pmin < 0.8*Minimum_pressure_intake:
-            path = 'source\library\libary_fix\Hở xupap.pdf'
+    return  value,path_open,path
+
+def open_in(compression_pressure, Pmax, Pmin, Minimum_pressure_intake ):
+        # Pmax lay gia ti lon nhat trong .dat , Pmin lay gia trinho nhat trong .dat
+    if 0.8*compression_pressure < Pmax < compression_pressure*1.1 and 0.8*Minimum_pressure_intake < Pmin < Minimum_pressure_intake*1.1:
+        value_in = 'Bình thường'
+        path_open_in = "source\library\libary_fix\Open.txt"
+        path_in = "source\library\libary_fix\Open.txt"
+    else:
+        value_in = 'Hư hỏng'
+        if Pmin < 0.8*Minimum_pressure_intake:
+            path_in = 'source\library\libary_fix\Hở xupap.pdf'
         elif Pmin > 0.62*Minimum_pressure_intake:
-            path = 'source\library\libary_fix\Hở giăng nắp máy.pdf'
-    return  value, path_open,path
+            path_in = 'source\library\libary_fix\Hở giăng nắp máy.pdf'
+    return  value_in,path_open_in,path_in

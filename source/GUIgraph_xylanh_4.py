@@ -20,7 +20,7 @@ class Ui(QtWidgets.QMainWindow):
         self.main_path = main_path
         # load GUI
         gui_path = os.path.abspath(
-            os.path.join(main_path, "GUI", "GUIgraph_xylanh1.ui"))
+            os.path.join(main_path, "GUI", "GUIgraph_xylanh4.ui"))
         uic.loadUi(gui_path, self)
         self.setup_pushButton()
         self.setup_graph()
@@ -28,7 +28,7 @@ class Ui(QtWidgets.QMainWindow):
     # Hien do thi giong GUI main
     def setup_graph(self):
         GV_graph: QGraphicsView = self.findChild(QGraphicsView, "GV_graph")
-        data_path = os.path.abspath(os.path.join(self.main_path, "data" ,"data_P.json"))
+        data_path = os.path.abspath(os.path.join(self.main_path, "data" ,"data_P_xylanh4.json"))
         customer = json2dict(data_path)
         graph = customer["Data"]
         # Tinh tong gia tri trong json

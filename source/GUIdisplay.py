@@ -8,6 +8,7 @@ import numpy as np
 # Import json module
 from modules.library.IO_support import *
 from modules.library.Open_pdf import *
+from modules.library.compare import *
 import webbrowser
 
 class Ui(QtWidgets.QMainWindow):
@@ -101,18 +102,83 @@ class Ui(QtWidgets.QMainWindow):
         LE_factory.setText(vin_num[10])
         LE_num_product.setText(num_product)
     
-    # Thêm giống GUimain
     def setup_lineEdit_diagnose(self):
-        GB_diagnose: QGroupBox = self.findChild(QGroupBox, "GB_diagnose")
-        LE_diagnose_1: QLineEdit = self.findChild(QLineEdit, "LE_diagnose_1")
-        LE_diagnose_1.setText('Xylanh 1: Hoạt động bình thường')
-        LE_diagnose_2: QLineEdit = self.findChild(QLineEdit, "LE_diagnose_2")
-        LE_diagnose_2.setText('Xylanh 2: Hoạt động bình thường')
-        LE_diagnose_3: QLineEdit = self.findChild(QLineEdit, "LE_diagnose_3")
-        LE_diagnose_3.setText('Xylanh 3: Hoạt động bình thường')
-        LE_diagnose_4: QLineEdit = self.findChild(QLineEdit, "LE_diagnose_4")
-        LE_diagnose_4.setText('Xylanh 4: Hoạt động bình thường')
+        data_path = os.path.abspath(os.path.join(self.main_path, "data" ,"data_cus_pdf.json"))
+        error = json2dict(data_path)
         
+        num_xilanh = 0
+        for num_xilanh in range(0,4):
+            num_xilanh +=1
+            
+            xilanh_str = "Xylanh_{}".format(num_xilanh)
+            
+            Pmax = error[xilanh_str]["Pmax"]
+            compression_pressure = error[xilanh_str]["compression_pressure"]
+            Minimum_pressure_intake = error[xilanh_str]["Minimum_pressure_intake"]
+            Pmin = error[xilanh_str]["Pmin"]
+            
+            value_str, damage_c_str = compare_c(compression_pressure = compression_pressure ,
+                        Pmax = Pmax ,
+                        Pmin = Pmin ,
+                        Minimum_pressure_intake = Minimum_pressure_intake)
+            
+            value_in_str, damage_in_str = compare_in(compression_pressure = compression_pressure ,
+                        Pmax = Pmax ,
+                        Pmin = Pmin ,
+                        Minimum_pressure_intake = Minimum_pressure_intake)
+            
+            if value_str == "Bình thường" and value_in_str == "Bình thường":
+                assess_str = """
+                <h3>Trạng thái:</h3>
+                <p>&ensp;{xilanh}</p>
+                <p>&ensp;{value}</p>
+                """\
+                    .format(xilanh=xilanh_str,
+                            value=value_str)
+                TE_diagnoses: QTextEdit = self.findChild(QTextEdit, "TE_diagnose_{num}"\
+                    .format(num=num_xilanh))
+                TE_diagnoses.setHtml(assess_str)
+            elif value_str == 'Hư hỏng':
+                assess_str = """
+                <h3>Trạng thái:</h3>
+                <p>&ensp;{xilanh}</p>
+                <p>&ensp;{value}</p>
+                <p>&ensp;{damage}</p>
+                """\
+                    .format(xilanh=xilanh_str,
+                            value=value_str,
+                            damage=damage_c_str)
+                TE_diagnoses: QTextEdit = self.findChild(QTextEdit, "TE_diagnose_{num}"\
+                    .format(num=num_xilanh))
+                TE_diagnoses.setHtml(assess_str)
+            elif value_in_str == 'Hư hỏng':
+                assess_str = """
+                <h3>Trạng thái:</h3>
+                <p>&ensp;{xilanh}</p>
+                <p>&ensp;{value}</p>
+                <p>&ensp;{damage_in}</p>
+                """\
+                    .format(xilanh=xilanh_str,
+                            value=value_in_str,
+                            damage_in=damage_in_str)
+                TE_diagnoses: QTextEdit = self.findChild(QTextEdit, "TE_diagnose_{num}"\
+                    .format(num=num_xilanh))
+                TE_diagnoses.setHtml(assess_str)
+            elif value_str =='Hư hỏng' and value_in_str == 'Hư hỏng':
+                assess_str = """
+                <h3>Trạng thái:</h3>
+                <p>&ensp;{xilanh}</p>
+                <p>&ensp;{value}</p>
+                <p>&ensp;{damage}</p>
+                <p>&ensp;{damage_in}</p>
+                """\
+                    .format(xilanh=xilanh_str,
+                            value=value_in_str,
+                            damage=damage_c_str,
+                            damage_in=damage_in_str)
+                TE_diagnoses: QTextEdit = self.findChild(QTextEdit, "TE_diagnose_{num}"\
+                    .format(num=num_xilanh))
+                TE_diagnoses.setHtml(assess_str)
         
         
     def LE_focusOutEvent(UI, self: QLineEdit, event: QFocusEvent):
@@ -141,7 +207,14 @@ class Ui(QtWidgets.QMainWindow):
         os.system('python "{}"'.format(file_data))
         
     def BT_graph_click(self):
-        file_data = os.path.abspath(os.path.join(self.main_path, "source", "GUIgraph_xylanh.py"))
+        
+        file_data = os.path.abspath(os.path.join(self.main_path, "source", "GUIgraph_xylanh_1.py"))
+        os.system('python "{}"'.format(file_data))
+        file_data = os.path.abspath(os.path.join(self.main_path, "source", "GUIgraph_xylanh_2.py"))
+        os.system('python "{}"'.format(file_data))
+        file_data = os.path.abspath(os.path.join(self.main_path, "source", "GUIgraph_xylanh_3.py"))
+        os.system('python "{}"'.format(file_data))
+        file_data = os.path.abspath(os.path.join(self.main_path, "source", "GUIgraph_xylanh_4.py"))
         os.system('python "{}"'.format(file_data))
         
     def BT_fix_click(self):
@@ -149,23 +222,39 @@ class Ui(QtWidgets.QMainWindow):
         data_path = os.path.abspath(os.path.join(self.main_path, "data" ,"data_cus_pdf.json"))
         pdf = json2dict(data_path)
 
-        Pmax = pdf["Data"]["Pmax"]
-        compression_pressure = pdf["Data"]["compression_pressure"]
-        Minimum_pressure_intake = pdf["Data"]["Minimum_pressure_intake"]
-        Pmin = pdf["Data"]["Pmin"]
+        num_xilanh = 0
+        for num_xilanh in range(0,4):
+            num_xilanh +=1
+            
+            xilanh_str = "Xylanh_{}".format(num_xilanh)
+            
+            Pmax = pdf[xilanh_str]["Pmax"]
+            compression_pressure = pdf[xilanh_str]["compression_pressure"]
+            Minimum_pressure_intake = pdf[xilanh_str]["Minimum_pressure_intake"]
+            Pmin = pdf[xilanh_str]["Pmin"]
         
-        value, path_open, path= open(compression_pressure = compression_pressure ,
-                        Pmax = Pmax ,
-                        Pmin = Pmin ,
-                        Minimum_pressure_intake = Minimum_pressure_intake)
-        
-        
-        if value == "Bình thường":
-            webbrowser.open_new(path_open)
-        else :
-            webbrowser.open_new(path_open)
-            webbrowser.open_new(path)
-        
+            value, path_open, path= open_c(compression_pressure = compression_pressure ,
+                            Pmax = Pmax ,
+                            Pmin = Pmin ,
+                            Minimum_pressure_intake = Minimum_pressure_intake)
+            
+            value_in, path_open_in, path_in = open_in(compression_pressure = compression_pressure ,
+                            Pmax = Pmax ,
+                            Pmin = Pmin ,
+                            Minimum_pressure_intake = Minimum_pressure_intake)
+            
+            if value == "Bình thường" and value_in == "Bình thường":
+                webbrowser.open_new(path_open)
+            elif value == 'Hư hỏng':
+                webbrowser.open_new(path_open)
+                webbrowser.open_new(path)
+            elif value_in == 'Hư hỏng':
+                webbrowser.open_new(path_open)
+                webbrowser.open_new(path_in)
+            elif value =='Hư hỏng' and value_in == 'Hư hỏng':
+                webbrowser.open_new(path_open)
+                webbrowser.open_new(path)
+                webbrowser.open_new(path_in)
         
     def BT_cancel_click(self):
         window.close()

@@ -617,7 +617,7 @@
     <property name="title">
      <string>Chẩn đoán</string>
     </property>
-    <widget class="QLineEdit" name="LE_diagnose_1">
+    <widget class="QTextEdit" name="TE_diagnose_1">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -631,14 +631,11 @@
        <pointsize>10</pointsize>
       </font>
      </property>
-     <property name="alignment">
-      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-     </property>
      <property name="readOnly">
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QLineEdit" name="LE_diagnose_2">
+    <widget class="QTextEdit" name="TE_diagnose_2">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -652,14 +649,11 @@
        <pointsize>10</pointsize>
       </font>
      </property>
-     <property name="alignment">
-      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-     </property>
      <property name="readOnly">
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QLineEdit" name="LE_diagnose_3">
+    <widget class="QTextEdit" name="TE_diagnose_3">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -673,14 +667,11 @@
        <pointsize>10</pointsize>
       </font>
      </property>
-     <property name="alignment">
-      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-     </property>
      <property name="readOnly">
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QLineEdit" name="LE_diagnose_4">
+    <widget class="QTextEdit" name="TE_diagnose_4">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -693,9 +684,6 @@
       <font>
        <pointsize>10</pointsize>
       </font>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
      </property>
      <property name="readOnly">
       <bool>true</bool>
