@@ -114,6 +114,7 @@ class Ui(QtWidgets.QMainWindow):
             
             Pmax = error[xilanh_str]["Pmax"]
             compression_pressure = error[xilanh_str]["compression_pressure"]
+            minimum_pressure = error[xilanh_str]["minimum_pressure"]
             Minimum_pressure_intake = error[xilanh_str]["Minimum_pressure_intake"]
             Pmin = error[xilanh_str]["Pmin"]
             
@@ -230,6 +231,7 @@ class Ui(QtWidgets.QMainWindow):
             
             Pmax = pdf[xilanh_str]["Pmax"]
             compression_pressure = pdf[xilanh_str]["compression_pressure"]
+            minimum_pressure = pdf[xilanh_str]["minimum_pressure"]
             Minimum_pressure_intake = pdf[xilanh_str]["Minimum_pressure_intake"]
             Pmin = pdf[xilanh_str]["Pmin"]
         

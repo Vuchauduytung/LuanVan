@@ -9,9 +9,9 @@ def open_c(compression_pressure, Pmax, Pmin, Minimum_pressure_intake ):
     else:
         value = 'Hư hỏng'
         path_open = "source\library\libary_fix\Tháo lắp động cơ.pdf"
-        if Pmax < compression_pressure:
+        if Pmax < Minimum_pressure:
             path = 'source\library\libary_fix\Gãy xéc măng, gãy xupap lủng piston.pdf'
-        elif Pmax <0.62*compression_pressure:
+        elif Minimum_pressure< Pmax <0.62*compression_pressure:
             path = 'source\library\libary_fix\Hở giăng nắp máy.pdf'
         elif 0.62*compression_pressure < Pmax <0.8*compression_pressure:
             path = 'source\library\libary_fix\Hở xupap.pdf'
