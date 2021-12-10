@@ -13,7 +13,7 @@ def compare_c(compression_pressure, Pmax, Pmin, Minimum_pressure_intake ):
             damage_c = 'Hở xupap.'
         elif Pmax > compression_pressure:
             damage_c = 'Buồng đốt bị bám mụi than, kẹt xupap xả.'
-        elif Pmax > 0.9*compression_pressure:
+        elif Pmax < 0.9*compression_pressure:
             damage_c = 'Các xy lanh mòn không đều.'
     return value, damage_c   
     

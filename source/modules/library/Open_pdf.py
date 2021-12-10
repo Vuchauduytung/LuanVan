@@ -17,7 +17,7 @@ def open_c(compression_pressure, Pmax, Pmin, Minimum_pressure_intake ):
             path = 'source\library\libary_fix\Hở xupap.pdf'
         elif Pmax > compression_pressure:
             path = 'source\library\libary_fix\Xilanh không đều.pdf'
-        elif Pmax > 0.9*compression_pressure:
+        elif Pmax < 0.9*compression_pressure:
             path = 'source\library\libary_fix\Xilanh không đều.pdf'
     return  value,path_open,path
 
