@@ -1,13 +1,13 @@
-def compare_c(compression_pressure, Pmax, Pmin, Minimum_pressure_intake ):
+def compare_c(compression_pressure, Pmax, Pmin, Minimum_pressure_intake, minimum_pressure ):
         # Pmax lay gia ti lon nhat trong .dat , Pmin lay gia trinho nhat trong .dat
     if 0.8*compression_pressure < Pmax < compression_pressure*1.1:
         value = 'Bình thường'
         damage_c = "Bình thường"
     else:
         value = 'Hư hỏng'
-        if Pmax < Minimum_pressure:
+        if Pmax < minimum_pressure:
             damage_c ='Gãy xéc măng, gãy xupap hay bị lủng piston.'
-        elif Minimum_pressure < Pmax <0.62*compression_pressure:
+        elif minimum_pressure < Pmax <0.62*compression_pressure:
             damage_c = 'Hở gioăng nắp máy.'
         elif 0.62*compression_pressure < Pmax <0.8*compression_pressure:
             damage_c = 'Hở xupap.'
