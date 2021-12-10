@@ -129,7 +129,7 @@ def check_state(air_press: float, reality_pressure: dict, compression_pressure: 
     Pmax = reality_pressure["compress"]
     Pmin = reality_pressure["load"]
     Minimum_pressure_load = minimum_pressure_load(load_pressure=air_press)
-    if 0.8*compression_pressure <= Pmax <= compression_pressure*1.1 and 0.8*Minimum_pressure_load <= Pmin <= Minimum_pressure_load*1.1:
+    if 0.9*compression_pressure <= Pmax <= compression_pressure*1.1 and 0.8*Minimum_pressure_load <= Pmin <= Minimum_pressure_load*1.1:
         return True
     else:
         return False
