@@ -142,7 +142,8 @@ class Ui(QtWidgets.QMainWindow):
         # MainWindow
         BT_confirm: QPushButton = self.findChild(QPushButton, "BT_confirm")
         BT_cancel: QPushButton = self.findChild(QPushButton, "BT_cancel")
-        # BT_cancel.clicked.connect(self.exit_gui)
+        BT_confirm.clicked.connect(self.exit_gui)
+        BT_cancel.clicked.connect(self.exit_gui)
         
         
 
@@ -252,7 +253,9 @@ class Ui(QtWidgets.QMainWindow):
         LE_Comp_temp_F.clear()
         LE_watt.clear()
     
-    # def exit_gui(self):
+    def exit_gui(self):
+        mainWindow.close()
+        
         
 
     def setup_processBar(self):
