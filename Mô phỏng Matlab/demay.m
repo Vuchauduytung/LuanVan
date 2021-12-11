@@ -54,7 +54,6 @@ L = input('Chieu dai thanh truyen: '); %133
 W = input('cong suat cuc dai: '); %68.4
 Po = input('Ap suat khi nap: '); %1
 Pa = Po*0.96;
-Pa = Po*0.96;
 % truy bat diem
 if v>290
     for i = 1:23
@@ -223,20 +222,20 @@ for k = 541:721;
         pmin(k)=((Pa*10^5)*0.000145)*ed1^n01;
         end
 end
-%duong ap suat
+%duong ap suat xylanh 1
 disp('Exit Ctrl + C');
 figure;
 a = 0;
 ii = 0;
 period = length(pmin);
-fileID = fopen('F:\HK211\Luận Văn\data\data_P.json','w');
-fprintf(fileID, '{ "Data"');
-fprintf(fileID, ':');
-fprintf(fileID, '[');
+fileID_1 = fopen('F:\HK211\Luận Văn\data\data_P_xylanh1.json','w');
+fprintf(fileID_1, '{ "Data"');
+fprintf(fileID_1, ':');
+fprintf(fileID_1, '[');
 time_step = (1/length(pmin))*1/2;
 str = sprintf('{"xilanh":1, "time":%f, "pmin":%f}', 0, pmin(1));
-fprintf(fileID, str);
-time = input('thoi gian do :');
+fprintf(fileID_1, str);
+time = input('thoi gian do xylanh 1:');
 time = time*2;
 time_time = 0;
 for a=1:period:time*period
@@ -245,13 +244,83 @@ for a=1:period:time*period
         hold on;
         str = sprintf(', {"xilanh":1, "time":%f, "pmin":%f}', time_time, pmin(ii));
         time_time = time_time +time_step;
-        fprintf(fileID, str);
+        fprintf(fileID_1, str);
     end
     pause(0.1);
 end
-fprintf(fileID, ']');
-fprintf(fileID, '}')
-fclose(fileID);
+fprintf(fileID_1, ']');
+fprintf(fileID_1, '}')
+fclose(fileID_1);
+
+%xylanh2
+fileID_2 = fopen('F:\HK211\Luận Văn\data\data_P_xylanh2.json','w');
+fprintf(fileID_2, '{ "Data"');
+fprintf(fileID_2, ':');
+fprintf(fileID_2, '[');
+time_step = (1/length(pmin))*1/2;
+str = sprintf('{"xilanh":1, "time":%f, "pmin":%f}', 0, pmin(1));
+fprintf(fileID_2, str);
+time = input('thoi gian do xylanh 2 :');
+time = time*2;
+time_time = 0;
+for a=1:period:time*period
+    for ii=1:period
+        str = sprintf(', {"xilanh":1, "time":%f, "pmin":%f}', time_time, pmin(ii));
+        time_time = time_time +time_step;
+        fprintf(fileID_2, str);
+    end
+    pause(0.1);
+end
+fprintf(fileID_2, ']');
+fprintf(fileID_2, '}')
+fclose(fileID_2);
+
+%xylanh3
+fileID_3 = fopen('F:\HK211\Luận Văn\data\data_P_xylanh3.json','w');
+fprintf(fileID_3, '{ "Data"');
+fprintf(fileID_3, ':');
+fprintf(fileID_3, '[');
+time_step = (1/length(pmin))*1/2;
+str = sprintf('{"xilanh":1, "time":%f, "pmin":%f}', 0, pmin(1));
+fprintf(fileID_3, str);
+time = input('thoi gian do xylanh 3 :');
+time = time*2;
+time_time = 0;
+for a=1:period:time*period
+    for ii=1:period
+        str = sprintf(', {"xilanh":1, "time":%f, "pmin":%f}', time_time, pmin(ii));
+        time_time = time_time +time_step;
+        fprintf(fileID_3, str);
+    end
+    pause(0.1);
+end
+fprintf(fileID_3, ']');
+fprintf(fileID_3, '}')
+fclose(fileID_3);
+
+%xylanh4
+fileID_4 = fopen('F:\HK211\Luận Văn\data\data_P_xylanh4.json','w');
+fprintf(fileID_4, '{ "Data"');
+fprintf(fileID_4, ':');
+fprintf(fileID_4, '[');
+time_step = (1/length(pmin))*1/2;
+str = sprintf('{"xilanh":1, "time":%f, "pmin":%f}', 0, pmin(1));
+fprintf(fileID_4, str);
+time = input('thoi gian do xylanh 4 :');
+time = time*2;
+time_time = 0;
+for a=1:period:time*period
+    for ii=1:period
+        str = sprintf(', {"xilanh":1, "time":%f, "pmin":%f}', time_time, pmin(ii));
+        time_time = time_time +time_step;
+        fprintf(fileID_4, str);
+    end
+    pause(0.1);
+end
+fprintf(fileID_4, ']');
+fprintf(fileID_4, '}')
+fclose(fileID_4);
+
 
 % save dat
 data_pmin = randn (721,1);
@@ -264,4 +333,4 @@ for ii=1:period
         
         time = time + time_step;
 end
-dlmwrite('F:\HK211\Lu?n V?n\data\data.dat', data_pmin);
+dlmwrite('F:\HK211\Luận Văn\data\data.dat', data_pmin);
