@@ -5,7 +5,7 @@ def caculate_n(Temperature, Compression_ratio):
     n = 1
     i = 0
     while(i < 1000):
-        m = 8.314/(19.806+0.002095*Temperature*(Compression_ratio**(n-1)+1))+1
+        m = 8.314/(19.806+0.002095*(Temperature+20)*(Compression_ratio**(n-1)+1))+1
         n = m
         i = i + 1
     return n
