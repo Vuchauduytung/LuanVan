@@ -103,7 +103,7 @@ class Ui(QtWidgets.QMainWindow):
         LE_num_product.setText(num_product)
     
     def setup_lineEdit_diagnose(self):
-        data_path = os.path.abspath(os.path.join(self.main_path, "data" ,"data_cus_pdf.json"))
+        data_path = os.path.abspath(os.path.join(self.main_path, "data" ,"data_cus_data.json"))
         error = json2dict(data_path)
         
         num_xilanh = 0
@@ -114,20 +114,24 @@ class Ui(QtWidgets.QMainWindow):
             
             Pmax = error[xilanh_str]["Pmax"]
             compression_pressure = error[xilanh_str]["compression_pressure"]
-            minimum_pressure = error[xilanh_str]["minimum_pressure"]
             Minimum_pressure_intake = error[xilanh_str]["Minimum_pressure_intake"]
+            minimum_pressure = error[xilanh_str]["minimum_pressure"]
             Pmin = error[xilanh_str]["Pmin"]
+            Minimum_pressure_charge = error[xilanh_str]["Minimum_pressure_charge"]
             
-            value_str, damage_c_str = compare_c(compression_pressure = compression_pressure ,
+            value_str, damage_c_str = compare_c(
+                        compression_pressure = compression_pressure ,
                         Pmax = Pmax ,
                         Pmin = Pmin ,
                         Minimum_pressure_intake = Minimum_pressure_intake,
-                        minimum_pressure =minimum_pressure )
+                        minimum_pressure =minimum_pressure)
             
-            value_in_str, damage_in_str = compare_in(compression_pressure = compression_pressure ,
+            value_in_str, damage_in_str = compare_in(
+                        compression_pressure = compression_pressure ,
                         Pmax = Pmax ,
                         Pmin = Pmin ,
-                        Minimum_pressure_intake = Minimum_pressure_intake)
+                        Minimum_pressure_intake = Minimum_pressure_intake,
+                        Minimum_pressure_charge=Minimum_pressure_charge)
             
             if value_str == "Bình thường" and value_in_str == "Bình thường":
                 assess_str = """
@@ -137,6 +141,21 @@ class Ui(QtWidgets.QMainWindow):
                 """\
                     .format(xilanh=xilanh_str,
                             value=value_str)
+                TE_diagnoses: QTextEdit = self.findChild(QTextEdit, "TE_diagnose_{num}"\
+                    .format(num=num_xilanh))
+                TE_diagnoses.setHtml(assess_str)
+            elif value_str =='Hư hỏng' and value_in_str == 'Hư hỏng':
+                assess_str = """
+                <h3>Trạng thái:</h3>
+                <p>&ensp;{xilanh}</p>
+                <p>&ensp;{value}</p>
+                <p>&ensp;{damage}</p>
+                <p>&ensp;{damage_in}</p>
+                """\
+                    .format(xilanh=xilanh_str,
+                            value=value_in_str,
+                            damage=damage_c_str,
+                            damage_in=damage_in_str)
                 TE_diagnoses: QTextEdit = self.findChild(QTextEdit, "TE_diagnose_{num}"\
                     .format(num=num_xilanh))
                 TE_diagnoses.setHtml(assess_str)
@@ -162,21 +181,6 @@ class Ui(QtWidgets.QMainWindow):
                 """\
                     .format(xilanh=xilanh_str,
                             value=value_in_str,
-                            damage_in=damage_in_str)
-                TE_diagnoses: QTextEdit = self.findChild(QTextEdit, "TE_diagnose_{num}"\
-                    .format(num=num_xilanh))
-                TE_diagnoses.setHtml(assess_str)
-            elif value_str =='Hư hỏng' and value_in_str == 'Hư hỏng':
-                assess_str = """
-                <h3>Trạng thái:</h3>
-                <p>&ensp;{xilanh}</p>
-                <p>&ensp;{value}</p>
-                <p>&ensp;{damage}</p>
-                <p>&ensp;{damage_in}</p>
-                """\
-                    .format(xilanh=xilanh_str,
-                            value=value_in_str,
-                            damage=damage_c_str,
                             damage_in=damage_in_str)
                 TE_diagnoses: QTextEdit = self.findChild(QTextEdit, "TE_diagnose_{num}"\
                     .format(num=num_xilanh))
@@ -221,7 +225,7 @@ class Ui(QtWidgets.QMainWindow):
         
     def BT_fix_click(self):
         
-        data_path = os.path.abspath(os.path.join(self.main_path, "data" ,"data_cus_pdf.json"))
+        data_path = os.path.abspath(os.path.join(self.main_path, "data" ,"data_cus_data.json"))
         pdf = json2dict(data_path)
 
         num_xilanh = 0
@@ -232,12 +236,12 @@ class Ui(QtWidgets.QMainWindow):
             
             Pmax = pdf[xilanh_str]["Pmax"]
             compression_pressure = pdf[xilanh_str]["compression_pressure"]
-            minimum_pressure = pdf[xilanh_str]["minimum_pressure"]
             Minimum_pressure_intake = pdf[xilanh_str]["Minimum_pressure_intake"]
+            minimum_pressure = pdf[xilanh_str]["minimum_pressure"]
             Pmin = pdf[xilanh_str]["Pmin"]
+            Minimum_pressure_charge = pdf[xilanh_str]["Minimum_pressure_charge"]
         
-            value, path_open, path= open_c(
-                            compression_pressure = compression_pressure ,
+            value, path_open, path= open_c(compression_pressure = compression_pressure ,
                             Pmax = Pmax ,
                             Pmin = Pmin ,
                             Minimum_pressure_intake = Minimum_pressure_intake,
@@ -247,18 +251,19 @@ class Ui(QtWidgets.QMainWindow):
                             compression_pressure = compression_pressure ,
                             Pmax = Pmax ,
                             Pmin = Pmin ,
-                            Minimum_pressure_intake = Minimum_pressure_intake)
+                            Minimum_pressure_intake = Minimum_pressure_intake,
+                            Minimum_pressure_charge=Minimum_pressure_charge)
             
-            if value == 'Hư hỏng':
+            if value =='Hư hỏng' and value_in == 'Hư hỏng':
                 webbrowser.open_new(path_open)
                 webbrowser.open_new(path)
+                webbrowser.open_new(path_in)
             elif value_in == 'Hư hỏng':
                 webbrowser.open_new(path_open)
                 webbrowser.open_new(path_in)
-            elif value =='Hư hỏng' and value_in == 'Hư hỏng':
+            elif value == 'Hư hỏng':
                 webbrowser.open_new(path_open)
                 webbrowser.open_new(path)
-                webbrowser.open_new(path_in)
         
     def BT_cancel_click(self):
         window.close()

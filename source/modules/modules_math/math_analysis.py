@@ -156,7 +156,7 @@ def damage(comp_rat, piston_jour, cyl_dm, rod_len, xup_cor, air_press, Pci, comp
         damage_c = 'Các xy lanh mòn không đều.'
     return damage_c
 
-def damage_in(comp_rat,Pmin, load_pressure):
+def damage_in(comp_rat, Pmin, load_pressure):
     n = 1
     i = 0
     while(i < 1000):
@@ -177,4 +177,6 @@ def damage_in(comp_rat,Pmin, load_pressure):
         damage_in = 'Xuppap bị kẹt (không mở hoàn toàn).'
     elif Pmin < 0.62*Pressure_discharge:
         damage_in = 'Lọt khí qua xecmang (xecmang đóng không kín).'
+    elif Pmin < Pressure_discharge:
+        damage_in = "Xylanh bị lủng"
     return damage_in

@@ -17,14 +17,16 @@ def compare_c(compression_pressure, Pmax, Pmin, Minimum_pressure_intake, minimum
             damage_c = 'Các xy lanh mòn không đều.'
     return value, damage_c   
     
-def compare_in(compression_pressure, Pmax, Pmin, Minimum_pressure_intake ):            
-    if 0.8*compression_pressure < Pmax < compression_pressure*1.1:
+def compare_in(compression_pressure, Pmax, Pmin, Minimum_pressure_intake, Minimum_pressure_charge ):            
+    if 0.8*Minimum_pressure_intake < Pmin < Minimum_pressure_intake*1.1:
         value_in = 'Bình thường'
         damage_in = 'Bình thường'
     else:
         value_in = 'Hư hỏng'
-        if Pmin < 0.8*Minimum_pressure_intake:
+        if Pmin < 0.8*Minimum_pressure_charge:
             damage_in = 'Xuppap bị kẹt (không mở hoàn toàn).'
-        elif Pmin > 0.62*Minimum_pressure_intake:
+        elif Pmin < 0.62*Minimum_pressure_charge:
             damage_in = 'Lọt khí qua xecmang (xecmang đóng không kín).'
+        elif Pmin < Minimum_pressure_charge:
+            damage_in = "Xylanh bị lủng"
     return  value_in, damage_in

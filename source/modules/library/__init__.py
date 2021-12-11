@@ -13,3 +13,4 @@ import task
 import method_support
 import pyqt_extension_method
 import Open_pdf
+import compare
