@@ -25,8 +25,6 @@ def compare_in(compression_pressure, Pmax, Pmin, Minimum_pressure_intake ):
         value_in = 'Hư hỏng'
         if Pmin < 0.8*Minimum_pressure_intake:
             damage_in = 'Xuppap bị kẹt (không mở hoàn toàn).'
-        elif Pmin < 0.62*Minimum_pressure_intake:
+        elif Pmin > 0.62*Minimum_pressure_intake:
             damage_in = 'Lọt khí qua xecmang (xecmang đóng không kín).'
-        elif Pmin < Minimum_pressure_intake:
-            damage_in = "Xylanh bị lủng"
     return  value_in, damage_in
