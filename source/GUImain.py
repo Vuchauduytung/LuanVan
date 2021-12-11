@@ -391,7 +391,8 @@ class Ui(QtWidgets.QMainWindow):
                                 air_press=load_pressure,
                                 Pci=pressure["compress"],
                                 compression_pressure=compression_pressure)
-            damage_in_str = damage_in(Pmin=pressure["load"],
+            damage_in_str = damage_in(comp_rat=comp_rat,
+                                      Pmin=pressure["load"],
                                       load_pressure=load_pressure)
             assess_str = """
             <h3>Đánh gía hư hỏng:</h3>

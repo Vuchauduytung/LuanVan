@@ -156,12 +156,25 @@ def damage(comp_rat, piston_jour, cyl_dm, rod_len, xup_cor, air_press, Pci, comp
         damage_c = 'Các xy lanh mòn không đều.'
     return damage_c
 
-def damage_in(Pmin, load_pressure):
+def damage_in(comp_rat,Pmin, load_pressure):
+    n = 1
+    i = 0
+    while(i < 1000):
+        m = 8.314/(19.806+0.002095*320*(comp_rat**(n-1)+1))+1
+        n = m
+        i = i + 1
+    n0 = (8.314/(19.806+0.002095*(300+20)
+          * (comp_rat**(n-1)+1))+1)
+    
+    Pressure_discharge = (((load_pressure*0.96)*10**5)
+                          * 0.000145)*comp_rat**n0
+    
     Minimum_pressure_load = minimum_pressure_load(load_pressure=load_pressure)
+    
     if 0.8*Minimum_pressure_load <= Pmin <= Minimum_pressure_load*1.1:
         damage_in = 'Khí nạp bình thường.'
-    elif Pmin < 0.8*Minimum_pressure_load:
+    elif Pmin < 0.8*Pressure_discharge:
         damage_in = 'Xuppap bị kẹt (không mở hoàn toàn).'
-    elif Pmin > 0.62*Minimum_pressure_load:
+    elif Pmin < 0.62*Pressure_discharge:
         damage_in = 'Lọt khí qua xecmang (xecmang đóng không kín).'
     return damage_in
