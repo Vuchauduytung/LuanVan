@@ -141,8 +141,10 @@ def damage(comp_rat, piston_jour, cyl_dm, rod_len, xup_cor, air_press, Pci, comp
                                                           Compression_ratio=comp_rat,
                                                           Cylinder_diameter=cyl_dm,
                                                           load_pressure=air_press)
-    Minimum_pressure = minimum_pressure(Dynamic_compression_ratio=Dynamic_compression_ratio)
-    if Pci < Minimum_pressure:
+    Minimum_pressure = 14.7*comp_rat + 14.7 + 5
+    if 0.9*compression_pressure <= Pci <= compression_pressure*1.1:
+        damage_c ='Áp suất nén bình thường'
+    elif Pci < Minimum_pressure:
         damage_c ='Gãy xéc măng, gãy xupap hay bị lủng piston.'
     elif Minimum_pressure < Pci <0.62*compression_pressure:
         damage_c = 'Hở gioăng nắp máy.'
@@ -156,7 +158,9 @@ def damage(comp_rat, piston_jour, cyl_dm, rod_len, xup_cor, air_press, Pci, comp
 
 def damage_in(Pmin, load_pressure):
     Minimum_pressure_load = minimum_pressure_load(load_pressure=load_pressure)
-    if Pmin < 0.8*Minimum_pressure_load:
+    if 0.8*Minimum_pressure_load <= Pmin <= Minimum_pressure_load*1.1:
+        damage_in = 'Khí nạp bình thường.'
+    elif Pmin < 0.8*Minimum_pressure_load:
         damage_in = 'Xuppap bị kẹt (không mở hoàn toàn).'
     elif Pmin > 0.62*Minimum_pressure_load:
         damage_in = 'Lọt khí qua xecmang (xecmang đóng không kín).'

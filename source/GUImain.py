@@ -376,20 +376,19 @@ class Ui(QtWidgets.QMainWindow):
             LE_rod_len: QLineEdit = self.findChild(QLineEdit, "LE_rod_len")
             LE_xup_cor: QLineEdit = self.findChild(QLineEdit, "LE_xup_cor")
             LE_air_press: QLineEdit = self.findChild(QLineEdit, "LE_air_press")
-            LE_air_press: QLineEdit = self.findChild(QLineEdit, "LE_air_press")
             comp_rat = float(LE_comp_rat.text())
             piston_jour = float(LE_piston_jour.text())
             cyl_dm = float(LE_cyl_dm.text())
             rod_len = float(LE_rod_len.text())
             xup_cor = float(LE_xup_cor.text())
-            load_pressure = float(LE_xup_cor.text())
+            load_pressure = float(LE_air_press.text())
             pressure = self.pressure_val[num_xilanh]
             damage_str = damage(comp_rat=comp_rat,
                                 piston_jour=piston_jour,
                                 cyl_dm=cyl_dm,
                                 rod_len=rod_len,
                                 xup_cor=xup_cor,
-                                air_press=air_press,
+                                air_press=load_pressure,
                                 Pci=pressure["compress"],
                                 compression_pressure=compression_pressure)
             damage_in_str = damage_in(Pmin=pressure["load"],
