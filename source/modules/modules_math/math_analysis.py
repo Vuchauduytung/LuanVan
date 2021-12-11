@@ -152,7 +152,7 @@ def damage(comp_rat, piston_jour, cyl_dm, rod_len, xup_cor, air_press, Pci, comp
         damage_c = 'Hở xupap.'
     elif Pci > compression_pressure:
         damage_c = 'Buồng đốt bị bám mụi than, kẹt xupap xả.'
-    elif Pci > 0.9*compression_pressure:
+    elif Pci < 0.9*compression_pressure:
         damage_c = 'Các xy lanh mòn không đều.'
     return damage_c
 
