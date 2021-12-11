@@ -177,4 +177,6 @@ def damage_in(comp_rat,Pmin, load_pressure):
         damage_in = 'Xuppap bị kẹt (không mở hoàn toàn).'
     elif Pmin < 0.62*Pressure_discharge:
         damage_in = 'Lọt khí qua xecmang (xecmang đóng không kín).'
+    elif Pmin < Pressure_discharge:
+        damage_in = "Xylanh bị lủng"
     return damage_in
