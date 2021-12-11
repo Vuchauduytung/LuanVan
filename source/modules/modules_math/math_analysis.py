@@ -141,7 +141,7 @@ def damage(comp_rat, piston_jour, cyl_dm, rod_len, xup_cor, air_press, Pci, comp
                                                           Compression_ratio=comp_rat,
                                                           Cylinder_diameter=cyl_dm,
                                                           load_pressure=air_press)
-    Minimum_pressure = 14.7*comp_rat + 14.7 + 5
+    Minimum_pressure = 14.7*Dynamic_compression_ratio + 14.7 + 5
     if 0.9*compression_pressure <= Pci <= compression_pressure*1.1:
         damage_c ='Áp suất nén bình thường'
     elif Pci < Minimum_pressure:
