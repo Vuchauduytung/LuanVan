@@ -173,7 +173,7 @@ def damage_in(comp_rat, Pmin, load_pressure):
     
     if 0.8*Minimum_pressure_load <= Pmin <= Minimum_pressure_load*1.1:
         damage_in = 'Khí nạp bình thường.'
-    elif Pmin < 0.8*Pressure_discharge:
+    elif 0.62*Pressure_discharge < Pmin < 0.8*Pressure_discharge:
         damage_in = 'Xuppap bị kẹt (không mở hoàn toàn).'
     elif Pmin < 0.62*Pressure_discharge:
         damage_in = 'Lọt khí qua xecmang (xecmang đóng không kín).'
