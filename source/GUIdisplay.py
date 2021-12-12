@@ -259,7 +259,7 @@ class Ui(QtWidgets.QMainWindow):
                 webbrowser.open_new(path)
                 webbrowser.open_new(path_in)
             elif value_in == 'Hư hỏng':
-                webbrowser.open_new(path_open)
+                webbrowser.open_new(path_open_in)
                 webbrowser.open_new(path_in)
             elif value == 'Hư hỏng':
                 webbrowser.open_new(path_open)
