@@ -28,5 +28,5 @@ def compare_in(compression_pressure, Pmax, Pmin, Minimum_pressure_intake, Minimu
         elif Pmin < 0.62*Minimum_pressure_charge:
             damage_in = 'Lọt khí qua xecmang (xecmang đóng không kín).'
         elif Pmin < Minimum_pressure_charge:
-            damage_in = "Xylanh bị lủng"
+            damage_in = "Xylanh hư hỏng"
     return  value_in, damage_in
