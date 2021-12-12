@@ -33,7 +33,7 @@ def open_in(compression_pressure, Pmax, Pmin, Minimum_pressure_intake, Minimum_p
         if 0.62*Minimum_pressure_charge < Pmin < 0.8*Minimum_pressure_charge:
             path_in = 'source\library\libary_fix\Hở xupap.pdf'
         elif Pmin < 0.62*Minimum_pressure_charge:
-            path_in = 'source\library\libary_fix\Hở giăng nắp máy.pdf'
+            path_in = 'source\library\libary_fix\Lọt khí xec măng.pdf'
         elif Pmin < Minimum_pressure_charge:
-            path_in = 'source\library\libary_fix\Gãy xéc măng, gãy xupap lủng piston.pdf'
+            path_in = 'source\library\libary_fix\Hư hỏng xylanh.pdf'
     return  value_in,path_open_in,path_in
