@@ -4,8 +4,8 @@ def open_c(compression_pressure, Pmax, Pmin, Minimum_pressure_intake, minimum_pr
         # Pmax lay gia ti lon nhat trong .dat , Pmin lay gia trinho nhat trong .dat
     if 0.9*compression_pressure < Pmax < compression_pressure*1.1:
         value = 'Bình thường'
-        path_open = "source\library\libary_fix\Open.txt"
-        path = "source\library\libary_fix\Open.txt"
+        path_open = "0"
+        path = "0"
     else:
         value = 'Hư hỏng'
         path_open = "source\library\libary_fix\Tháo lắp động cơ.pdf"
