@@ -243,28 +243,31 @@ class Ui(QtWidgets.QMainWindow):
         GB_foreseen: QGroupBox = self.findChild(QGroupBox, "GB_foreseen")
         if all([LE.text() != "" for LE in math_para_lst]):
             try:
-                Compression_wattage, temperature_C, temperature_F, compression_pressure = caculate(extTem=float(LE_extTem.text()),
+                n, dynamic_compression_ratio , temperature_F, compression_pressure = caculate(extTem=float(LE_extTem.text()),
                                                                                                    comp_rat=float(LE_comp_rat.text()),
                                                                                                    piston_jour=float(LE_piston_jour.text()),
                                                                                                    cyl_dm=float(LE_cyl_dm.text()),
                                                                                                    rod_len=float(LE_rod_len.text()),
                                                                                                    xup_cor=float(LE_xup_cor.text()),
                                                                                                    air_press=float(LE_air_press.text()))
+                
                 for lineEdit in math_para_lst:
                     lineEdit.setReadOnly(True)
             except Exception:
                 GB_foreseen.label_warning.setText("Vui lòng nhập chính xác tất cả thông số")
                 GB_foreseen.label_warning.setVisible(True)
             else:
+                # Thay đổi giá trị
                 GB_foreseen.label_warning.setVisible(False)
-                LE_Compression: QLineEdit = self.findChild(QLineEdit, "LE_Compression")
-                LE_Comp_temp_C: QLineEdit = self.findChild(QLineEdit, "LE_Comp_temp_C")
+                LE_n: QLineEdit = self.findChild(QLineEdit, "LE_n")
+                LE_dym_comp_rat: QLineEdit = self.findChild(QLineEdit, "LE_dym_comp_rat")
                 LE_Comp_temp_F: QLineEdit = self.findChild(QLineEdit, "LE_Comp_temp_F")
-                LE_watt: QLineEdit = self.findChild(QLineEdit, "LE_watt")
-                LE_Compression.setText(str(round(Compression_wattage,4)))
-                LE_Comp_temp_C.setText(str(round(temperature_C,4)))
+                LE_Compression: QLineEdit = self.findChild(QLineEdit, "LE_Compression")
+                LE_n.setText(str(round(n,4)))
+                LE_dym_comp_rat.setText(str(round(dynamic_compression_ratio,4)))
                 LE_Comp_temp_F.setText(str(round(temperature_F,4)))
-                LE_watt.setText(str(round(compression_pressure,4)))
+                LE_Compression.setText(str(round(compression_pressure,4)))
+                
         else:
             GB_foreseen.label_warning.setText("Vui lòng điền đầy đủ thông tin")
             GB_foreseen.label_warning.setVisible(True)
@@ -314,13 +317,13 @@ class Ui(QtWidgets.QMainWindow):
         GB_foreseen.label_warning.setVisible(False)
         # GB_data GroupBox
         LE_Compression: QLineEdit = self.findChild(QLineEdit, "LE_Compression")
-        LE_Comp_temp_C: QLineEdit = self.findChild(QLineEdit, "LE_Comp_temp_C")
+        LE_dym_comp_rat: QLineEdit = self.findChild(QLineEdit, "LE_dym_comp_rat")
         LE_Comp_temp_F: QLineEdit = self.findChild(QLineEdit, "LE_Comp_temp_F")
-        LE_watt: QLineEdit = self.findChild(QLineEdit, "LE_watt")
+        LE_n: QLineEdit = self.findChild(QLineEdit, "LE_n")
         LE_Compression.clear()
-        LE_Comp_temp_C.clear()
+        LE_dym_comp_rat.clear()
         LE_Comp_temp_F.clear()
-        LE_watt.clear()
+        LE_n.clear()
         
     def exit_gui(self):
         mainWindow.close()
