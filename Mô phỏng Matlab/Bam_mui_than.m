@@ -3,22 +3,14 @@ SE = (S*(1+cosd(0))/2)+L-sqrt((L^2)+((S*sind(0))^2)/4);
 Ve = (pi*(D^2)*SE)/4;
 Vc = (pi/(4*(u-1)))*(D^2)*S;
 ed = (Ve+Vc)/Vc;
-disp('ed= ');
-disp(ed);
 T = v+20;
 n0 = (8.314/(19.806+0.002095*T*(ed^(p-1)+1))+1) ;
 Vh1=(ed*Vc-Vc)/10^6;
 nv=(v/(T))*(ed/(ed-1))*(Pa/Po);
-disp('n= ');
-disp(n0) 
 Lc = (Po*Vh1*nv*T*((Vh1^(n0-1))-1))/((n0-1)*v);
 Tc=T*ed^(n0-1);
 Tz=Tc-273;
 Pc_1=((Pa*10^5)*0.000145)*ed^n0;
-disp('Ap suat truoc xuppap: Pa= ')
-disp(Pa);
-disp('Lc = ')
-disp(Lc*1000);
 disp('Tc = ')
 disp(Tc);
 disp('Pc loi = ')
@@ -171,8 +163,6 @@ data_T = randn (721,1);
 
 period = length(T_value_1);
 for ii=1:period
-        
-        data_T (ii,1) = T_value_1(ii);
-        
+        data_T (ii,1) = T_value_1(ii);      
 end
-dlmwrite('data\data_T_loi_1.dat', data\data_T);
+dlmwrite('data\data_T_loi_1.dat', data_T);
