@@ -141,3 +141,19 @@ cla;
  plot(pmin_1,'--');
  plot(T_value_1,'--');
  legend ('Duong ap suat chuan','Duong nhiet do chuan','Duong ap suat loi','Duong nhiet do loi')
+ %Lay data
+data_pmin = randn (721,1);
+period = length(pmin_1);
+for ii=1:period
+        data_pmin (ii,1) = pmin_1(ii);
+end
+dlmwrite('data\data_P_loi_4.dat', data_pmin);
+data_T = randn (721,1);
+
+period = length(T_value_1);
+for ii=1:period
+        
+        data_T (ii,1) = T_value_1(ii);
+        
+end
+dlmwrite('data\data_T_loi_4.dat', data_T);

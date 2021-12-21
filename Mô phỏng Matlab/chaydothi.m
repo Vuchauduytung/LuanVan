@@ -146,23 +146,16 @@ time_step = time*2;
 % lay gia tri
 data_pmin = randn (721,1);
 period = length(pmin_1);
-time_step = 0.0007;
-time = now;
 for ii=1:period
-        
         data_pmin (ii,1) = pmin_1(ii);
-        
-        time = time + time_step;
 end
-dlmwrite('data_P.dat', data_pmin);
+dlmwrite('data\data_P.dat', data_pmin);
 data_T = randn (721,1);
+
 period = length(T_value_1);
-time_step = 0.0007;
-time = now;
 for ii=1:period
         
         data_T (ii,1) = T_value_1(ii);
         
-        time = time + time_step;
 end
-dlmwrite('data_T.dat', data_T);
+dlmwrite('data\data_T.dat', data_T);

@@ -57,7 +57,7 @@ for k = 20:47;
          Vc1 = (pi/(4*(u-1)))*(D^2)*S;
          ed1 = (Ve1+Vc1)/Vc1;
          n01 = (8.314/(19.806+0.002095*T*(ed1^(p-1)+1))+1);
-    if k < 22000;
+    if k < 22;
          P_min=((Pa*10^5)*0.000145)*ed1^n01;
          pmin_1(k) = pmin_1(19);
     else
@@ -146,3 +146,19 @@ cla;
  plot(pmin_1,'--');
  plot(T_value_1,'--');
  legend ('Duong ap suat chuan','Duong nhiet do chuan','Duong ap suat loi','Duong nhiet do loi')
+ %Lay data
+data_pmin = randn (721,1);
+period = length(pmin_1);
+for ii=1:period
+        data_pmin (ii,1) = pmin_1(ii);
+end
+dlmwrite('data\data_P_loi_3.dat', data_pmin);
+data_T = randn (721,1);
+
+period = length(T_value_1);
+for ii=1:period
+        
+        data_T (ii,1) = T_value_1(ii);
+        
+end
+dlmwrite('data\data_T_loi_3.dat', data_T);
