@@ -71,12 +71,12 @@ def minimum_pressure(Dynamic_compression_ratio):
     return Minimum_pressure
 
 
-def minimum_pressure_load(load_pressure):
-    Minimum_pressure_load = (((-load_pressure*0.96)*10**5)*0.000145)
+def minimum_pressure_load(load_pressure = 1):
+    Minimum_pressure_load = (((-load_pressure*0.98)*10**5)*0.000145)
     return Minimum_pressure_load
 
-def pressure_discharge(load_pressure):
-    pressure_discharge = (((load_pressure*0.96)*10**5)*0.000145)
+def pressure_discharge(load_pressure = 1):
+    pressure_discharge = (((load_pressure*0.98)*10**5)*0.000145)
     return pressure_discharge
 
 def caculate(extTem, comp_rat, piston_jour, cyl_dm, rod_len, xup_cor, air_press):
