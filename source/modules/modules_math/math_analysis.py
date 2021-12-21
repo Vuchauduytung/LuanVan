@@ -115,11 +115,12 @@ def caculate(extTem, comp_rat, piston_jour, cyl_dm, rod_len, xup_cor, air_press)
     return n, dynamic_compression_ratio , temperature_F, Compression_wattage
 
 def check_state(air_press: float, reality_pressure: dict, compression_pressure: float):
-    # Pmax lay gia ti lon nhat trong .dat , Pmin lay gia trinho nhat trong .dat
     Pmax = reality_pressure["compress"]
-    Pmin = reality_pressure["load"]
+    P_out = reality_pressure["discharge"]
+    P_in = reality_pressure["load"]
     Minimum_pressure_load = minimum_pressure_load(load_pressure=air_press)
-    if 0.9*compression_pressure <= Pmax <= compression_pressure*1.1 and 0.8*Minimum_pressure_load <= Pmin <= Minimum_pressure_load*1.1:
+    pressure_discharge = pressure_discharge(load_pressure=air_press)
+    if 0.9*compression_pressure <= Pmax <= compression_pressure*1.1 and 0.8*pressure_discharge <= P_out <= pressure_discharge*1.1 and 0.8*Minimum_pressure_load <= P_in <= Minimum_pressure_load*1.1:
         return True
     else:
         return False
@@ -146,27 +147,40 @@ def damage(comp_rat, piston_jour, cyl_dm, rod_len, xup_cor, air_press, Pci, comp
         damage_c = 'Các xy lanh mòn không đều.'
     return damage_c
 
-def damage_in(comp_rat, Pmin, load_pressure):
-    n = 1
-    i = 0
-    while(i < 1000):
-        m = 8.314/(19.806+0.002095*320*(comp_rat**(n-1)+1))+1
-        n = m
-        i = i + 1
-    n0 = (8.314/(19.806+0.002095*(300+20)
-          * (comp_rat**(n-1)+1))+1)
+def damage_out(load_pressure):
     
     Pressure_discharge = (((load_pressure*0.96)*10**5)
-                          * 0.000145)*comp_rat**n0
+                          * 0.000145)
     
-    Minimum_pressure_load = minimum_pressure_load(load_pressure=load_pressure)
+    pressure_discharge = pressure_discharge(load_pressure=load_pressure)
     
-    if 0.8*Minimum_pressure_load <= Pmin <= Minimum_pressure_load*1.1:
+    if 0.8*pressure_discharge <= P_out <= pressure_discharge*1.1:
+        damage_out = 'Khí nạp bình thường.'
+    elif 0.62*Pressure_discharge < P_out < 0.8*Pressure_discharge:
+        damage_out = 'Xuppap bị kẹt (không mở hoàn toàn).'
+    elif P_out < 0.62*Pressure_discharge:
+        damage_out = 'Cam mở sai thời điểm.'
+    elif P_out < 2*Pressure_discharge:
+        damage_out = "Hở xupap xả"
+    elif P_out > 1.1*Pressure_discharge:
+        damage_out = "Xupap nạp mở sai thời điểm"
+    elif P_out > 5*Pressure_discharge:
+        damage_out = "Kẹt xupap xả"
+    return damage_out
+
+def damage_in(load_pressure):
+    Minimum_pressure_load = (((-load_pressure*0.98)*10**5)
+                             *0.000145)
+    Pressure_discharge = (((load_pressure*0.96)*10**5)
+                          * 0.000145)
+    if 0.8*Minimum_pressure_load <= P_in <= Minimum_pressure_load*1.1:
         damage_in = 'Khí nạp bình thường.'
-    elif 0.62*Pressure_discharge < Pmin < 0.8*Pressure_discharge:
-        damage_in = 'Xuppap bị kẹt (không mở hoàn toàn).'
-    elif Pmin < 0.62*Pressure_discharge:
-        damage_in = 'Lọt khí qua xecmang (xecmang đóng không kín).'
-    elif Pmin < Pressure_discharge:
-        damage_in = "Xylanh hư hỏng"
+    elif 0.62*Minimum_pressure_load < P_in < 0.8*Minimum_pressure_load:
+        damage_in = 'Xuppap nạp hở (không mở hoàn toàn).'
+    elif P_in < 0.62*Minimum_pressure_load:
+        damage_in = 'Cam mở sai thời điểm.'
+    elif P_in > 1.1*Minimum_pressure_load:
+        damage_in = "Xupap nạp nh"
+    elif 0.8*Pressure_discharge <= P_in <= Pressure_discharge*1.1:
+        damage_in = 'Lỗi thời điểm đóng mở xupap'
     return damage_in
