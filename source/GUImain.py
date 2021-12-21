@@ -443,23 +443,31 @@ class Ui(QtWidgets.QMainWindow):
                                 Pci=pressure["compress"],
                                 compression_pressure=compression_pressure)
             damage_in_str = damage_in(comp_rat=comp_rat,
-                                      Pmin=pressure["load"],
+                                      P_in=pressure["load"],
                                       load_pressure=load_pressure)
+            
+            damage_out_str = damage_in(comp_rat=comp_rat,
+                                      P_out=pressure["charge"],
+                                      load_pressure=load_pressure)
+            
             assess_str = """
             <h3>Đánh gía hư hỏng:</h3>
             <p>&ensp;{damage}</p>
             <p>&ensp;{damage_in}</p>
+            <p>&ensp;{damage_out}</p>
             """\
                 .format(damage=damage_str,
-                        damage_in=damage_in_str)
+                        damage_in=damage_in_str,
+                        damage_out=damage_out_str)
             TE_diagnoses_xilanh: QTextEdit = self.findChild(QTextEdit, "TE_diagnoses_xilanh{num}"\
                 .format(num=num_xilanh))
             TE_diagnoses_xilanh.setHtml(assess_str)
         TW_table.setItem(num_xilanh-1, 0, QTableWidgetItem(str(round(P_load, 4))))
-        TW_table.setItem(num_xilanh-1, 1, QTableWidgetItem(str(round(P_compress, 4))))
-        TW_table.setItem(num_xilanh-1, 2, QTableWidgetItem(LE_Compression.text()))
-        TW_table.setItem(num_xilanh-1, 3, QTableWidgetItem(str(round(diff_ratio, 4))))
-        TW_table.setItem(num_xilanh-1, 4, QTableWidgetItem(state_str))
+        TW_table.setItem(num_xilanh-1, 1, QTableWidgetItem(str(round(P_charge, 4))))
+        TW_table.setItem(num_xilanh-1, 2, QTableWidgetItem(str(round(P_compress, 4))))
+        TW_table.setItem(num_xilanh-1, 3, QTableWidgetItem(LE_Compression.text()))
+        TW_table.setItem(num_xilanh-1, 4, QTableWidgetItem(str(round(diff_ratio, 4))))
+        TW_table.setItem(num_xilanh-1, 5, QTableWidgetItem(state_str))
 
     def activate_diagnoses_buttons(self, num_button: int):
         BT_xilanh_cancel: QPushButton = self.findChild(QPushButton, "BT_xilanh{num}_cancel"\
@@ -474,6 +482,7 @@ class Ui(QtWidgets.QMainWindow):
         TW_table.setItem(row, 2, QTableWidgetItem(""))
         TW_table.setItem(row, 3, QTableWidgetItem(""))
         TW_table.setItem(row, 4, QTableWidgetItem(""))
+        TW_table.setItem(row, 5, QTableWidgetItem(""))
 
     def clear_xilanh_data(self, num_xilanh: int, button: QPushButton):
         BT_measure_xylanh: QPushButton = self.findChild(QPushButton, "BT_measure_xylanh{num}"\
