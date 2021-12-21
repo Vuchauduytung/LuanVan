@@ -157,7 +157,7 @@ def damage_out(load_pressure):
     if 0.8*pressure_discharge <= P_out <= pressure_discharge*1.1:
         damage_out = 'Khí xả bình thường.'
     elif 0.62*Pressure_discharge < P_out < 0.8*Pressure_discharge:
-        damage_out = 'Xuppap bị kẹt (không mở hoàn toàn).'
+        damage_out = 'Xilanh mòn không đều.'
     elif P_out < 0.62*Pressure_discharge:
         damage_out = 'Cam mở sai thời điểm.'
     elif P_out < 2*Pressure_discharge:

@@ -42,14 +42,14 @@ def compare_out(compression_pressure, Pmax, P_out, Minimum_pressure_intake, Mini
         if 0.8*pressure_discharge <= P_out <= pressure_discharge*1.1:
             damage_out = 'Khí xả bình thường.'
         elif 0.62*Pressure_discharge < P_out < 0.8*Pressure_discharge:
-            damage_out = 'Xuppap bị kẹt (không mở hoàn toàn).'
+            damage_out = 'Xilanh mòn không đều.'
         elif P_out < 0.62*Pressure_discharge:
             damage_out = 'Cam mở sai thời điểm.'
         elif P_out < 2*Pressure_discharge:
             damage_out = "Hở xupap xả"
         elif P_out > 1.1*Pressure_discharge:
             damage_out = "Xupap nạp mở sai thời điểm"
-        elif P_out > 5*Pressure_discharge:
+        elif P_out > 2.5*Pressure_discharge:
             damage_out = "Kẹt xupap xả"
     return value_out, damage_out
 
@@ -68,7 +68,7 @@ def compare_in(compression_pressure, Pmax, P_in, Minimum_pressure_intake, Minimu
         elif P_in < 0.62*Minimum_pressure_load:
             damage_in = 'Cam mở sai thời điểm.'
         elif P_in > 1.1*Minimum_pressure_load:
-            damage_in = "Xupap nạp nh"
+            damage_in = "Xupap nạp hở"
         elif 0.8*Pressure_discharge <= P_in <= Pressure_discharge*1.1:
             damage_in = 'Lỗi thời điểm đóng mở xupap'
     return value_in, damage_in
