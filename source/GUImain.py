@@ -189,33 +189,37 @@ class Ui(QtWidgets.QMainWindow):
                             "compression_pressure": pmax,
                             "minimum_pressure": pmin,
                             "Pmax": P_max_data [1],
-                            "Minimum_pressure_intake": p_in,
-                            "Pmin": P_min_data [1],
-                            "Minimum_pressure_charge":Minimum_pressure_charge
+                            "Minimum_pressure_intake": p_in*0.96,
+                            "P_in": P_min_data [1],
+                            "Minimum_pressure_charge":Minimum_pressure_charge,
+                            "P_out":P_out
                         },
                         "Xylanh_2":{
                             "compression_pressure": pmax,
                             "minimum_pressure": pmin,
                             "Pmax": P_max_data [2],
-                            "Minimum_pressure_intake": p_in,
-                            "Pmin": P_min_data [2],
-                            "Minimum_pressure_charge":Minimum_pressure_charge
+                            "Minimum_pressure_intake": p_in*0.96,
+                            "P_in": P_min_data [2],
+                            "Minimum_pressure_charge":Minimum_pressure_charge,
+                            "P_out":P_out
                         },
                         "Xylanh_3":{
                             "compression_pressure": pmax,
                             "minimum_pressure": pmin,
                             "Pmax": P_max_data [3],
-                            "Minimum_pressure_intake": p_in,
-                            "Pmin": P_min_data [3],
-                            "Minimum_pressure_charge":Minimum_pressure_charge
+                            "Minimum_pressure_intake": p_in*0.96,
+                            "P_in": P_min_data [3],
+                            "Minimum_pressure_charge":Minimum_pressure_charge,
+                            "P_out":P_out
                         },
                         "Xylanh_4":{
                             "compression_pressure": pmax,
                             "minimum_pressure": pmin,
                             "Pmax": P_max_data [4],
-                            "Minimum_pressure_intake": p_in,
-                            "Pmin": P_min_data [4],
-                            "Minimum_pressure_charge":Minimum_pressure_charge
+                            "Minimum_pressure_intake": p_in*0.96,
+                            "P_in": P_min_data [4],
+                            "Minimum_pressure_charge":Minimum_pressure_charge,
+                            "P_out":P_out
                         }
                     }
         data_path = os.path.abspath(os.path.join(self.main_path, "data", "data_cus_data.json"))
