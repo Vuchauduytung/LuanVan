@@ -11,10 +11,10 @@ Lc = (Po*Vh1*nv*T*((Vh1^(n0-1))-1))/((n0-1)*v);
 Tc=T*ed^(n0-1);
 Tz=Tc-273;
 Pc_1=((Pa*10^5)*0.000145)*ed^n0;
-disp('Tc = ')
-disp(Tc);
 disp('Pc loi = ')
 disp(Pc_1);
+disp('Tc loi = ')
+disp(Tc);
 %do thi ap suat 
 syms Pc_1
 %ki nap

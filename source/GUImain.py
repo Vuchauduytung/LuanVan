@@ -559,8 +559,8 @@ class Ui(QtWidgets.QMainWindow):
             self.draw()  
 
         def setup_data(self):
-            data_path = os.path.abspath(os.path.join(self.main_path, "data"))
-            engine_path = os.path.abspath(os.path.join(data_path, 'data.dat'))
+            data_path = os.path.abspath(os.path.join(self.main_path,"Mô phỏng Matlab","data"))
+            engine_path = os.path.abspath(os.path.join(data_path, 'data_P.dat'))
             self.engine_data = dat2numpy(direct_path=engine_path)
     
         def caculate_pressure(self, epoch: int):
