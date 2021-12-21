@@ -262,6 +262,7 @@ class Ui(QtWidgets.QMainWindow):
             Minimum_pressure_intake = pdf[xilanh_str]["Minimum_pressure_intake"]
             minimum_pressure = pdf[xilanh_str]["minimum_pressure"]
             P_in = pdf[xilanh_str]["P_in"]
+            P_out = pdf[xilanh_str]["P_out"]
             Minimum_pressure_charge = pdf[xilanh_str]["Minimum_pressure_charge"]
         
             value, path_open, path= open_c(compression_pressure = compression_pressure ,
