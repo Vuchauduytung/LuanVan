@@ -90,6 +90,15 @@ def caculate(extTem, comp_rat, piston_jour, cyl_dm, rod_len, xup_cor, air_press)
     n = caculate_n(Temperature=Temperature,
                    Compression_ratio=comp_rat)
     load_pressure = air_press
+          
+    dynamic_compression_ratio = dynamic_compression_ratio(Piston_journey=piston_jour,
+                                                            Late_closing_angle=xup_cor,
+                                                            Connecting_rod_length=rod_len,
+                                                            Compression_ratio=comp_rat,
+                                                            Cylinder_diameter=cyl_dm,
+                                                            load_pressure=air_press,
+                                                            Temperature=Temperature)
+    
     Volume = volume(Piston_journey=piston_jour,
                     Late_closing_angle=xup_cor,
                     Connecting_rod_length=rod_len,
