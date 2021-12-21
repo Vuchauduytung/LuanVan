@@ -155,7 +155,7 @@ def damage_out(load_pressure):
     pressure_discharge = pressure_discharge(load_pressure=load_pressure)
     
     if 0.8*pressure_discharge <= P_out <= pressure_discharge*1.1:
-        damage_out = 'Khí nạp bình thường.'
+        damage_out = 'Khí xả bình thường.'
     elif 0.62*Pressure_discharge < P_out < 0.8*Pressure_discharge:
         damage_out = 'Xuppap bị kẹt (không mở hoàn toàn).'
     elif P_out < 0.62*Pressure_discharge:

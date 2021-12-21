@@ -116,20 +116,28 @@ class Ui(QtWidgets.QMainWindow):
             compression_pressure = error[xilanh_str]["compression_pressure"]
             Minimum_pressure_intake = error[xilanh_str]["Minimum_pressure_intake"]
             minimum_pressure = error[xilanh_str]["minimum_pressure"]
-            Pmin = error[xilanh_str]["Pmin"]
+            P_in = error[xilanh_str]["P_in"]
+            P_out = error[xilanh_str]["P_out"]
             Minimum_pressure_charge = error[xilanh_str]["Minimum_pressure_charge"]
             
             value_str, damage_c_str = compare_c(
                         compression_pressure = compression_pressure ,
                         Pmax = Pmax ,
-                        Pmin = Pmin ,
+                        P_in = P_in ,
                         Minimum_pressure_intake = Minimum_pressure_intake,
                         minimum_pressure =minimum_pressure)
             
             value_in_str, damage_in_str = compare_in(
                         compression_pressure = compression_pressure ,
                         Pmax = Pmax ,
-                        Pmin = Pmin ,
+                        P_in = P_in ,
+                        Minimum_pressure_intake = Minimum_pressure_intake,
+                        Minimum_pressure_charge=Minimum_pressure_charge)
+            
+            value_out_str, damage_out_str = compare_out(
+                        compression_pressure = compression_pressure ,
+                        Pmax = Pmax ,
+                        P_out= P_out ,
                         Minimum_pressure_intake = Minimum_pressure_intake,
                         Minimum_pressure_charge=Minimum_pressure_charge)
             
@@ -144,18 +152,20 @@ class Ui(QtWidgets.QMainWindow):
                 TE_diagnoses: QTextEdit = self.findChild(QTextEdit, "TE_diagnose_{num}"\
                     .format(num=num_xilanh))
                 TE_diagnoses.setHtml(assess_str)
-            elif value_str =='Hư hỏng' and value_in_str == 'Hư hỏng':
+            elif value_str =='Hư hỏng' and value_in_str == 'Hư hỏng' and value_out_str == 'Hư hỏng':
                 assess_str = """
                 <h3>Trạng thái:</h3>
                 <p>&ensp;{xilanh}</p>
                 <p>&ensp;{value}</p>
                 <p>&ensp;{damage}</p>
                 <p>&ensp;{damage_in}</p>
+                <p>&ensp;{damage_out}</p>
                 """\
                     .format(xilanh=xilanh_str,
                             value=value_in_str,
                             damage=damage_c_str,
-                            damage_in=damage_in_str)
+                            damage_in=damage_in_str,
+                            damage_out=damage_out_str)
                 TE_diagnoses: QTextEdit = self.findChild(QTextEdit, "TE_diagnose_{num}"\
                     .format(num=num_xilanh))
                 TE_diagnoses.setHtml(assess_str)
@@ -182,6 +192,19 @@ class Ui(QtWidgets.QMainWindow):
                     .format(xilanh=xilanh_str,
                             value=value_in_str,
                             damage_in=damage_in_str)
+                TE_diagnoses: QTextEdit = self.findChild(QTextEdit, "TE_diagnose_{num}"\
+                    .format(num=num_xilanh))
+                TE_diagnoses.setHtml(assess_str)
+            elif value_out_str == 'Hư hỏng':
+                assess_str = """
+                <h3>Trạng thái:</h3>
+                <p>&ensp;{xilanh}</p>
+                <p>&ensp;{value}</p>
+                <p>&ensp;{damage_out}</p>
+                """\
+                    .format(xilanh=xilanh_str,
+                            value=value_in_str,
+                            damage_out=damage_out_str)
                 TE_diagnoses: QTextEdit = self.findChild(QTextEdit, "TE_diagnose_{num}"\
                     .format(num=num_xilanh))
                 TE_diagnoses.setHtml(assess_str)
@@ -238,19 +261,19 @@ class Ui(QtWidgets.QMainWindow):
             compression_pressure = pdf[xilanh_str]["compression_pressure"]
             Minimum_pressure_intake = pdf[xilanh_str]["Minimum_pressure_intake"]
             minimum_pressure = pdf[xilanh_str]["minimum_pressure"]
-            Pmin = pdf[xilanh_str]["Pmin"]
+            P_in = pdf[xilanh_str]["P_in"]
             Minimum_pressure_charge = pdf[xilanh_str]["Minimum_pressure_charge"]
         
             value, path_open, path= open_c(compression_pressure = compression_pressure ,
                             Pmax = Pmax ,
-                            Pmin = Pmin ,
+                            P_in = P_in ,
                             Minimum_pressure_intake = Minimum_pressure_intake,
                             minimum_pressure =minimum_pressure)
             
             value_in, path_open_in, path_in = open_in(
                             compression_pressure = compression_pressure ,
                             Pmax = Pmax ,
-                            Pmin = Pmin ,
+                            P_in = P_in ,
                             Minimum_pressure_intake = Minimum_pressure_intake,
                             Minimum_pressure_charge=Minimum_pressure_charge)
             
