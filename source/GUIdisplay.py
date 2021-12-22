@@ -119,11 +119,12 @@ class Ui(QtWidgets.QMainWindow):
             P_in = error[xilanh_str]["P_in"]
             P_out = error[xilanh_str]["P_out"]
             Minimum_pressure_charge = error[xilanh_str]["Minimum_pressure_charge"]
+            P_compress_end=error[xilanh_str]["compress_end"]
             
             value_str, damage_c_str = compare_c(
                         compression_pressure = compression_pressure ,
                         Pmax = Pmax ,
-                        P_in = P_in ,
+                        Pmin=minimum_pressure,
                         Minimum_pressure_intake = Minimum_pressure_intake,
                         minimum_pressure =minimum_pressure)
             
@@ -132,6 +133,7 @@ class Ui(QtWidgets.QMainWindow):
                         Pmax = Pmax ,
                         P_in = P_in ,
                         Minimum_pressure_intake = Minimum_pressure_intake,
+                        P_compress_end=P_compress_end,
                         Minimum_pressure_charge=Minimum_pressure_charge)
             
             value_out_str, damage_out_str = compare_out(

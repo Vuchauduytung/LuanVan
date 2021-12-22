@@ -28,7 +28,7 @@ class Ui(QtWidgets.QMainWindow):
     # Hien do thi giong GUI main
     def setup_graph(self):
         GV_graph: QGraphicsView = self.findChild(QGraphicsView, "GV_graph")
-        data_path = os.path.abspath(os.path.join(self.main_path, "data" ,"data_P_xylanh2.json"))
+        data_path = os.path.abspath(os.path.join(self.main_path,"Mô phỏng Matlab", "data" ,"data_P_xylanh2.json"))
         customer = json2dict(data_path)
         graph = customer["Data"]
         # Tinh tong gia tri trong json
@@ -39,7 +39,7 @@ class Ui(QtWidgets.QMainWindow):
         i = 0
         for graph[i] in graph:
             data_list_time[i] =  customer["Data"][i]['time']
-            data_list_P[i] =  customer["Data"][i]['pmin']
+            data_list_P[i] =  customer["Data"][i]['pmin_1']
             i+=1
         # Ve do thi ap suat nen   
         self.scene = QtWidgets.QGraphicsScene(self.GV_graph)

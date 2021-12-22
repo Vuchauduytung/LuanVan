@@ -55,7 +55,7 @@ for k = 1:19;
         pmin_1(k)=((Pa*10^5)*0.000145)*ed1^n01;
         T_value_1(k)=(Tz*((abs(pmin_1(k))/Pc)))+273;
 end
-for k = 20:47;
+for k = 20:43;
     if k == 20;
          SE1 = ((mS(k)*(1+cosd(0))/2)+L-sqrt((L^2)+((mS(k)*sind(0))^2)/4));
          Ve1 = (pi*(D^2)*SE1)/4;

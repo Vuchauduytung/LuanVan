@@ -145,88 +145,6 @@ class Ui(QtWidgets.QMainWindow):
         BT_confirm.clicked.connect(self.save_data)
         BT_cancel.clicked.connect(self.exit_gui)
         
-    def save_data(self):
-        LE_Compression: QLineEdit = self.findChild(QLineEdit, "LE_Compression")
-        LE_extTem: QLineEdit = self.findChild(QLineEdit, "LE_extTem")
-        LE_comp_rat: QLineEdit = self.findChild(QLineEdit, "LE_comp_rat")
-        LE_piston_jour: QLineEdit = self.findChild(QLineEdit, "LE_piston_jour")
-        LE_cyl_dm: QLineEdit = self.findChild(QLineEdit, "LE_cyl_dm")
-        LE_rod_len: QLineEdit = self.findChild(QLineEdit, "LE_rod_len")
-        LE_xup_cor: QLineEdit = self.findChild(QLineEdit, "LE_xup_cor")
-        LE_air_press: QLineEdit = self.findChild(QLineEdit, "LE_air_press")
-        pmax = float(LE_Compression.text())
-        n = caculate_n(Temperature=float(LE_extTem.text()),
-                       Compression_ratio=float(LE_comp_rat.text()))
-        
-        Minimum_pressure_charge = Pressure_discharge(Piston_journey=float(LE_piston_jour.text()),
-                                                     Connecting_rod_length=float(LE_rod_len.text()),
-                                                     Compression_ratio=float(LE_comp_rat.text()),
-                                                     Cylinder_diameter=float(LE_cyl_dm.text()),
-                                                     load_pressure=float(LE_air_press.text()),
-                                                     Temperature=float(LE_extTem.text()),
-                                                     n=n)
-        p_in = minimum_pressure_load(load_pressure = float(LE_air_press.text()))
-        pmin = minimum_pressure(Dynamic_compression_ratio = float(LE_comp_rat.text()))
-        P_max_data = list(range(1,6))
-        P_min_data = list(range(1,6))
-        for i in range(1,5):
-            data_path = os.path.abspath(os.path.join(self.main_path, "data" ,"data_P_xylanh{}.json".format(i)))
-            customer = json2dict(data_path)
-            graph = customer["Data"]
-            # Tinh tong gia tri trong json
-            k = int(len(graph))
-            # Tao list
-            data_list_P = list(range(0,k))
-            ii = 0
-            for graph[ii] in graph:
-                data_list_P[ii] =  customer["Data"][ii]['pmin']
-                ii+=1
-            P_max_data[i] = max(data_list_P)
-            P_min_data[i] = min(data_list_P)
-        
-        data_cus = {
-                        "Xylanh_1":{
-                            "compression_pressure": pmax,
-                            "minimum_pressure": pmin,
-                            "Pmax": P_max_data [1],
-                            "Minimum_pressure_intake": p_in*0.96,
-                            "P_in": P_min_data [1],
-                            "Minimum_pressure_charge":Minimum_pressure_charge,
-                            "P_out":P_out
-                        },
-                        "Xylanh_2":{
-                            "compression_pressure": pmax,
-                            "minimum_pressure": pmin,
-                            "Pmax": P_max_data [2],
-                            "Minimum_pressure_intake": p_in*0.96,
-                            "P_in": P_min_data [2],
-                            "Minimum_pressure_charge":Minimum_pressure_charge,
-                            "P_out":P_out
-                        },
-                        "Xylanh_3":{
-                            "compression_pressure": pmax,
-                            "minimum_pressure": pmin,
-                            "Pmax": P_max_data [3],
-                            "Minimum_pressure_intake": p_in*0.96,
-                            "P_in": P_min_data [3],
-                            "Minimum_pressure_charge":Minimum_pressure_charge,
-                            "P_out":P_out
-                        },
-                        "Xylanh_4":{
-                            "compression_pressure": pmax,
-                            "minimum_pressure": pmin,
-                            "Pmax": P_max_data [4],
-                            "Minimum_pressure_intake": p_in*0.96,
-                            "P_in": P_min_data [4],
-                            "Minimum_pressure_charge":Minimum_pressure_charge,
-                            "P_out":P_out
-                        }
-                    }
-        data_path = os.path.abspath(os.path.join(self.main_path, "data", "data_cus_data.json"))
-        with open(data_path, 'w') as outfile:
-            json.dump(data_cus, outfile)
-
-        mainWindow.close()
     def BT_math_click(self):
         LE_extTem: QLineEdit = self.findChild(QLineEdit, "LE_extTem")
         LE_comp_rat: QLineEdit = self.findChild(QLineEdit, "LE_comp_rat")
@@ -356,11 +274,11 @@ class Ui(QtWidgets.QMainWindow):
             W_graph_xilanh.size().width(),
             W_graph_xilanh.size().height()
         )
-        chart = self.Canvas(parent=W_graph_xilanh,
+        self.chart = self.Canvas(parent=W_graph_xilanh,
                             num_xilanh=num_xilanh,
                             main_path=self.main_path,
                             size=size)
-        W_graph_xilanh.chart = chart
+        W_graph_xilanh.chart = self.chart
     
     def measureBT_click(self, button: QPushButton, num_button: int, DSB_time: QDoubleSpinBox):
         xylanh_process: QProgressBar = self.GBdata_processbar[num_button]
@@ -412,7 +330,10 @@ class Ui(QtWidgets.QMainWindow):
         LE_Compression: QLineEdit = self.findChild(QLineEdit, "LE_Compression")
         theory_compress_pressure = float(LE_Compression.text())
         TW_table: QTableWidget = self.findChild(QTableWidget, "TW_table")
-        P_compress, P_load = self.pressure_val[num_xilanh]["compress"], self.pressure_val[num_xilanh]["load"]
+        
+        P_compress, P_load, P_charge_start = self.pressure_val[num_xilanh]["compress"], self.pressure_val[num_xilanh]["load"], self.pressure_val[num_xilanh]["charge_start"]
+        P_charge_end, P_compress_end = self.pressure_val[num_xilanh]["charge_end"], self.pressure_val[num_xilanh]["compress_end"]
+
         diff_ratio = abs((P_compress/theory_compress_pressure-1)*100)
         LE_air_press: QLineEdit = self.findChild(QLineEdit, "LE_air_press")
         LE_Compression: QLineEdit = self.findChild(QLineEdit, "LE_Compression")
@@ -425,12 +346,14 @@ class Ui(QtWidgets.QMainWindow):
             state_str = "Bình thường"
         else:
             state_str = "Hư hỏng"
+            LE_extTem: QLineEdit = self.findChild(QLineEdit, "LE_extTem")
             LE_comp_rat: QLineEdit = self.findChild(QLineEdit, "LE_comp_rat")
             LE_piston_jour: QLineEdit = self.findChild(QLineEdit, "LE_piston_jour")
             LE_cyl_dm: QLineEdit = self.findChild(QLineEdit, "LE_cyl_dm")
             LE_rod_len: QLineEdit = self.findChild(QLineEdit, "LE_rod_len")
             LE_xup_cor: QLineEdit = self.findChild(QLineEdit, "LE_xup_cor")
             LE_air_press: QLineEdit = self.findChild(QLineEdit, "LE_air_press")
+            Temperature = float(LE_extTem.text())
             comp_rat = float(LE_comp_rat.text())
             piston_jour = float(LE_piston_jour.text())
             cyl_dm = float(LE_cyl_dm.text())
@@ -445,13 +368,15 @@ class Ui(QtWidgets.QMainWindow):
                                 xup_cor=xup_cor,
                                 air_press=load_pressure,
                                 Pci=pressure["compress"],
-                                compression_pressure=compression_pressure)
-            damage_in_str = damage_in(comp_rat=comp_rat,
-                                      P_in=pressure["load"],
+                                compression_pressure=compression_pressure,
+                                Temperature=Temperature)
+            
+            damage_in_str = damage_in(P_in=pressure["load"],
+                                      P_compress_end = pressure["compress_end"],
                                       load_pressure=load_pressure)
             
-            damage_out_str = damage_in(comp_rat=comp_rat,
-                                      P_out=pressure["charge"],
+            damage_out_str = damage_out(P_out=pressure["charge_end"],
+                                        P_out_st=pressure["charge_start"],
                                       load_pressure=load_pressure)
             
             assess_str = """
@@ -467,7 +392,7 @@ class Ui(QtWidgets.QMainWindow):
                 .format(num=num_xilanh))
             TE_diagnoses_xilanh.setHtml(assess_str)
         TW_table.setItem(num_xilanh-1, 0, QTableWidgetItem(str(round(P_load, 4))))
-        TW_table.setItem(num_xilanh-1, 1, QTableWidgetItem(str(round(P_charge, 4))))
+        TW_table.setItem(num_xilanh-1, 1, QTableWidgetItem(str(round(P_charge_start, 4))))
         TW_table.setItem(num_xilanh-1, 2, QTableWidgetItem(str(round(P_compress, 4))))
         TW_table.setItem(num_xilanh-1, 3, QTableWidgetItem(LE_Compression.text()))
         TW_table.setItem(num_xilanh-1, 4, QTableWidgetItem(str(round(diff_ratio, 4))))
@@ -514,6 +439,78 @@ class Ui(QtWidgets.QMainWindow):
             button.setEnabled(False)
         return clear
 
+    def save_data(self, get_peak_values: dict):
+        self.pressure_val = {}
+        self.pressure_val = self.chart.get_peak_values()
+        
+        LE_Compression: QLineEdit = self.findChild(QLineEdit, "LE_Compression")
+        LE_extTem: QLineEdit = self.findChild(QLineEdit, "LE_extTem")
+        LE_comp_rat: QLineEdit = self.findChild(QLineEdit, "LE_comp_rat")
+        LE_piston_jour: QLineEdit = self.findChild(QLineEdit, "LE_piston_jour")
+        LE_cyl_dm: QLineEdit = self.findChild(QLineEdit, "LE_cyl_dm")
+        LE_rod_len: QLineEdit = self.findChild(QLineEdit, "LE_rod_len")
+        LE_xup_cor: QLineEdit = self.findChild(QLineEdit, "LE_xup_cor")
+        LE_air_press: QLineEdit = self.findChild(QLineEdit, "LE_air_press")
+        pmax = float(LE_Compression.text())
+        n = caculate_n(Temperature=float(LE_extTem.text()),
+                       Compression_ratio=float(LE_comp_rat.text()))
+        
+        Minimum_pressure_charge = pressure_discharge(load_pressure=float(LE_air_press.text()))
+        
+        p_in = minimum_pressure_load(load_pressure = float(LE_air_press.text()))
+        pmin = minimum_pressure(Dynamic_compression_ratio = float(LE_comp_rat.text()))
+        
+        P_compress, P_load, P_charge_start = self.pressure_val["compress"], self.pressure_val["load"], self.pressure_val["charge_start"]
+        P_charge_end, P_compress_end = self.pressure_val["charge_end"], self.pressure_val["compress_end"]
+        
+        data_cus = {
+                        "Xylanh_1":{
+                            "compression_pressure": pmax,
+                            "minimum_pressure": pmin,
+                            "Pmax": P_compress,
+                            "Minimum_pressure_intake": p_in,
+                            "P_in": P_load,
+                            "Minimum_pressure_charge":Minimum_pressure_charge,
+                            "P_out":P_charge_end,
+                            "compress_end":P_compress_end
+                        },
+                        "Xylanh_2":{
+                            "compression_pressure": pmax,
+                            "minimum_pressure": pmin,
+                            "Pmax": P_compress,
+                            "Minimum_pressure_intake": p_in,
+                            "P_in": P_load,
+                            "Minimum_pressure_charge":Minimum_pressure_charge,
+                            "P_out":P_charge_end,
+                            "compress_end":P_compress_end
+                        },
+                        "Xylanh_3":{
+                            "compression_pressure": pmax,
+                            "minimum_pressure": pmin,
+                            "Pmax": P_compress,
+                            "Minimum_pressure_intake": p_in,
+                            "P_in": P_load,
+                            "Minimum_pressure_charge":Minimum_pressure_charge,
+                            "P_out":P_charge_end,
+                            "compress_end":P_compress_end
+                        },
+                        "Xylanh_4":{
+                            "compression_pressure": pmax,
+                            "minimum_pressure": pmin,
+                            "Pmax": P_compress,
+                            "Minimum_pressure_intake": p_in,
+                            "P_in": P_load,
+                            "Minimum_pressure_charge":Minimum_pressure_charge,
+                            "P_out":P_charge_end,
+                            "compress_end":P_compress_end
+                        }
+                    }
+        data_path = os.path.abspath(os.path.join(self.main_path, "data", "data_cus_data.json"))
+        with open(data_path, 'w') as outfile:
+            json.dump(data_cus, outfile)
+
+        mainWindow.close()
+        
 
     class Canvas(FigureCanvas):
 
@@ -569,14 +566,40 @@ class Ui(QtWidgets.QMainWindow):
                     pressure_string = np.concatenate((pressure_string, self.engine_data)) 
                 except:
                     pressure_string = self.engine_data
-            self.P_max = np.max(pressure_string)
-            self.P_min = np.min(pressure_string)
+                
+                data_list_1 = list(range(20))
+                for i in range(20):
+                    data_list_1[i] = pressure_string[i]
+                self.P_charge_end = max(data_list_1)
+                
+                data_list_2 = list(range(160))
+                for i in range(160):
+                    data_list_2[i] = pressure_string[i+20]
+                self.P_load = min(data_list_2)
+                
+                data_list_3 = list(range(270))
+                for i in range(270):
+                    data_list_3[i] = pressure_string[i+180]
+                self.P_compress = max(data_list_3)
+                
+                data_list_4 = list(range(130))
+                for i in range(130):
+                    data_list_4[i] = pressure_string[i+450]
+                self.P_compress_end = min(data_list_4)
+                
+                data_list_5 = list(range(140))
+                for i in range(140):
+                    data_list_5[i] = pressure_string[i+580]
+                self.P_charge_start = max(data_list_5)
             return pressure_string
             
         def get_peak_values(self):
             return {
-                "load": self.P_min, 
-                "compress": self.P_max
+                "load": self.P_load, 
+                "compress": self.P_compress,
+                "charge_start": self.P_charge_start,
+                "compress_end":self.P_compress_end,
+                "charge_end":self.P_charge_end
             }
 
 
