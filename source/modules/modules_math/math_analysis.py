@@ -116,17 +116,17 @@ def caculate(extTem, comp_rat, piston_jour, cyl_dm, rod_len, xup_cor, air_press)
 
 def check_state(air_press: float, reality_pressure: dict, compression_pressure: float):
     Pmax = reality_pressure["compress"]
-    P_out = reality_pressure["discharge"]
+    P_out = reality_pressure["charge"]
     P_in = reality_pressure["load"]
     Minimum_pressure_load = minimum_pressure_load(load_pressure=air_press)
-    pressure_discharge = pressure_discharge(load_pressure=air_press)
-    if 0.9*compression_pressure <= Pmax <= compression_pressure*1.1 and 0.8*pressure_discharge <= P_out <= pressure_discharge*1.1 and 0.8*Minimum_pressure_load <= P_in <= Minimum_pressure_load*1.1:
+    pressure_discharg_caculate = pressure_discharge(load_pressure=air_press)
+    if 0.8*compression_pressure <= Pmax <= compression_pressure*1.1 and 0.8*pressure_discharg_caculate <= P_out <= pressure_discharg_caculate*1.1 and 1.1*Minimum_pressure_load <= P_in <= Minimum_pressure_load*0.8:
         return True
     else:
         return False
 
 def damage(comp_rat, piston_jour, cyl_dm, rod_len, xup_cor, air_press, Pci, compression_pressure):
-    Dynamic_compression_ratio = dynamic_compression_ratio(Piston_journey=piston_jour,
+    Dynamic_compression_ratio = dynamic_compression_ratio_caculate(Piston_journey=piston_jour,
                                                           Late_closing_angle=xup_cor,
                                                           Connecting_rod_length=rod_len,
                                                           Compression_ratio=comp_rat,
