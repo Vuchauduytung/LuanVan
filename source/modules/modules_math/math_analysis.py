@@ -180,7 +180,7 @@ def damage_in(load_pressure):
     elif P_in < 0.62*Minimum_pressure_load:
         damage_in = 'Cam mở sai thời điểm.'
     elif P_in > 1.1*Minimum_pressure_load:
-        damage_in = "Xupap nạp nh"
+        damage_in = "Xupap nạp hở"
     elif 0.8*Pressure_discharge <= P_in <= Pressure_discharge*1.1:
         damage_in = 'Lỗi thời điểm đóng mở xupap'
     return damage_in
