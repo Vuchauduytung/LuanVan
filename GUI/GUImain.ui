@@ -135,7 +135,7 @@
            </font>
           </property>
           <property name="text">
-           <string>Góc đóng muộn xuppap</string>
+           <string>Góc IVC</string>
           </property>
          </widget>
         </item>
@@ -147,7 +147,7 @@
            </font>
           </property>
           <property name="text">
-           <string>Đường kính xyalnh</string>
+           <string>Đường kính xylanh</string>
           </property>
          </widget>
         </item>
@@ -343,7 +343,7 @@
            </font>
           </property>
           <property name="text">
-           <string>Áp xuất nén</string>
+           <string>Áp suất nén</string>
           </property>
          </widget>
         </item>
