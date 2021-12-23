@@ -572,12 +572,12 @@ class Ui(QtWidgets.QMainWindow):
 
         def setup_data(self):
             data_path = os.path.abspath(os.path.join(self.main_path,"Mô phỏng Matlab","data"))
-            engine_path = os.path.abspath(os.path.join(data_path, 'data_P.dat'))
+            engine_path = os.path.abspath(os.path.join(data_path, 'data_P_loi_8.dat'))
             self.engine_data = dat2numpy(direct_path=engine_path)
             
         def setup_data_T(self):
             data_path_T = os.path.abspath(os.path.join(self.main_path,"Mô phỏng Matlab","data"))
-            engine_path_T = os.path.abspath(os.path.join(data_path_T, 'data_T.dat'))
+            engine_path_T = os.path.abspath(os.path.join(data_path_T, 'data_T_loi_8.dat'))
             self.engine_data_T = dat2numpy(direct_path=engine_path_T)
 
         def caculate_temperature(self, epoch: int):

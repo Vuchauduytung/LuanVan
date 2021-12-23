@@ -290,7 +290,7 @@ class Ui(QtWidgets.QMainWindow):
                         P_compress_end=P_compress_end,
                         Minimum_pressure_charge=Minimum_pressure_charge)
             
-            value_out_str, damage_out_str = compare_out(
+            value_out, path_open_out, path_out = open_out(
                         compression_pressure = compression_pressure ,
                         Pmax = Pmax ,
                         P_out= P_out ,
@@ -299,16 +299,32 @@ class Ui(QtWidgets.QMainWindow):
                         Minimum_pressure_intake = Minimum_pressure_intake,
                         Minimum_pressure_charge=Minimum_pressure_charge)
             
-            if value =='Hư hỏng' and value_in == 'Hư hỏng':
+            if value =='Hư hỏng' and value_in == 'Hư hỏng'and value_out == 'Hư hỏng':
                 webbrowser.open_new(path_open)
                 webbrowser.open_new(path)
                 webbrowser.open_new(path_in)
-            elif value_in == 'Hư hỏng':
+                webbrowser.open_new(path_out)
+            elif value =='Hư hỏng' and value_in == 'Hư hỏng':
+                webbrowser.open_new(path_open)
+                webbrowser.open_new(path)
+                webbrowser.open_new(path_in)
+            elif value =='Hư hỏng' and value_out == 'Hư hỏng':
+                webbrowser.open_new(path_open)
+                webbrowser.open_new(path)
+                webbrowser.open_new(path_out)
+            elif value_in == 'Hư hỏng' and value_out == 'Hư hỏng':
                 webbrowser.open_new(path_open_in)
                 webbrowser.open_new(path_in)
+                webbrowser.open_new(path_out)
             elif value == 'Hư hỏng':
                 webbrowser.open_new(path_open)
                 webbrowser.open_new(path)
+            elif value_in == 'Hư hỏng':
+                webbrowser.open_new(path_open_in)
+                webbrowser.open_new(path_in)
+            elif value_out == 'Hư hỏng':
+                webbrowser.open_new(path_open_out)
+                webbrowser.open_new(path_out)
         
     def BT_cancel_click(self):
         window.close()
