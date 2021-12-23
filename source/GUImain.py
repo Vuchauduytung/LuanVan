@@ -333,7 +333,8 @@ class Ui(QtWidgets.QMainWindow):
         
         P_compress, P_load, P_charge_start = self.pressure_val[num_xilanh]["compress"], self.pressure_val[num_xilanh]["load"], self.pressure_val[num_xilanh]["charge_start"]
         P_charge_end, P_compress_end = self.pressure_val[num_xilanh]["charge_end"], self.pressure_val[num_xilanh]["compress_end"]
-
+        T_compress=self.pressure_val[num_xilanh]["T_compress"]
+        
         diff_ratio = abs((P_compress/theory_compress_pressure-1)*100)
         LE_air_press: QLineEdit = self.findChild(QLineEdit, "LE_air_press")
         LE_Compression: QLineEdit = self.findChild(QLineEdit, "LE_Compression")
@@ -394,10 +395,11 @@ class Ui(QtWidgets.QMainWindow):
             TE_diagnoses_xilanh.setHtml(assess_str)
         TW_table.setItem(num_xilanh-1, 0, QTableWidgetItem(str(round(P_load, 4))))
         TW_table.setItem(num_xilanh-1, 1, QTableWidgetItem(str(round(P_charge_start, 4))))
-        TW_table.setItem(num_xilanh-1, 2, QTableWidgetItem(str(round(P_compress, 4))))
-        TW_table.setItem(num_xilanh-1, 3, QTableWidgetItem(LE_Compression.text()))
-        TW_table.setItem(num_xilanh-1, 4, QTableWidgetItem(str(round(diff_ratio, 4))))
-        TW_table.setItem(num_xilanh-1, 5, QTableWidgetItem(state_str))
+        TW_table.setItem(num_xilanh-1, 2, QTableWidgetItem(str(round(T_compress, 4))))
+        TW_table.setItem(num_xilanh-1, 3, QTableWidgetItem(str(round(P_compress, 4))))
+        TW_table.setItem(num_xilanh-1, 4, QTableWidgetItem(LE_Compression.text()))
+        TW_table.setItem(num_xilanh-1, 5, QTableWidgetItem(str(round(diff_ratio, 4))))
+        TW_table.setItem(num_xilanh-1, 6, QTableWidgetItem(state_str))
 
     def activate_diagnoses_buttons(self, num_button: int):
         BT_xilanh_cancel: QPushButton = self.findChild(QPushButton, "BT_xilanh{num}_cancel"\
@@ -413,6 +415,7 @@ class Ui(QtWidgets.QMainWindow):
         TW_table.setItem(row, 3, QTableWidgetItem(""))
         TW_table.setItem(row, 4, QTableWidgetItem(""))
         TW_table.setItem(row, 5, QTableWidgetItem(""))
+        TW_table.setItem(row, 6, QTableWidgetItem(""))
 
     def clear_xilanh_data(self, num_xilanh: int, button: QPushButton):
         BT_measure_xylanh: QPushButton = self.findChild(QPushButton, "BT_measure_xylanh{num}"\
@@ -463,6 +466,7 @@ class Ui(QtWidgets.QMainWindow):
         
         P_compress, P_load, P_charge_start = self.pressure_val["compress"], self.pressure_val["load"], self.pressure_val["charge_start"]
         P_charge_end, P_compress_end = self.pressure_val["charge_end"], self.pressure_val["compress_end"]
+        T_compress=self.pressure_val["T_compress"]
         
         data_cus = {
                         "Xylanh_1":{
@@ -474,7 +478,8 @@ class Ui(QtWidgets.QMainWindow):
                             "Minimum_pressure_charge":Minimum_pressure_charge,
                             "P_out":P_charge_end,
                             "P_out_st":P_charge_start,
-                            "compress_end":P_compress_end
+                            "compress_end":P_compress_end,
+                            "T_compress":T_compress
                         },
                         "Xylanh_2":{
                             "compression_pressure": pmax,
@@ -485,7 +490,8 @@ class Ui(QtWidgets.QMainWindow):
                             "Minimum_pressure_charge":Minimum_pressure_charge,
                             "P_out":P_charge_end,
                             "P_out_st":P_charge_start,
-                            "compress_end":P_compress_end
+                            "compress_end":P_compress_end,
+                            "T_compress":T_compress
                         },
                         "Xylanh_3":{
                             "compression_pressure": pmax,
@@ -496,7 +502,8 @@ class Ui(QtWidgets.QMainWindow):
                             "Minimum_pressure_charge":Minimum_pressure_charge,
                             "P_out":P_charge_end,
                             "P_out_st":P_charge_start,
-                            "compress_end":P_compress_end
+                            "compress_end":P_compress_end,
+                            "T_compress":T_compress
                         },
                         "Xylanh_4":{
                             "compression_pressure": pmax,
@@ -507,7 +514,8 @@ class Ui(QtWidgets.QMainWindow):
                             "Minimum_pressure_charge":Minimum_pressure_charge,
                             "P_out":P_charge_end,
                             "P_out_st":P_charge_start,
-                            "compress_end":P_compress_end
+                            "compress_end":P_compress_end,
+                            "T_compress":T_compress
                         }
                     }
         data_path = os.path.abspath(os.path.join(self.main_path, "data", "data_cus_data.json"))
@@ -533,6 +541,7 @@ class Ui(QtWidgets.QMainWindow):
             super().__init__(fig)
             self.setParent(parent)
             self.setup_data()
+            self.setup_data_T()
             """ 
             Matplotlib Script
             """
@@ -551,6 +560,7 @@ class Ui(QtWidgets.QMainWindow):
                             stop=TIME, 
                             num=epoch*self.num_point_per_period)
             P = self.caculate_pressure(epoch=epoch)
+            T = self.caculate_temperature(epoch=epoch)
             self.ax.plot(t, P)
             self.ax.grid()  
             self.ax.xaxis.set_visible(True)
@@ -562,9 +572,24 @@ class Ui(QtWidgets.QMainWindow):
 
         def setup_data(self):
             data_path = os.path.abspath(os.path.join(self.main_path,"Mô phỏng Matlab","data"))
-            engine_path = os.path.abspath(os.path.join(data_path, 'data_P_loi_4.dat'))
+            engine_path = os.path.abspath(os.path.join(data_path, 'data_P.dat'))
             self.engine_data = dat2numpy(direct_path=engine_path)
-    
+            
+        def setup_data_T(self):
+            data_path_T = os.path.abspath(os.path.join(self.main_path,"Mô phỏng Matlab","data"))
+            engine_path_T = os.path.abspath(os.path.join(data_path_T, 'data_T.dat'))
+            self.engine_data_T = dat2numpy(direct_path=engine_path_T)
+
+        def caculate_temperature(self, epoch: int):
+            for i in range(epoch):
+                try:
+                    temperature_string = np.concatenate((temperature_string, self.engine_data_T)) 
+                except:
+                    temperature_string = self.engine_data_T
+  
+                self.T_compress=np.max(temperature_string)
+            return temperature_string
+        
         def caculate_pressure(self, epoch: int):
             for i in range(epoch):
                 try:
@@ -604,7 +629,8 @@ class Ui(QtWidgets.QMainWindow):
                 "compress": self.P_compress,
                 "charge_start": self.P_charge_start,
                 "compress_end":self.P_compress_end,
-                "charge_end":self.P_charge_end
+                "charge_end":self.P_charge_end,
+                "T_compress":self.T_compress
             }
 
 

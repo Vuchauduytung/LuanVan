@@ -621,9 +621,9 @@
     <property name="geometry">
      <rect>
       <x>400</x>
-      <y>20</y>
+      <y>10</y>
       <width>851</width>
-      <height>191</height>
+      <height>201</height>
      </rect>
     </property>
     <property name="font">
@@ -640,7 +640,7 @@
        <x>10</x>
        <y>30</y>
        <width>831</width>
-       <height>151</height>
+       <height>161</height>
       </rect>
      </property>
      <property name="layoutDirection">
@@ -735,6 +735,11 @@
      </column>
      <column>
       <property name="text">
+       <string>T nén</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
        <string>P nén</string>
       </property>
      </column>
@@ -754,14 +759,6 @@
       </property>
      </column>
      <item row="0" column="0">
-      <property name="text">
-       <string/>
-      </property>
-      <property name="flags">
-       <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
-      </property>
-     </item>
-     <item row="0" column="2">
       <property name="text">
        <string/>
       </property>
@@ -793,7 +790,7 @@
        <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
-     <item row="1" column="0">
+     <item row="0" column="6">
       <property name="text">
        <string/>
       </property>
@@ -801,7 +798,7 @@
        <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
-     <item row="1" column="2">
+     <item row="1" column="0">
       <property name="text">
        <string/>
       </property>
@@ -833,7 +830,7 @@
        <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
-     <item row="2" column="0">
+     <item row="1" column="6">
       <property name="text">
        <string/>
       </property>
@@ -841,7 +838,7 @@
        <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
-     <item row="2" column="2">
+     <item row="2" column="0">
       <property name="text">
        <string/>
       </property>
@@ -873,7 +870,7 @@
        <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
-     <item row="3" column="0">
+     <item row="2" column="6">
       <property name="text">
        <string/>
       </property>
@@ -881,7 +878,7 @@
        <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
-     <item row="3" column="2">
+     <item row="3" column="0">
       <property name="text">
        <string/>
       </property>
@@ -913,13 +910,21 @@
        <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
+     <item row="3" column="6">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="flags">
+       <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
+     </item>
     </widget>
    </widget>
    <widget class="QPushButton" name="BT_cancel">
     <property name="geometry">
      <rect>
       <x>850</x>
-      <y>720</y>
+      <y>710</y>
       <width>93</width>
       <height>28</height>
      </rect>
@@ -938,7 +943,7 @@
     <property name="geometry">
      <rect>
       <x>750</x>
-      <y>720</y>
+      <y>710</y>
       <width>93</width>
       <height>28</height>
      </rect>
@@ -957,7 +962,7 @@
     <property name="geometry">
      <rect>
       <x>400</x>
-      <y>230</y>
+      <y>220</y>
       <width>851</width>
       <height>481</height>
      </rect>
