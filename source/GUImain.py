@@ -377,6 +377,7 @@ class Ui(QtWidgets.QMainWindow):
             
             damage_out_str = damage_out(P_out=pressure["charge_end"],
                                         P_out_st=pressure["charge_start"],
+                                        P_compress_end = pressure["compress_end"],
                                       load_pressure=load_pressure)
             
             assess_str = """
@@ -472,6 +473,7 @@ class Ui(QtWidgets.QMainWindow):
                             "P_in": P_load,
                             "Minimum_pressure_charge":Minimum_pressure_charge,
                             "P_out":P_charge_end,
+                            "P_out_st":P_charge_start,
                             "compress_end":P_compress_end
                         },
                         "Xylanh_2":{
@@ -482,6 +484,7 @@ class Ui(QtWidgets.QMainWindow):
                             "P_in": P_load,
                             "Minimum_pressure_charge":Minimum_pressure_charge,
                             "P_out":P_charge_end,
+                            "P_out_st":P_charge_start,
                             "compress_end":P_compress_end
                         },
                         "Xylanh_3":{
@@ -492,6 +495,7 @@ class Ui(QtWidgets.QMainWindow):
                             "P_in": P_load,
                             "Minimum_pressure_charge":Minimum_pressure_charge,
                             "P_out":P_charge_end,
+                            "P_out_st":P_charge_start,
                             "compress_end":P_compress_end
                         },
                         "Xylanh_4":{
@@ -502,6 +506,7 @@ class Ui(QtWidgets.QMainWindow):
                             "P_in": P_load,
                             "Minimum_pressure_charge":Minimum_pressure_charge,
                             "P_out":P_charge_end,
+                            "P_out_st":P_charge_start,
                             "compress_end":P_compress_end
                         }
                     }
@@ -557,7 +562,7 @@ class Ui(QtWidgets.QMainWindow):
 
         def setup_data(self):
             data_path = os.path.abspath(os.path.join(self.main_path,"Mô phỏng Matlab","data"))
-            engine_path = os.path.abspath(os.path.join(data_path, 'data_P.dat'))
+            engine_path = os.path.abspath(os.path.join(data_path, 'data_P_loi_8.dat'))
             self.engine_data = dat2numpy(direct_path=engine_path)
     
         def caculate_pressure(self, epoch: int):

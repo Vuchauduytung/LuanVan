@@ -154,6 +154,7 @@ def damage(comp_rat, piston_jour, cyl_dm, rod_len, xup_cor, air_press, Pci, comp
 
 def damage_out( P_out,
                 P_out_st,
+                P_compress_end,
                 load_pressure):
     
     
@@ -164,16 +165,16 @@ def damage_out( P_out,
     elif 0.62*discharge < P_out < 0.8*discharge:
         damage_out = 'Xilanh mòn không đều.'
     elif P_out < 0.62*discharge:
-        damage_out = 'Cam mở sai thời điểm.'
-    elif 0.8*discharge <= P_out <= discharge*1.3:
+        damage_out = 'Xupap nạp mở sai thời điểm'
+    elif 0.8*discharge <= P_out <= discharge*1.1:
         damage_out = 'Khí xả bình thường.'
-    elif P_out < 2*discharge:
-        damage_out = "Hở xupap xả"
+    elif P_compress_end < 2*discharge:
+            damage_out = "Hở xupap xả"
     elif P_out > 1.1*discharge:
-        damage_out = "Xupap nạp mở sai thời điểm"
+        damage_out = "Cam mở sai thời điểm."
     return damage_out
 
-def damage_in(  P_in,
+def damage_in( P_in,
               P_compress_end ,
             load_pressure):
     Minimum_pressure_load = (((-load_pressure*0.98)*10**5)
@@ -183,12 +184,12 @@ def damage_in(  P_in,
     if 1.1*Minimum_pressure_load <= P_in <= Minimum_pressure_load*0.8:
         damage_in = 'Khí nạp bình thường.'
     elif 0.8*Minimum_pressure_load < P_in < 0.62*Minimum_pressure_load:
-        damage_in = 'Xilanh mòn không đều.'
-    elif P_in < P_compress_end:
-        damage_in = 'Xilanh mòn không đều.'
+        damage_in = 'Lỗi thời điểm đóng mở xupap'
+    elif P_in < 1.4*Minimum_pressure_load:
+            damage_in = 'Xilanh mòn không đều.'
     elif P_in < 1.1*Minimum_pressure_load:
         damage_in = "Xupap nạp hở"
-    elif P_in < 2*Minimum_pressure_load:
+    elif P_in > 0.62*Minimum_pressure_load:
         damage_in = 'Cam mở sai thời điểm.'
     elif 0.8*discharge <= P_in <= discharge*1.1:
         damage_in = 'Lỗi thời điểm đóng mở xupap'

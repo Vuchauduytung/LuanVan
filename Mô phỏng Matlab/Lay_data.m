@@ -1,6 +1,7 @@
 %duong ap suat xylanh 1
 disp('Exit Ctrl + C');
 time = input('thoi gian do xylanh: ');
+time = time*2;
 a = 0;
 ii = 0;
 period = length(pmin_1);
