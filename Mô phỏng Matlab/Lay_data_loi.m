@@ -4,7 +4,7 @@ period = length(pmin_1);
 for ii=1:period
         data_pmin (ii,1) = pmin_1(ii);
 end
-dlmwrite('data\data_P_l.dat', data_pmin);
+dlmwrite('data\data_P.dat', data_pmin);
 data_T = randn (721,1);
 
 period = length(T_value_1);
@@ -13,7 +13,7 @@ for ii=1:period
         data_T (ii,1) = T_value_1(ii);
         
 end
-dlmwrite('data\T_value_l.dat', data_T);
+dlmwrite('data\data_P.dat', data_T);
 
 %duong ap suat xylanh 1
 disp('Exit Ctrl + C');

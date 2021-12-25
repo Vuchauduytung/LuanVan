@@ -6,7 +6,7 @@ for k=1:270
     mS(k)=uk;
     uk=uk-(S/270);
 end
-%kì nen
+%kï¿½ nen
 bn=0;
 for k=271:360
     mS(k)=bn;
@@ -131,7 +131,7 @@ period = length(pmin_c);
 for ii=1:period
         data_pmin (ii,1) = pmin_c(ii);
 end
-dlmwrite('data\data_P_c.dat', data_pmin);
+dlmwrite('data\data_P.dat', data_pmin);
 data_T = randn (721,1);
 
 period = length(T_value_c);
@@ -140,7 +140,7 @@ for ii=1:period
         data_T (ii,1) = T_value_c(ii);
         
 end
-dlmwrite('data\data_T_c.dat', data_T);
+dlmwrite('data\data_T.dat', data_T);
 
 %duong ap suat xylanh 1
 disp('Exit Ctrl + C');
