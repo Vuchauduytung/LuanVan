@@ -1,4 +1,7 @@
 % lay gia tri
+a = 0;
+ii = 0;
+time = input('thoi gian do xylanh: ');
 data_pmin = randn (721,1);
 period = length(pmin_1);
 for ii=1:period
@@ -13,14 +16,10 @@ for ii=1:period
         data_T (ii,1) = T_value_1(ii);
         
 end
-dlmwrite('data\data_P.dat', data_T);
+dlmwrite('data\data_T.dat', data_T);
 
 %duong ap suat xylanh 1
-disp('Exit Ctrl + C');
-time = input('thoi gian do xylanh: ');
 time = time*2;
-a = 0;
-ii = 0;
 period = length(pmin_1);
 fileID_1 = fopen('data\data_P_xylanh1.json','w');
 fprintf(fileID_1, '{ "Data"');
@@ -33,8 +32,6 @@ fprintf(fileID_1, str);
 time_time = 0;
 for a=1:period:time*period
     for ii=1:period
-        plot(((ii+a)/period)/2 , pmin_1(ii), 'b.', 'MarkerSize', 10);
-        hold on;
         str = sprintf(', {"xilanh":1, "time":%f, "pmin_1":%f}', time_time, pmin_1(ii));
         time_time = time_time +time_step;
         fprintf(fileID_1, str);

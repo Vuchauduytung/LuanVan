@@ -1,4 +1,3 @@
-disp('Exit Ctrl + C');
 mS=zeros(1,721);
 uk=S;
 %ki nap
@@ -6,7 +5,7 @@ for k=1:270
     mS(k)=uk;
     uk=uk-(S/270);
 end
-%kï¿½ nen
+%kì nen
 bn=0;
 for k=271:360
     mS(k)=bn;
@@ -126,6 +125,9 @@ for k = 1:721;
     end
 end
 % lay gia tri
+a = 0;
+ii = 0;
+time = input('thoi gian do xylanh: ');
 data_pmin = randn (721,1);
 period = length(pmin_c);
 for ii=1:period
@@ -143,25 +145,20 @@ end
 dlmwrite('data\data_T.dat', data_T);
 
 %duong ap suat xylanh 1
-disp('Exit Ctrl + C');
 time = time*2;
-a = 0;
-ii = 0;
 period = length(pmin_c);
 fileID_1 = fopen('data\data_P_xylanh1.json','w');
 fprintf(fileID_1, '{ "Data"');
 fprintf(fileID_1, ':');
 fprintf(fileID_1, '[');
 time_step = (1/length(pmin_c))*1/2;
-str = sprintf('{"xilanh":1, "time":%f, "pmin_c":%f}', 0, pmin_c(1));
+str = sprintf('{"xilanh":1, "time":%f, "pmin_1":%f}', 0, pmin_c(1));
 fprintf(fileID_1, str);
 
 time_time = 0;
 for a=1:period:time*period
     for ii=1:period
-        plot(((ii+a)/period)/2 , pmin_c(ii), 'b.', 'MarkerSize', 10);
-        hold on;
-        str = sprintf(', {"xilanh":1, "time":%f, "pmin_c":%f}', time_time, pmin_c(ii));
+        str = sprintf(', {"xilanh":1, "time":%f, "pmin_1":%f}', time_time, pmin_c(ii));
         time_time = time_time +time_step;
         fprintf(fileID_1, str);
     end
@@ -176,13 +173,13 @@ fprintf(fileID_2, '{ "Data"');
 fprintf(fileID_2, ':');
 fprintf(fileID_2, '[');
 time_step = (1/length(pmin_c))*1/2;
-str = sprintf('{"xilanh":1, "time":%f, "pmin_c":%f}', 0, pmin_c(1));
+str = sprintf('{"xilanh":1, "time":%f, "pmin_1":%f}', 0, pmin_c(1));
 fprintf(fileID_2, str);
 
 time_time = 0;
 for a=1:period:time*period
     for ii=1:period
-        str = sprintf(', {"xilanh":1, "time":%f, "pmin_c":%f}', time_time, pmin_c(ii));
+        str = sprintf(', {"xilanh":1, "time":%f, "pmin_1":%f}', time_time, pmin_c(ii));
         time_time = time_time +time_step;
         fprintf(fileID_2, str);
     end
@@ -197,13 +194,13 @@ fprintf(fileID_3, '{ "Data"');
 fprintf(fileID_3, ':');
 fprintf(fileID_3, '[');
 time_step = (1/length(pmin_c))*1/2;
-str = sprintf('{"xilanh":1, "time":%f, "pmin_c":%f}', 0, pmin_c(1));
+str = sprintf('{"xilanh":1, "time":%f, "pmin_1":%f}', 0, pmin_c(1));
 fprintf(fileID_3, str);
 
 time_time = 0;
 for a=1:period:time*period
     for ii=1:period
-        str = sprintf(', {"xilanh":1, "time":%f, "pmin_c":%f}', time_time, pmin_c(ii));
+        str = sprintf(', {"xilanh":1, "time":%f, "pmin_1":%f}', time_time, pmin_c(ii));
         time_time = time_time +time_step;
         fprintf(fileID_3, str);
     end
@@ -218,13 +215,13 @@ fprintf(fileID_4, '{ "Data"');
 fprintf(fileID_4, ':');
 fprintf(fileID_4, '[');
 time_step = (1/length(pmin_c))*1/2;
-str = sprintf('{"xilanh":1, "time":%f, "pmin_c":%f}', 0, pmin_c(1));
+str = sprintf('{"xilanh":1, "time":%f, "pmin_1":%f}', 0, pmin_c(1));
 fprintf(fileID_4, str);
 
 time_time = 0;
 for a=1:period:time*period
     for ii=1:period
-        str = sprintf(', {"xilanh":1, "time":%f, "pmin_c":%f}', time_time, pmin_c(ii));
+        str = sprintf(', {"xilanh":1, "time":%f, "pmin_1":%f}', time_time, pmin_c(ii));
         time_time = time_time +time_step;
         fprintf(fileID_4, str);
     end
