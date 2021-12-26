@@ -4,7 +4,6 @@ from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 import sys
 import os
-import numpy as np
 # Import json module
 from modules.library.IO_support import *
 from modules.library.Open_pdf import *
@@ -16,9 +15,10 @@ class Ui(QtWidgets.QMainWindow):
     Application
     """
 
-    def __init__(self, main_path):
+    def __init__(self, main_path: str, phone_number: str):
         super(Ui, self).__init__()
         self.main_path = main_path
+        self.phone_number = phone_number
         # load GUI
         gui_path = os.path.abspath(
             os.path.join(main_path, "GUI", "GUIdisplay.ui"))
@@ -28,17 +28,17 @@ class Ui(QtWidgets.QMainWindow):
         self.setup_lineEdit_car_number_VIN()
         self.setup_lineEdit_diagnose()
         self.show()
-    
-    def open_json(self):
-        #Open json
-        data_path = os.path.abspath(os.path.join(self.main_path, "data", "data_cus.json"))
-        customer = json2dict(data_path)
         
     def setup_lineEdit_information_custom(self):
         #Open json
-        data_path = os.path.abspath(os.path.join(self.main_path, "data", "data_cus.json"))
-        customer = json2dict(data_path)
-        
+        data_path = os.path.abspath(os.path.join(self.main_path, "data", "customers_data.json"))
+        customers_list = json2dict(data_path)
+        for customer in customers_list:
+            if customer.get('phone_number') == self.phone_number:
+                break
+        else:
+            raise Exception("Cannot find customer with phone number \"{phone_number}\""\
+                .format(phone_number=self.phone_number))
         GB_information_custom: QGroupBox = self.findChild(QGroupBox, "GB_information_custom")
         LE_name: QLineEdit = self.findChild(QLineEdit, "LE_name")
         LE_num_vin: QLineEdit = self.findChild(QLineEdit, "LE_num_vin")
@@ -59,8 +59,14 @@ class Ui(QtWidgets.QMainWindow):
         
     def setup_lineEdit_car_number_VIN(self):
         #Open json
-        data_path = os.path.abspath(os.path.join(self.main_path, "data", "data_cus.json"))
-        customer = json2dict(data_path)
+        data_path = os.path.abspath(os.path.join(self.main_path, "data", "customers_data.json"))
+        customers_list = json2dict(data_path)
+        for customer in customers_list:
+            if customer.get('phone_number') == self.phone_number:
+                break
+        else:
+            raise Exception("Cannot find customer with phone number \"{phone_number}\""\
+                .format(phone_number=self.phone_number))
         vin_num = list(customer["VIN_code"])
         vin_num_product = "".join(vin_num[:3])
         vin_num_product_2 = "".join(vin_num[:2])
@@ -103,39 +109,44 @@ class Ui(QtWidgets.QMainWindow):
         LE_num_product.setText(num_product)
     
     def setup_lineEdit_diagnose(self):
-        data_path = os.path.abspath(os.path.join(self.main_path, "data" ,"data_cus_data.json"))
-        error = json2dict(data_path)
-        
+        data_path = os.path.abspath(os.path.join(self.main_path, "data" ,"customers_data.json"))
+        customers_list = json2dict(data_path)
+        for customer in customers_list:
+            if customer.get('phone_number') == self.phone_number:
+                break
+        else:
+            raise Exception("Cannot find customer with phone number \"{phone_number}\""\
+                .format(phone_number=self.phone_number))
         num_xilanh = 0
-        for num_xilanh in range(0,4):
-            num_xilanh +=1
-            
+        for num_xilanh in range(1,5):
+            # num_xilanh +=1
             xilanh_str = "Xylanh_{}".format(num_xilanh)
-            
-            Pmax = error[xilanh_str]["Pmax"]
-            compression_pressure = error[xilanh_str]["compression_pressure"]
-            Minimum_pressure_intake = error[xilanh_str]["Minimum_pressure_intake"]
-            minimum_pressure = error[xilanh_str]["minimum_pressure"]
-            P_in = error[xilanh_str]["P_in"]
-            P_out = error[xilanh_str]["P_out"]
-            P_out_st = error[xilanh_str]["P_out_st"]
-            Minimum_pressure_charge = error[xilanh_str]["Minimum_pressure_charge"]
-            P_compress_end=error[xilanh_str]["compress_end"]
+            if customer[xilanh_str] == {}:
+                continue
+            Pmax = customer[xilanh_str]["Pmax"]
+            compression_pressure = customer[xilanh_str]["compression_pressure"]
+            Minimum_load_pressure = customer[xilanh_str]["Minimum_load_pressure"]
+            minimum_pressure = customer[xilanh_str]["minimum_pressure"]
+            P_in = customer[xilanh_str]["P_in"]
+            P_out = customer[xilanh_str]["P_out"]
+            P_out_st = customer[xilanh_str]["P_out_st"]
+            Minimum_charge_pressure = customer[xilanh_str]["Minimum_charge_pressure"]
+            P_compress_end=customer[xilanh_str]["compress_end"]
             
             value_str, damage_c_str = compare_c(
                         compression_pressure = compression_pressure ,
                         Pmax = Pmax ,
                         Pmin=minimum_pressure,
-                        Minimum_pressure_intake = Minimum_pressure_intake,
+                        Minimum_load_pressure = Minimum_load_pressure,
                         minimum_pressure =minimum_pressure)
             
             value_in_str, damage_in_str = compare_in(
                         compression_pressure = compression_pressure ,
                         Pmax = Pmax ,
                         P_in = P_in ,
-                        Minimum_pressure_intake = Minimum_pressure_intake,
+                        Minimum_load_pressure = Minimum_load_pressure,
                         P_compress_end=P_compress_end,
-                        Minimum_pressure_charge=Minimum_pressure_charge)
+                        Minimum_charge_pressure=Minimum_charge_pressure)
             
             value_out_str, damage_out_str = compare_out(
                         compression_pressure = compression_pressure ,
@@ -143,8 +154,8 @@ class Ui(QtWidgets.QMainWindow):
                         P_out= P_out ,
                         P_out_st=P_out_st,
                         P_compress_end=P_compress_end,
-                        Minimum_pressure_intake = Minimum_pressure_intake,
-                        Minimum_pressure_charge=Minimum_pressure_charge)
+                        Minimum_load_pressure = Minimum_load_pressure,
+                        Minimum_charge_pressure=Minimum_charge_pressure)
             
             if value_str == "Bình thường" and value_in_str == "Bình thường":
                 assess_str = """
@@ -241,63 +252,73 @@ class Ui(QtWidgets.QMainWindow):
         
     def BT_graph_fix_click(self):
         file_data = os.path.abspath(os.path.join(self.main_path, "source", "GUIgraph_fix.py"))
-        os.system('python "{}"'.format(file_data))
+        os.system('python3 "{python_script}" \"{phone_number}\"'\
+            .format(python_script=file_data,
+                    phone_number=self.phone_number))
         
     def BT_graph_click(self):
         
         file_data = os.path.abspath(os.path.join(self.main_path, "source", "GUIgraph_xylanh_1.py"))
-        os.system('python "{}"'.format(file_data))
+        os.system('python3 "{}"'.format(file_data))
         file_data = os.path.abspath(os.path.join(self.main_path, "source", "GUIgraph_xylanh_2.py"))
-        os.system('python "{}"'.format(file_data))
+        os.system('python3 "{}"'.format(file_data))
         file_data = os.path.abspath(os.path.join(self.main_path, "source", "GUIgraph_xylanh_3.py"))
-        os.system('python "{}"'.format(file_data))
+        os.system('python3 "{}"'.format(file_data))
         file_data = os.path.abspath(os.path.join(self.main_path, "source", "GUIgraph_xylanh_4.py"))
-        os.system('python "{}"'.format(file_data))
+        os.system('python3 "{}"'.format(file_data))
         
     def BT_fix_click(self):
-        
-        data_path = os.path.abspath(os.path.join(self.main_path, "data" ,"data_cus_data.json"))
-        pdf = json2dict(data_path)
-
+        data_path = os.path.abspath(os.path.join(self.main_path, "data", "customers_data.json"))
+        customers_list = json2dict(data_path)
+        customer: dict
+        for customer in customers_list:
+            if customer.get('phone_number') == self.phone_number:
+                break
+        else:
+            raise Exception("Cannot find customer with phone number \"{phone_number}\""\
+                .format(phone_number=self.phone_number))
         num_xilanh = 0
         for num_xilanh in range(0,4):
             num_xilanh +=1
             
             xilanh_str = "Xylanh_{}".format(num_xilanh)
             
-            Pmax = pdf[xilanh_str]["Pmax"]
-            compression_pressure = pdf[xilanh_str]["compression_pressure"]
-            Minimum_pressure_intake = pdf[xilanh_str]["Minimum_pressure_intake"]
-            minimum_pressure = pdf[xilanh_str]["minimum_pressure"]
-            P_in = pdf[xilanh_str]["P_in"]
-            P_out = pdf[xilanh_str]["P_out"]
-            P_out_st = pdf[xilanh_str]["P_out_st"]
-            Minimum_pressure_charge = pdf[xilanh_str]["Minimum_pressure_charge"]
-            P_compress_end=pdf[xilanh_str]["compress_end"]
+            Pmax = customer[xilanh_str]["Pmax"]
+            compression_pressure = customer[xilanh_str]["compression_pressure"]
+            Minimum_load_pressure = customer[xilanh_str]["Minimum_load_pressure"]
+            minimum_pressure = customer[xilanh_str]["minimum_pressure"]
+            P_in = customer[xilanh_str]["P_in"]
+            P_out = customer[xilanh_str]["P_out"]
+            P_out_st = customer[xilanh_str]["P_out_st"]
+            Minimum_charge_pressure = customer[xilanh_str]["Minimum_charge_pressure"]
+            P_compress_end=customer[xilanh_str]["compress_end"]
             
             value, path_open, path = open_c(
+                        main_path=self.main_path,
                         compression_pressure = compression_pressure ,
                         Pmax = Pmax ,
                         Pmin=minimum_pressure,
-                        Minimum_pressure_intake = Minimum_pressure_intake,
+                        Minimum_load_pressure = Minimum_load_pressure,
                         minimum_pressure =minimum_pressure)
             
             value_in, path_open_in, path_in = open_in(
+                        main_path=self.main_path,
                         compression_pressure = compression_pressure ,
                         Pmax = Pmax ,
                         P_in = P_in ,
-                        Minimum_pressure_intake = Minimum_pressure_intake,
+                        Minimum_load_pressure = Minimum_load_pressure,
                         P_compress_end=P_compress_end,
-                        Minimum_pressure_charge=Minimum_pressure_charge)
+                        Minimum_charge_pressure=Minimum_charge_pressure)
             
             value_out, path_open_out, path_out = open_out(
+                        main_path=self.main_path,
                         compression_pressure = compression_pressure ,
                         Pmax = Pmax ,
                         P_out= P_out ,
                         P_out_st=P_out_st,
                         P_compress_end=P_compress_end,
-                        Minimum_pressure_intake = Minimum_pressure_intake,
-                        Minimum_pressure_charge=Minimum_pressure_charge)
+                        Minimum_load_pressure = Minimum_load_pressure,
+                        Minimum_charge_pressure=Minimum_charge_pressure)
             
             if value =='Hư hỏng' and value_in == 'Hư hỏng'and value_out == 'Hư hỏng':
                 webbrowser.open_new(path_open)
@@ -327,13 +348,20 @@ class Ui(QtWidgets.QMainWindow):
                 webbrowser.open_new(path_out)
         
     def BT_cancel_click(self):
-        window.close()
+        self.close()
+        QApplication.quit()
         
-    
-
-if __name__ == "__main__":
+def main():
     path = os.path.abspath(os.path.dirname(__file__))
     main_path = os.path.abspath(os.path.join(path, os.pardir))
     app = QtWidgets.QApplication(sys.argv)
-    window = Ui(main_path=main_path)
+    if len(sys.argv) > 1:
+        phone_number = sys.argv[1]
+    else:
+        raise Exception("Missing phone number")
+    window = Ui(main_path=main_path,
+                phone_number=phone_number)
     app.exec_()
+
+if __name__ == "__main__":
+    main()

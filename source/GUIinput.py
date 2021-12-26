@@ -1,13 +1,14 @@
-from PyQt5 import QtWidgets, uic
+from PyQt5 import QtWidgets, uic, QtGui
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 import sys
 import os
-import numpy as np
+import io
+import base64
+import PIL.Image as Image
 # Import json module
 from modules.library.IO_support import *
-from modules.library.pyqt_support import *
 
 class Ui(QtWidgets.QMainWindow):
     """
@@ -17,6 +18,7 @@ class Ui(QtWidgets.QMainWindow):
     def __init__(self, main_path):
         super(Ui, self).__init__()
         self.main_path = main_path
+        self.images_source = []
         # load GUI
         gui_path = os.path.abspath(
             os.path.join(main_path, "GUI", "GUIinput.ui"))
@@ -91,9 +93,9 @@ class Ui(QtWidgets.QMainWindow):
         GB_customer_information: QGroupBox = self.findChild(QGroupBox, "GB_customer_information")
         L_Warning = QLabel(GB_customer_information)
         GB_customer_information.label_warning = L_Warning
-        L_Warning.setText("Nhập dữ liệu ")
+        L_Warning.setText("Vui lòng điền đầỳ đủ thông tin")
         LT_customer_information.addWidget(L_Warning,
-                            7,
+                            6,
                             0,
                             1,
                             2,
@@ -126,37 +128,37 @@ class Ui(QtWidgets.QMainWindow):
         i = 0
         #Số sảnh đc chọn 
         k = int(len(filenames))
-        # Tao list chứa ảnh
-        data_list_graph = list(range(0,k))
         # Điều chỉnh ảnh
         for file in filenames:
             img = QtGui.QImage(file)
-            data_list_graph[i] = file
+            self.images_source += [file]
             i += 1
             if k <2:
                 img = img.scaled(pixel[0], pixel[1])
                 Pimax_Item = QtWidgets.QGraphicsPixmapItem(QtGui.QPixmap.fromImage(img))
-                a = self.scene.addItem(Pimax_Item) 
+                self.scene.addItem(Pimax_Item) 
                 self.GV_inciden_images.fitInView(Pimax_Item)
             elif k>=2:
                 if i <= round(k/2):        
-                    img = img.scaled(pixel[0]/round(k/2), pixel[1]/2)
+                    img = img.scaled(int(pixel[0]/round(k/2)), int(pixel[1]/2))
                     Pimax_Item = QtWidgets.QGraphicsPixmapItem(QtGui.QPixmap.fromImage(img))
-                    a = self.scene.addItem(Pimax_Item)
+                    self.scene.addItem(Pimax_Item)
                     Pimax_Item.setOffset(pos[0], pos[1]) 
                     pos[0] += (pixel[0]+5)/round(k/2) 
                 elif i > round(k/2):
                     pos_2[1] = (pixel[1]+5)/2
-                    img = img.scaled(pixel[0]/(k-round(k/2)),pixel[1]/2)
+                    img = img.scaled(int(pixel[0]/(k-round(k/2))),int(pixel[1]/2))
                     Pimax_Item = QtWidgets.QGraphicsPixmapItem(QtGui.QPixmap.fromImage(img))
-                    a = self.scene.addItem(Pimax_Item)
+                    self.scene.addItem(Pimax_Item)
                     Pimax_Item.setOffset(pos_2[0], pos_2[1])
                     pos_2[0] += (pixel[0]+5)/(k-round(k/2))
-        
-        data_graph = {'graphic':data_list_graph}
-        data_path = os.path.abspath(os.path.join(self.main_path, "data", "data_grap.json"))
-        with open(data_path, 'w') as outfile:
-            json.dump(data_graph, outfile)
+        # for img_path in self.images_source:
+        #     str_code = img2str(direct_path=img_path)
+        #     self.images += [str_code]
+        # data_graph = {'graphic':self.images_source}
+        # data_path = os.path.abspath(os.path.join(self.main_path, "data", "data_grap.json"))
+        # with open(data_path, 'w') as outfile:
+        #     json.dump(data_graph, outfile, sort_keys=True, indent=4)
         
                     
     # Nút xác nhận    
@@ -169,11 +171,12 @@ class Ui(QtWidgets.QMainWindow):
         LE_fixing_date: QLineEdit = self.findChild(QLineEdit, "LE_fixing_date")
         LE_damage: QLineEdit = self.findChild(QLineEdit, "LE_damage")
         
-        number_char_vin = int(len(list(LE_VIN_code.text())))
+        char_vin_length = int(len(list(LE_VIN_code.text())))
         
-        if number_char_vin == 17:
-            if LE_customer_name.text() == "" and LE_VIN_code.text() =="" and LE_number_plate.text() =="" and LE_number_plate.text() =="" and LE_phone_number.text() =="" and LE_address.text() =="" and LE_fixing_date.text() =="":
+        if LE_customer_name.text() != "" and LE_VIN_code.text() !="" and LE_number_plate.text() !="" and LE_number_plate.text() !="" and LE_phone_number.text() !="" and LE_address.text() !="" and LE_fixing_date.text() !="":
+            if char_vin_length != 17:
                 GB_customer_information: QGroupBox = self.findChild(QGroupBox, "GB_customer_information")
+                GB_customer_information.label_warning.setText("Vui lòng nhập chính xác mã VIN")
                 GB_customer_information.label_warning.setVisible(True)
             else :
                 data_cus = {
@@ -183,18 +186,21 @@ class Ui(QtWidgets.QMainWindow):
                     "phone_number": LE_phone_number.text(),
                     "address": LE_address.text(),
                     "fixing_date" : LE_fixing_date.text(),
-                    "damaged": LE_damage.text()
+                    "damaged": LE_damage.text(),
+                    "images_source": self.images_source
                 }
-                data_path = os.path.abspath(os.path.join(self.main_path, "data", "data_cus.json"))
-                with open(data_path, 'w') as outfile:
-                    json.dump(data_cus, outfile)
-                
-                file_data = os.path.abspath(os.path.join(self.main_path, "source", "GUImain.py"))
-                os.system('python "{}"'.format(file_data))
-                
+                # data_path = os.path.abspath(os.path.join(self.main_path, "data", "data_cus.json"))
+                # with open(data_path, 'w') as outfile:
+                #     json.dump(data_cus, outfile, sort_keys=True, indent=4)
                 window.close()
+                file_data = os.path.abspath(os.path.join(self.main_path, "source", "GUImain.py"))
+                os.system("python3 '{python_script}' '{cus_data}'"\
+                    .format(python_script=file_data,
+                    cus_data=json.dumps(data_cus)))
+
         else:
             GB_customer_information: QGroupBox = self.findChild(QGroupBox, "GB_customer_information")
+            GB_customer_information.label_warning.setText("Vui lòng điền đầỳ đủ thông tin")
             GB_customer_information.label_warning.setVisible(True)
 
     # Đóng chương trình

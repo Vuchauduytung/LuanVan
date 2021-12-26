@@ -4,7 +4,6 @@ from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 import sys
 import os
-import numpy as np
 # Import json module
 from modules.library.IO_support import *
 
@@ -96,21 +95,24 @@ class Ui(QtWidgets.QMainWindow):
         LE_number_car: QLineEdit = self.findChild(QLineEdit, "LE_number_car")
         value = LE_phone_number
         #Open json
-        data_path = os.path.abspath(os.path.join(self.main_path, "data", "data_cus.json"))
-        customer = json2dict(data_path)
-        keyvalue = 'phone_number'
+        data_path = os.path.abspath(os.path.join(self.main_path, "data", "customers_data.json"))
+        customers = json2dict(data_path)
         # phone tra trong json
-        if customer[keyvalue] == LE_phone_number.text():
-            file_data = os.path.abspath(os.path.join(self.main_path, "source", "GUIdisplay.py"))
-            os.system('python "{}"'.format(file_data))
-            window.close()
+        for cus in customers:
+            if cus.get('phone_number') == LE_phone_number.text():
+                phone_number = cus.get('phone_number')
+                file_data = os.path.abspath(os.path.join(self.main_path, "source", "GUIdisplay.py"))
+                self.close()
+                os.system('python3 "{python_script}" "{phone_number}"'\
+                    .format(python_script=file_data,
+                            phone_number=phone_number))
         else :
             GB_informatin_custom: QGroupBox = self.findChild(QGroupBox, "GB_informatin_custom")
             GB_informatin_custom.label_warning.setVisible(True)
             
             
     def BT_quit_click(self):
-        window.close()
+        self.close()
         
 if __name__ == "__main__":
     path = os.path.abspath(os.path.dirname(__file__))

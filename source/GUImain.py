@@ -4,7 +4,11 @@ from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 import sys
 import os
+from matplotlib.backends.backend_qt import MainWindow
 import numpy as np
+import asyncio
+from asyncqt import *
+from asyncio import *
 from modules.modules_math.math_analysis import *
 from modules.library.IO_support import *
 import matplotlib.pyplot as plt
@@ -18,9 +22,11 @@ class Ui(QtWidgets.QMainWindow):
     Application
     """
 
-    def __init__(self, main_path):
+    def __init__(self, main_path: str, cus_data: dict = {}):
         super(Ui, self).__init__()
         self.main_path = main_path
+        self.cus_data = cus_data
+        self.encode_images()
         # load GUI
         gui_path = os.path.abspath(
             os.path.join(main_path, "GUI", "GUImain.ui"))
@@ -32,6 +38,14 @@ class Ui(QtWidgets.QMainWindow):
         self.setup_foreseen_children()
         self.setup_tableWidget()
         self.show()
+
+    def encode_images(self):
+        images = []
+        images_source = self.cus_data.get("images_source")
+        for img_path in images_source:
+            images += [img2str(direct_path=img_path)]
+        del self.cus_data["images_source"]
+        self.cus_data["images"] = images
 
     def setup_lineEdit(self):
         LE_extTem: QLineEdit = self.findChild(QLineEdit, "LE_extTem")
@@ -248,7 +262,7 @@ class Ui(QtWidgets.QMainWindow):
         LE_n.clear()
         
     def exit_gui(self):
-        mainWindow.close()
+        self.close()
         
 
     def setup_processBar(self):
@@ -279,6 +293,7 @@ class Ui(QtWidgets.QMainWindow):
                             main_path=self.main_path,
                             size=size)
         W_graph_xilanh.chart = self.chart
+        W_graph_xilanh.data = {}
     
     def measureBT_click(self, button: QPushButton, num_button: int, DSB_time: QDoubleSpinBox):
         xylanh_process: QProgressBar = self.GBdata_processbar[num_button]
@@ -312,9 +327,34 @@ class Ui(QtWidgets.QMainWindow):
             .format(num=num_xilanh))
         chart = W_graph_xilanh.chart
         chart.draw_graph(TIME=TIME)
-        self.pressure_val[num_xilanh] = chart.get_peak_values()
+        pressure_val = chart.get_peak_values()
+        self.pressure_val[num_xilanh] = pressure_val
         self.export_table(num_xilanh=num_xilanh)
         TbW_diagnoses.setCurrentIndex(num_xilanh-1)
+        LE_Compression: QLineEdit = self.findChild(QLineEdit, "LE_Compression")
+        LE_comp_rat: QLineEdit = self.findChild(QLineEdit, "LE_comp_rat")
+        LE_air_press: QLineEdit = self.findChild(QLineEdit, "LE_air_press")
+        pmax = float(LE_Compression.text())
+        Minimum_charge_pressure = pressure_discharge(load_pressure=float(LE_air_press.text()))
+        p_in = minimum_pressure_load(load_pressure = float(LE_air_press.text()))
+        pmin = minimum_pressure(Dynamic_compression_ratio = float(LE_comp_rat.text()))
+        P_compress, P_load, P_charge_start = pressure_val["compress"], pressure_val["load"], pressure_val["charge_start"]
+        P_charge_end, P_compress_end = pressure_val["charge_end"], pressure_val["compress_end"]
+        T_compress = pressure_val["T_compress"]
+        data_points = chart.get_data_points()
+        W_graph_xilanh.data={
+            "compression_pressure": pmax,
+            "minimum_pressure": pmin,
+            "Pmax": P_compress,
+            "Minimum_load_pressure": p_in,
+            "P_in": P_load,
+            "Minimum_charge_pressure":Minimum_charge_pressure,
+            "P_out":P_charge_end,
+            "P_out_st":P_charge_start,
+            "compress_end":P_compress_end,
+            "T_compress":T_compress,
+            "data_points": list(data_points)
+        }
 
     def setup_tableWidget(self):
         TW_table: QTableWidget = self.findChild(QTableWidget, "TW_table")
@@ -443,86 +483,27 @@ class Ui(QtWidgets.QMainWindow):
             button.setEnabled(False)
         return clear
 
-    def save_data(self, get_peak_values: dict):
-        self.pressure_val = {}
-        self.pressure_val = self.chart.get_peak_values()
-        
-        LE_Compression: QLineEdit = self.findChild(QLineEdit, "LE_Compression")
-        LE_extTem: QLineEdit = self.findChild(QLineEdit, "LE_extTem")
-        LE_comp_rat: QLineEdit = self.findChild(QLineEdit, "LE_comp_rat")
-        LE_piston_jour: QLineEdit = self.findChild(QLineEdit, "LE_piston_jour")
-        LE_cyl_dm: QLineEdit = self.findChild(QLineEdit, "LE_cyl_dm")
-        LE_rod_len: QLineEdit = self.findChild(QLineEdit, "LE_rod_len")
-        LE_xup_cor: QLineEdit = self.findChild(QLineEdit, "LE_xup_cor")
-        LE_air_press: QLineEdit = self.findChild(QLineEdit, "LE_air_press")
-        pmax = float(LE_Compression.text())
-        n = caculate_n(Temperature=float(LE_extTem.text()),
-                       Compression_ratio=float(LE_comp_rat.text()))
-        
-        Minimum_pressure_charge = pressure_discharge(load_pressure=float(LE_air_press.text()))
-        
-        p_in = minimum_pressure_load(load_pressure = float(LE_air_press.text()))
-        pmin = minimum_pressure(Dynamic_compression_ratio = float(LE_comp_rat.text()))
-        
-        P_compress, P_load, P_charge_start = self.pressure_val["compress"], self.pressure_val["load"], self.pressure_val["charge_start"]
-        P_charge_end, P_compress_end = self.pressure_val["charge_end"], self.pressure_val["compress_end"]
-        T_compress=self.pressure_val["T_compress"]
-        
-        data_cus = {
-                        "Xylanh_1":{
-                            "compression_pressure": pmax,
-                            "minimum_pressure": pmin,
-                            "Pmax": P_compress,
-                            "Minimum_pressure_intake": p_in,
-                            "P_in": P_load,
-                            "Minimum_pressure_charge":Minimum_pressure_charge,
-                            "P_out":P_charge_end,
-                            "P_out_st":P_charge_start,
-                            "compress_end":P_compress_end,
-                            "T_compress":T_compress
-                        },
-                        "Xylanh_2":{
-                            "compression_pressure": pmax,
-                            "minimum_pressure": pmin,
-                            "Pmax": P_compress,
-                            "Minimum_pressure_intake": p_in,
-                            "P_in": P_load,
-                            "Minimum_pressure_charge":Minimum_pressure_charge,
-                            "P_out":P_charge_end,
-                            "P_out_st":P_charge_start,
-                            "compress_end":P_compress_end,
-                            "T_compress":T_compress
-                        },
-                        "Xylanh_3":{
-                            "compression_pressure": pmax,
-                            "minimum_pressure": pmin,
-                            "Pmax": P_compress,
-                            "Minimum_pressure_intake": p_in,
-                            "P_in": P_load,
-                            "Minimum_pressure_charge":Minimum_pressure_charge,
-                            "P_out":P_charge_end,
-                            "P_out_st":P_charge_start,
-                            "compress_end":P_compress_end,
-                            "T_compress":T_compress
-                        },
-                        "Xylanh_4":{
-                            "compression_pressure": pmax,
-                            "minimum_pressure": pmin,
-                            "Pmax": P_compress,
-                            "Minimum_pressure_intake": p_in,
-                            "P_in": P_load,
-                            "Minimum_pressure_charge":Minimum_pressure_charge,
-                            "P_out":P_charge_end,
-                            "P_out_st":P_charge_start,
-                            "compress_end":P_compress_end,
-                            "T_compress":T_compress
-                        }
-                    }
-        data_path = os.path.abspath(os.path.join(self.main_path, "data", "data_cus_data.json"))
-        with open(data_path, 'w') as outfile:
-            json.dump(data_cus, outfile)
+    def save_data(self):
+        W_graph_xilanh1: QWidget = self.findChild(QWidget, "W_graph_xilanh1")
+        W_graph_xilanh2: QWidget = self.findChild(QWidget, "W_graph_xilanh2")
+        W_graph_xilanh3: QWidget = self.findChild(QWidget, "W_graph_xilanh3")
+        W_graph_xilanh4: QWidget = self.findChild(QWidget, "W_graph_xilanh4")
+        self.cus_data.update({
+            "Xylanh_1": W_graph_xilanh1.data,
+            "Xylanh_2": W_graph_xilanh2.data,
+            "Xylanh_3": W_graph_xilanh3.data,
+            "Xylanh_4": W_graph_xilanh4.data,
+        })
+        data_path = os.path.abspath(os.path.join(self.main_path, "data", "customers_data.json"))
+        try:
+            all_cus_data: list = json2dict(direct_path=data_path)
+        except FileNotFoundError:
+            all_cus_data = []    
+        all_cus_data += [self.cus_data]
+        dict2json(target_path=data_path,
+                  data=all_cus_data)
 
-        mainWindow.close()
+        self.close()
         
 
     class Canvas(FigureCanvas):
@@ -633,21 +614,30 @@ class Ui(QtWidgets.QMainWindow):
                 "T_compress":self.T_compress
             }
 
+        def get_data_points(self):
+            line = self.ax.lines[0]
+            return line.get_ydata()
 
-
-
-if __name__ == "__main__":
-    from asyncqt import QEventLoop, asyncSlot, asyncClose
-    import asyncio
+def main():
     path = os.path.abspath(os.path.dirname(__file__))
     main_path = os.path.abspath(os.path.join(path, os.pardir))
 
     app = QApplication(sys.argv)
     loop = QEventLoop(app)
     asyncio.set_event_loop(loop)
-
-    mainWindow = Ui(main_path=main_path)
+    if len(sys.argv) > 1:
+        customer_data = sys.argv[1]
+        mainWindow = Ui(main_path=main_path,
+                        cus_data=json.loads(customer_data))
+    else:
+        mainWindow = Ui(main_path=main_path)
+    # mainWindow = Ui(main_path=main_path,
+    #                 cus_data={})
     mainWindow.show()
 
     with loop:
         sys.exit(loop.run_forever())
+
+
+if __name__ == "__main__":
+    main()

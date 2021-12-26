@@ -1,4 +1,4 @@
-def compare_c(compression_pressure, Pmax, Pmin, Minimum_pressure_intake, minimum_pressure ):
+def compare_c(compression_pressure, Pmax, Pmin, Minimum_load_pressure, minimum_pressure ):
         # Pmax lay gia ti lon nhat trong .dat , Pmin lay gia trinho nhat trong .dat
     if 0.9*compression_pressure < Pmax < compression_pressure*1.1:
         value = 'Bình thường'
@@ -18,11 +18,11 @@ def compare_c(compression_pressure, Pmax, Pmin, Minimum_pressure_intake, minimum
     return value, damage_c   
     
 
-def compare_out(compression_pressure, Pmax, P_out,P_out_st,P_compress_end, Minimum_pressure_intake, Minimum_pressure_charge ):
+def compare_out(compression_pressure, Pmax, P_out,P_out_st,P_compress_end, Minimum_load_pressure, Minimum_charge_pressure ):
     
-    Minimum_pressure_load = Minimum_pressure_intake
-    Pressure_discharge = Minimum_pressure_charge        
-    if 0.8*Minimum_pressure_charge < P_out < Minimum_pressure_charge*1.1:
+    Minimum_pressure_load = Minimum_load_pressure
+    Pressure_discharge = Minimum_charge_pressure        
+    if 0.8*Minimum_charge_pressure < P_out < Minimum_charge_pressure*1.1:
         value_out = 'Bình thường'
         damage_out = 'Bình thường'
     else:
@@ -41,10 +41,10 @@ def compare_out(compression_pressure, Pmax, P_out,P_out_st,P_compress_end, Minim
             damage_out = "Xupap mở sai thời điểm"
     return value_out, damage_out
 
-def compare_in(compression_pressure, Pmax, P_in, Minimum_pressure_intake, P_compress_end, Minimum_pressure_charge ):
+def compare_in(compression_pressure, Pmax, P_in, Minimum_load_pressure, P_compress_end, Minimum_charge_pressure ):
     
-    Minimum_pressure_load = Minimum_pressure_intake
-    Pressure_discharge = Minimum_pressure_charge        
+    Minimum_pressure_load = Minimum_load_pressure
+    Pressure_discharge = Minimum_charge_pressure        
     if 1.1*Minimum_pressure_load <= P_in <= Minimum_pressure_load*0.8:
         value_in = 'Bình thường'
         damage_in = 'Bình thường'

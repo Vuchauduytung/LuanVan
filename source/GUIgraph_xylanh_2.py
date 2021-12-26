@@ -5,7 +5,6 @@ from PyQt5.QtCore import *
 import sys
 import os
 from modules.library.IO_support import *
-from modules.library.pyqt_support import *
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 import numpy as np
