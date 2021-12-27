@@ -4,7 +4,6 @@ from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 import sys
 import os
-from matplotlib.backends.backend_qt import MainWindow
 import numpy as np
 import asyncio
 from asyncqt import *
@@ -22,10 +21,12 @@ class Ui(QtWidgets.QMainWindow):
     Application
     """
 
-    def __init__(self, main_path: str, cus_data: dict = {}):
+    def __init__(self, main_path: str, cus_data: dict, pres_data_list: list, temp_data_list: list):
         super(Ui, self).__init__()
         self.main_path = main_path
         self.cus_data = cus_data
+        self.pres_data_list = pres_data_list
+        self.temp_data_list = temp_data_list
         self.encode_images()
         # load GUI
         gui_path = os.path.abspath(
@@ -293,9 +294,9 @@ class Ui(QtWidgets.QMainWindow):
             W_graph_xilanh.size().height()
         )
         self.chart = self.Canvas(parent=W_graph_xilanh,
-                            num_xilanh=num_xilanh,
-                            main_path=self.main_path,
-                            size=size)
+                                 num_xilanh=num_xilanh,
+                                 main_path=self.main_path,
+                                 size=size)
         W_graph_xilanh.chart = self.chart
         W_graph_xilanh.data = {}
     
@@ -330,7 +331,9 @@ class Ui(QtWidgets.QMainWindow):
         W_graph_xilanh: QWidget = self.findChild(QWidget, "W_graph_xilanh{num}"\
             .format(num=num_xilanh))
         chart = W_graph_xilanh.chart
-        chart.draw_graph(TIME=TIME)
+        chart.draw_graph(TIME=TIME, 
+                         pres_data=self.pres_data_list[num_xilanh-1],
+                         temp_data=self.temp_data_list[num_xilanh-1])
         pressure_val = chart.get_peak_values()
         self.pressure_val[num_xilanh] = pressure_val
         self.export_table(num_xilanh=num_xilanh)
@@ -525,8 +528,8 @@ class Ui(QtWidgets.QMainWindow):
             
             super().__init__(fig)
             self.setParent(parent)
-            self.setup_data()
-            self.setup_data_T()
+            # self.setup_data()
+            # self.setup_data_T()
             """ 
             Matplotlib Script
             """
@@ -539,13 +542,13 @@ class Ui(QtWidgets.QMainWindow):
             self.ax.yaxis.set_visible(False)
               
             
-        def draw_graph(self, TIME: float):
+        def draw_graph(self, TIME: float, pres_data: list, temp_data: list):
             epoch = int(TIME/self.period)
             t = np.linspace(start=0, 
                             stop=TIME, 
                             num=epoch*self.num_point_per_period)
-            P = self.caculate_pressure(epoch=epoch)
-            T = self.caculate_temperature(epoch=epoch)
+            P = self.caculate_pressure(epoch=epoch, data_points=pres_data)
+            T = self.caculate_temperature(epoch=epoch, data_points=temp_data)
             self.ax.plot(t, P)
             self.ax.grid()  
             self.ax.xaxis.set_visible(True)
@@ -555,32 +558,32 @@ class Ui(QtWidgets.QMainWindow):
                             .format(num=self.num))
             self.draw()  
 
-        def setup_data(self):
-            data_path = os.path.abspath(os.path.join(self.main_path,"Mô phỏng Matlab","data"))
-            engine_path = os.path.abspath(os.path.join(data_path, 'data_P.dat'))
-            self.engine_data = dat2numpy(direct_path=engine_path)
+        # def setup_data(self):
+        #     data_path = os.path.abspath(os.path.join(self.main_path,"Mô phỏng Matlab","data"))
+        #     engine_path = os.path.abspath(os.path.join(data_path, 'data_P.dat'))
+        #     self.engine_data = dat2numpy(direct_path=engine_path)
             
-        def setup_data_T(self):
-            data_path_T = os.path.abspath(os.path.join(self.main_path,"Mô phỏng Matlab","data"))
-            engine_path_T = os.path.abspath(os.path.join(data_path_T, 'data_T.dat'))
-            self.engine_data_T = dat2numpy(direct_path=engine_path_T)
+        # def setup_data_T(self):
+        #     data_path_T = os.path.abspath(os.path.join(self.main_path,"Mô phỏng Matlab","data"))
+        #     engine_path_T = os.path.abspath(os.path.join(data_path_T, 'data_T.dat'))
+        #     self.engine_data_T = dat2numpy(direct_path=engine_path_T)
 
-        def caculate_temperature(self, epoch: int):
+        def caculate_temperature(self, epoch: int, data_points: np.array):
             for i in range(epoch):
                 try:
-                    temperature_string = np.concatenate((temperature_string, self.engine_data_T)) 
+                    temperature_string = np.concatenate((temperature_string, data_points)) 
                 except:
-                    temperature_string = self.engine_data_T
+                    temperature_string = data_points
   
                 self.T_compress=np.max(temperature_string)
             return temperature_string
         
-        def caculate_pressure(self, epoch: int):
+        def caculate_pressure(self, epoch: int, data_points: np.array):
             for i in range(epoch):
                 try:
-                    pressure_string = np.concatenate((pressure_string, self.engine_data)) 
+                    pressure_string = np.concatenate((pressure_string, data_points)) 
                 except:
-                    pressure_string = self.engine_data
+                    pressure_string = data_points
                 
                 data_list_1 = list(range(20))
                 for i in range(20):
@@ -629,12 +632,26 @@ def main():
     app = QApplication(sys.argv)
     loop = QEventLoop(app)
     asyncio.set_event_loop(loop)
-    if len(sys.argv) > 1:
+    if len(sys.argv) >= 9:
+        pres_name_list = sys.argv[2:6]
+        temp_name_list = sys.argv[6:10]
         customer_data = sys.argv[1]
+        pres_data_list = []
+        temp_data_list = []
+        for pres_name in pres_name_list:
+            pres_path = os.path.abspath(os.path.join(main_path, "simulate-input", pres_name))
+            pres_data = dat2numpy(direct_path=pres_path)
+            pres_data_list += [pres_data]
+        for temp_name in temp_name_list:
+            temp_path = os.path.abspath(os.path.join(main_path, "simulate-input", temp_name))
+            temp_data = dat2numpy(direct_path=temp_path)
+            temp_data_list += [temp_data]
         mainWindow = Ui(main_path=main_path,
-                        cus_data=json.loads(customer_data))
+                        cus_data=json.loads(customer_data),
+                        pres_data_list=pres_data_list,
+                        temp_data_list=temp_data_list)
     else:
-        mainWindow = Ui(main_path=main_path)
+        raise Exception("Missing argument!")
     # mainWindow = Ui(main_path=main_path,
     #                 cus_data={})
     mainWindow.show()
