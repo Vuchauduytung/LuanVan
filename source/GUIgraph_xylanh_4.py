@@ -23,7 +23,11 @@ class Ui(QtWidgets.QMainWindow):
         uic.loadUi(gui_path, self)
         self.setup_pushButton()
         self.setup_graph()
+        self.icon()
         self.show()
+        
+    def icon(self):
+        self.setWindowIcon(QIcon('source\icon\Logo BK.png'))
     # Hien do thi giong GUI main
     def setup_graph(self):
         GV_graph: QGraphicsView = self.findChild(QGraphicsView, "GV_graph")

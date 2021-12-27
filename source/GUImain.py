@@ -38,8 +38,12 @@ class Ui(QtWidgets.QMainWindow):
         self.setup_pushButton()
         self.setup_foreseen_children()
         self.setup_tableWidget()
+        self.icon()
         self.show()
 
+    def icon(self):
+        self.setWindowIcon(QIcon('source\icon\Logo BK.png'))
+        
     def encode_images(self):
         images = []
         images_source = self.cus_data.get("images_source")

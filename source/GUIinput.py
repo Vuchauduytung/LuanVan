@@ -25,8 +25,11 @@ class Ui(QtWidgets.QMainWindow):
         self.setup_lineEdit()
         self.setup_foreseen_children()
         self.setup_pushButton()
+        self.icon()
         self.show()
-        
+    
+    def icon(self):
+        self.setWindowIcon(QIcon('source\icon\Logo BK.png'))
     # Điền lineEdit    
     def setup_lineEdit(self):
         LE_customer_name: QLineEdit = self.findChild(QLineEdit, "LE_customer_name")

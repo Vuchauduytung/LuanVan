@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>GUI_input</string>
+   <string>Dữ liệu khách hàng</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QSplitter" name="splitter">
@@ -504,7 +504,7 @@
      <x>0</x>
      <y>0</y>
      <width>1173</width>
-     <height>20</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuEdit">
