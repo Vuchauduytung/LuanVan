@@ -27,7 +27,11 @@ class Ui(QtWidgets.QMainWindow):
         self.setup_lineEdit_information_custom()
         self.setup_lineEdit_car_number_VIN()
         self.setup_lineEdit_diagnose()
+        self.icon()
         self.show()
+        
+    def icon(self):
+        self.setWindowIcon(QIcon('source\icon\Logo BK.png'))
         
     def setup_lineEdit_information_custom(self):
         #Open json

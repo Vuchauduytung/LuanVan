@@ -22,7 +22,11 @@ class Ui(QtWidgets.QMainWindow):
         uic.loadUi(gui_path, self)
         self.setup_pushButton()
         self.setup_graph()
+        self.icon()
         self.show()
+    
+    def icon(self):
+        self.setWindowIcon(QIcon('source\icon\Logo BK.png'))
         
     def setup_pushButton(self):
         # GB_informatin_custom QGroupBox
