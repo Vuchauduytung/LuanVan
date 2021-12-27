@@ -4,3 +4,5 @@ PyQt5-tools
 matplotlib
 asyncio
 asyncqt
+dotenv
+pandas
