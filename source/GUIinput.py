@@ -1,12 +1,10 @@
 from PyQt5 import QtWidgets, uic, QtGui
+from dotenv import load_dotenv
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 import sys
 import os
-import io
-import base64
-import PIL.Image as Image
 # Import json module
 from modules.library.IO_support import *
 
@@ -15,9 +13,10 @@ class Ui(QtWidgets.QMainWindow):
     Application
     """
     # Hiện chương trình
-    def __init__(self, main_path):
+    def __init__(self, main_path: str, simulate_data: list):
         super(Ui, self).__init__()
         self.main_path = main_path
+        self.simulate_data = simulate_data
         self.images_source = []
         # load GUI
         gui_path = os.path.abspath(
@@ -189,14 +188,12 @@ class Ui(QtWidgets.QMainWindow):
                     "damaged": LE_damage.text(),
                     "images_source": self.images_source
                 }
-                # data_path = os.path.abspath(os.path.join(self.main_path, "data", "data_cus.json"))
-                # with open(data_path, 'w') as outfile:
-                #     json.dump(data_cus, outfile, sort_keys=True, indent=4)
                 window.close()
                 file_data = os.path.abspath(os.path.join(self.main_path, "source", "GUImain.py"))
-                os.system("python3 '{python_script}' '{cus_data}'"\
+                os.system("python3 '{python_script}' '{cus_data}' {simulate_data}"\
                     .format(python_script=file_data,
-                    cus_data=json.dumps(data_cus)))
+                            cus_data=json.dumps(data_cus),
+                            simulate_data=" ".join(self.simulate_data)))
 
         else:
             GB_customer_information: QGroupBox = self.findChild(QGroupBox, "GB_customer_information")
@@ -210,6 +207,27 @@ class Ui(QtWidgets.QMainWindow):
 if __name__ == "__main__":
     path = os.path.abspath(os.path.dirname(__file__))
     main_path = os.path.abspath(os.path.join(path, os.pardir))
+    dotenv_path = os.path.abspath(os.path.join(main_path, "config", "simulate.env"))
+    load_dotenv(dotenv_path=dotenv_path)
     app = QtWidgets.QApplication(sys.argv)
-    window = Ui(main_path=main_path)
+    XILANH1_PRESSURE=os.getenv('XILANH1_PRESSURE')
+    XILANH2_PRESSURE=os.getenv('XILANH2_PRESSURE')
+    XILANH3_PRESSURE=os.getenv('XILANH3_PRESSURE')
+    XILANH4_PRESSURE=os.getenv('XILANH4_PRESSURE')
+    XILANH1_TEMPERATURE=os.getenv('XILANH1_TEMPERATURE')
+    XILANH2_TEMPERATURE=os.getenv('XILANH2_TEMPERATURE')
+    XILANH3_TEMPERATURE=os.getenv('XILANH3_TEMPERATURE')
+    XILANH4_TEMPERATURE=os.getenv('XILANH4_TEMPERATURE')
+    simulate_data = [
+        XILANH1_PRESSURE,
+        XILANH2_PRESSURE,
+        XILANH3_PRESSURE,
+        XILANH4_PRESSURE,
+        XILANH1_TEMPERATURE,
+        XILANH2_TEMPERATURE,
+        XILANH3_TEMPERATURE,
+        XILANH3_TEMPERATURE,
+    ]
+    window = Ui(main_path=main_path,
+                simulate_data=simulate_data)
     app.exec_()
