@@ -693,7 +693,7 @@
    <widget class="QPushButton" name="BT_graph">
     <property name="geometry">
      <rect>
-      <x>430</x>
+      <x>350</x>
       <y>580</y>
       <width>93</width>
       <height>28</height>
@@ -712,7 +712,7 @@
    <widget class="QPushButton" name="BT_fix">
     <property name="geometry">
      <rect>
-      <x>530</x>
+      <x>450</x>
       <y>580</y>
       <width>93</width>
       <height>28</height>
@@ -731,7 +731,7 @@
    <widget class="QPushButton" name="BT_graph_fix">
     <property name="geometry">
      <rect>
-      <x>330</x>
+      <x>250</x>
       <y>580</y>
       <width>93</width>
       <height>28</height>
@@ -750,7 +750,7 @@
    <widget class="QPushButton" name="BT_cancel">
     <property name="geometry">
      <rect>
-      <x>740</x>
+      <x>670</x>
       <y>580</y>
       <width>93</width>
       <height>28</height>
@@ -769,9 +769,9 @@
    <widget class="QPushButton" name="BT_eport_excel">
     <property name="geometry">
      <rect>
-      <x>630</x>
+      <x>550</x>
       <y>580</y>
-      <width>101</width>
+      <width>111</width>
       <height>28</height>
      </rect>
     </property>
