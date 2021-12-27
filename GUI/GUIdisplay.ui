@@ -750,7 +750,7 @@
    <widget class="QPushButton" name="BT_cancel">
     <property name="geometry">
      <rect>
-      <x>630</x>
+      <x>740</x>
       <y>580</y>
       <width>93</width>
       <height>28</height>
@@ -764,6 +764,26 @@
     </property>
     <property name="text">
      <string>Thoát</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="BT_eport_excel">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>580</y>
+      <width>101</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Xuất file excel</string>
     </property>
    </widget>
   </widget>
