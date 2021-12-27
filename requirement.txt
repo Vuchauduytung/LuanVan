@@ -1,8 +1,6 @@
 numpy
 PyQt5
 PyQt5-tools
-
 matplotlib
 asyncio
 asyncqt
-pandas
