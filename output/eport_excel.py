@@ -6,11 +6,6 @@ from openpyxl import Workbook
 # Import json module
 import json
 
-
-
-#############################################
-#  MAIN
-#############################################
 if __name__ == '__main__':
 
     json_data = {}
