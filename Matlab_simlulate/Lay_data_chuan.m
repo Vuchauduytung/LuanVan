@@ -1,3 +1,14 @@
+SE = (S*(1+cosd(A))/2)+L-sqrt((L^2)+((S*sind(A))^2)/4);
+Ve = (pi*(D^2)*SE)/4;
+Vc = (pi/(4*(u-1)))*(D^2)*S;
+ed = (Ve+Vc)/Vc;
+T = v+20;
+n0 = (8.314/(19.806+0.002095*T*(ed^(p-1)+1))+1) ;
+Vh1=(ed*Vc-Vc)/10^6;
+nv=(v/(T))*(ed/(ed-1))*(Pa/Po);
+Lc = (Po*Vh1*nv*T*((Vh1^(n0-1))-1))/((n0-1)*v);
+Tc=T*ed^(n0-1);
+Tz=Tc-273;
 mS=zeros(1,721);
 uk=S;
 %ki nap

@@ -14,7 +14,7 @@ Pc_1=((Pa*10^5)*0.000145)*ed^n0;
 disp('Pc loi = ')
 disp(Pc_1);
 disp('Tc loi = ')
-disp(Tc);
+disp(Tc*1.131);
 %do thi ap suat 
 syms Pc_1
 %ki nap
