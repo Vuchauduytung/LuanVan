@@ -1,0 +1,8 @@
+numpy
+PyQt5
+PyQt5Designer
+matplotlib
+asyncio
+asyncqt
+python-dotenv
+openpyxl
