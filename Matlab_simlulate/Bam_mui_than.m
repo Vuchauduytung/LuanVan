@@ -146,8 +146,8 @@ for k = 1:721;
 end
 axis on
 %duong ap suat
-path_P = fullfile(pwd,'..','simulate-input','data_P_loi_1.dat');
-path_T = fullfile(pwd,'..','simulate-input','data_T_loi_1.dat');
+path_P = fullfile(pwd,'..','output','Program','simulate-input','data_P_loi_1.dat');
+path_T = fullfile(pwd,'..','output','Program','simulate-input','data_T_loi_1.dat');
 cla;
  plot(truc_khuyu,pmin,'-');
  plot(truc_khuyu,T_value,'-');

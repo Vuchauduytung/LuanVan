@@ -124,10 +124,10 @@ for k = 1:721;
     T_value_c(k) = T_value_c(k);
     end
 end
-path_P_c = fullfile(pwd,'..','simulate-input','data_P_c.dat');
-path_T_c = fullfile(pwd,'..','simulate-input','data_T_c.dat');
-path_P_l = fullfile(pwd,'..','simulate-input','data_P_l.dat');
-path_T_l = fullfile(pwd,'..','simulate-input','data_T_l.dat');
+path_P_c = fullfile(pwd,'..','output','Program','simulate-input','data_P_c.dat');
+path_T_c = fullfile(pwd,'..','output','Program','simulate-input','data_T_c.dat');
+path_P_l = fullfile(pwd,'..','output','Program','simulate-input','data_P_l.dat');
+path_T_l = fullfile(pwd,'..','output','Program','simulate-input','data_T_l.dat');
 % lay gia tri
 a = 0;
 ii = 0;

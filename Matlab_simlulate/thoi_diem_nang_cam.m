@@ -136,8 +136,8 @@ for k = 1:721;
     T_value_1(k) = T_value_1(k);
     end
 end
-path_P = fullfile(pwd,'..','simulate-input','data_P_loi_4.dat');
-path_T = fullfile(pwd,'..','simulate-input','data_T_loi_4.dat');
+path_P = fullfile(pwd,'..','output','Program','simulate-input','data_P_loi_4.dat');
+path_T = fullfile(pwd,'..','output','Program','simulate-input','data_T_loi_4.dat');
 cla;
  plot(truc_khuyu,pmin,'-');
  plot(truc_khuyu,T_value,'-');
