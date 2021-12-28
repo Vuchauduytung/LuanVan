@@ -29,6 +29,7 @@ class Ui(QtWidgets.QMainWindow):
         self.setup_lineEdit_diagnose()
         self.icon()
         self.show()
+        self.GUIgraph_path = os.path.abspath(os.path.join(main_path, "source", "GUIgraph.py"))
         
     def icon(self):
         self.setWindowIcon(QIcon('source\icon\Logo BK.png'))
@@ -245,8 +246,17 @@ class Ui(QtWidgets.QMainWindow):
         BT_graph_fix: QPushButton = self.findChild(QPushButton, "BT_graph_fix")
         BT_graph_fix.clicked.connect(self.BT_graph_fix_click)
         
-        BT_graph: QPushButton = self.findChild(QPushButton, "BT_graph")
-        BT_graph.clicked.connect(self.BT_graph_click)
+        BT_graph_1: QPushButton = self.findChild(QPushButton, "BT_graph_1")
+        BT_graph_1.clicked.connect(self.BT_graph1_click)
+
+        BT_graph_2: QPushButton = self.findChild(QPushButton, "BT_graph_2")
+        BT_graph_2.clicked.connect(self.BT_graph2_click)
+
+        BT_graph_3: QPushButton = self.findChild(QPushButton, "BT_graph_4")
+        BT_graph_3.clicked.connect(self.BT_graph3_click)
+
+        BT_graph_4: QPushButton = self.findChild(QPushButton, "BT_graph_5")
+        BT_graph_4.clicked.connect(self.BT_graph4_click)
         
         BT_fix: QPushButton = self.findChild(QPushButton, "BT_fix")
         BT_fix.clicked.connect(self.BT_fix_click)
@@ -270,6 +280,26 @@ class Ui(QtWidgets.QMainWindow):
         os.system('python3 "{}"'.format(file_data))
         file_data = os.path.abspath(os.path.join(self.main_path, "source", "GUIgraph_xylanh_4.py"))
         os.system('python3 "{}"'.format(file_data))
+
+    def BT_graph1_click(self):
+        os.system("python3 \"{python_script}\" \"{phone_number}\" 1 "\
+            .format(python_script=self.GUIgraph_path,
+                    phone_number=self.phone_number))
+
+    def BT_graph2_click(self):
+        os.system("python3 \"{python_script}\" \"{phone_number}\" 2 "\
+            .format(python_script=self.GUIgraph_path,
+                    phone_number=self.phone_number))
+    
+    def BT_graph3_click(self):
+        os.system("python3 \"{python_script}\" \"{phone_number}\" 3 "\
+            .format(python_script=self.GUIgraph_path,
+                    phone_number=self.phone_number))
+    
+    def BT_graph4_click(self):
+        os.system("python3 \"{python_script}\" \"{phone_number}\" 4 "\
+            .format(python_script=self.GUIgraph_path,
+                    phone_number=self.phone_number))
         
     def BT_fix_click(self):
         data_path = os.path.abspath(os.path.join(self.main_path, "data", "customers_data.json"))
