@@ -142,16 +142,6 @@
      <height>26</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuEdit">
-    <property name="title">
-     <string>Edit</string>
-    </property>
-    <addaction name="actionOpen"/>
-    <addaction name="actionNew"/>
-    <addaction name="actionSave_as"/>
-    <addaction name="actionSave"/>
-   </widget>
-   <addaction name="menuEdit"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionOpen">

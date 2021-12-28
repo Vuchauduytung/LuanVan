@@ -69,14 +69,13 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>20</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuEdit">
     <property name="title">
-     <string>Edit</string>
+     <string>File</string>
     </property>
-    <addaction name="actionOpen"/>
     <addaction name="actionSave"/>
    </widget>
    <addaction name="menuEdit"/>
