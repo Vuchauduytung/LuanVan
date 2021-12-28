@@ -646,8 +646,9 @@ def main():
             temp_path = os.path.abspath(os.path.join(main_path, "simulate-input", temp_name))
             temp_data = dat2numpy(direct_path=temp_path)
             temp_data_list += [temp_data]
+        print(repr(customer_data))
         mainWindow = Ui(main_path=main_path,
-                        cus_data=json.loads(customer_data),
+                        cus_data=json.loads(customer_data.replace("'", '"') ),
                         pres_data_list=pres_data_list,
                         temp_data_list=temp_data_list)
     else:

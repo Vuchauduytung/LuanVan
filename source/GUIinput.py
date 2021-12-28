@@ -193,9 +193,9 @@ class Ui(QtWidgets.QMainWindow):
                 }
                 window.close()
                 file_data = os.path.abspath(os.path.join(self.main_path, "source", "GUImain.py"))
-                os.system("python3 '{python_script}' '{cus_data}' {simulate_data}"\
+                os.system("python3 \"{python_script}\" \"{cus_data}\" {simulate_data}"\
                     .format(python_script=file_data,
-                            cus_data=json.dumps(data_cus),
+                            cus_data=json.dumps(data_cus).replace('"', "'"),
                             simulate_data=" ".join(self.simulate_data)))
 
         else:
@@ -229,7 +229,7 @@ if __name__ == "__main__":
         XILANH1_TEMPERATURE,
         XILANH2_TEMPERATURE,
         XILANH3_TEMPERATURE,
-        XILANH3_TEMPERATURE,
+        XILANH4_TEMPERATURE,
     ]
     window = Ui(main_path=main_path,
                 simulate_data=simulate_data)

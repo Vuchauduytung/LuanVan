@@ -1,9 +1,8 @@
 numpy
 PyQt5
-PyQt5-tools
 PyQt5Designer
 matplotlib
 asyncio
 asyncqt
-dotenv
+python-dotenv
 pandas
