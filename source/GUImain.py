@@ -504,7 +504,7 @@ class Ui(QtWidgets.QMainWindow):
         data_path = os.path.abspath(os.path.join(self.main_path, "data", "customers_data.json"))
         try:
             all_cus_data: list = json2dict(direct_path=data_path)
-        except FileNotFoundError:
+        except Exception:
             all_cus_data = []    
         all_cus_data += [self.cus_data]
         dict2json(target_path=data_path,
@@ -646,7 +646,6 @@ def main():
             temp_path = os.path.abspath(os.path.join(main_path, "simulate-input", temp_name))
             temp_data = dat2numpy(direct_path=temp_path)
             temp_data_list += [temp_data]
-        print(repr(customer_data))
         mainWindow = Ui(main_path=main_path,
                         cus_data=json.loads(customer_data.replace("'", '"') ),
                         pres_data_list=pres_data_list,
