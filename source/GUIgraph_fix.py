@@ -65,7 +65,6 @@ class Ui(QtWidgets.QMainWindow):
                 image_qt = image_qt.scaled(int(pixel[0]), int(pixel[1]))
                 Pimax_Item = QtWidgets.QGraphicsPixmapItem(QtGui.QPixmap.fromImage(image_qt))
                 self.scene.addItem(Pimax_Item) 
-                self.GV_graph_fix.fitInView(Pimax_Item)
             elif k>=2:
                 if i <= round(k/2):        
                     image_qt = image_qt.scaled(int(pixel[0]/round(k/2)), int(pixel[1]/2))
@@ -96,4 +95,6 @@ if __name__ == "__main__":
         raise Exception("Missing phone number")
     window = Ui(main_path=main_path,
                 phone_number=phone_number)
+    # window = Ui(main_path=main_path,
+    #             phone_number="11")
     app.exec_()

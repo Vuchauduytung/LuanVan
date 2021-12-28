@@ -6,6 +6,7 @@ import sys
 import os
 from modules.library.IO_support import *
 from matplotlib.figure import Figure
+import matplotlib.pyplot as plt
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 import numpy as np
 
@@ -32,7 +33,36 @@ class Ui(QtWidgets.QMainWindow):
         self.setup_pushButton()
         self.setup_graph()
         self.icon()
+        self.setup_action()
         self.show()
+
+    def setup_action(self):
+        actionSave: QAction = self.findChild(QAction, "actionSave")
+        actionSave.triggered.connect(self.save_image)
+
+    def save_image(self):
+        filepath = self.get_saveFile_directory()
+        # Get region of scene to capture from somewhere.
+        area = self.scene.sceneRect()
+        # Create a QImage to render to and fix up a QPainter for it.
+        image = QImage(int(area.width()), int(area.height()), QImage.Format_ARGB32_Premultiplied)
+        painter = QPainter(image)
+        # Render the region of interest to the QImage.
+        self.scene.render(painter, area, area)
+        painter.end()
+        # Save the image to a file.
+        image.save(filepath)
+        
+
+    def get_saveFile_directory(self):
+        default_dir = os.path.abspath(os.path.join(self.main_path, "output"))
+        default_filename = os.path.join(default_dir, "graph.png")
+        filename, _ = QFileDialog.getSaveFileName(
+            self, "Save audio file", default_filename, "Excel Files (*.png)"
+        )
+        if filename:
+            print(filename)
+        return filename    
 
     def get_data(self):
         data_path = os.path.abspath(os.path.join(self.main_path, "data" ,"customers_data.json"))
@@ -56,25 +86,13 @@ class Ui(QtWidgets.QMainWindow):
     # Hien do thi giong GUI main
     def setup_graph(self):
         GV_graph: QGraphicsView = self.findChild(QGraphicsView, "GV_graph")
-        # data_path = os.path.abspath(os.path.join(self.main_path,"matlab_simulator", "data" ,"customers_data.json"))
-        # customer = json2dict(data_path)
-        # graph = customer["Data"]
-        # # Tinh tong gia tri trong json
-        # k = int(len(graph))
-        # # Tao list
-        # data_list_time = list(range(0,k))
-        # data_list_P = list(range(0,k))
-        # i = 0
-        # for graph[i] in graph:
-        #     data_list_time[i] =  customer["Data"][i]['time']
-        #     data_list_P[i] =  customer["Data"][i]['pmin_1']
-        #     i+=1
         # Ve do thi ap suat nen   
         self.scene = QtWidgets.QGraphicsScene(GV_graph)
         GV_graph.setScene(self.scene)
-        figure = Figure()
+        figure: Figure = Figure()
         axes = figure.gca()
-        axes.set_title("Do thi ap suat nen")
+        axes.set_title("Đồ thị áp suất xi lanh {num_xilanh}"\
+            .format(num_xilanh=self.num_xilanh))
         axes.plot(self.time_points, self.pres_points, "-k", label="Ap suat ")
         axes.legend()
         axes.grid(True)

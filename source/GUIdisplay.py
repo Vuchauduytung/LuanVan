@@ -9,6 +9,7 @@ from modules.library.IO_support import *
 from modules.library.Open_pdf import *
 from modules.library.compare import *
 import webbrowser
+from openpyxl import Workbook
 
 class Ui(QtWidgets.QMainWindow):
     """
@@ -29,8 +30,69 @@ class Ui(QtWidgets.QMainWindow):
         self.setup_lineEdit_diagnose()
         self.icon()
         self.show()
+        self.setup_action()
         self.GUIgraph_path = os.path.abspath(os.path.join(main_path, "source", "GUIgraph.py"))
+
+    def setup_action(self):
+        actionExport: QAction = self.findChild(QAction, "actionExport")
+        actionExport.triggered.connect(self.export_exel)
+
+    def export_exel(self):
+        data_path = os.path.abspath(os.path.join(self.main_path, "data", "customers_data.json"))
+        customers_list = json2dict(data_path)
+        for customer in customers_list:
+            if customer.get('phone_number') == self.phone_number:
+                break
+        else:
+            raise Exception("Cannot find customer with phone number \"{phone_number}\""\
+                .format(phone_number=self.phone_number))
+        TE_diagnose_1: QTextEdit = self.findChild(QTextEdit, "TE_diagnose_1")
+        TE_diagnose_2: QTextEdit = self.findChild(QTextEdit, "TE_diagnose_2")
+        TE_diagnose_3: QTextEdit = self.findChild(QTextEdit, "TE_diagnose_3")
+        TE_diagnose_4: QTextEdit = self.findChild(QTextEdit, "TE_diagnose_4")
+        wb = Workbook()
+        #When you make a new workbook you get a new blank active sheet
+        #We need to delete it since we do not want it
+        wb.remove(wb.active)
+        wb1 = wb.create_sheet(title="Data")
+        wb1.cell(1,1, "Khách hàng")
+        wb1.cell(2,1, "Mã VIN")
+        wb1.cell(3,1, "Biển số")
+        wb1.cell(4,1, "Số điện thoại")
+        wb1.cell(5,1, "Địa chỉ")
+        wb1.cell(6,1, "Ngày sửa chữa")
+        wb1.cell(7,1, "Hư hỏng")
+        wb1.cell(8,1, "Xilanh 1")
+        wb1.cell(9,1, "Xilanh 2")
+        wb1.cell(10,1, "Xilanh 3")
+        wb1.cell(11,1, "Xilanh 4")
+        wb1.cell(1,2, customer["name"])
+        wb1.cell(2,2, customer["VIN_code"])
+        wb1.cell(3,2, customer["number_plate"])
+        wb1.cell(4,2, customer["phone_number"])
+        wb1.cell(5,2, customer["address"])
+        wb1.cell(6,2, customer["fixing_date"])
+        wb1.cell(7,2, customer["damaged"])
+        wb1.cell(8,2, TE_diagnose_1.toPlainText())
+        wb1.cell(9,2, TE_diagnose_2.toPlainText())
+        wb1.cell(10,2, TE_diagnose_3.toPlainText())
+        wb1.cell(11,2, TE_diagnose_4.toPlainText())
+        wb1.cell(12,2, "Cố vấn dịch vụ")
+        wb1.cell(12,3, "phamthinh02@gmail.com")
+        #Save it to excel
+        filepath = self.get_saveFile_directory()
+        wb.save(filepath)
         
+    def get_saveFile_directory(self):
+        default_dir = os.path.abspath(os.path.join(self.main_path, "output"))
+        default_filename = os.path.join(default_dir, "customer.xls")
+        filename, _ = QFileDialog.getSaveFileName(
+            self, "Save audio file", default_filename, "Excel Files (*.xls)"
+        )
+        if filename:
+            print(filename)
+        return filename
+    
     def icon(self):
         self.setWindowIcon(QIcon('source\icon\Logo BK.png'))
         
@@ -124,7 +186,6 @@ class Ui(QtWidgets.QMainWindow):
                 .format(phone_number=self.phone_number))
         num_xilanh = 0
         for num_xilanh in range(1,5):
-            # num_xilanh +=1
             xilanh_str = "Xylanh_{}".format(num_xilanh)
             if customer[xilanh_str] == {}:
                 continue

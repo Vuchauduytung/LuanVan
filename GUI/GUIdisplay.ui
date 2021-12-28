@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1037</width>
-    <height>679</height>
+    <height>659</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -253,7 +253,7 @@
        <x>150</x>
        <y>191</y>
        <width>221</width>
-       <height>31</height>
+       <height>22</height>
       </rect>
      </property>
      <property name="font">
@@ -269,9 +269,9 @@
      <property name="geometry">
       <rect>
        <x>150</x>
-       <y>230</y>
+       <y>220</y>
        <width>221</width>
-       <height>22</height>
+       <height>32</height>
       </rect>
      </property>
      <property name="font">
@@ -766,25 +766,6 @@
      </property>
     </widget>
    </widget>
-   <widget class="QPushButton" name="BT_graph">
-    <property name="geometry">
-     <rect>
-      <x>390</x>
-      <y>580</y>
-      <width>93</width>
-      <height>28</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>Đồ thị</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="BT_fix">
     <property name="geometry">
      <rect>
@@ -807,10 +788,10 @@
    <widget class="QPushButton" name="BT_graph_fix">
     <property name="geometry">
      <rect>
-      <x>290</x>
-      <y>577</y>
+      <x>390</x>
+      <y>580</y>
       <width>93</width>
-      <height>31</height>
+      <height>28</height>
      </rect>
     </property>
     <property name="font">
@@ -861,8 +842,13 @@
     <addaction name="QA_actionSave"/>
     <addaction name="QA_actionSave_as"/>
     <addaction name="QA_actionPrint"/>
+    <addaction name="separator"/>
+    <addaction name="actionExport"/>
    </widget>
    <widget class="QMenu" name="menuView">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="title">
      <string>View</string>
     </property>
@@ -872,6 +858,12 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="QA_actionOpen">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>Open</string>
    </property>
@@ -894,6 +886,11 @@
   <action name="QA_actionPrint">
    <property name="text">
     <string>Print</string>
+   </property>
+  </action>
+  <action name="actionExport">
+   <property name="text">
+    <string>Export</string>
    </property>
   </action>
  </widget>

@@ -5,4 +5,4 @@ matplotlib
 asyncio
 asyncqt
 python-dotenv
-pandas
+openpyxl
