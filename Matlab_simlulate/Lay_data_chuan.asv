@@ -128,10 +128,10 @@ path_P_1 = fullfile(pwd,'..','output','Program','simulate-input','data_P_xilanh_
 path_T_1 = fullfile(pwd,'..','output','Program','simulate-input','data_T_xilanh_1.dat');
 path_P_2 = fullfile(pwd,'..','output','Program','simulate-input','data_P_xilanh_2.dat');
 path_T_2 = fullfile(pwd,'..','output','Program','simulate-input','data_T_xilanh_2.dat');
-path_P_3 = fullfile(pwd,'..','output','Program','simulate-input','data_P_xilanh_3.dat');
-path_T_3 = fullfile(pwd,'..','output','Program','simulate-input','data_T_xilanh_3.dat');
-path_P_4 = fullfile(pwd,'..','output','Program','simulate-input','data_P_xilanh_4.dat');
-path_T_4 = fullfile(pwd,'..','output','Program','simulate-input','data_T_xilanh_4.dat');
+path_P_1 = fullfile(pwd,'..','output','Program','simulate-input','data_P_xilanh_3.dat');
+path_T_1 = fullfile(pwd,'..','output','Program','simulate-input','data_T_xilanh_1.dat');
+path_P_2 = fullfile(pwd,'..','output','Program','simulate-input','data_P_xilanh_2.dat');
+path_T_2 = fullfile(pwd,'..','output','Program','simulate-input','data_T_xilanh_2.dat');
 % lay gia tri
 a = 0;
 ii = 0;
@@ -160,29 +160,3 @@ for ii=1:period
         
 end
 dlmwrite(path_T_2, data_T);
-% lay gia tri
-data_pmin = randn (721,1);
-period = length(pmin_c);
-for ii=1:period
-        data_pmin (ii,1) = pmin_c(ii);
-end
-dlmwrite(path_P_3, data_pmin);
-for ii=1:period
-        data_pmin (ii,1) = pmin_c(ii);
-end
-dlmwrite(path_P_4, data_pmin);
-
-data_T = randn (721,1);
-period = length(T_value_c);
-for ii=1:period
-        
-        data_T (ii,1) = T_value_c(ii);
-        
-end
-dlmwrite(path_T_3, data_T);
-for ii=1:period
-        
-        data_T (ii,1) = T_value_c(ii);
-        
-end
-dlmwrite(path_T_4, data_T);
