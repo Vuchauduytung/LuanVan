@@ -6,7 +6,6 @@ import sys
 import os
 from modules.library.IO_support import *
 from matplotlib.figure import Figure
-import matplotlib.pyplot as plt
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 import numpy as np
 
@@ -82,7 +81,7 @@ class Ui(QtWidgets.QMainWindow):
                                        num=len(self.pres_points))
         
     def icon(self):
-        self.setWindowIcon(QIcon('source\icon\Logo BK.png'))
+        self.setWindowIcon(QIcon('icon\Logo BK.png'))
     # Hien do thi giong GUI main
     def setup_graph(self):
         GV_graph: QGraphicsView = self.findChild(QGraphicsView, "GV_graph")
@@ -113,8 +112,7 @@ class Ui(QtWidgets.QMainWindow):
     
 
 if __name__ == "__main__":
-    path = os.path.abspath(os.path.dirname(__file__))
-    main_path = os.path.abspath(os.path.join(path, os.pardir))
+    main_path = os.path.abspath(os.path.dirname(__file__))
     app = QtWidgets.QApplication(sys.argv)
     if len(sys.argv) >= 3:
         phone_number = sys.argv[1]

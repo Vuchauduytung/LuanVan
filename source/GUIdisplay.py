@@ -31,7 +31,7 @@ class Ui(QtWidgets.QMainWindow):
         self.icon()
         self.show()
         self.setup_action()
-        self.GUIgraph_path = os.path.abspath(os.path.join(main_path, "source", "GUIgraph.py"))
+        self.GUIgraph_path = os.path.abspath(os.path.join(main_path, "GUIgraph.py"))
 
     def setup_action(self):
         actionExport: QAction = self.findChild(QAction, "actionExport")
@@ -94,7 +94,7 @@ class Ui(QtWidgets.QMainWindow):
         return filename
     
     def icon(self):
-        self.setWindowIcon(QIcon('source\icon\Logo BK.png'))
+        self.setWindowIcon(QIcon('icon\Logo BK.png'))
         
     def setup_lineEdit_information_custom(self):
         #Open json
@@ -139,10 +139,9 @@ class Ui(QtWidgets.QMainWindow):
         vin_num_product_2 = "".join(vin_num[:2])
         num_product = "".join(vin_num[11:])
         
-        data_vin = os.path.abspath(os.path.join(self.main_path, "source","library", "libary_VIN.json"))
+        data_vin = os.path.abspath(os.path.join(self.main_path, "library", "libary_VIN.json"))
         num_vin_data = json2dict(data_vin)
         # Doc ma vin
-        GB_car_number_VIN: QGroupBox = self.findChild(QGroupBox, "GB_car_number_VIN")
         LE_area: QLineEdit = self.findChild(QLineEdit, "LE_area")    
         LE_country: QLineEdit = self.findChild(QLineEdit, "LE_country")
         LE_car_model: QLineEdit = self.findChild(QLineEdit, "LE_car_model")
@@ -199,29 +198,18 @@ class Ui(QtWidgets.QMainWindow):
             Minimum_charge_pressure = customer[xilanh_str]["Minimum_charge_pressure"]
             P_compress_end=customer[xilanh_str]["compress_end"]
             
-            value_str, damage_c_str = compare_c(
-                        compression_pressure = compression_pressure ,
-                        Pmax = Pmax ,
-                        Pmin=minimum_pressure,
-                        Minimum_load_pressure = Minimum_load_pressure,
-                        minimum_pressure =minimum_pressure)
+            value_str, damage_c_str = compare_c(compression_pressure = compression_pressure,
+                                                Pmax = Pmax,
+                                                minimum_pressure =minimum_pressure)
             
-            value_in_str, damage_in_str = compare_in(
-                        compression_pressure = compression_pressure ,
-                        Pmax = Pmax ,
-                        P_in = P_in ,
-                        Minimum_load_pressure = Minimum_load_pressure,
-                        P_compress_end=P_compress_end,
-                        Minimum_charge_pressure=Minimum_charge_pressure)
+            value_in_str, damage_in_str = compare_in(P_in = P_in ,
+                                                     Minimum_load_pressure = Minimum_load_pressure,
+                                                     Minimum_charge_pressure=Minimum_charge_pressure)
             
-            value_out_str, damage_out_str = compare_out(
-                        compression_pressure = compression_pressure ,
-                        Pmax = Pmax ,
-                        P_out= P_out ,
-                        P_out_st=P_out_st,
-                        P_compress_end=P_compress_end,
-                        Minimum_load_pressure = Minimum_load_pressure,
-                        Minimum_charge_pressure=Minimum_charge_pressure)
+            value_out_str, damage_out_str = compare_out(P_out= P_out ,
+                                                        P_out_st=P_out_st,
+                                                        P_compress_end=P_compress_end,
+                                                        Minimum_charge_pressure=Minimum_charge_pressure)
             
             if value_str == "Bình thường" and value_in_str == "Bình thường":
                 assess_str = """
@@ -326,41 +314,76 @@ class Ui(QtWidgets.QMainWindow):
         BT_cancel.clicked.connect(self.BT_cancel_click)
         
     def BT_graph_fix_click(self):
-        file_data = os.path.abspath(os.path.join(self.main_path, "source", "GUIgraph_fix.py"))
-        os.system('python3 "{python_script}" \"{phone_number}\"'\
-            .format(python_script=file_data,
-                    phone_number=self.phone_number))
+        file_data = os.path.abspath(os.path.join(self.main_path, "GUIgraph_fix.py"))
+        try:
+            os.system('python3 "{python_script}" \"{phone_number}\"'\
+                .format(python_script=file_data,
+                        phone_number=self.phone_number))
+        except:
+            os.system('python "{python_script}" \"{phone_number}\"'\
+                .format(python_script=file_data,
+                        phone_number=self.phone_number))
         
     def BT_graph_click(self):
-        
-        file_data = os.path.abspath(os.path.join(self.main_path, "source", "GUIgraph_xylanh_1.py"))
-        os.system('python3 "{}"'.format(file_data))
-        file_data = os.path.abspath(os.path.join(self.main_path, "source", "GUIgraph_xylanh_2.py"))
-        os.system('python3 "{}"'.format(file_data))
-        file_data = os.path.abspath(os.path.join(self.main_path, "source", "GUIgraph_xylanh_3.py"))
-        os.system('python3 "{}"'.format(file_data))
-        file_data = os.path.abspath(os.path.join(self.main_path, "source", "GUIgraph_xylanh_4.py"))
-        os.system('python3 "{}"'.format(file_data))
+        try:
+            file_data = os.path.abspath(os.path.join(self.main_path, "GUIgraph_xylanh_1.py"))
+            os.system('python3 "{}"'.format(file_data))
+            file_data = os.path.abspath(os.path.join(self.main_path, "GUIgraph_xylanh_2.py"))
+            os.system('python3 "{}"'.format(file_data))
+            file_data = os.path.abspath(os.path.join(self.main_path, "GUIgraph_xylanh_3.py"))
+            os.system('python3 "{}"'.format(file_data))
+            file_data = os.path.abspath(os.path.join(self.main_path, "GUIgraph_xylanh_4.py"))
+            os.system('python3 "{}"'.format(file_data))
+        except:
+            file_data = os.path.abspath(os.path.join(self.main_path, "GUIgraph_xylanh_1.py"))
+            os.system('python "{}"'.format(file_data))
+            file_data = os.path.abspath(os.path.join(self.main_path, "GUIgraph_xylanh_2.py"))
+            os.system('python "{}"'.format(file_data))
+            file_data = os.path.abspath(os.path.join(self.main_path, "GUIgraph_xylanh_3.py"))
+            os.system('python "{}"'.format(file_data))
+            file_data = os.path.abspath(os.path.join(self.main_path, "GUIgraph_xylanh_4.py"))
+            os.system('python "{}"'.format(file_data))
 
     def BT_graph1_click(self):
-        os.system("python3 \"{python_script}\" \"{phone_number}\" 1 "\
-            .format(python_script=self.GUIgraph_path,
-                    phone_number=self.phone_number))
+        try:
+            os.system("python3 \"{python_script}\" \"{phone_number}\" 1 "\
+                .format(python_script=self.GUIgraph_path,
+                        phone_number=self.phone_number))
+        except:
+            os.system("python \"{python_script}\" \"{phone_number}\" 1 "\
+                .format(python_script=self.GUIgraph_path,
+                        phone_number=self.phone_number))
 
     def BT_graph2_click(self):
-        os.system("python3 \"{python_script}\" \"{phone_number}\" 2 "\
-            .format(python_script=self.GUIgraph_path,
-                    phone_number=self.phone_number))
+        try:
+            os.system("python3 \"{python_script}\" \"{phone_number}\" 2 "\
+                .format(python_script=self.GUIgraph_path,
+                        phone_number=self.phone_number))
+        except:
+            os.system("python \"{python_script}\" \"{phone_number}\" 2 "\
+                .format(python_script=self.GUIgraph_path,
+                        phone_number=self.phone_number))
     
     def BT_graph3_click(self):
-        os.system("python3 \"{python_script}\" \"{phone_number}\" 3 "\
-            .format(python_script=self.GUIgraph_path,
-                    phone_number=self.phone_number))
+        try:
+            os.system("python3 \"{python_script}\" \"{phone_number}\" 3 "\
+                .format(python_script=self.GUIgraph_path,
+                        phone_number=self.phone_number))
+        except:
+            os.system("python \"{python_script}\" \"{phone_number}\" 3 "\
+                .format(python_script=self.GUIgraph_path,
+                        phone_number=self.phone_number))
     
     def BT_graph4_click(self):
-        os.system("python3 \"{python_script}\" \"{phone_number}\" 4 "\
-            .format(python_script=self.GUIgraph_path,
-                    phone_number=self.phone_number))
+        try:
+            os.system("python3 \"{python_script}\" \"{phone_number}\" 4 "\
+                .format(python_script=self.GUIgraph_path,
+                        phone_number=self.phone_number))
+        except:
+            os.system("python \"{python_script}\" \"{phone_number}\" 4 "\
+                .format(python_script=self.GUIgraph_path,
+                        phone_number=self.phone_number))
+            
         
     def BT_fix_click(self):
         data_path = os.path.abspath(os.path.join(self.main_path, "data", "customers_data.json"))
@@ -375,9 +398,7 @@ class Ui(QtWidgets.QMainWindow):
         num_xilanh = 0
         for num_xilanh in range(0,4):
             num_xilanh +=1
-            
-            xilanh_str = "Xylanh_{}".format(num_xilanh)
-            
+            xilanh_str = "Xylanh_{}".format(num_xilanh)       
             Pmax = customer[xilanh_str]["Pmax"]
             compression_pressure = customer[xilanh_str]["compression_pressure"]
             Minimum_load_pressure = customer[xilanh_str]["Minimum_load_pressure"]
@@ -387,34 +408,19 @@ class Ui(QtWidgets.QMainWindow):
             P_out_st = customer[xilanh_str]["P_out_st"]
             Minimum_charge_pressure = customer[xilanh_str]["Minimum_charge_pressure"]
             P_compress_end=customer[xilanh_str]["compress_end"]
-            
-            value, path_open, path = open_c(
-                        main_path=self.main_path,
-                        compression_pressure = compression_pressure ,
-                        Pmax = Pmax ,
-                        Pmin=minimum_pressure,
-                        Minimum_load_pressure = Minimum_load_pressure,
-                        minimum_pressure =minimum_pressure)
-            
-            value_in, path_open_in, path_in = open_in(
-                        main_path=self.main_path,
-                        compression_pressure = compression_pressure ,
-                        Pmax = Pmax ,
-                        P_in = P_in ,
-                        Minimum_load_pressure = Minimum_load_pressure,
-                        P_compress_end=P_compress_end,
-                        Minimum_charge_pressure=Minimum_charge_pressure)
-            
-            value_out, path_open_out, path_out = open_out(
-                        main_path=self.main_path,
-                        compression_pressure = compression_pressure ,
-                        Pmax = Pmax ,
-                        P_out= P_out ,
-                        P_out_st=P_out_st,
-                        P_compress_end=P_compress_end,
-                        Minimum_load_pressure = Minimum_load_pressure,
-                        Minimum_charge_pressure=Minimum_charge_pressure)
-            
+            value, path_open, path = open_c(main_path=self.main_path,
+                                            compression_pressure = compression_pressure,
+                                            Pmax = Pmax,
+                                            minimum_pressure =minimum_pressure)
+            value_in, path_open_in, path_in = open_in(main_path=self.main_path,
+                                                      P_in = P_in ,
+                                                      Minimum_load_pressure = Minimum_load_pressure,
+                                                      Minimum_charge_pressure=Minimum_charge_pressure)
+            value_out, path_open_out, path_out = open_out(main_path=self.main_path,
+                                                         P_out= P_out ,
+                                                         P_out_st=P_out_st,
+                                                         P_compress_end=P_compress_end,
+                                                         Minimum_charge_pressure=Minimum_charge_pressure)
             if value =='Hư hỏng' and value_in == 'Hư hỏng'and value_out == 'Hư hỏng':
                 webbrowser.open_new(path_open)
                 webbrowser.open_new(path)
@@ -446,9 +452,9 @@ class Ui(QtWidgets.QMainWindow):
         self.close()
         QApplication.quit()
         
+        
 def main():
-    path = os.path.abspath(os.path.dirname(__file__))
-    main_path = os.path.abspath(os.path.join(path, os.pardir))
+    main_path = os.path.abspath(os.path.dirname(__file__))
     app = QtWidgets.QApplication(sys.argv)
     if len(sys.argv) > 1:
         phone_number = sys.argv[1]

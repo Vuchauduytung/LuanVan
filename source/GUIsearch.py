@@ -28,14 +28,14 @@ class Ui(QtWidgets.QMainWindow):
         self.show()
 
     def icon(self):
-        self.setWindowIcon(QIcon('source\icon\Logo BK.png'))
+        self.setWindowIcon(QIcon('icon\Logo BK.png'))
         
     def setup_lineEdit(self):
         LE_name_custom: QLineEdit = self.findChild(QLineEdit, "LE_name_custom")
         LE_phone_number: QLineEdit = self.findChild(QLineEdit, "LE_phone_number")
         LE_number_car: QLineEdit = self.findChild(QLineEdit, "LE_number_car")
         icon_path: str = os.path.abspath(os.path.join(
-            self.main_path, "source/icon", "exclamation_mark.png"))
+            self.main_path, "icon", "exclamation_mark.png"))
         icon = QIcon(icon_path)
         
         LE_name_custom.action = LE_name_custom.addAction(
@@ -93,10 +93,7 @@ class Ui(QtWidgets.QMainWindow):
         BT_cancel.clicked.connect(self.BT_quit_click)
         
     def BT_search_click(self):
-        LE_name_custom: QLineEdit = self.findChild(QLineEdit, "LE_name_custom")
         LE_phone_number: QLineEdit = self.findChild(QLineEdit, "LE_phone_number")
-        LE_number_car: QLineEdit = self.findChild(QLineEdit, "LE_number_car")
-        value = LE_phone_number
         #Open json
         data_path = os.path.abspath(os.path.join(self.main_path, "data", "customers_data.json"))
         customers = json2dict(data_path)
@@ -104,11 +101,16 @@ class Ui(QtWidgets.QMainWindow):
         for cus in customers:
             if cus.get('phone_number') == LE_phone_number.text():
                 phone_number = cus.get('phone_number')
-                file_data = os.path.abspath(os.path.join(self.main_path, "source", "GUIdisplay.py"))
+                file_data = os.path.abspath(os.path.join(self.main_path, "GUIdisplay.py"))
                 self.close()
-                os.system('python3 "{python_script}" "{phone_number}"'\
-                    .format(python_script=file_data,
-                            phone_number=phone_number))
+                try:
+                    os.system('python3 "{python_script}" "{phone_number}"'\
+                        .format(python_script=file_data,
+                                phone_number=phone_number))
+                except:
+                    os.system('python "{python_script}" "{phone_number}"'\
+                        .format(python_script=file_data,
+                                phone_number=phone_number))
                 break
         else :
             GB_informatin_custom: QGroupBox = self.findChild(QGroupBox, "GB_informatin_custom")
@@ -119,8 +121,7 @@ class Ui(QtWidgets.QMainWindow):
         self.close()
         
 if __name__ == "__main__":
-    path = os.path.abspath(os.path.dirname(__file__))
-    main_path = os.path.abspath(os.path.join(path, os.pardir))
+    main_path = os.path.abspath(os.path.dirname(__file__))
     app = QtWidgets.QApplication(sys.argv)
     window = Ui(main_path=main_path)
     app.exec_()

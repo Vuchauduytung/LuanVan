@@ -25,7 +25,7 @@ class Ui(QtWidgets.QMainWindow):
         self.show()
 
     def icon(self):
-        self.setWindowIcon(QIcon('source\icon\Logo BK.png'))
+        self.setWindowIcon(QIcon('icon\Logo BK.png'))
         
     def setup_pushButton_cus(self):
         # GB_informatin_custom QGroupBox
@@ -38,19 +38,28 @@ class Ui(QtWidgets.QMainWindow):
         BT_cancel.clicked.connect(self.search_custom)
                     
     def custom_new(self):
-        direct_path = os.path.abspath(os.path.join(self.main_path, "source", "GUIinput.py"))
-        os.system("python3 \"{path}\""\
-            .format(path=direct_path))
+        direct_path = os.path.abspath(os.path.join(self.main_path, "GUIinput.py"))
+        try:
+            os.system("python3 \"{path}\""\
+                .format(path=direct_path))
+        except:
+            os.system("python \"{path}\""\
+                .format(path=direct_path))
         
     def search_custom(self):
-        direct_path = os.path.abspath(os.path.join(self.main_path, "source", "GUIsearch.py"))
-        os.system("python3 \"{path}\""\
-            .format(path=direct_path))
+        direct_path = os.path.abspath(os.path.join(self.main_path, "GUIsearch.py"))
+        try:
+            os.system("python3 \"{path}\""\
+                .format(path=direct_path))
+        except:
+            os.system("python \"{path}\""\
+                .format(path=direct_path))
         
         
         
 if __name__ == "__main__":
-    main_path = os.path.abspath(os.path.dirname(__file__))
+    path = os.path.abspath(os.path.dirname(__file__))
+    main_path = os.path.abspath(os.path.join(path, "source"))
     app = QtWidgets.QApplication(sys.argv)
     window = Ui(main_path=main_path)
     app.exec_()

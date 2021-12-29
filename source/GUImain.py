@@ -1,4 +1,4 @@
-from PyQt5 import QtWidgets, uic, QtGui
+from PyQt5 import QtWidgets, uic
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
@@ -42,7 +42,7 @@ class Ui(QtWidgets.QMainWindow):
         self.show()
 
     def icon(self):
-        self.setWindowIcon(QIcon('source\icon\Logo BK.png'))
+        self.setWindowIcon(QIcon('icon\Logo BK.png'))
         
     def encode_images(self):
         images = []
@@ -61,7 +61,7 @@ class Ui(QtWidgets.QMainWindow):
         LE_xup_cor: QLineEdit = self.findChild(QLineEdit, "LE_xup_cor")
         LE_air_press: QLineEdit = self.findChild(QLineEdit, "LE_air_press")
         icon_path: str = os.path.abspath(os.path.join(
-            self.main_path, "source/icon", "exclamation_mark.png"))
+            self.main_path, "icon", "exclamation_mark.png"))
         icon = QIcon(icon_path)
         LE_extTem.action = LE_extTem.addAction(
             icon, LE_extTem.TrailingPosition)
@@ -185,12 +185,12 @@ class Ui(QtWidgets.QMainWindow):
         if all([LE.text() != "" for LE in math_para_lst]):
             try:
                 n, dynamic_compression_ratio , temperature_F, compression_pressure = caculate(extTem=float(LE_extTem.text()),
-                                                                                                   comp_rat=float(LE_comp_rat.text()),
-                                                                                                   piston_jour=float(LE_piston_jour.text()),
-                                                                                                   cyl_dm=float(LE_cyl_dm.text()),
-                                                                                                   rod_len=float(LE_rod_len.text()),
-                                                                                                   xup_cor=float(LE_xup_cor.text()),
-                                                                                                   air_press=float(LE_air_press.text()))
+                                                                                              comp_rat=float(LE_comp_rat.text()),
+                                                                                              piston_jour=float(LE_piston_jour.text()),
+                                                                                              cyl_dm=float(LE_cyl_dm.text()),
+                                                                                              rod_len=float(LE_rod_len.text()),
+                                                                                              xup_cor=float(LE_xup_cor.text()),
+                                                                                              air_press=float(LE_air_press.text()))
                 
                 for lineEdit in math_para_lst:
                     lineEdit.setReadOnly(True)
@@ -207,8 +207,7 @@ class Ui(QtWidgets.QMainWindow):
                 LE_n.setText(str(round(n,4)))
                 LE_dym_comp_rat.setText(str(round(dynamic_compression_ratio,4)))
                 LE_Comp_temp_F.setText(str(round(temperature_F,4)))
-                LE_Compression.setText(str(round(compression_pressure,4)))
-                
+                LE_Compression.setText(str(round(compression_pressure,4)))    
         else:
             GB_foreseen.label_warning.setText("Vui lòng điền đầy đủ thông tin")
             GB_foreseen.label_warning.setVisible(True)
@@ -379,7 +378,6 @@ class Ui(QtWidgets.QMainWindow):
         TW_table: QTableWidget = self.findChild(QTableWidget, "TW_table")
         
         P_compress, P_load, P_charge_start = self.pressure_val[num_xilanh]["compress"], self.pressure_val[num_xilanh]["load"], self.pressure_val[num_xilanh]["charge_start"]
-        P_charge_end, P_compress_end = self.pressure_val[num_xilanh]["charge_end"], self.pressure_val[num_xilanh]["compress_end"]
         T_compress=self.pressure_val[num_xilanh]["T_compress"]
         
         diff_ratio = abs((P_compress/theory_compress_pressure-1)*100)
@@ -394,39 +392,22 @@ class Ui(QtWidgets.QMainWindow):
             state_str = "Bình thường"
         else:
             state_str = "Hư hỏng"
-            LE_extTem: QLineEdit = self.findChild(QLineEdit, "LE_extTem")
             LE_comp_rat: QLineEdit = self.findChild(QLineEdit, "LE_comp_rat")
-            LE_piston_jour: QLineEdit = self.findChild(QLineEdit, "LE_piston_jour")
-            LE_cyl_dm: QLineEdit = self.findChild(QLineEdit, "LE_cyl_dm")
-            LE_rod_len: QLineEdit = self.findChild(QLineEdit, "LE_rod_len")
-            LE_xup_cor: QLineEdit = self.findChild(QLineEdit, "LE_xup_cor")
             LE_air_press: QLineEdit = self.findChild(QLineEdit, "LE_air_press")
-            Temperature = float(LE_extTem.text())
             comp_rat = float(LE_comp_rat.text())
-            piston_jour = float(LE_piston_jour.text())
-            cyl_dm = float(LE_cyl_dm.text())
-            rod_len = float(LE_rod_len.text())
-            xup_cor = float(LE_xup_cor.text())
             load_pressure = float(LE_air_press.text())
             pressure = self.pressure_val[num_xilanh]
             damage_str = damage(comp_rat=comp_rat,
-                                piston_jour=piston_jour,
-                                cyl_dm=cyl_dm,
-                                rod_len=rod_len,
-                                xup_cor=xup_cor,
-                                air_press=load_pressure,
                                 Pci=pressure["compress"],
-                                compression_pressure=compression_pressure,
-                                Temperature=Temperature)
+                                compression_pressure=compression_pressure)
             
             damage_in_str = damage_in(P_in=pressure["load"],
-                                      P_compress_end = pressure["compress_end"],
                                       load_pressure=load_pressure)
             
             damage_out_str = damage_out(P_out=pressure["charge_end"],
                                         P_out_st=pressure["charge_start"],
                                         P_compress_end = pressure["compress_end"],
-                                      load_pressure=load_pressure)
+                                        load_pressure=load_pressure)
             
             assess_str = """
             <h3>Đánh gía hư hỏng:</h3>
@@ -475,7 +456,7 @@ class Ui(QtWidgets.QMainWindow):
             .format(num=num_xilanh))
         chart = W_graph_xilanh.chart
         axe = W_graph_xilanh.chart.ax
-        def clear(status):
+        def clear():
             self.clear_table_row(row=num_xilanh-1)
             BT_measure_xylanh.setEnabled(True)
             TE_diagnoses_xilanh.setHtml("")
@@ -558,16 +539,6 @@ class Ui(QtWidgets.QMainWindow):
                             .format(num=self.num))
             self.draw()  
 
-        # def setup_data(self):
-        #     data_path = os.path.abspath(os.path.join(self.main_path,"Mô phỏng Matlab","data"))
-        #     engine_path = os.path.abspath(os.path.join(data_path, 'data_P.dat'))
-        #     self.engine_data = dat2numpy(direct_path=engine_path)
-            
-        # def setup_data_T(self):
-        #     data_path_T = os.path.abspath(os.path.join(self.main_path,"Mô phỏng Matlab","data"))
-        #     engine_path_T = os.path.abspath(os.path.join(data_path_T, 'data_T.dat'))
-        #     self.engine_data_T = dat2numpy(direct_path=engine_path_T)
-
         def caculate_temperature(self, epoch: int, data_points: np.array):
             for i in range(epoch):
                 try:
@@ -626,9 +597,7 @@ class Ui(QtWidgets.QMainWindow):
             return line.get_ydata()
 
 def main():
-    path = os.path.abspath(os.path.dirname(__file__))
-    main_path = os.path.abspath(os.path.join(path, os.pardir))
-
+    main_path = os.path.abspath(os.path.dirname(__file__))
     app = QApplication(sys.argv)
     loop = QEventLoop(app)
     asyncio.set_event_loop(loop)

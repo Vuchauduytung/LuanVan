@@ -11,7 +11,7 @@ def caculate_n(Temperature, Compression_ratio):
     return n
 
 
-def dynamic_compression_ratio_caculate(Piston_journey, Late_closing_angle, Connecting_rod_length, Compression_ratio, Cylinder_diameter, load_pressure, Temperature):
+def dynamic_compression_ratio_caculate(Piston_journey, Late_closing_angle, Connecting_rod_length, Compression_ratio, Cylinder_diameter):
     SE = (Piston_journey*(1 + math.cos((Late_closing_angle*math.pi)/180))/2) + Connecting_rod_length - \
         math.sqrt((Connecting_rod_length**2)+((Piston_journey *
                   math.sin((Late_closing_angle*math.pi)/180))**2)/4)
@@ -22,8 +22,7 @@ def dynamic_compression_ratio_caculate(Piston_journey, Late_closing_angle, Conne
     return Dynamic_compression_ratio
 
 
-def volume_caculate(Piston_journey, Late_closing_angle, Connecting_rod_length, Compression_ratio, Cylinder_diameter, load_pressure, Temperature):
-    Cylinder_pressure = load_pressure*0.98
+def volume_caculate(Piston_journey, Late_closing_angle, Connecting_rod_length, Compression_ratio, Cylinder_diameter):
     SE = (Piston_journey*(1 + math.cos((Late_closing_angle*math.pi)/180))/2) + Connecting_rod_length - \
         math.sqrt((Connecting_rod_length**2)+((Piston_journey *
                   math.sin((Late_closing_angle*math.pi)/180))**2)/4)
@@ -32,8 +31,6 @@ def volume_caculate(Piston_journey, Late_closing_angle, Connecting_rod_length, C
         (Cylinder_diameter**2)*Piston_journey
     Dynamic_compression_ratio = (Ve+Vc)/Vc
     Volume = (Dynamic_compression_ratio*Vc-Vc)/10**6
-    n_dynamic = (Temperature/(Temperature+20))*(Dynamic_compression_ratio /
-                                                (Dynamic_compression_ratio-1))*(Cylinder_pressure/load_pressure)
     return Volume
 
 
@@ -61,7 +58,6 @@ def Analysis(Temperature, Dynamic_compression_ratio, n, load_pressure, Volume, n
     temperature_C = temperature_F-273
     Compression_wattage = (((load_pressure*0.96)*10**5)
                             * 0.000145)*Dynamic_compression_ratio**n0
-
     return compression_pressure, temperature_C, temperature_F, Compression_wattage
 
 
@@ -83,22 +79,16 @@ def caculate(extTem, comp_rat, piston_jour, cyl_dm, rod_len, xup_cor, air_press)
     n = caculate_n(Temperature=Temperature,
                    Compression_ratio=comp_rat)
     load_pressure = air_press
-          
     dynamic_compression_ratio = dynamic_compression_ratio_caculate(Piston_journey=piston_jour,
-                                                            Late_closing_angle=xup_cor,
-                                                            Connecting_rod_length=rod_len,
-                                                            Compression_ratio=comp_rat,
-                                                            Cylinder_diameter=cyl_dm,
-                                                            load_pressure=air_press,
-                                                            Temperature=Temperature)
-    
+                                                                  Late_closing_angle=xup_cor,
+                                                                  Connecting_rod_length=rod_len,
+                                                                  Compression_ratio=comp_rat,
+                                                                  Cylinder_diameter=cyl_dm)
     Volume = volume_caculate(Piston_journey=piston_jour,
-                    Late_closing_angle=xup_cor,
-                    Connecting_rod_length=rod_len,
-                    Compression_ratio=comp_rat,
-                    Cylinder_diameter=cyl_dm,
-                    load_pressure=air_press,
-                    Temperature=Temperature)
+                             Late_closing_angle=xup_cor,
+                             Connecting_rod_length=rod_len,
+                             Compression_ratio=comp_rat,
+                             Cylinder_diameter=cyl_dm)
     n_dynamic = n_dynamic_caculate(Piston_journey=piston_jour,
                                    Late_closing_angle=xup_cor,
                                    Connecting_rod_length=rod_len,
@@ -106,20 +96,18 @@ def caculate(extTem, comp_rat, piston_jour, cyl_dm, rod_len, xup_cor, air_press)
                                    Cylinder_diameter=cyl_dm,
                                    load_pressure=air_press,
                                    Temperature=Temperature)
-    compression_pressure, temperature_F, temperature_C, Compression_wattage = Analysis(Temperature=Temperature,
-                                                                                       Dynamic_compression_ratio=dynamic_compression_ratio,
-                                                                                       n=n,
-                                                                                       load_pressure=load_pressure,
-                                                                                       Volume=Volume,
-                                                                                       n_dynamic=n_dynamic)
+    _, temperature_F, _, Compression_wattage = Analysis(Temperature=Temperature,
+                                                        Dynamic_compression_ratio=dynamic_compression_ratio,
+                                                        n=n,
+                                                        load_pressure=load_pressure,
+                                                        Volume=Volume,
+                                                        n_dynamic=n_dynamic)
     return n, dynamic_compression_ratio , temperature_F, Compression_wattage
 
 def check_state(air_press: float, reality_pressure: dict, compression_pressure: float):
     Pmax = reality_pressure["compress"]
     P_out = reality_pressure["charge_end"]
     P_in = reality_pressure["load"]
-    P_out_st = reality_pressure["charge_start"]
-    P_max_end = reality_pressure["compress_end"]
     Minimum_pressure_load = minimum_pressure_load(load_pressure=air_press)
     pressure_discharg_caculate = pressure_discharge(load_pressure=air_press)
     if 0.8*compression_pressure <= Pmax <= compression_pressure*1.1 and 0.8*pressure_discharg_caculate <= P_out <= pressure_discharg_caculate*1.1 and 1.1*Minimum_pressure_load <= P_in <= Minimum_pressure_load*0.8:
@@ -127,14 +115,7 @@ def check_state(air_press: float, reality_pressure: dict, compression_pressure: 
     else:
         return False
 
-def damage(comp_rat, piston_jour, cyl_dm, rod_len, xup_cor, air_press, Pci, compression_pressure, Temperature):
-    Dynamic_compression_ratio = dynamic_compression_ratio_caculate(Piston_journey=piston_jour,
-                                                          Late_closing_angle=xup_cor,
-                                                          Connecting_rod_length=rod_len,
-                                                          Compression_ratio=comp_rat,
-                                                          Cylinder_diameter=cyl_dm,
-                                                          load_pressure=air_press,
-                                                          Temperature=Temperature)
+def damage(comp_rat, Pci, compression_pressure):
     Minimum_pressure = 14.7*comp_rat + 14.7 + 5
     if 0.9*compression_pressure <= Pci <= compression_pressure*1.1:
         damage_c ='Áp suất nén bình thường'
@@ -152,14 +133,11 @@ def damage(comp_rat, piston_jour, cyl_dm, rod_len, xup_cor, air_press, Pci, comp
         damage_c = 'Các xy lanh mòn không đều.'
     return damage_c
 
-def damage_out( P_out,
-                P_out_st,
-                P_compress_end,
-                load_pressure):
-    
-    
+def damage_out(P_out,
+               P_out_st,
+               P_compress_end,
+               load_pressure):
     discharge = pressure_discharge(load_pressure=load_pressure)
-    
     if P_out_st > 5*discharge:
         damage_out = "Kẹt xupap xả"
     elif 0.62*discharge < P_out < 0.8*discharge:
@@ -174,9 +152,8 @@ def damage_out( P_out,
         damage_out = "Cam mở sai thời điểm."
     return damage_out
 
-def damage_in( P_in,
-              P_compress_end ,
-            load_pressure):
+def damage_in(P_in,
+              load_pressure):
     Minimum_pressure_load = (((-load_pressure*0.98)*10**5)
                              *0.000145)
     discharge = (((load_pressure*0.96)*10**5)

@@ -26,7 +26,7 @@ class Ui(QtWidgets.QMainWindow):
         self.show()
     
     def icon(self):
-        self.setWindowIcon(QIcon('source\icon\Logo BK.png'))
+        self.setWindowIcon(QIcon('icon\Logo BK.png'))
         
     def setup_pushButton(self):
         # GB_informatin_custom QGroupBox
@@ -35,7 +35,6 @@ class Ui(QtWidgets.QMainWindow):
     
     def setup_graph(self):
         #Luu gia tri vao file json
-        GV_graph_fix: QGraphicsView = self.findChild(QGraphicsView, "GV_graph_fix")
         data_path = os.path.abspath(os.path.join(self.main_path, "data", "customers_data.json"))
         customers_list = json2dict(data_path)
         for customer in customers_list:
@@ -86,8 +85,7 @@ class Ui(QtWidgets.QMainWindow):
     
 
 if __name__ == "__main__":
-    path = os.path.abspath(os.path.dirname(__file__))
-    main_path = os.path.abspath(os.path.join(path, os.pardir))
+    main_path = os.path.abspath(os.path.dirname(__file__))
     app = QtWidgets.QApplication(sys.argv)
     if len(sys.argv) > 1:
         phone_number = sys.argv[1]

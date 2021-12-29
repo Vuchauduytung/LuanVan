@@ -29,7 +29,7 @@ class Ui(QtWidgets.QMainWindow):
         self.show()
     
     def icon(self):
-        self.setWindowIcon(QIcon('source\icon\Logo BK.png'))
+        self.setWindowIcon(QIcon('icon\Logo BK.png'))
     # Điền lineEdit    
     def setup_lineEdit(self):
         LE_customer_name: QLineEdit = self.findChild(QLineEdit, "LE_customer_name")
@@ -39,7 +39,7 @@ class Ui(QtWidgets.QMainWindow):
         LE_address: QLineEdit = self.findChild(QLineEdit, "LE_address")
         LE_fixing_date: QLineEdit = self.findChild(QLineEdit, "LE_fixing_date")
         icon_path: str = os.path.abspath(os.path.join(
-            self.main_path, "source/icon", "exclamation_mark.png"))
+            self.main_path, "icon", "exclamation_mark.png"))
         icon = QIcon(icon_path)
         
         LE_customer_name.action = LE_customer_name.addAction(
@@ -154,13 +154,6 @@ class Ui(QtWidgets.QMainWindow):
                     self.scene.addItem(Pimax_Item)
                     Pimax_Item.setOffset(pos_2[0], pos_2[1])
                     pos_2[0] += (pixel[0]+5)/(k-round(k/2))
-        # for img_path in self.images_source:
-        #     str_code = img2str(direct_path=img_path)
-        #     self.images += [str_code]
-        # data_graph = {'graphic':self.images_source}
-        # data_path = os.path.abspath(os.path.join(self.main_path, "data", "data_grap.json"))
-        # with open(data_path, 'w') as outfile:
-        #     json.dump(data_graph, outfile, sort_keys=True, indent=4)
         
                     
     # Nút xác nhận    
@@ -204,11 +197,17 @@ class Ui(QtWidgets.QMainWindow):
                     "images_source": self.images_source
                 }
                 window.close()
-                file_data = os.path.abspath(os.path.join(self.main_path, "source", "GUImain.py"))
-                os.system("python3 \"{python_script}\" \"{cus_data}\" {simulate_data}"\
-                    .format(python_script=file_data,
-                            cus_data=json.dumps(data_cus).replace('"', "'"),
-                            simulate_data=" ".join(self.simulate_data)))
+                file_data = os.path.abspath(os.path.join(self.main_path, "GUImain.py"))
+                try:
+                    os.system("python3 \"{python_script}\" \"{cus_data}\" {simulate_data}"\
+                        .format(python_script=file_data,
+                                cus_data=json.dumps(data_cus).replace('"', "'"),
+                                simulate_data=" ".join(self.simulate_data)))
+                except:
+                    os.system("python \"{python_script}\" \"{cus_data}\" {simulate_data}"\
+                        .format(python_script=file_data,
+                                cus_data=json.dumps(data_cus).replace('"', "'"),
+                                simulate_data=" ".join(self.simulate_data)))
 
         else:
             GB_customer_information: QGroupBox = self.findChild(QGroupBox, "GB_customer_information")
@@ -220,8 +219,7 @@ class Ui(QtWidgets.QMainWindow):
         window.close()
         
 if __name__ == "__main__":
-    path = os.path.abspath(os.path.dirname(__file__))
-    main_path = os.path.abspath(os.path.join(path, os.pardir))
+    main_path = os.path.abspath(os.path.dirname(__file__))
     dotenv_path = os.path.abspath(os.path.join(main_path, "config", "simulate.env"))
     load_dotenv(dotenv_path=dotenv_path)
     app = QtWidgets.QApplication(sys.argv)
