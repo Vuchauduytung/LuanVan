@@ -55,16 +55,10 @@ def Analysis(Temperature, Dynamic_compression_ratio, n, load_pressure, Volume, n
                            (Temperature+20)*((Volume**(n0-1))-1))/((n0-1)*Temperature) * 1000
     temperature_F = (((Temperature-273+20)) * \
         Dynamic_compression_ratio**(n0-1))+273
-<<<<<<< HEAD
     temperature_C = temperature_F
     Compression_wattage = (((load_pressure*0.948)*10**5)
                             * 0.00001)*Dynamic_compression_ratio**n0
 
-=======
-    temperature_C = temperature_F-273
-    Compression_wattage = (((load_pressure*0.96)*10**5)
-                            * 0.000145)*Dynamic_compression_ratio**n0
->>>>>>> a93e8137d591719a21b858b5e906395a0125dd84
     return compression_pressure, temperature_C, temperature_F, Compression_wattage
 
 
