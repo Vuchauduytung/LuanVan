@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>HCMUT</class>
+ <widget class="QWidget" name="HCMUT">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>595</width>
+    <height>314</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>HCMUT - Ho Chi Minh City University of Technology</string>
+  </property>
+  <widget class="QGroupBox" name="GB_BK">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>571</width>
+     <height>291</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="title">
+    <string>Chương trình chẩn đoán áp suất tức thời không đánh lửa</string>
+   </property>
+   <widget class="QPushButton" name="BT_custom_new">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>70</y>
+      <width>481</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Dữ liệu khách hàng mới</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="BT_search_custom">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>170</y>
+      <width>481</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Tra dữ liệu khách hàng </string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
