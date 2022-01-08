@@ -89,16 +89,16 @@ nv=(v/(T))*(ed/(ed-1))*(Pa/Po);
 disp('n= ');
 disp(n0) 
 Lc = (Po*Vh1*nv*T*((Vh1^(n0-1))-1))/((n0-1)*v);
-Tc=T*ed^(n0-1);
-Tz=Tc-273;
+Tz=(T-273)*ed^(n0-1);
+Tc=Tz+273;
 Pc=((Pa*10^5)*0.000145)*ed^n0;
 disp('Ap suat truoc xuppap: Pa= ')
 disp(Pa);
 disp('Lc = ')
 disp(Lc*1000);
 disp('Tc = ')
-disp(Tc);
 disp(Tz);
+disp(Tc);
 disp('Pc = ')
 disp(Pc);
 else 
