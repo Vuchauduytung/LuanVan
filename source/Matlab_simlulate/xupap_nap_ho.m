@@ -10,7 +10,8 @@ nv=(v/(T))*(ed/(ed-1))*(Pa/Po);
 Pc_1=((Pa*10^5)*0.000145)*ed^n0*0.7;
 disp('Pc loi = ')
 disp(Pc_1);
-Tz=(T-273)*ed^(n0-1)*0.8;
+Tc=(T-273)*ed^(n0-1)*0.7;
+Tz =Tc +273;
 disp('Tc loi = ')
 disp(Tz)
 %do thi ap suat 
