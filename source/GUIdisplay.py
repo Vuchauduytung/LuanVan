@@ -94,7 +94,8 @@ class Ui(QtWidgets.QMainWindow):
         return filename
     
     def icon(self):
-        self.setWindowIcon(QIcon('icon\Logo BK.png'))
+        icon_path = os.path.abspath(os.path.join(self.main_path, "icon","Logo BK.png"))
+        self.setWindowIcon(QIcon(icon_path))
         
     def setup_lineEdit_information_custom(self):
         #Open json

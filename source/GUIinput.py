@@ -29,7 +29,8 @@ class Ui(QtWidgets.QMainWindow):
         self.show()
     
     def icon(self):
-        self.setWindowIcon(QIcon('icon\Logo BK.png'))
+        icon_path = os.path.abspath(os.path.join(self.main_path, "icon","Logo BK.png"))
+        self.setWindowIcon(QIcon(icon_path))
     # Điền lineEdit    
     def setup_lineEdit(self):
         LE_customer_name: QLineEdit = self.findChild(QLineEdit, "LE_customer_name")

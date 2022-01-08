@@ -81,7 +81,8 @@ class Ui(QtWidgets.QMainWindow):
                                        num=len(self.pres_points))
         
     def icon(self):
-        self.setWindowIcon(QIcon('icon\Logo BK.png'))
+        icon_path = os.path.abspath(os.path.join(self.main_path, "icon","Logo BK.png"))
+        self.setWindowIcon(QIcon(icon_path))
     # Hien do thi giong GUI main
     def setup_graph(self):
         GV_graph: QGraphicsView = self.findChild(QGraphicsView, "GV_graph")
