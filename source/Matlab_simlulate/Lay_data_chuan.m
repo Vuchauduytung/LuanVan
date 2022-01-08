@@ -7,8 +7,8 @@ n0 = (8.314/(19.806+0.002095*T*(ed^(p-1)+1))+1) ;
 Vh1=(ed*Vc-Vc)/10^6;
 nv=(v/(T))*(ed/(ed-1))*(Pa/Po);
 Lc = (Po*Vh1*nv*T*((Vh1^(n0-1))-1))/((n0-1)*v);
-Tc=T*ed^(n0-1);
-Tz=Tc-273;
+Tc=(T-273)*ed^(n0-1);
+Tz=Tc+273;
 mS=zeros(1,721);
 uk=S;
 %ki nap
@@ -144,7 +144,6 @@ path_T_3 = fullfile(pwd,'..','simulate-input','data_T_xilanh_3.dat');
 path_P_4 = fullfile(pwd,'..','simulate-input','data_P_xilanh_4.dat');
 path_T_4 = fullfile(pwd,'..','simulate-input','data_T_xilanh_4.dat');
 % lay gia tri
-a = 0;
 ii = 0;
 data_pmin = randn (721,1);
 period = length(pmin_c);
@@ -197,3 +196,25 @@ for ii=1:period
         
 end
 dlmwrite(path_T_4, data_T);
+% Ve do thi
+time = input('Nhap thoi gian:');
+time_step =time*2;
+a = 0;
+p_v = zeros(1,time_step*period);
+d = zeros(1,time_step*period);
+for a = 1:period:time_step*period
+    for ii = 1:period
+        d (ii+a) = (ii+a)/period/2;
+        p_v (ii+a) = pmin_c(ii);
+    end
+end
+figure;
+ axis([0    max(d)   min(pmin_c)-20     max(pmin_c)+20]);
+ hold on
+ plot(d,p_v,'-');
+ grid on;
+ box on;
+ legend ('Duong ap suat chuan')
+ xlabel('Chu trinh');
+ ylabel('P (psi)');
+ title('Do thi ');
