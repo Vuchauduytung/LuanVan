@@ -1,14 +1,5 @@
-<<<<<<< HEAD:Matlab_simlulate/Lay_data_loi_xilanh_4.m
-time = input('Thoi gian do: ');
-for i=0:time
-    pause(1);
-end
-path_P_l = fullfile(pwd,'..','output','Program','simulate-input','data_P_xilanh_4.dat');
-path_T_l = fullfile(pwd,'..','output','Program','simulate-input','data_T_xilanh_4.dat');
-=======
 path_P_l = fullfile(pwd,'..','simulate-input','data_P_xilanh_4.dat');
 path_T_l = fullfile(pwd,'..','simulate-input','data_T_xilanh_4.dat');
->>>>>>> a93e8137d591719a21b858b5e906395a0125dd84:build/Linux/dist/chuongtrinhchandoan/source/Matlab_simlulate/Lay_data_loi_xilanh_4.m
 % lay gia tri
 a = 0;
 ii = 0;
