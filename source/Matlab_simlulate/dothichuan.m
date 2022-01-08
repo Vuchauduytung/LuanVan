@@ -98,7 +98,7 @@ disp('Lc = ')
 disp(Lc*1000);
 disp('Tc = ')
 disp(Tc);
-disp(Tz);
+disp(Tz+273);
 disp('Pc = ')
 disp(Pc);
 else 

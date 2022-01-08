@@ -8,7 +8,7 @@ Vh1=(ed*Vc-Vc)/10^6;
 nv=(v/(T))*(ed/(ed-1))*(Pa/Po);
 Lc = (Po*Vh1*nv*T*((Vh1^(n0-1))-1))/((n0-1)*v);
 Tc=(T-273)*ed^(n0-1);
-Tz=Tc+273;
+Tz=Tc;
 mS=zeros(1,721);
 uk=S;
 %ki nap
