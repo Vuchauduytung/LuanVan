@@ -89,14 +89,14 @@ nv=(v/(T))*(ed/(ed-1))*(Pa/Po);
 disp('n= ');
 disp(n0) 
 Lc = (Po*Vh1*nv*T*((Vh1^(n0-1))-1))/((n0-1)*v);
-Tc=T*ed^(n0-1);
-Tz=Tc-273;
+Tc=(T-273)*ed^(n0-1);
+Tz=Tc+273;
 Pc=((Pa*10^5)*0.000145)*ed^n0;
 disp('Ap suat truoc xuppap: Pa= ')
 disp(Pa);
 disp('Lc = ')
 disp(Lc*1000);
-disp('Tc = ')
+disp('T = ')
 disp(Tc);
 disp(Tz);
 disp('Pc = ')
@@ -152,7 +152,7 @@ for k = 1:19999;
         ed1 = (Ve1+Vc1)/Vc1;
         n01 = (8.314/(19.806+0.002095*T*(ed1^(p-1)+1))+1) ;
         pmin(k)=((Pa*10^5)*0.000145)*ed1^n01;
-        T_value(k)=(Tz*((abs(pmin(k))/Pc)))+273;
+        T_value(k)=(Tc*((abs(pmin(k))/Pc)))+273;
 end
 for k = 20000:47999;
     if k == 20000;
@@ -171,7 +171,7 @@ for k = 20000:47999;
         n01 = (8.314/(19.806+0.002095*T*(ed1^(p-1)+1))+1);
         pmin(k)=pmin(20000)-P_min+((Pa*10^5)*0.000145)*ed1^n01;
     end
-    T_value(k)=(Tz*((abs(pmin(k))/Pc)))+273;
+    T_value(k)=(Tc*((abs(pmin(k))/Pc)))+273;
 end
 for k = 48000:180999;
         SE1 = ((0*(1+cosd(A))/2)+L-sqrt((L^2)+((0*sind(A))^2)/4));
@@ -180,11 +180,11 @@ for k = 48000:180999;
         ed1 = (Ve1+Vc1)/Vc1;
         n01 = (8.314/(19.806+0.002095*T*(ed1^(p-1)+1))+1) ;
         pmin(k)=((Pn*10^5)*0.000145)*ed1^n01;
-        T_value(k)=(Tz*((abs(pmin(k))/Pc)))+273;
+        T_value(k)=(Tc*((abs(pmin(k))/Pc)))+273;
 end
 for k = 181000:270999;
         pmin(k)=((Pn*10^5)*0.000145)*ed1^n01 + pmin(20000)*(k-181000)/45000 ;
-        T_value(k)=(Tz*((abs(pmin(k))/Pc)))+273;
+        T_value(k)=(Tc*((abs(pmin(k))/Pc)))+273;
 end
 for k = 271000:360999;
         SE1 = ((mS(k)*(1+cosd(A))/2)+L-sqrt((L^2)+((mS(k)*sind(A))^2)/4));
@@ -193,7 +193,7 @@ for k = 271000:360999;
         ed1 = (Ve1+Vc1)/Vc1;
         n01 = (8.314/(19.806+0.002095*T*(ed1^(p-1)+1))+1) ;
         pmin(k)=((Pa*10^5)*0.000145)*ed1^n01;
-        T_value(k)=(Tz*((abs(pmin(k))/Pc)))+273;
+        T_value(k)=(Tc*((abs(pmin(k))/Pc)))+273;
 end
 for k = 361000:450999;
         SE1 = ((mS(k)*(1+cosd(A))/2)+L-sqrt((L^2)+((mS(k)*sind(A))^2)/4));
@@ -202,11 +202,11 @@ for k = 361000:450999;
         ed1 = (Ve1+Vc1)/Vc1;
         n01 = (8.314/(19.806+0.002095*T*(ed1^(p-1)+1))+1) ;
         pmin(k)=((Pa*10^5)*0.000145)*ed1^n01;
-        T_value(k)=(Tz*((abs(pmin(k))/Pc)))+273;
+        T_value(k)=(Tc*((abs(pmin(k))/Pc)))+273;
 end
 for k = 451000:539999;
         pmin(k)=((Pa*10^5)*0.000145)*ed1^n01-pmin(450000)*(k-450000)/50000;
-        T_value(k)=(Tz*((abs(pmin(k))/Pc)))+273;
+        T_value(k)=(Tc*((abs(pmin(k))/Pc)))+273;
 end
 for k = 540000:580999;
      if k <= 541999;
@@ -225,7 +225,7 @@ for k = 540000:580999;
         n01 = (8.314/(19.806+0.002095*T*(ed1^(p-1)+1))+1);
         pmin(k)=P_min+((Pa*10^5)*0.000145)*ed1^n01;
      end
-     T_value(k)=(Tz*((abs(pmin(k))/Pc)))+273;
+     T_value(k)=(Tc*((abs(pmin(k))/Pc)))+273;
 end
 for k = 581000:721000;
         SE1 = ((0*(1+cosd(A))/2)+L-sqrt((L^2)+((0*sind(A))^2)/4));
@@ -234,7 +234,7 @@ for k = 581000:721000;
         ed1 = (Ve1+Vc1)/Vc1;
         n01 = (8.314/(19.806+0.002095*T*(ed1^(p-1)+1))+1) ;
         pmin(k)=((Pa*10^5)*0.000145)*ed1^n01;
-        T_value(k)=(Tz*((abs(pmin(k))/Pc)))+273;
+        T_value(k)=(Tc*((abs(pmin(k))/Pc)))+273;
 end
 for k = 1:721000;
     if T_value(k) < T;
@@ -284,10 +284,12 @@ title('Do thi cong nen Lac');
  axis([0    max(truc_khuyu)   min(pmin)-150     max(T_value)+150]);
  hold on
  plot(truc_khuyu,pmin,'-');
- plot(truc_khuyu,T_value,'-');
+ %plot(truc_khuyu,T_value,'-');
  grid on;
  box on;
- legend ('Duong ap suat chuan','Duong nhiet do chuan')
+ %legend ('Duong ap suat chuan','Duong nhiet do chuan')
+ legend ('Duong ap suat chuan')
  xlabel('Chu trinh');
- ylabel('P (psi) va Nhiet do (K)');
- title('Do thi ');
+ %ylabel('P (psi) va Nhiet do (K)');
+ ylabel('P (psi)');
+ title('Do thi ap suat');

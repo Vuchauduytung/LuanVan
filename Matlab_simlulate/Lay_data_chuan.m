@@ -1,3 +1,7 @@
+time = input('Thoi gian do: ');
+for i=0:time
+    pause(1);
+end
 SE = (S*(1+cosd(A))/2)+L-sqrt((L^2)+((S*sind(A))^2)/4);
 Ve = (pi*(D^2)*SE)/4;
 Vc = (pi/(4*(u-1)))*(D^2)*S;
@@ -7,8 +11,8 @@ n0 = (8.314/(19.806+0.002095*T*(ed^(p-1)+1))+1) ;
 Vh1=(ed*Vc-Vc)/10^6;
 nv=(v/(T))*(ed/(ed-1))*(Pa/Po);
 Lc = (Po*Vh1*nv*T*((Vh1^(n0-1))-1))/((n0-1)*v);
-Tc=T*ed^(n0-1);
-Tz=Tc-273;
+Tc=(T-273)*ed^(n0-1);
+Tz=Tc+273;
 mS=zeros(1,721);
 uk=S;
 %ki nap
@@ -44,7 +48,7 @@ for k = 1:19;
         ed1 = (Ve1+Vc1)/Vc1;
         n01 = (8.314/(19.806+0.002095*T*(ed1^(p-1)+1))+1) ;
         pmin_c(k)=((Pa*10^5)*0.000145)*ed1^n01;
-        T_value_c(k)=(Tz*((abs(pmin_c(k))/Pc)))+273;
+        T_value_c(k)=(Tc*((abs(pmin_c(k))/Pc)))+273;
 end
 for k = 20:47;
     if k == 20;
@@ -63,7 +67,7 @@ for k = 20:47;
         n01 = (8.314/(19.806+0.002095*T*(ed1^(p-1)+1))+1);
         pmin_c(k)=pmin_c(20)-P_min+((Pa*10^5)*0.000145)*ed1^n01;
     end
-    T_value_c(k)=(Tz*((abs(pmin_c(k))/Pc)))+273;
+    T_value_c(k)=(Tc*((abs(pmin_c(k))/Pc)))+273;
 end
 for k = 48:180;
         SE1 = ((0*(1+cosd(A))/2)+L-sqrt((L^2)+((0*sind(A))^2)/4));
@@ -72,11 +76,11 @@ for k = 48:180;
         ed1 = (Ve1+Vc1)/Vc1;
         n01 = (8.314/(19.806+0.002095*T*(ed1^(p-1)+1))+1) ;
         pmin_c(k)=((Pn*10^5)*0.000145)*ed1^n01;
-        T_value_c(k)=(Tz*((abs(pmin_c(k))/Pc)))+273;
+        T_value_c(k)=(Tc*((abs(pmin_c(k))/Pc)))+273;
 end
 for k = 181:270;
         pmin_c(k)=((Pn*10^5)*0.000145)*ed1^n01 + pmin_c(20)*(k-181)/45 ;
-        T_value_c(k)=(Tz*((abs(pmin_c(k))/Pc)))+273;
+        T_value_c(k)=(Tc*((abs(pmin_c(k))/Pc)))+273;
 end
 for k = 271:360;
         SE1 = ((mS(k)*(1+cosd(A))/2)+L-sqrt((L^2)+((mS(k)*sind(A))^2)/4));
@@ -85,7 +89,7 @@ for k = 271:360;
         ed1 = (Ve1+Vc1)/Vc1;
         n01 = (8.314/(19.806+0.002095*T*(ed1^(p-1)+1))+1) ;
         pmin_c(k)=((Pa*10^5)*0.000145)*ed1^n01;
-        T_value_c(k)=(Tz*((abs(pmin_c(k))/Pc)))+273;
+        T_value_c(k)=(Tc*((abs(pmin_c(k))/Pc)))+273;
 end
 for k = 361:450;
         SE1 = ((mS(k)*(1+cosd(A))/2)+L-sqrt((L^2)+((mS(k)*sind(A))^2)/4));
@@ -94,11 +98,11 @@ for k = 361:450;
         ed1 = (Ve1+Vc1)/Vc1;
         n01 = (8.314/(19.806+0.002095*T*(ed1^(p-1)+1))+1) ;
         pmin_c(k)=((Pa*10^5)*0.000145)*ed1^n01;
-        T_value_c(k)=(Tz*((abs(pmin_c(k))/Pc)))+273;
+        T_value_c(k)=(Tc*((abs(pmin_c(k))/Pc)))+273;
 end
 for k = 451:539;
         pmin_c(k)=((Pa*10^5)*0.000145)*ed1^n01-pmin_c(450)*(k-450)/50;
-        T_value_c(k)=(Tz*((abs(pmin_c(k))/Pc)))+273;
+        T_value_c(k)=(Tc*((abs(pmin_c(k))/Pc)))+273;
 end
 for k = 540:580;
      if k == 540;
@@ -117,7 +121,7 @@ for k = 540:580;
         n01 = (8.314/(19.806+0.002095*T*(ed1^(p-1)+1))+1);
         pmin_c(k)=P_min+((Pa*10^5)*0.000145)*ed1^n01;
      end
-     T_value_c(k)=(Tz*((abs(pmin_c(k))/Pc)))+273;
+     T_value_c(k)=(Tc*((abs(pmin_c(k))/Pc)))+273;
 end
 for k = 581:721;
         SE1 = ((0*(1+cosd(A))/2)+L-sqrt((L^2)+((0*sind(A))^2)/4));
@@ -126,7 +130,7 @@ for k = 581:721;
         ed1 = (Ve1+Vc1)/Vc1;
         n01 = (8.314/(19.806+0.002095*T*(ed1^(p-1)+1))+1) ;
         pmin_c(k)=((Pa*10^5)*0.000145)*ed1^n01;
-        T_value_c(k)=(Tz*((abs(pmin_c(k))/Pc)))+273;
+        T_value_c(k)=(Tc*((abs(pmin_c(k))/Pc)))+273;
 end
 for k = 1:721;
     if T_value_c(k) < T;
@@ -197,3 +201,26 @@ for ii=1:period
         
 end
 dlmwrite(path_T_4, data_T);
+% ve do thi
+figure;
+time_step = time*2;
+time_line= zeros(1,time_step*period);
+pre = zeros(1,time_step*period);
+T_line = zeros(1,time_step*period);
+ for a=1:period:time_step*period;
+     for ii=1:period;
+         time_line (ii+a)=((ii+a)/period)/2;
+         pre (ii+a)= pmin_c(ii);
+         T_line (ii+a)= T_value_c(ii);
+     end
+     pause(0.1);
+ end
+axis([0  max(time_line)  (min(pmin_c)-20)  (max(pmin_c)+50)]);
+grid on;
+box on;
+hold on
+plot(time_line,pre,'-');
+legend ('Duong ap suat')
+xlabel('Thoi gian (s)');
+ylabel('P (psi)');
+title('Do thi ap suat');
